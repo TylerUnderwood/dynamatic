@@ -1,0 +1,12 @@
+title: 'Block Heading'
+fields:
+  -
+    handle: subheading
+    field:
+      type: text
+      display: Subheading
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading

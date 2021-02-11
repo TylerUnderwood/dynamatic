@@ -1,0 +1,28 @@
+title: 'Section Main Left'
+fields:
+  -
+    handle: main_column_settings
+    field:
+      type: section
+      localizable: false
+      listable: false
+      display: 'Main Column'
+  -
+    import: column_meta
+    prefix: left_
+  -
+    import: blocks_main
+    prefix: left_
+  -
+    handle: aside_column_settings
+    field:
+      type: section
+      localizable: false
+      listable: false
+      display: 'Aside Column'
+  -
+    import: column_meta
+    prefix: right_
+  -
+    import: blocks_aside
+    prefix: right_

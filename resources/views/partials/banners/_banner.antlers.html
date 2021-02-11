@@ -1,0 +1,26 @@
+<section id="banner" class="banner {{ if banner_image }}has-image{{ /if }} {{ banner_height }} trim gutter">
+	
+	{{ if banner_image }}
+	<div class="banner__image {{ banner_overlay }}"style="background-image: url('{{ banner_image }}');"></div>
+	{{ /if }}
+
+	<div class="banner__inner wrapper">
+		{{ if banner_subheading }}
+		<div class="hgroup">
+			<h3 class="large">{{ banner_subheading }}</h3>
+			<h1>{{ banner_heading or title }}</h1>
+		</div>
+		{{ else }}
+		<h1>{{ banner_heading or title }}</h1>
+		{{ /if }}
+		{{ if banner_intro }}
+		<div class="markdown mar-t">
+			{{ banner_intro }}
+		</div>
+		{{ /if }}
+		{{ if banner_button }}
+		<a class="btn mar-t" href="{{ banner_button_link }}">{{ banner_button_text }}</a>
+		{{ /if }}
+	</div> <!-- END banner__inner -->
+	
+</section> <!-- END banner -->

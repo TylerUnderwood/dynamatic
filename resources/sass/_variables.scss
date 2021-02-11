@@ -1,0 +1,218 @@
+
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// Settings: COLOR
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// common
+$true_red:          #FF0000;
+$true_orange:       #FF8000;
+$true_yellow:       #FFFF00;
+$true_chartreuse:   #80FF00;
+$true_green:        #00FF00;
+$true_jade:         #00FF80;
+$true_cyan:         #00FFFF;
+$true_azure:        #0080FF;
+$true_blue:         #0000FF;
+$true_purple:       #8000FF;
+$true_magenta:      #FF00FF;
+$true_fuchsia:      #FF0080;
+
+// grey shades
+$white:             #ffffff;
+$off_white:         #f8f8f8;
+$light:             #eeeeee;
+$grey_light:        #c0c0c0;
+$grey:              #808080;
+$grey_dark:         #404040;
+$dark:              #333333;
+$off_black:         #202020;
+$black:             #000000;
+
+// social media colors
+$facebook:          #3b5998;
+$instagram:         #bc2a8d;
+$linkedin:          #0077b5;
+$periscope:         #d75444;
+$pinterest:         #c8232c;
+$soundcloud:        #FF5401;
+$twitter:           #1da1f2;
+$vimeo:             #1ab7ea;
+$youtube:           #bb0000;
+
+// site specific
+$royal_purple:      #c000ff;
+$fuchsia:           #ff0080;
+$starburst:         #ff0040;
+$lava_orange:       #ff4000;
+$neon_yellow:       #c0ff00;
+$jade:              #00ff80;
+$sea_foam:          #00ffc0;
+$azure:             #0080ff;
+
+// site dynamic
+
+// Branding
+$primary:           $fuchsia;
+$accent:            $sea_foam;
+
+// Background
+$background:        #1b1822;
+$contrast:          lighten($background, 8%);
+
+// Border
+$border_color:      lighten($background, 16%);
+
+// Text
+$text_color:        $light;
+$text_color_off:    lighten($background, 20%);
+
+// Headings
+$heading_color:     $primary;
+$heading_color_alt: $lava_orange;
+
+// Links
+$link_color:        $accent;
+$link_hover:        $azure;
+
+
+
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// Settings: TYPOGRAPHY
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono:wght@200;400;600|Kanit:wght@200;400;600&display=swap');
+
+// FONT FAM
+
+// default
+$default_serif:         Times, serif;
+$default_sans_serif:    Arial, sans-serif;
+
+// site fonts
+$kanit:             'Kanit', $default_serif;
+$overpass:          'Overpass', $default_sans_serif;
+$overpass_mono:     'Overpass Mono', monospace;
+
+// dynamic fonts
+$serif: 			$kanit;
+$sans_serif: 		$overpass;
+$monospace: 		$overpass_mono;
+
+// site dynamic fonts
+$heading_font: 		$kanit;
+$copy_font: 		$overpass;
+$meta_font: 		$overpass_mono;
+
+// FONT SIZE
+$font_min:          16px;
+$font_max:          20px;
+
+
+
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// Settings: SITE VARS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// BORDER RADIUS
+$round: 2px;
+$shadow: 0px 7px 10px 0px rgba(0,0,0,0.25);
+$border: 2px solid $border_color;
+
+
+
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// Settings: LAYOUT
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// RESPONSIVE
+
+$mobile: 			480px;
+$tablet: 			768px;
+$desktop: 			1024px;
+
+$breakpoints: (
+    sm:             $mobile,
+    md:             $tablet,
+    lg:             $desktop,
+);
+
+// MAX WIDTHS
+
+// base structure
+$min_width: 		480px;
+$max_width: 		1600px;
+
+// main containers
+$text_max: 			36rem;
+$inner:             $text_max;
+
+$content_max:       64rem;
+$wrapper:           $content_max;
+
+$site_max:          80rem;
+$outer:             $site_max;
+
+// utility
+$max_widths: (
+    120:            6rem,
+    240:            12rem,
+    360:            18rem,
+    480:            24rem,
+    720:            36rem,
+    1080:           54rem,
+    1280:           64rem,
+    1600:           80rem,
+);
+
+$widths: (
+    25:             25%,
+    33:             33.3333%,
+    50:             50%,
+    66:             66.6667%,
+    75:             75%,
+    100:            100%,
+);
+
+// the number is for x out of twelve
+$columns: (
+    1:              #{ (1 / 12) * 100 + '%'},
+    2:              #{ (2 / 12) * 100 + '%'},
+    3:              #{ (3 / 12) * 100 + '%'},
+    4:              #{ (4 / 12) * 100 + '%'},
+    5:              #{ (5 / 12) * 100 + '%'},
+    6:              #{ (6 / 12) * 100 + '%'},
+    7:              #{ (7 / 12) * 100 + '%'},
+    8:              #{ (8 / 12) * 100 + '%'},
+    9:              #{ (9 / 12) * 100 + '%'},
+    10:             #{(10 / 12) * 100 + '%'},
+    11:             #{(11 / 12) * 100 + '%'},
+    12:             #{(12 / 12) * 100 + '%'},
+);
+
+// WHITESPACE
+
+// Mobile horizontal space
+$horz_space_min:    32px;
+// Desktop horizontal space
+$horz_space_max:    64px;
+
+// Mobile vertical space
+$vert_space_min:    64px;
+// Desktop vertical space
+$vert_space_max:    96px;
+
+// default
+$space:             1.6rem;
+
+// utility
+// the most common spacing amounts
+$spacing: (
+    0:              0,
+    1:              0.4rem,
+    2:              0.8rem,
+    3:              1.2rem,
+    4:              1.6rem,
+    5:              2.4rem,
+    6:              3.2rem,
+    7:              6.4rem,
+);

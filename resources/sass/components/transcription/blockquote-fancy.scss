@@ -1,0 +1,36 @@
+blockquote.fancy {
+    margin-top: -0.36em;
+    text-align: center;
+    font-family: $serif;
+    font-size: 1.6rem;
+
+    & + .accent {
+        display: block;
+        position: relative;
+        margin-top: 1rem;
+        margin-right: auto;
+        margin-left: auto;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        background-color: $accent;
+        font-size: 8px;
+        color: gray;
+        content: '';
+    
+        &::before,
+        &::after {
+            position: absolute;
+            top: 50%;
+            width: 4rem;
+            transform: translate(0, -50%);
+            height: 2px;
+            background-color: inherit;
+            content: '';
+        }
+    
+        &::before { left: 2em; }
+    
+        &::after { right: 2em; }
+    }
+}

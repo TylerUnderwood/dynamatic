@@ -1,0 +1,54 @@
+<footer id="footer">
+
+	<div class="outer relative" style="z-index: 1;">
+		<a class="scroll-to-top" href="#site">
+			{{ theme:output src="svg/chevron-up.svg" }}
+		</a> <!-- END scroll-to-top -->
+	</div>
+
+	<div class="footer gutter trim">
+		<div class="footer__inner outer">
+
+			<nav class="nav footer__nav">
+			{{ nav }}
+
+				<a class="nav__link link" href="{{ url }}">
+					<span class="meta meta-fix">{{ title }}</span>
+				</a>
+				
+			{{ /nav }}
+			</nav> <!-- END footer-nav -->
+
+			<div class="break"></div>
+			
+			<address class="inline-list inline-list--pipline meta small thin">
+				<a class="item" href="{{ site:google_maps_url }}" target="_blank">
+					<span class="meta-fix">{{ site:address:city }} &middot; {{ site:address:state }}</span>
+				</a>
+				<a class="item" href="tel:{{ site:phone }}">
+					<span class="meta-fix">{{ site:phone }}</span>
+				</a>
+				<a class="item" href="mailto:{{ site:email }}">
+					<span class="meta-fix">{{ site:email }}</span>
+				</a>
+			</address> <!-- END site-info -->
+
+			<div class="break"></div>
+	
+			<div class="copyright meta small thin">
+				<span class="meta-fix">Copyright &copy; {{ date format="Y" }} {{ site:name }}.</span>
+				<span class="meta-fix">All Rights Reserved.</span>
+				<span class="meta-fix">
+					<a 
+						href="https://github.com/cyborgspaceviking" 
+						target="_blank" 
+						title="All my work in one place">
+						Site by Tyler.
+					</a>
+				</span>
+			</div> <!-- END copyright -->
+	
+		</div> <!-- END inner-footer -->
+	</div>
+    
+</footer> <!-- END #footer -->

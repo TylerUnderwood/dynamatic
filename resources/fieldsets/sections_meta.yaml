@@ -1,0 +1,57 @@
+title: 'Sections Meta'
+fields:
+  -
+    handle: section_meta
+    field:
+      type: section
+      localizable: false
+      listable: false
+      display: 'Section Meta'
+  -
+    handle: section_id
+    field:
+      placeholder: ID
+      type: text
+      localizable: false
+      listable: hidden
+      display: ID
+  -
+    handle: mobile_frame
+    field:
+      type: select
+      options:
+        'mb:frame': 'Top and Bottom'
+        'mb:frame--top': 'Only Top'
+        'mb:frame--bot': 'Only Bottom'
+        'mb:frame--not': Neither
+      display: 'Mobile, Space Between'
+      default: 'mb:frame'
+      width: 50
+      listable: hidden
+      placeholder: 'Space Between'
+      clearable: false
+      multiple: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+  -
+    handle: desktop_frame
+    field:
+      type: select
+      options:
+        'dt:frame': 'Top and Bottom'
+        'dt:frame--top': 'Only Top'
+        'dt:frame--bot': 'Only Bottom'
+        'dt:frame--not': Neither
+      display: 'Desktop, Space Between'
+      default: 'dt:frame'
+      width: 50
+      listable: hidden
+      placeholder: 'Space Between'
+      clearable: false
+      multiple: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false

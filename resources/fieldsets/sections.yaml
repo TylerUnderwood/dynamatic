@@ -1,0 +1,51 @@
+title: Sections
+fields:
+  -
+    handle: section_settings
+    field:
+      type: section
+      localizable: false
+      listable: false
+      display: 'Page Sections'
+  -
+    handle: sections
+    field:
+      sets:
+        section_full:
+          display: 'Full Section'
+          fields:
+            -
+              import: sections_meta
+            -
+              import: section_full
+        section_half:
+          display: 'Half Section'
+          fields:
+            -
+              import: sections_meta
+            -
+              import: sections_split_meta
+            -
+              import: section_half
+        section_main_left:
+          display: 'Main Left Section'
+          fields:
+            -
+              import: sections_meta
+            -
+              import: sections_split_meta
+            -
+              import: section_main_left
+        section_main_right:
+          display: 'Main Right Section'
+          fields:
+            -
+              import: sections_meta
+            -
+              import: sections_split_meta
+            -
+              import: section_main_right
+      type: replicator
+      localizable: false
+      listable: hidden
+      display: Sections

@@ -1,0 +1,57 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Single Form
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.single-form {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: $text_max;
+
+  &__label,
+  &__input,
+  &__submit {
+    display: block;
+    height: 2rem;
+    line-height: 1;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__label:first-child {
+    flex: 1;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__submit {
+    padding-left: 1.4em;
+    padding-right: 1.4em;
+  }
+
+  @include below( sm ) {
+    flex-direction: column;
+
+    &__label:not(:first-child) {
+      margin-top: 1rem;
+    }
+    &__submit {
+      width: 100%;
+    }
+  }	
+
+  @include above( sm ) {
+    &__input {
+      border-top-right-radius: unset;
+      border-bottom-right-radius: unset;
+      border-right: transparent;
+    }
+    &__submit {
+      border-top-left-radius: unset;
+      border-bottom-left-radius: unset;
+    }
+  }
+}

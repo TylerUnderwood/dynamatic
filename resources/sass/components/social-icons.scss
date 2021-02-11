@@ -1,0 +1,58 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Social Icons
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.social-icons {
+  display: flex;
+  margin: -0.2em;
+  font-size: 2rem;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.2em;
+    height: 1.2em;
+    padding: 0.2em;
+  }
+
+  .icon-facebook,
+  .icon-facebook-square {
+    color: $facebook;
+  }
+
+  .icon-instagram {
+    color: $instagram;
+  }
+
+  .icon-linkedin {
+    color: $linkedin;
+  }
+
+  .icon-periscope {
+    color: $periscope;
+  }
+
+  .icon-pinterest {
+    color: $pinterest;
+  }
+
+  .icon-soundcloud {
+    color: $soundcloud;
+  }
+
+  .icon-twitter {
+    color: $twitter;
+  }
+
+  .icon-vimeo {
+    color: $vimeo;
+  }
+      
+  .icon-youtube,
+  .icon-youtube-outline {
+    color: $youtube;
+  }
+}

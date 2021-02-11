@@ -1,0 +1,72 @@
+/* ==========================================================================
+===== THEME STYLESHEET =====
+=
+= I've divvied up the scss to go from a wider scope to a more specific scope. ( As you would )
+= The order that I have decided on is: global > module > component > layout
+= For each one, I will explain my thinking as to why they are more specific than the last.
+= Here is a link to something which explains my thinking on the mater, fairly well.
+= https://softwareengineering.stackexchange.com/questions/178927/is-there-a-difference-between-a-component-and-a-module
+=
+========================================================================== */
+
+@import "variables";
+@import "functions";
+
+/* ==========================================================================
+===== BASE STYLES =====
+=
+= These are for styles that will always be used. The rules here should be minimal and dry.
+= When working on more specific classes and elements you don't want to have to backpedal very much, if at all.
+= Don't see the need to add any more files to this folder, what is here should cover all the core needs.
+=
+========================================================================== */
+@import "base/reset"; // This is the file to put your favorite browser reset in; I have chosen normalize
+@import "base/body";
+@import "base/typography";
+@import "base/dividers";
+@import "base/forms";
+@import "base/buttons";
+@import "base/media";
+@import "base/backgrounds";
+@import "base/animations";
+
+
+
+/* ==========================================================================
+===== COMPONENTS STYLES =====
+=
+= Here a component is a specific class or set of classes that relate to a singular use or style.
+=
+========================================================================== */
+@import "components/transcription";
+@import "components/section";
+@import "components/masonry";
+@import "components/navs";
+@import "components/header";
+@import "components/menu";
+@import "components/footer";
+@import "components/banner";
+@import "components/card";
+@import "components/bard";
+@import "components/modal";
+@import "components/accordion";
+@import "components/pagination";
+@import "components/social-icons";
+@import "components/contact-form";
+@import "components/single-form";
+
+
+
+/* ==========================================================================
+===== UTILITY STYLES =====
+=
+= 
+=
+========================================================================== */
+@import "utility/text";
+@import "utility/color";
+@import "utility/position";
+@import "utility/layout";
+@import "utility/alignment";
+@import "utility/width";
+@import "utility/whitespace";

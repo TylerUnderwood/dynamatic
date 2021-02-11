@@ -1,0 +1,36 @@
+title: Page
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          display: Title
+          width: 66
+          localizable: true
+      -
+        handle: slug
+        field:
+          type: text
+          display: Slug
+          width: 33
+      -
+        import: banner
+      -
+        import: sections
+      -
+        handle: users
+        field:
+          max_items: 1
+          mode: select
+          type: users
+          localizable: false
+          listable: hidden
+          display: Users
+      -
+        handle: template
+        field:
+          type: template
+          display: Template

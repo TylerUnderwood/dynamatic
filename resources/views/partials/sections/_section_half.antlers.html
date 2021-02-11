@@ -1,0 +1,38 @@
+<section 
+	{{ if section_id }}id="{{ section_id }}" {{ /if }}
+	class="
+		section {{ section_reverse }} 
+		frame {{ desktop_frame }} {{ mobile_frame }} 
+		{{ classes }}">
+
+	<div class="
+		section__column section__half 
+		{{ left_background_color }} 
+		trim {{ left_mobile_trim }} {{ left_desktop_trim }}">
+	{{ left_blocks_half }}
+
+		<div class="section__block {{ type }}__block gutter {{ space_above }} {{ classes }}">
+			<div class="section__wrap {{ type }}__wrap gutter">
+				{{ partial src="blocks/_{type}" }}
+			</div>
+		</div>
+
+	{{ /left_blocks_half }}
+	</div>
+
+	<div class="
+		section__column section__half 
+		{{ right_background_color }} 
+		trim {{ right_mobile_trim }} {{ right_desktop_trim }}">
+	{{ right_blocks_half }}
+
+		<div class="section__block {{ type }}__block gutter {{ space_above }} {{ classes }}">
+			<div class="section__wrap {{ type }}__wrap gutter">
+				{{ partial src="blocks/_{type}" }}
+			</div>
+		</div>
+
+	{{ /right_blocks_half }}
+	</div>
+
+</section> <!-- END half_section -->

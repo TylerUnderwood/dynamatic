@@ -1,0 +1,17 @@
+title: Archive
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          display: Title
+          width: 66
+      -
+        handle: slug
+        field:
+          type: text
+          display: Slug
+          width: 33

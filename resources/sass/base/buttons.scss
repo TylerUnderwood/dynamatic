@@ -1,0 +1,176 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Buttons 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  color: $background;
+  cursor: pointer;
+}
+
+
+$btn_phat_height: 2.8em;
+$btn_height: 2.2em;
+$btn_slim_height: 1.6em;
+
+
+.btn {
+  $self: &;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  border: 2px solid $link_color;
+  border-radius: $round;
+  min-width: 8em;
+  height: $btn_height;
+  background-color: $link_color;
+  padding: 0.6em 1.4em;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-family: $meta_font;
+  font-weight: bold;
+  color: $background;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: border-color 300ms ease-in-out,
+              background-color 300ms ease-in-out,
+              color 300ms ease-in-out;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: $link_hover;
+    background-color: $link_hover;
+    color: $background;
+  }
+
+  &[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus {
+      border-color: $link_color;
+      background-color: $link_color;
+      color: $background;
+    }
+  }
+
+  // === button components === //
+  &__text {
+    display: inline-block;
+    font-size: 0.8em;
+  }
+
+  &__icon {
+    display: inline-block;
+    max-width: 1em;
+    max-height: 1em;
+  }
+
+  // === button types === //
+  
+  // border button //
+  &--border {
+    border-color: $link_color;
+    background: transparent;
+    color: $link_color;
+    
+    &:hover,
+    &:focus {
+      border-color: $link_hover;
+      background-color: transparent;
+      color: $link_hover;
+    }
+
+    #{$self}__text {
+      font-size: 0.7em;
+    }
+  }
+  
+
+  // slim button //
+  &--slim {
+    min-width: 6em;
+    height: $btn_slim_height;
+    border-width: 1px;
+    padding: 0.4em 1.2em;
+    font-weight: normal;
+
+    #{$self}__text {
+      font-size: 0.7em;
+    }
+
+    #{$self}__icon {
+      max-width: 0.8em;
+      max-height: 0.8em;
+    }
+
+    &#{$self}--border #{$self}__text {
+      font-size: 0.6em;
+    }
+  }
+
+
+  // phat button //
+  &--phat {
+    min-width: 12em;
+    height: $btn_phat_height;
+    border-width: 2px;
+    padding: 0.8em 2.4em;
+    font-weight: bold;
+
+    #{$self}__text {
+      font-size: 0.9em;
+    }
+
+    #{$self}__icon {
+      max-width: 1.2em;
+      max-height: 1.2em;
+    }
+
+    &#{$self}--border #{$self}__text {
+      font-size: 0.8em;
+    }
+  }
+
+
+  // stout //
+  &--stout {
+    min-width: unset;
+    padding-right: 0.8em;
+    padding-left: 0.8em;
+  }
+
+
+  // square //
+  &--square {
+    min-width: unset;
+    padding: 0.2em;
+    width: $btn_height;
+    height: $btn_height;
+
+    &#{$self}--slim {
+      width: $btn_slim_height;
+      height: $btn_slim_height;
+    }
+
+    &#{$self}--phat {
+      width: $btn_phat_height;
+      height: $btn_phat_height;
+    }
+  }
+}
+
+// ===== site specific ===== //

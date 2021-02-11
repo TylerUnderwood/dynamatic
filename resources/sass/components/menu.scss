@@ -1,0 +1,238 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Site Header 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/* ===== VARIABLES ===== */
+
+$menu_bg: $contrast;
+$menu_color: $white;
+$menu_time: 240ms;
+
+// this is the space between the nav items and the top and bottom when the height is smaller than the nav
+$menu_buffer: 1em;
+
+
+
+/* ===== LAYOUT ===== */
+
+.menu {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-flow: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: $menu_bg;
+  padding: 0 $header_padding;
+  padding-top: $header_height;
+  line-height: 1;
+  font-size: 2.4rem;
+
+  // These ::before and ::afters are for fading the nav items
+  // top and bottom as you scroll through them.
+  &:before,
+  &:after {
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    width: 100%;
+    min-height: $menu_buffer;
+    content: '';
+  }
+
+  &:before {
+    top: $header_height;
+    background: linear-gradient(rgba($menu_bg, 1) 0%, 
+                                rgba($menu_bg, 0) 100%);
+  }
+
+  &:after {
+    bottom: 0;
+    background: linear-gradient(rgba($menu_bg, 0) 0%, 
+                                rgba($menu_bg, 1) 100%);
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    // these match the fading buffers for the main nav
+    &::before,
+    &::after {
+      display: block;
+      opacity: 0;
+      width: 100%;
+      min-height: $menu_buffer;
+      content: '';
+    }
+  }
+
+  /* === NAVIGATION LINKS === */
+  &__nav {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    margin: -0.8rem;
+  }
+
+  &__link {
+    display: inline-flex;
+    padding: 0.8rem;
+    text-transform: capitalize;
+    font-family: $heading_font;
+    font-weight: normal;
+    color: $menu_color;
+
+    .icon {
+      &:first-child {
+        margin-right: 0.5em;
+      }
+      &:last-child {
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  // ANIMATIONS
+  @keyframes open_menu {
+    from {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes close_menu {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+  }
+
+  // ACTIVE STATES
+  &[data-state="active"] {
+		visibility: visible;
+  }
+
+  &[data-state="deactivating"] {
+    animation: close_menu $menu_time ease-in-out forwards;
+  }
+
+  &[data-state="inactive"] {
+		visibility: hidden;
+  }
+
+  &[data-state="activating"] {
+    animation: open_menu $menu_time ease-in-out forwards;
+  }
+}
+
+
+
+/* === MENU BUTTON === */
+.menu-button {
+  $self: &;
+  display: block;
+  z-index: 99;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+  padding: 0.5em;
+  // font size canges the whole size
+  font-size: 24px;
+  color: inherit;
+  transition: background-color $menu_time ease;
+  cursor: pointer;
+
+  &__bar {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0.5em;
+    width: 1em;
+    height: 2px;
+    border-radius: 1px;
+    background-color: currentColor;
+    transition: all $menu_time ease;
+
+    &:nth-child(1) {
+      top: calc(0.5em + 2px);
+      bottom: unset;
+    }
+    &:nth-child(2) {
+      top: calc(1em - 1px);
+      bottom: unset;
+    }
+    &:nth-child(3) {
+      top: unset;
+      bottom: calc(0.5em + 2px);
+    }
+  }
+  
+  // HOVER STATES
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  // ACTIVE STATES
+  &[data-state="active"],
+  &[data-state="activating"] {
+    visibility: visible;
+    color: $white;
+
+    #{$self}__bar {
+      visibility: visible;
+
+      &:nth-child(1) {
+        top: calc(1em - 1px);
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        bottom: calc(1em - 1px);
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &[data-state="inactive"],
+  &[data-state="deactivating"] {
+    visibility: visible;
+
+    #{$self}__bar {
+      visibility: visible;
+
+      &:nth-child(1) {
+        transform: rotate(0);
+      }
+      &:nth-child(2) {
+        opacity: 1;
+      }
+      &:nth-child(3) {
+        transform: rotate(0);
+      }
+    }
+  }
+}

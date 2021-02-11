@@ -1,0 +1,88 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Pagination
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$pagination_btn_bg: $link_color;
+$pagination_btn_bg_hover: $link_hover;
+$pagination_btn_bg_active: $contrast;
+$pagination_btn_bg_disabled: $link_hover;
+
+$pagination_btn_text: $background;
+$pagination_btn_text_hover: $background;
+$pagination_btn_text_active: $link_color;
+$pagination_btn_text_disabled: $background;
+
+.pagination {
+  display: flex;
+  font-size: 1.2rem;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.25em;
+    border-radius: $round;
+    width: 2em;
+    height: 2em;
+    background-color: $pagination_btn_bg;
+    padding: 0.5em;
+    line-height: 1;
+    vertical-align: baseline;
+    text-align: center;
+    font-weight: bold;
+    font-size: inherit;
+    font-family: $meta_font;
+    color: $pagination_btn_text;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    background-color: $pagination_btn_bg;
+    color: $pagination_btn_text;
+    transition: background 300ms ease,
+                color 300ms ease;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      background-color: $pagination_btn_bg_hover;
+      color: $pagination_btn_text_hover;
+    }
+  }
+
+  &__active {
+    background-color: $pagination_btn_bg_active;
+    color: $pagination_btn_text_active;
+    cursor: default;
+  }
+
+  &__disabled {
+    background-color: $pagination_btn_bg_disabled;
+    color: $pagination_btn_text_disabled;
+    cursor: not-allowed;
+  }
+      
+  .icon-arrow-left,
+  .icon-arrow-right {
+    width: 100%;
+    max-width: 0.8em;
+    max-height: 0.8em;
+    stroke-width: 6px;
+    stroke: currentColor;
+  }
+  .icon-arrow-left {
+    margin-right: 0.1em;
+  }
+  .icon-arrow-right {
+    margin-left: 0.1em;
+  }
+}

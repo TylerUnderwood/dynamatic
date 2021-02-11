@@ -1,0 +1,74 @@
+title: Blog
+fields:
+  -
+    handle: blog
+    field:
+      sets:
+        blockquote:
+          display: Blockquote
+          fields:
+            -
+              handle: quote
+              field:
+                type: textarea
+                listable: hidden
+                display: Quote
+            -
+              handle: cite
+              field:
+                input_type: text
+                type: text
+                listable: hidden
+                display: Cite
+        ordered_list:
+          display: 'Ordered List'
+          fields:
+            -
+              handle: list
+              field:
+                type: list
+                listable: hidden
+                display: List
+        unordered_list:
+          display: 'Unordered List'
+          fields:
+            -
+              handle: list
+              field:
+                type: list
+                listable: hidden
+                display: List
+      buttons:
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+        - horizontalrule
+        - bold
+        - italic
+        - underline
+        - superscript
+        - subscript
+        - anchor
+        - quote
+        - unorderedlist
+        - orderedlist
+        - table
+        - code
+        - codeblock
+        - image
+        - removeformat
+      container: images
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: true
+      link_noreferrer: true
+      target_blank: true
+      reading_time: false
+      fullscreen: true
+      allow_source: false
+      type: bard
+      listable: hidden
+      display: Blog
+      always_show_set_button: true

@@ -1,0 +1,111 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Forms 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+form {
+  display: block;
+  max-width: $text_max;
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+input,
+select,
+textarea,
+fieldset,
+.input {
+  display: block;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  border: $border;
+  border-radius: $round;
+  background-color: $contrast;
+  width: 100%;
+  padding: 0.5em 0.8em;
+  line-height: 1;
+  font-size: 1rem;
+  color: $text_color;
+  transition: border 300ms ease-in-out,
+              background-color 300ms ease-in-out;
+
+  &::placeholder {
+    opacity: 0.3;
+    color: inherit;
+  }
+
+  &:focus,
+  &:active {
+    border-color: $link_color;
+    background-color: lighten($contrast, 8%);
+  }
+}
+
+input[readonly],
+fieldset {
+  &:focus,
+  &:active {
+    border-color: $border_color;
+    background-color: $contrast;
+  }
+}
+
+legend {
+  padding: 0 0.4em;
+  margin: 0 -0.4em;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  height: 12em;
+  resize: vertical;
+  line-height: 1.4;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+      
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+input[type="color"] {
+  height: 2.2em;
+  padding: 0.1em;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: unset;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  display: inline-block;
+  width: unset;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  cursor: pointer;
+}
+
+input[type="file"] {
+  cursor: pointer;
+}

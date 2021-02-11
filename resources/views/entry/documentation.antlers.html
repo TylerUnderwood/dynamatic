@@ -1,0 +1,22 @@
+{{ partial src="banners/_banner" banner_height="banner--short" }}
+
+<section class="section frame">
+	<div class="section__column section__aside">
+		
+		<div class="section__block gutter">
+			<div class="section__wrap">
+				{{ partial src="_docs_nav" }}
+			</div>
+		</div>
+
+	</div>
+	<div class="section__column section__main trim mb:trim--top dt:trim--not">
+
+		<div class="section__block gutter">
+			<div class="section__wrap gutter">
+				{{ partial src="documentation/{subject}" }}
+			</div>
+		</div>
+
+	</div>
+</section> <!-- END documentation -->

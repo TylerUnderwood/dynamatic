@@ -1,0 +1,21 @@
+<section id="banner" class="banner banner--short trim gutter">
+
+	<div class="banner__inner wrapper">
+
+		<div class="hgroup">
+			<h3 class="banner-subtitle">{{ view:error_title }}</h3>
+			<h1>{{ view:error_code }}</h1>
+		</div>
+
+		{{ if view:error_message }}
+			<hr class="mar-t mxw-480">
+			<p class="mar-t">{{ view:error_message }}</p>
+		{{ /if }}
+		
+		<a class="btn mar-t" href="/">
+			<span class="btn__text meta-fix">Back to Homepage</span>
+		</a>
+			
+	</div> <!-- END banner__inner -->
+	
+</section> <!-- END banner -->

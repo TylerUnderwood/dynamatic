@@ -1,0 +1,28 @@
+title: 'Section Half'
+fields:
+  -
+    handle: left_column_settings
+    field:
+      type: section
+      localizable: false
+      listable: false
+      display: 'Left Column'
+  -
+    import: column_meta
+    prefix: left_
+  -
+    import: blocks_half
+    prefix: left_
+  -
+    handle: right_column_settings
+    field:
+      type: section
+      localizable: false
+      listable: false
+      display: 'Right Column'
+  -
+    import: column_meta
+    prefix: right_
+  -
+    import: blocks_half
+    prefix: right_

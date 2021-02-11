@@ -1,0 +1,10 @@
+title: Site
+data:
+  name: Dynamatic
+  description: 'Blog and library for clean, readable, dynamic code.'
+  phone: 555-555-5555
+  email: info@website.com
+  address:
+    city: Austin
+    state: TX
+  google_maps_url: 'https://www.google.com/maps/place/Austin,+TX/'

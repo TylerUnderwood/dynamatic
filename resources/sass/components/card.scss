@@ -1,0 +1,35 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Excerpt
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.card {
+    $self: &;
+    display: flex;
+    box-shadow: $shadow;
+    border-radius: $round;
+    background: $contrast;
+
+    &__content {
+        width: 100%;
+        padding: $space;
+    }
+
+    &__figure {
+        width: 100%;
+    }
+
+    &--entry {
+        flex-direction: row;
+
+        #{$self}__content {
+            padding: 1rem;
+        }
+
+        #{$self}__figure {
+            max-width: 8rem;
+            background-color: $border_color;
+        }
+    }
+}

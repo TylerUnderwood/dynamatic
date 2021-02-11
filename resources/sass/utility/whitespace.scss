@@ -1,0 +1,247 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Whitespace
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+|
+| Syntax
+| [rule]-[direction]-[size] 
+|
+| size values are found in settings.scss
+|
+| pad = padding
+| mar = margin
+|
+| v = vertical
+| h = horizontal
+| t = top
+| r = right
+| b = bottom
+| l = left
+|
+*/
+
+
+
+/* === PADDING === */
+
+/* surrounding */
+.pad {
+  padding: $space;
+}
+
+@include makeAll( pad, padding, $spacing );
+
+/* vertical */
+.pad-v {
+  padding-top: $space;
+  padding-bottom: $space;
+}
+
+@include makeAll( pad-v, padding-top padding-bottom, $spacing );
+
+/* horizontal */
+.pad-h {
+  padding-right: $space;
+  padding-left: $space;
+}
+
+@include makeAll( pad-h, padding-right padding-left, $spacing );
+
+/* top */
+.pad-t {
+  padding-top: $space;
+}
+
+@include makeAll( pad-t, padding-top, $spacing );
+
+/* right */
+.pad-r {
+  padding-right: $space;
+}
+
+@include makeAll( pad-r, padding-right, $spacing );
+
+/* bottom */
+.pad-b {
+  padding-bottom: $space;
+}
+
+@include makeAll( pad-b, padding-bottom, $spacing );
+
+/* left */
+.pad-l {
+  padding-left: $space;
+}
+
+@include makeAll( pad-l, padding-left, $spacing );
+
+/* padding breakpoints */
+@include addBreakpoints() {
+  // surrounding
+  &pad {
+    padding: $space;
+  }
+  
+  @include makeAllForBreakpoints( pad, padding, $spacing );
+
+  // vertical
+  &pad-v {
+    padding-top: $space;
+    padding-bottom: $space;
+  }
+  
+  @include makeAllForBreakpoints( pad-v, padding-top padding-bottom, $spacing );
+
+  // horizontal
+  &pad-h {
+    padding-right: $space;
+    padding-left: $space;
+  }
+  
+  @include makeAllForBreakpoints( pad-h, padding-right padding-left, $spacing );
+
+  // top
+  &pad-t {
+    padding-top: $space;
+  }
+  
+  @include makeAllForBreakpoints( pad-t, padding-top, $spacing );
+
+  // right
+  &pad-r {
+    padding-right: $space;
+  }
+  
+  @include makeAllForBreakpoints( pad-r, padding-right, $spacing );
+
+  // bottom
+  &pad-b {
+    padding-bottom: $space;
+  }
+  
+  @include makeAllForBreakpoints( pad-b, padding-bottom, $spacing );
+
+  // left
+  &pad-l {
+    padding-left: $space;
+  }
+  
+  @include makeAllForBreakpoints( pad-l, padding-left, $spacing );
+}
+
+
+
+/* === MARGIN === */
+
+/* surrounding */
+.mar {
+  margin: $space;
+}
+
+@include makeAll( mar, margin, $spacing );
+
+.mar-auto {
+  margin: auto;
+}
+
+/* top */
+.mar-t {
+  margin-top: $space;
+}
+
+@include makeAll( mar-t, margin-top, $spacing );
+
+.mar-t-auto {
+  margin-top: auto;
+}
+
+/* right */
+.mar-r {
+  margin-right: $space;
+}
+
+@include makeAll( mar-r, margin-right, $spacing );
+
+.mar-r-auto {
+  margin-right: auto;
+}
+
+/* bottom */
+.mar-b {
+  margin-bottom: $space;
+}
+
+@include makeAll( mar-b, margin-bottom, $spacing );
+
+.mar-b-auto {
+  margin-bottom: auto;
+}
+
+/* left */
+.mar-l {
+  margin-left: $space;
+}
+
+@include makeAll( mar-l, margin-left, $spacing );
+
+.mar-l-auto {
+  margin-left: auto;
+}
+
+/* margin breakpoints */
+@include addBreakpoints() {
+  // surrounding
+  &mar {
+    margin: $space;
+  }
+
+  @include makeAllForBreakpoints( mar, margin, $spacing );
+
+  &mar-auto {
+    margin: auto;
+  }
+
+  // top
+  &mar-t {
+    margin-top: $space;
+  }
+
+  @include makeAllForBreakpoints( mar-t, margin-top, $spacing );
+
+  &mar-t-auto {
+    margin-top: auto;
+  }
+
+  // right
+  &mar-r {
+    margin-right: $space;
+  }
+
+  @include makeAllForBreakpoints( mar-r, margin-right, $spacing );
+
+  &mar-r-auto {
+    margin-right: auto;
+  }
+
+  // bottom
+  &mar-b {
+    margin-bottom: $space;
+  }
+
+  @include makeAllForBreakpoints( mar-b, margin-bottom, $spacing );
+
+  &mar-b-auto {
+    margin-bottom: auto;
+  }
+
+  // left
+  &mar-l {
+    margin-left: $space;
+  }
+
+  @include makeAllForBreakpoints( mar-l, margin-left, $spacing );
+
+  &mar-l-auto {
+    margin-left: auto;
+  }
+}

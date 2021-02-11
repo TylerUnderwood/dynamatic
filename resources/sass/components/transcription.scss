@@ -1,0 +1,367 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Transcription
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+|
+| For sections where you want your lists, links and etc. to look nice,
+| and so you don't have to backpedal any of the styles where you don't need.
+|
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/* === Headings === */
+
+// Padding top is used so if you want to link to a heading there will be space above it
+@mixin heading( $size: 1.6rem, $color: inherit ) {
+  margin: 0 0 0.5rem;
+  padding-top: 1em;
+  line-height: 1.2;
+  font-size: $size;
+  font-weight: normal;
+  font-family: $heading_font;
+  color: $color;
+
+  &:first-child {
+    margin-top: -0.25em;
+    padding-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: -0.2em;
+    padding-bottom: 0;
+  }
+
+  & + p {
+    margin-top: 0;
+  }
+}
+
+.heading {
+  @include heading;
+}
+
+.h1 {
+  @include heading( 3.6rem, $heading_color );
+}
+
+.h2 {
+  @include heading( 2.4rem, $heading_color );
+}
+
+.h3 {
+  @include heading( 2.0rem, $heading_color );
+}
+
+.h4 {
+  @include heading( 1.6rem, $heading_color );
+}
+
+.h5 {
+  @include heading( 1.6rem, $heading_color_alt );
+}
+
+.h6 {
+  @include heading( 1.6rem, $text_color_off );
+}
+
+.subheading {
+  @include heading( 1.2rem, $heading_color_alt );
+}
+
+.hgroup {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: -0.25em;
+    margin-bottom: -0.2em;
+    padding: 0;
+    line-height: 1.2;
+  }
+}
+
+/* === Standard Text === */
+
+.copy {
+  margin: $space 0 0;
+  max-width: $text_max;
+  line-height: 1.6;
+  hyphens: none;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.label {
+  text-transform: uppercase;
+  font-family: $meta_font;
+}
+
+.caption {
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+.meta {
+  display: inline-block;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  font-family: $meta_font;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.meta-fix {
+  display: inline-block;
+  margin-top: 0.15em;
+  margin-bottom: -0.1em;
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+.large {
+  font-size: 1.2rem;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.midline {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.baseline {
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: baseline;
+}
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1em;
+  max-height: 1em;
+
+  svg {
+    max-width: inherit;
+    max-height: inherit;
+  }
+}
+
+/* === Anchor Tags === */
+
+.link {
+  color: $link_color;
+  transition: color 200ms ease-in-out;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $link_hover;
+  }
+}
+
+.hyperlink {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(transparent calc(100% - 0.2em), $link_hover 0),
+                    linear-gradient(transparent calc(100% - 0.2em), $link_color 0);
+  background-size: 0 100%, 100% 100%;
+  color: inherit;
+  transition: background 200ms ease-in-out;
+
+  &:hover {
+    color: inherit;
+    background-size: 100% 100%, 100% 100%;
+  }
+}
+
+/* === List Types === */
+
+@mixin list( $type: list ) {
+  $list-top: 0.8em;
+  $list-left: 1.6em;
+
+  margin: $space 0 0;
+  max-width: $text_max;
+  padding: 0;
+  line-height: 1.4;
+
+  @if $type == list {
+    list-style: none;
+  }
+  @if $type == unordered {
+    list-style: none;
+  }
+  @if $type == ordered {
+    list-style: decimal outside;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @if $type == list {
+    > li {
+      margin: $list-top 0 0;
+      padding: 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @if $type == unordered {
+    > li {
+      position: relative;
+      margin: $list-top 0 0;
+      padding: 0 0 0 $list-left;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:before {
+        position: absolute;
+        top: 0.4em;
+        left: 0;
+        width: 0.4em;
+        height: 0.4em;
+        background-color: $accent;
+        content: '';
+      }
+    }
+  }
+
+  @if $type == ordered {
+    > li {
+      margin: $list-top 0 0 #{$list-left / 2};
+      padding: 0 0 0 #{$list-left / 2};
+      list-style: inherit;
+    
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  & > ul,
+  & > ol {
+    margin-top: $list-top;
+    margin-left: $list-left;
+  }
+}
+
+.list {
+  @include list;
+}
+
+.ul {
+  @include list( unordered );
+}
+
+.ol {
+  @include list( ordered );
+}
+
+/* === Blockquote === */
+
+.quote {
+  margin: 1.6rem 0 0;
+  max-width: $text_max;
+  border-left: 0.2em solid $accent;
+  padding: 0 0 0 1.2em;
+  font-size: 1.2rem;
+      
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.cite {
+  display: block;
+  margin: 0.2em 0 0;
+  max-width: $text_max;
+  padding: 0;
+  text-align: right;
+  line-height: 1.2rem;
+  font-size: 0.8rem;
+
+  &:before {
+    padding: 0 0.5em 0 0;
+    content: '\2014';
+  }
+}
+
+/* === Putting it all together === */
+
+// This class is often used anywhere you want some default text styling
+.transcription {
+  display: block;
+
+  h1 {
+    @extend .h1;
+  }
+
+  h2 {
+    @extend .h2;
+  }
+
+  h3 {
+    @extend .h3;
+  }
+
+  h4 {
+    @extend .h4;
+  }
+
+  h5 {
+    @extend .h5;
+  }
+
+  h6 {
+    @extend .h6;
+  }
+
+  p {
+    @extend .copy;
+  }
+
+  label {
+    @extend .label;
+  }
+
+  a {
+    @extend .hyperlink;
+  }
+
+  ul {
+    @extend .ul;
+  }
+
+  ol {
+    @extend .ol;
+  }
+
+  blockquote {
+    @extend .quote;
+  }
+
+  cite {
+    @extend .cite;
+  }
+}
+
+/* ===== Extra Componants ===== */
+
+@import './transcription/blockquote-fancy.scss';
+
+@import './transcription/inline-list.scss';

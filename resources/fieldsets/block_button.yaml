@@ -1,0 +1,35 @@
+title: 'Block Button'
+fields:
+  -
+    handle: button_alignment
+    field:
+      type: select
+      options:
+        text-right: Right
+        text-left: Left
+        text-center: Center
+      display: Alignment
+      default: 'text-left'
+      listable: false
+      clearable: false
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+  -
+    handle: button_text
+    field:
+      type: text
+      width: 50
+      display: 'Button Text'
+      listable: false
+      placeholder: Text
+  -
+    handle: button_link
+    field:
+      type: text
+      width: 50
+      display: 'Button Link'
+      listable: false
+      placeholder: Link

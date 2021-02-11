@@ -1,0 +1,118 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: masonry 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.masonry {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.grout {
+  margin: -0.8rem;
+}
+.grout .tile {
+  padding: 0.8rem;
+}
+
+.tile {
+  flex: 0 0 auto;
+  width: auto;
+}
+.tile-3 {
+  flex: 1 1 25%;
+  max-width: 25%;
+}
+.tile-4 {
+  flex: 1 1 33.3333%;
+  max-width: 33.3333%;
+}
+.tile-12 {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+*/
+
+//////////////////////////
+// .masonry
+.masonry {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@include addBreakpoints() {
+  &masonry {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+
+//////////////////////////
+// .grout
+.grout {
+  margin: -$space / 2;
+
+  .tile {
+    padding: $space / 2;
+  }
+}
+
+@include addBreakpoints() {
+  &grout {
+    margin: -$space / 2;
+  
+    .tile {
+      padding: $space / 2;
+    }
+  }
+}
+
+@mixin makeGrout( $array ) {
+  @each $index, $value in $array {
+    .grout-#{$index} {
+      margin: -#{$value / 2};
+
+      .tile {
+        padding: #{$value / 2};
+      }
+    }
+  }
+}
+
+@include makeGrout( $spacing );
+
+
+//////////////////////////
+//.tile
+.tile {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+@mixin makeTileClasses( $array ) {
+  @each $index, $value in $array {
+    .tile-#{$index} {
+      flex: 1 1 $value;
+      max-width: $value;
+    }
+  }
+  @each $point, $width in $breakpoints {
+    @media ( min-width: #{$width} ) {
+      .#{$point}\: {
+        @each $index, $value in $array {
+          &tile-#{$index} {
+            flex: 1 1 $value;
+            max-width: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include makeTileClasses( $columns );

@@ -1,0 +1,23 @@
+title: Documentation
+template: entry/documentation
+layout: layout
+mount: 7d6b022d-9c98-4340-b7d6-4c2b4386497d
+revisions: false
+route: '{mount}/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false
+  max_depth: 2
+  tree:
+    -
+      entry: a0fa3149-6324-4e44-a0bc-52f53b445246
+      children:
+        -
+          entry: 93b621c3-cf06-4748-8fa2-4c85a3b915aa
+    -
+      entry: 29e92c63-05e9-4235-8633-102b1679e5e9
+    -
+      entry: 19210630-3b66-4495-a9a1-a358e415fb47

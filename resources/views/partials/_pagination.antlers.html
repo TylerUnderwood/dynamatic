@@ -1,0 +1,79 @@
+{{ paginate }}
+<nav class="pagination">
+
+	{{ if prev_page }}
+		<a class="pagination__item pagination__link" href="{{ prev_page }}">
+			<span class="pagination__icon">{{ theme:output src="svg/icon-arrow-left.svg" }}</span>
+		</a>
+	{{ else }}
+		<span class="pagination__item pagination__disabled">
+			<span class="pagination__icon">{{ theme:output src="svg/icon-arrow-left.svg" }}</span>
+		</span>
+	{{ /if }}
+
+	{{ links:segments }}
+
+		{{ first | length }}
+
+		{{ first }}
+			{{ if page == current_page }}
+				<span class="pagination__item pagination__active">
+					<span class="meta-fix">{{ page }}</span>
+				</span>
+			{{ else }}
+				<a class="pagination__item pagination__link" href="{{ url }}">
+					<span class="meta-fix">{{ page }}</span>
+				</a>
+			{{ /if }}
+		{{ /first }}
+
+		{{ slider | length }}
+
+		{{ if slider }}
+			<span class="pagination__item pagination__disabled">...</span>
+		{{ /if }}
+
+		{{ slider }}
+			{{ if page == current_page }}
+				<span class="pagination__item pagination__active">
+					<span class="meta-fix">{{ page }}</span>
+				</span>
+			{{ else }}
+				<a class="pagination__item pagination__link" href="{{ url }}">
+					<span class="meta-fix">{{ page }}</span>
+				</a>
+			{{ /if }}
+		{{ /slider }}
+
+		{{ if slider || (!slider && last) }}
+			<span class="pagination__item pagination__disabled">...</span>
+		{{ /if }}
+
+		{{ last | length }}
+
+		{{ last }}
+			{{ if page == current_page }}
+				<span class="pagination__item pagination__active">
+					<span class="meta-fix">{{ page }}</span>
+				</span>
+			{{ else }}
+				<a class="pagination__item pagination__link" href="{{ url }}">
+					<span class="meta-fix">{{ page }}</span>
+				</a>
+			{{ /if }}
+		{{ /last }}
+
+	{{ /links:segments }}
+
+	{{ if next_page }}
+		<a class="pagination__item pagination__link" href="{{ next_page }}">
+			<span class="pagination__icon">{{ theme:output src="svg/icon-arrow-right.svg" }}</span>
+		</a>
+	{{ else }}
+		<span class="pagination__item pagination__disabled">
+			<span class="pagination__icon">{{ theme:output src="svg/icon-arrow-right.svg" }}</span>
+		</span>
+	{{ /if }}
+
+</nav>
+{{ /paginate }}

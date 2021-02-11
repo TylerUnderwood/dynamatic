@@ -1,0 +1,49 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Navigation 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.nav {
+  $self: &;
+  display: flex;
+  margin: -0.5em;
+
+  &__link {
+    display: inline-flex;
+    padding: 0.5em;
+    color: inherit;
+
+    &:hover,
+    &:active {
+      color: $link_color;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    margin-top: 0.1em;
+    margin-bottom: -0.2em;
+    letter-spacing: 2px;
+    font-family: $monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &--h {
+    flex-direction: row;
+
+    #{$self}__link {
+      white-space: nowrap;
+      line-height: 1;
+    }
+  }
+
+  &--v {
+    flex-direction: column;
+
+    #{$self}__link {
+      line-height: 1.2;
+    }
+  }
+}

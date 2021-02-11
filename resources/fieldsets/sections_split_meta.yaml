@@ -1,0 +1,20 @@
+title: 'Sections Split Meta'
+fields:
+  -
+    handle: section_reverse
+    field:
+      options:
+        section--default: Default
+        section--reverse: Reversed
+      clearable: false
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      type: select
+      localizable: false
+      listable: false
+      placeholder: 'Color'
+      display: 'Reverse Section'
+      default: 'section--default'

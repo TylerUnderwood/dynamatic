@@ -1,0 +1,19 @@
+<form class="newsletter-form">
+{{ form:create in="newsletter" redirect="/contact/newsletter-success" }}
+
+	{{ if errors }}
+	<div class="form_message_error mb-2">{{ errors | list }}</div>
+	{{ /if }}
+
+	<div class="single-form">
+		<label for="email" class="single-form__label">
+			<input class="single-form__input" type="text" name="email" placeholder="email" />
+		</label>
+	
+		<label for="submit" class="single-form__label">
+			<button class="single-form__submit btn" type="submit">Submit</button>
+		</label>
+	</div>
+
+{{ /form:create }}
+</form> <!-- END newsletter-form -->

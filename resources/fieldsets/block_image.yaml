@@ -1,0 +1,14 @@
+title: 'Block Image'
+fields:
+  -
+    handle: image
+    field:
+      container: images
+      mode: grid
+      restrict: true
+      allow_uploads: true
+      max_files: 1
+      type: assets
+      listable: hidden
+      display: Image
+      folder: /

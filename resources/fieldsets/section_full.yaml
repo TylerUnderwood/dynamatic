@@ -1,0 +1,13 @@
+title: 'Section Full'
+fields:
+  -
+    handle: full_section
+    field:
+      type: section
+      localizable: false
+      listable: false
+      display: 'Full Section'
+  -
+    import: column_meta
+  -
+    import: blocks

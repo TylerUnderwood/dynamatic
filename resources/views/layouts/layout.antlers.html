@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="{{ site:description }}">
+		<title>{{ site:name }} | {{ view:error_code or title }}</title>
+		<link rel="shortcut icon" href="{{ site:favicon }}" type="image/x-icon" />
+		<link rel="stylesheet" href="{{ mix src='css/site.css' }}">
+		<script src="{{ mix src='/js/site.js' }}"></script>
+		<script src="https://use.fontawesome.com/e0e6298726.js"></script>
+	</head>
+
+	<body class="{{ template or 'main' }}-layout nav-closed">
+
+		<div id="site">
+			{{ partial src="headers/_header" }}
+
+			<main id="main" class="main">
+				{{ template_content }}
+			</main> <!-- END #main -->
+	
+			{{ partial src="footers/_footer" }}
+		</div> <!-- END Vue App -->
+
+	</body>
+
+</html>

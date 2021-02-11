@@ -1,0 +1,305 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Layout 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/* show */
+.show {
+  display: inherit;
+}
+
+/* hide */
+.hide {
+  display: none;
+}
+
+/* block */
+.block {
+  display: inherit;
+}
+
+/* inline */
+.inline {
+  display: none;
+}
+
+/* inline-block */
+.inline-block {
+  display: inherit;
+}
+
+/* inline-flex */
+.inline-flex {
+  display: none;
+}
+
+/* === Flex === */
+.flex {
+  display: flex;
+}
+
+/* === Justify === */
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* === Align === */
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-between {
+  align-items: space-between;
+}
+
+/* === Flex Row === */
+.row {
+  display: flex;
+  flex-direction: row;
+
+  &-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &--t {
+    align-items: flex-start;
+  }
+  &--r {
+    justify-content: flex-end;
+  }
+  &--b {
+    align-items: flex-end;
+  }
+  &--l {
+    justify-content: flex-start;
+  }
+
+  &--h {
+    align-items: center;
+  }
+  &--v {
+    justify-content: center;
+  }
+
+  &--between {
+    justify-content: space-between;
+  }
+  &--around {
+    justify-content: space-around;
+  }
+  &--evenly {
+    justify-content: space-evenly;
+  }
+}
+
+/* === Flex Columns === */
+.column {
+  display: flex;
+  flex-direction: column;
+
+  &-reverse {
+    flex-direction: column-reverse;
+  }
+
+  &--t {
+    justify-content: flex-start;
+  }
+  &--r {
+    align-items: flex-end;
+  }
+  &--b {
+    justify-content: flex-end;
+  }
+  &--l {
+    align-items: flex-start;
+  }
+
+  &--h {
+    justify-content: center;
+  }
+  &--v {
+    align-items: center;
+  }
+      
+  &--between {
+    align-content: space-between;
+  }
+  &--around {
+    align-content: space-around;
+  }
+  &--evenly {
+    align-content: space-evenly;
+  }
+}
+
+@include addBreakpoints() {
+  // show
+  &show {
+    display: inherit;
+  }
+  
+  // hide
+  &hide {
+    display: none;
+  }
+
+  // block
+  &block {
+    display: inherit;
+  }
+  
+  // inline
+  &inline {
+    display: none;
+  }
+  
+  // inline-block
+  &inline-block {
+    display: inherit;
+  }
+  
+  // inline-flex
+  &inline-flex {
+    display: none;
+  }
+
+  // Flex
+  &flex {
+    display: flex;
+  }
+  
+  // Justify
+  &justify-start {
+    justify-content: flex-start;
+  }
+  
+  &justify-end {
+    justify-content: flex-end;
+  }
+  
+  &justify-center {
+    justify-content: center;
+  }
+  
+  &justify-between {
+    justify-content: space-between;
+  }
+  
+  // Align
+  &align-start {
+    align-items: flex-start;
+  }
+  
+  &align-end {
+    align-items: flex-end;
+  }
+  
+  &align-center {
+    align-items: center;
+  }
+  
+  &align-between {
+    align-items: space-between;
+  }
+  
+  // Flex Row
+  &row {
+    display: flex;
+    flex-direction: row;
+  
+    &-reverse {
+      flex-direction: row-reverse;
+    }
+  
+    &--t {
+      align-items: flex-start;
+    }
+    &--r {
+      justify-content: flex-end;
+    }
+    &--b {
+      align-items: flex-end;
+    }
+    &--l {
+      justify-content: flex-start;
+    }
+  
+    &--h {
+      align-items: center;
+    }
+    &--v {
+      justify-content: center;
+    }
+  
+    &--between {
+      justify-content: space-between;
+    }
+    &--around {
+      justify-content: space-around;
+    }
+    &--evenly {
+      justify-content: space-evenly;
+    }
+  }
+  
+  // Flex Columns
+  &column {
+    display: flex;
+    flex-direction: column;
+  
+    &-reverse {
+      flex-direction: column-reverse;
+    }
+  
+    &--t {
+      justify-content: flex-start;
+    }
+    &--r {
+      align-items: flex-end;
+    }
+    &--b {
+      justify-content: flex-end;
+    }
+    &--l {
+      align-items: flex-start;
+    }
+  
+    &--h {
+      justify-content: center;
+    }
+    &--v {
+      align-items: center;
+    }
+        
+    &--between {
+      align-content: space-between;
+    }
+    &--around {
+      align-content: space-around;
+    }
+    &--evenly {
+      align-content: space-evenly;
+    }
+  }
+}

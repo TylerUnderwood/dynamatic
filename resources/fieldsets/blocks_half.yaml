@@ -1,0 +1,41 @@
+title: 'Blocks Half'
+fields:
+  -
+    handle: blocks_half
+    field:
+      sets:
+        heading:
+          display: Heading
+          fields:
+            -
+              import: blocks_meta
+            -
+              import: block_heading
+        copy:
+          display: Copy
+          fields:
+            -
+              import: blocks_meta
+            -
+              import: block_copy
+        button:
+          display: Button
+          fields:
+            -
+              import: blocks_meta
+            -
+              import: block_button
+        image:
+          display: Image
+          fields:
+            -
+              import: blocks_meta
+            -
+              import: block_image
+        filler:
+          display: Filler
+          fields: {  }
+      type: replicator
+      localizable: false
+      listable: hidden
+      display: Blocks

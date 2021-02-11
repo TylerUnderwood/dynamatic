@@ -1,0 +1,190 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Bard
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+|
+| Layout and styles for anthing built within the bard.
+|
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$bard-outer: $wrapper;
+$bard-inner: $inner;
+$half-bard-outer: $wrapper / 2;
+
+.bard {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $bard-outer;
+
+  .bard-block {
+    margin: $space auto 0;
+    max-width: $bard-inner;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  // Dropcap
+  .transcription:first-child {
+    
+    p:first-child::first-letter {
+      float: left;
+      margin: 0;
+      padding: 0.15em 0.2em 0 0;
+      font-family: $serif;
+      font-size: 3.3rem;
+      line-height: 2rem;
+    }
+  }
+
+  .blockquote {
+    padding: $space 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  h4, h5 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  h5 {
+    color: $accent;
+  }
+
+  hr {
+    margin: 3.2rem auto;
+    width: $bard-inner * 0.8;
+    max-width: 80%;
+    border-color: $light;
+    
+    & + * {
+      margin-top: 0;
+    }
+  }
+
+  figure,
+  figcaption {
+    max-width: $bard-inner;
+    margin: 0 auto;
+  }
+      
+  figure {
+    margin: $space auto 0;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  figcaption {
+    display: block;
+    margin: 8px 0 0;
+    text-align: center;
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+
+  .double-image {
+    display: flex;
+    flex-flow: row wrap;
+
+    img,
+    .bg-img {
+      max-width: 50%;
+    }
+  }
+      
+  /* === Alignment === */
+  .align-full,
+  .align-wide {
+    margin-top: $space;
+    margin-bottom: $space;
+  }
+
+  .align-left,
+  .align-right {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .align-full {
+    max-width: unset;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    // If you want to constrain the max height
+    // display: flex;
+    // align-items: center;
+    // max-height: 60vw;
+    // overflow: hidden;
+
+    > * {
+      width: 100%;
+      max-width: unset;
+    }
+  }
+
+  .align-wide {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+
+    > * {
+      width: 100%;
+      max-width: unset;
+    }
+  }
+
+  .align-left,
+  .align-right {
+    width: 100%;
+    max-width: $half-bard-outer;
+  }
+
+  .align-left {
+    float: left;
+    margin-right: $space;
+  }
+
+  .align-right {
+    float: right;
+    margin-left: $space;
+  }
+
+  @include below( md ) {
+    .align-left,
+    .align-right {
+      display: block;
+      float: none;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: $bard-inner;
+    }
+  }
+
+  @include below( lg ) {
+    .align-wide {
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      width: 100vw;
+      max-width: unset;
+    }
+
+    .video-block.align-wide {
+      padding-top: 56.25vw;
+    }
+  }
+}

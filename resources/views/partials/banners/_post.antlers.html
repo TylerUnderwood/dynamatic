@@ -1,0 +1,30 @@
+<section id="banner" class="banner banner-post{{ if featured_image }} has-image{{ /if }}">
+
+	<div class="trim gutter banner__inner">
+		<div class="inner">
+			<h1>{{ title }}</h1>
+			{{ if author }}
+			<div class="post-author-meta mar-t">
+				{{ relate:author }}
+				<div class="author-img">
+					<img src="{{ email | gravatar or profile_pic }}" alt="{{ name }}">
+				</div>
+				<div class="author-info">
+					<span>{{ name }}</span>
+				</div>
+				{{ /relate:author }}
+			</div>
+			{{ /if }}
+			{{ if post_intro }}
+			<p>{{ post_intro }}</p>
+			{{ /if }}
+		</div>
+	</div> <!-- END banner__inner -->
+
+	{{ if featured_image }}
+	<div class="wrapper">
+		<div class="bg-img bg-ultra-wide" style="background-image: url('{{ featured_image }}');"></div>
+	</div> <!-- END banner__image -->
+	{{ /if }}
+	
+</section> <!-- END banner -->

@@ -1,0 +1,75 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Dividers
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+
+/* === line === */
+hr,
+.line {
+  clear: both;
+  margin: 0;
+  border: unset;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  width: 100%;
+  color: inherit;
+}
+
+/* === line-break === */
+br,
+.line-break {
+  clear: both;
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  line-height: inherit;
+}
+
+
+
+/* === break === */
+.break {
+  padding-top: $space;
+  min-width: 100%;
+  content: '';
+}
+
+/* === space === */
+.space {
+  padding-left: $space;
+  min-height: 100%;
+  content: '';
+}
+
+/* === gap === */
+.gap {
+  padding-top: $space;
+  padding-left: $space;
+}
+
+@include makeAll( gap, padding-top padding-left, $spacing );
+
+@include addBreakpoints() {
+  &gap {
+    padding-top: $space;
+    padding-left: $space;
+  }
+  
+  @include makeAllForBreakpoints( gap, padding-top padding-left, $spacing );
+}
+
+
+/* === FILLER === */
+// This is used as a sibling element inside a flex element to fill empty space
+
+.filler {
+  display: block;
+  flex: 1 1 auto;
+  content: '';
+}
+
+.fill {
+  flex: 1 1 auto;
+}

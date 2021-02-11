@@ -1,0 +1,62 @@
+title: 'Column Meta'
+fields: 
+  -
+    handle: background_color
+    field:
+      options:
+        transparent: None
+        bg-light: 'Primary Light'
+        bg-primary: 'Primary Color'
+        bg-dark: 'Primary Dark'
+      clearable: false
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      type: select
+      localizable: false
+      listable: false
+      placeholder: 'Color'
+      display: 'Background Color'
+      default: 'transparent'
+  -
+    handle: mobile_trim
+    field:
+      type: select
+      options:
+        'mb:trim': 'Top and Bottom'
+        'mb:trim--top': 'Only Top'
+        'mb:trim--bot': 'Only Bottom'
+        'mb:trim--not': Neither
+      display: 'Mobile, Space Around'
+      default: 'mb:trim--not'
+      width: 50
+      listable: hidden
+      placeholder: 'Space Around'
+      clearable: false
+      multiple: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+  -
+    handle: desktop_trim
+    field:
+      type: select
+      options:
+        'dt:trim': 'Top and Bottom'
+        'dt:trim--top': 'Only Top'
+        'dt:trim--bot': 'Only Bottom'
+        'dt:trim--not': Neither
+      display: 'Desktop, Space Around'
+      width: 50
+      listable: hidden
+      placeholder: 'Space Around'
+      default: 'dt:trim--not'
+      clearable: false
+      multiple: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false

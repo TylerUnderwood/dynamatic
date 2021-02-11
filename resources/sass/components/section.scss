@@ -1,0 +1,479 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Section
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$section_wrap: $wrapper;
+$section_aside: $section_wrap / 3;
+$section_half: $section_wrap / 2;
+$section_main: ($section_wrap / 3) * 2;
+
+$section_difference: ($section_main - $section_aside) / 2;
+
+
+/* ===== CONTAINERS ===== */
+
+/* === outer === */
+$outer_aside: ($outer / 2) - $section_difference;
+$outer_half: ($outer / 2);
+$outer_main: ($outer / 2) + $section_difference;
+
+.outer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: $outer;
+
+  &--aside {
+    max-width: $outer_aside;
+  }
+  &--half {
+    max-width: $outer_half;
+  }
+  &--main {
+    max-width: $outer_main;
+  }
+}
+
+/* === wrapper === */
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: $section_wrap;
+  
+  &--aside {
+    max-width: $section_aside;
+  }
+  &--half {
+    max-width: $section_half;
+  }
+  &--main {
+    max-width: $section_main;
+  }
+}
+
+/* === inner === */
+$inner_aside: ($inner / 2) - $section_difference;
+$inner_half: ($inner / 2);
+$inner_main: ($inner / 2) + $section_difference;
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: $inner;
+
+  &--aside {
+    max-width: $inner_aside;
+  }
+  &--half {
+    max-width: $inner_half;
+  }
+  &--main {
+    max-width: $inner_main;
+  }
+}
+
+
+
+/* ===== WHITESPACE ===== */
+
+/* === frame === */
+// margin based vertical whitespace
+@mixin vert_mar {
+  @include fluid-type(margin-top margin-bottom, $min_width, $max_width, $vert_space_min, $vert_space_max);
+}
+
+.frame {
+  @include vert_mar;
+  
+  &--top {
+    margin-bottom: 0;
+  }
+  &--bot {
+    margin-top: 0;
+  }
+}
+
+@include below( md ) {
+  .mb\:frame {
+    &--top {
+      margin-bottom: 0;
+    }
+    &--bot {
+      margin-top: 0;
+    }
+    &--not {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include above( md ) {
+  .dt\:frame {
+    &--top {
+      margin-bottom: 0;
+    }
+    &--bot {
+      margin-top: 0;
+    }
+    &--not {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* === trim === */
+// padding based vertical whitespace
+@mixin vert_pad {
+  @include fluid-type(padding-top padding-bottom, $min_width, $max_width, $vert_space_min, $vert_space_max);
+}
+
+.trim {
+  @include vert_pad;
+
+  &--top {
+    padding-bottom: 0;
+  }
+  &--bot {
+    padding-top: 0;
+  }
+}
+
+@include below( md ) {
+  .mb\:trim {
+    &--top {
+      padding-bottom: 0;
+    }
+    &--bot {
+      padding-top: 0;
+    }
+    &--not {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+@include above( md ) {
+  .dt\:trim {
+    &--top {
+      padding-bottom: 0;
+    }
+    &--bot {
+      padding-top: 0;
+    }
+    &--not {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+
+/* === buffer === */
+// margin based horizontal whitespace
+@mixin horz_mar {
+  @include fluid-type(margin-right margin-left, $min_width, $max_width, $horz_space_min, $horz_space_max);
+}
+
+.buffer {
+  @include horz_mar;
+
+  &--left {
+    margin-right: 0;
+  }
+  &--right {
+    margin-left: 0;
+  }
+}
+
+@include below( md ) {
+  .mb\:buffer {
+    &--left {
+      margin-right: 0;
+    }
+    &--right {
+      margin-left: 0;
+    }
+    &--not {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+@include above( md ) {
+  .dt\:buffer {
+    &--left {
+      margin-right: 0;
+    }
+    &--right {
+      margin-left: 0;
+    }
+    &--not {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+
+/* === gutter === */
+// padding based horizontal whitespace
+@mixin horz_pad {
+  @include fluid-type(padding-right padding-left, $min_width, $max_width, $horz_space_min, $horz_space_max);
+}
+
+.gutter {
+  @include horz_pad;
+
+  &--left {
+    padding-right: 0;
+  }
+  &--right {
+    padding-left: 0;
+  }
+}
+
+@include below( md ) {
+  .mb\:gutter {
+    &--left {
+      padding-right: 0;
+    }
+    &--right {
+      padding-left: 0;
+    }
+    &--not {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@include above( md ) {
+  .dt\:gutter {
+    &--left {
+      padding-right: 0;
+    }
+    &--right {
+      padding-left: 0;
+    }
+    &--not {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+
+
+/* ===== SECTIONING ===== */
+
+.section {
+  $self: &;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+    
+  // columns have no padding or margin and only distinguish width
+  &__column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    // trim
+    // background
+  }
+  
+  // blocks must stack inside column with optional padding and margin
+  &__block {
+    display: flex;
+    width: 100%;
+    // margin-top
+    // gutter
+    
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+  
+  // Fill can replace __block to fill in space between blocks 
+  // Don't put any elements inside of this one
+  &__fill {
+    margin: 0 !important;
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 0 !important;
+    content: '';
+  }
+  
+  // wrap is what sets the max-width based on the column it is inside
+  &__wrap {
+    display: block;
+    width: 100%;
+    // gutter
+  }
+  
+  @media ( max-width: 767px ) {
+    &:not(&--reverse) {
+      flex-direction: column;
+    }
+    
+    &--reverse {
+      flex-direction: column-reverse;
+    }
+    
+    &__wrap {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: unset;
+      padding: 0;
+    }
+  }
+  
+  @media ( min-width: 768px ) {
+    flex-direction: row;
+    
+    // this will be on the left
+    &__column:first-child {
+      align-items: flex-end;
+
+      #{$self}__block {
+        justify-content: flex-end;
+        padding-right: 0;
+      }
+
+      #{$self}__wrap {
+        margin-left: auto;
+        padding-left: 0;
+      }
+    }
+
+    // this will be on the right
+    &__column:last-child {
+      align-items: flex-start;
+
+      #{$self}__block {
+        justify-content: flex-start;
+        padding-left: 0;
+      }
+
+      #{$self}__wrap {
+        margin-right: auto;
+        padding-right: 0;
+      }
+    }
+
+    // the aside column
+    &__aside {
+      max-width: 33.3333%;
+
+      #{$self}__wrap {
+        max-width: $section_aside;
+      }
+      #{$self}__outer {
+        max-width: $outer_aside;
+      }
+      #{$self}__inner {
+        max-width: $inner_aside;
+      }
+    }
+    
+    // the half column
+    &__half {
+      max-width: 50%;
+
+      #{$self}__wrap {
+        max-width: $section_half;
+      }
+      #{$self}__outer {
+        max-width: $outer_half;
+      }
+      #{$self}__inner {
+        max-width: $inner_half;
+      }
+    }
+    
+    // the main column
+    &__main {
+      max-width: 66.6666%;
+
+      #{$self}__wrap {
+        max-width: $section_main;
+      }
+      #{$self}__outer {
+        max-width: $outer_main;
+      }
+      #{$self}__inner {
+        max-width: $inner_main;
+      }
+    }
+  }
+
+  @media ( min-width: $section_wrap ) {
+    &__aside {
+      max-width: calc(50% - #{$section_difference});
+    }
+    &__main {
+      max-width: calc(50% + #{$section_difference});
+    }
+  }
+}
+
+  
+/* === FILLER === */
+.filler {
+  &__block,
+  &__wrap {
+    flex: 1;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* === IMAGE === */
+.image {
+  &__block,
+  &__wrap {
+    flex: 1;
+    display: flex;
+    padding: 0;
+  }
+  
+  &__block {
+    .bg-img {
+      flex: 1;
+    }
+
+    @media ( max-width: 767px ) {
+      // make that image 16:9
+      .bg-img::after {
+      padding-top: 56.25%;
+      }
+    }
+
+    @media ( min-width: 768px ) {
+      .bg-img {
+      min-height: 12rem;
+      }
+      .bg-img::after {
+      padding-top: 0;
+      }
+    }
+  }
+}

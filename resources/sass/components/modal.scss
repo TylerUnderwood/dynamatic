@@ -1,0 +1,182 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Modal 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+  
+/* === variables === */
+  
+$modal_gutter: 3rem;
+$modal_trim: 5rem;
+$modal_time: 300ms;
+
+/* === animations === */
+
+@keyframes modal_pop_in {
+  from {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes modal_pop_out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.95);
+    opacity: 0;
+    filter: blur(0);
+  }
+}
+
+@keyframes modal_fade_in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal_fade_out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* === content === */
+
+.modal {
+  $self: &;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 990;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  padding: 0 $modal_gutter;
+
+  &::before,
+  &::after {
+    display: block;
+    position: relative;
+    z-index: 899;
+    flex-shrink: 0;
+    width: 100%;
+    height: $modal_trim;
+    content: '';
+  }
+
+  &__overlay {
+    display: block;
+    position: fixed;
+    z-index: 991;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba( 0, 0, 0, 0.5 );
+    cursor: pointer;
+    content: '';
+  }
+      
+  &__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    left: unset;
+    transform: translate( -10px, 10px );
+    border-radius: 50%;
+    border: 0;
+    box-shadow: 0px 0px 20px 4px rgba(0,0,0,0.2);
+    background-color: white;
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0;
+    line-height: 1;
+    font-size: 24px;
+    color: blue;
+    transition: background 300ms ease-in-out,
+                color 300ms ease-in-out;
+    cursor: pointer;
+    
+    &::after {
+      display: block;
+      padding: 3px 0 0 1px;
+      content: "\00d7";
+    }
+      
+    &:hover,
+    &:focus {
+      background-color: blue;
+      color: white;
+    }
+  }
+
+  & > &__close {
+    position: fixed;
+  }
+
+  &__container {
+    display: flex;
+    position: relative;
+    z-index: 998;
+    max-width: 100%;
+    box-shadow: 0px 0px 20px 4px rgba(0,0,0,0.2);
+      
+    #{$self}__close {
+      transform: translate( 60%, -60% );
+    }
+  }
+
+  &--full {
+    background-color: $background;
+        
+    #{$self}__container {
+      box-shadow: none;
+    }
+  }
+
+  &[data-state="active"] {
+    visibility: visible;
+
+    #{$self}__container {
+      visibility: visible;
+    }
+  }
+
+  &[data-state="deactivating"] {
+    animation: modal_fade_out $modal_time forwards ease-out;
+
+    #{$self}__container {
+      animation: modal_pop_out $modal_time forwards ease-out;
+    }
+  }
+
+  &[data-state="inactive"] {
+    visibility: hidden;
+
+    #{$self}__container {
+      visibility: hidden;
+    }
+  }
+
+  &[data-state="activating"] {
+    animation: modal_fade_in $modal_time forwards ease-in;
+
+    #{$self}__container {	
+      animation: modal_pop_in $modal_time forwards ease-in;
+    }
+  }
+}

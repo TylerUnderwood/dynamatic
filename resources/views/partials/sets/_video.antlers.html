@@ -1,0 +1,9 @@
+<div class="bard-block align-wide video-block">
+    {{ if video | is_embeddable }}
+		<!-- Youtube and Video -->
+		<iframe src="{{ video | embed_url }}" ...></iframe>
+	{{ else }}
+		<!-- Other HTML5 video types -->
+		<video src="{{ video | embed_url }}" ...></video>
+	{{ /if }}
+</div> <!-- END video -->

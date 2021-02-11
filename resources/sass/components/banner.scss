@@ -1,0 +1,61 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Banner 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.banner {
+  display: flex;
+  position: relative;
+  min-height: 24rem;
+  background: linear-gradient(45deg, rgb(112, 43, 159) 0%, rgb(249, 36, 36) 100%);
+  color: $white;
+
+  &--short {	
+    min-height: 12rem;
+  }
+  &--full {	
+    min-height: 100vh;
+  }
+
+  &__inner {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    &::after {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+    }
+
+    &.banner-overlay-none::after {
+      display: none;
+    }
+    &.banner-overlay-light::after {
+      background: linear-gradient(45deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+    }
+    &.banner-overlay::after {
+      background: linear-gradient(45deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 25%, rgba(0,0,0,0.4) 55%, rgba(0,0,0,0) 100%);
+    }
+    &.banner-overlay-dark::after {
+      background: linear-gradient(45deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
+    }
+  }
+}

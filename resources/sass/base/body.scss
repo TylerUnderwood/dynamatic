@@ -1,0 +1,70 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Body
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  @include fluid-type(font-size, $min_width, $max_width, $font_min, $font_max);
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $background;
+  line-height: 1;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: $copy_font;
+  text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  color: $text_color;
+
+  // Firefox only
+  scroll-behavior: smooth;
+
+  // remove scollbar
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.scroll-lock {
+  overflow: hidden !important;
+}
+
+#site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#header {
+  position: relative;
+  z-index: 3;
+}
+
+#main {
+  position: relative;
+  z-index: 2;
+  flex: 1 0 auto;
+}
+
+#footer {
+  position: relative;
+  z-index: 1;
+}

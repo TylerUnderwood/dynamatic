@@ -1,0 +1,18 @@
+<section 
+	{{ if section_id }} id="{{ section_id }}" {{ /if }}
+	class="
+		section
+		frame {{ mobile_frame }} {{ desktop_frame }} 
+		{{ background_color }} 
+		trim {{ mobile_trim }} {{ desktop_trim }} gutter 
+		{{ classes }}">
+	<div class="wrapper">
+
+	{{ blocks }}
+		
+		{{ partial src="blocks/_{type}" }}
+
+	{{ /blocks }}
+
+	</div>
+</section> <!-- END full_section -->

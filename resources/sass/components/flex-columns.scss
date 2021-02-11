@@ -1,0 +1,52 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Flex Columns
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+// ███████╗██╗     ███████╗██╗  ██╗     ██████╗ ██████╗ ██╗     ██╗   ██╗███╗   ███╗███╗   ██╗███████╗
+// ██╔════╝██║     ██╔════╝╚██╗██╔╝    ██╔════╝██╔═══██╗██║     ██║   ██║████╗ ████║████╗  ██║██╔════╝
+// █████╗  ██║     █████╗   ╚███╔╝     ██║     ██║   ██║██║     ██║   ██║██╔████╔██║██╔██╗ ██║███████╗
+// ██╔══╝  ██║     ██╔══╝   ██╔██╗     ██║     ██║   ██║██║     ██║   ██║██║╚██╔╝██║██║╚██╗██║╚════██║
+// ██║     ███████╗███████╗██╔╝ ██╗    ╚██████╗╚██████╔╝███████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚████║███████║
+// ╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝     ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══╝╚══════╝
+// Flex Columns
+
+// Author: Tyler Underwood
+//
+// A flex-column must be a child element of a parent with these rules:
+// display: flex;
+// flex-flow: row wrap;
+// All flex alignment rules can be added to the parents as well.
+
+@mixin flex-column($columns, $x-gap, $y-gap) {
+  $gaps:    #{($columns - 1)};
+  $pillars: #{($columns + 1)};
+
+  margin: 0 $x-gap 0 0;
+  width: calc(#{(100% / #{$columns})} - (#{$x-gap} * #{$gaps}) / #{$columns});
+
+  &:nth-child(n+#{$pillars}) {
+    margin-top: $y-gap;
+  }
+
+  &:last-child,
+  &:nth-child(#{$columns}n) {
+    margin-right: 0;
+  }
+}
+
+// DEMO
+.flex-tri-col {
+  @media ( max-width: 480px ) {
+    & + & { margin-top: 2rem; }
+  }
+
+  @media ( min-width: 480px ) and ( max-width: 768px ) {
+    @include flex-column(2, 48px, 48px);
+  }
+
+  @media ( min-width: 768px ) {
+    @include flex-column(3, 64px, 64px);
+  }
+}

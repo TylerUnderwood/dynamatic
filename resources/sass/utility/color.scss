@@ -1,0 +1,106 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Color
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+
+
+/* === text === */
+
+.text-dark {
+  color: $dark;
+}
+
+.text-light {
+  color: $text_color_off;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-color {
+  color: $text_color;
+}
+
+.heading-color {
+  color: $heading_color;
+}
+
+.heading-color-alt {
+  color: $heading_color_alt;
+}
+
+.link-color {
+  color: $link_color;
+}
+
+
+
+/* === border === */
+
+.border-white {
+  border-color: $white;
+}
+
+.border-text-color {
+  border-color: $text_color;
+}
+
+.border-primary {
+  border-color: $primary;
+}
+
+.border-accent {
+  border-color: $accent;
+}
+
+
+
+/* === svg === */
+
+.fill-white {
+  fill: $white;
+}
+
+.fill-text-color {
+  fill: $text_color;
+}
+
+.fill-primary {
+  fill: $primary;
+}
+
+.fill-accent {
+  fill: $accent;
+}
+
+
+
+/* === BACKGROUND COLORS === */
+
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-off-white {
+  background-color: $off_white;
+}
+
+.bg-gray {
+  background-color: $grey;
+}
+
+.bg-off-black {
+  background-color: $off_black;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-accent {
+  background-color: $accent;
+}

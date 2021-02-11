@@ -1,0 +1,64 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: WIDTH
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+
+/* ===== MAX WIDTHS ===== */
+
+/* dynamic */
+.mxw-text {
+  max-width: $text_max;
+}
+
+.mxw-content {
+  max-width: $content_max;
+}
+
+.mxw-site {
+  max-width: $site_max;
+}
+
+/* static */
+@include makeAll( mxw, max-width, $max_widths );
+
+@include addBreakpoints() {
+  // DYNAMIC
+  &mxw-text {
+    max-width: $text_max;
+  }
+  &mxw-content {
+    max-width: $content_max;
+  }
+  &mxw-site {
+    max-width: $site_max;
+  }
+
+  // STATIC
+  @include makeAllForBreakpoints( mxw, max-width, $max_widths );
+}
+
+
+
+/* ===== WIDTHS ===== */
+
+@include makeAll( w, width, $widths );
+
+@include addBreakpoints() {
+  @include makeAllForBreakpoints( w, width, $widths );
+}
+
+
+/* ===== FORCE FULL ===== */
+
+// this one must be inside a centered container
+.force-full {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  max-width: unset;
+}

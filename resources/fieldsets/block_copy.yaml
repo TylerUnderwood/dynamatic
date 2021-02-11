@@ -1,0 +1,16 @@
+title: 'Block Copy'
+fields:
+  -
+    handle: copy
+    field:
+      container: main
+      folder: images
+      restrict: true
+      automatic_line_breaks: true
+      automatic_links: false
+      escape_markup: false
+      smartypants: false
+      type: markdown
+      localizable: false
+      listable: hidden
+      display: Copy

@@ -1,0 +1,80 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Site Footer 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/* ===== VARIABLES ===== */
+
+
+/* ===== LAYOUT ===== */
+
+.footer {
+  position: relative;
+  background-color: $accent;
+  background: linear-gradient(45deg, rgb(112, 43, 159) 0%, rgb(249, 36, 36) 100%);
+  color: $white;
+
+  &__inner {
+    position: relative;
+  }
+      
+  /* === NAVIGATION === */
+  &__nav {
+    max-width: $text_max;
+  }
+
+  /* ===== RESPONSIVE ===== */
+
+  /* === BELOW MOBILE === */
+  @include below( sm ) {
+    &__nav {
+      flex-flow: column;
+      align-items: center;
+      margin: 0;
+    }
+
+    .copyright {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  /* === BELOW TABLET === */
+  @include below( md ) {
+    .copyright {
+      span {
+        display: block;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+/* ===== COMPONENTS ===== */
+
+/* === SCROLL TO TOP BUTTON === */
+
+// Scroll To Top Size
+$stt-size: 4rem;
+
+.scroll-to-top {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em;
+  font-size: $stt-size;
+  background-color: $background;
+  fill: $link_color;
+}
+
+/* === COPYRIGHT === */
+.copyright {
+  a {
+    font-size: inherit;
+    color: inherit;
+  }
+}

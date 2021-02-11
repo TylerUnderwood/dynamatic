@@ -1,0 +1,48 @@
+.inline-list {
+    display: flex;
+    flex-flow: row wrap;
+
+    & > .item {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    & > .item + .item::before {
+        display: block;
+        margin: 0 0.5em;
+        content: "";
+    }
+    
+    &--pipline > .item + .item::before {
+        vertical-align: baseline;
+        width: 1px;
+        height: 0.7em;
+        background-color: currentColor;
+        margin: 0 1em;
+        content: "";
+    }
+
+    &--middot > .item + .item::before {
+        vertical-align: baseline;
+        margin: 0 1em;
+        content: "\00B7";
+    }
+
+    @include below( sm ) {
+        & > .item {
+            text-align: center;
+        }
+    }
+
+    @include below( md ) {
+        & > .item {
+            display: block;
+            width: 100%;
+            line-height: 1.6;
+        }
+
+        & > .item + .item::before {
+            display: none;
+        }
+    }
+}

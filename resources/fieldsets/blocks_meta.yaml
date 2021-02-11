@@ -1,0 +1,21 @@
+title: 'Blocks Meta'
+fields:
+  -
+    handle: space_above
+    field:
+      options:
+        '': None
+        mar-t: Default
+        mt-2: Small
+        'frame frame--top': Large
+      clearable: true
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      type: select
+      localizable: false
+      listable: false
+      display: 'Space Above'
+      default: 'mar-t'

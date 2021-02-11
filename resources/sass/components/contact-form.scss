@@ -1,0 +1,22 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Contact Form
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+[class*="form_message"] {
+  border: 2px solid $text_color;
+  border-radius: $round;
+  width: 100%;
+  padding: 0.3em 0.6em;
+}
+.form_message_success {
+  border-color: darken(lightgreen, 10%);
+  background-color: lightgreen;
+  color: $text_color;
+}
+.form_message_error {
+  border-color: lighten(red, 20%);
+  background-color: lighten(red, 30%);
+  color: $text_color;
+}

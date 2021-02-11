@@ -1,0 +1,68 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Text
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.font-serif {
+  font-family: $serif;
+}
+
+.font-sans {
+  font-family: $sans_serif;
+}
+
+.font-geo {
+  font-family: $monospace;
+}
+
+.letter-space {
+  letter-spacing: 2px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.break-words {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* === Font Weight === */
+
+.font-lighter {
+  font-weight: lighter;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+/* === Alignment === */
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+@include addBreakpoints() {
+  &text-left {
+    text-align: left;
+  }
+  &text-right {
+    text-align: right;
+  }
+  &text-center {
+    text-align: center;
+  }
+}

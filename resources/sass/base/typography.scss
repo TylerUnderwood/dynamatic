@@ -1,0 +1,197 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Typography
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+span {
+  display: inline;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+  hyphens: none;
+}
+
+// HEADINGS
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: normal;
+  font-family: $heading_font;
+
+  &:first-child {
+    margin-top: -0.25em;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 2.0rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+
+// LISTS
+
+li {
+  line-height: 1.4;
+  list-style: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: decimal outside;
+}
+
+
+// QUOTE
+
+blockquote {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+cite {
+  font-size: 0.8rem;
+}
+
+figcaption {
+  font: 0.8rem/1.2 $monospace;
+}
+
+
+// Link
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: inherit;
+  }
+}
+
+
+// Other
+
+address {
+  font-style: normal;
+}
+
+time {
+  font-style: normal;
+}
+
+
+// CODE
+
+code {
+  border-radius: 2px;
+  background: #dddddd;
+  padding: 4px;
+  line-height: 1.6;
+  font-family: $monospace;
+  font-size: inherit;
+  color: #333333;
+}
+
+pre code {
+  display: block;
+  padding: 1rem;
+  white-space: normal;
+}
+
+
+// SEMANTICS
+
+// bold
+b {
+  font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
+}
+
+// italics
+i {
+  font-style: italic;
+}
+
+em {
+  font-style: italic;
+}
+
+// highlighted
+mark {
+  background-color: yellow;
+}
+
+// underline
+ins {
+  text-decoration: underline;
+}
+
+// striketrough
+del {
+  text-decoration: line-through;
+}
+
+// small text
+small {
+  font-size: 0.8em;
+}
+
+// subscript / superscript
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+}
+
+sup {
+  top: -0.25em;
+}
+
+sub {
+  bottom: -0.25em;
+}

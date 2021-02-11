@@ -1,0 +1,66 @@
+title: Banner
+fields:
+  -
+    handle: banner_settings
+    field:
+      type: section
+      listable: false
+      display: banner
+  -
+    handle: banner_heading
+    field:
+      type: text
+      instructions: 'This is the big text that will show in the banner.'
+      listable: hidden
+      display: Heading
+  -
+    handle: banner_image
+    field:
+      container: images
+      mode: grid
+      restrict: true
+      allow_uploads: true
+      max_files: 1
+      type: assets
+      width: 33
+      listable: hidden
+      display: 'Background Image'
+      folder: banners
+  -
+    handle: banner_overlay
+    field:
+      options:
+        overlay-darken: Darken
+        overlay-primary: 'Primary Color'
+        overlay-none: None
+      placeholder: Overlay
+      clearable: false
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      type: select
+      instructions: 'This is the overlay that will show over the banner image.'
+      width: 33
+      listable: hidden
+      display: 'Background Overlay'
+  -
+    handle: banner_height
+    field:
+      options:
+        banner: Standard
+        banner--small: Small
+        banner--full: 'Full screen height'
+      placeholder: Height
+      clearable: false
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      type: select
+      instructions: 'This will change the minimum height of the banner.'
+      width: 33
+      listable: false
+      display: Height

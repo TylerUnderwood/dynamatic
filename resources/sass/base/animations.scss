@@ -1,0 +1,130 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Animations
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@keyframes bounce_up {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0.3em);
+  }
+  50% {
+    transform: translateY(-0.5em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.bounce-up {
+  animation: bounce_up 1100ms infinite ease-in-out;
+}
+
+
+@keyframes bounce_right {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-0.3rem);
+  }
+  50% {
+    transform: translateX(0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.bounce-right {
+  animation: bounce_right 1100ms infinite ease-in-out;
+}
+
+
+@keyframes bounce_down {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-0.3em);
+  }
+  50% {
+    transform: translateY(0.5em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.bounce-down {
+  animation: bounce_down 1100ms infinite ease-in-out;
+}
+
+
+@keyframes bounce_left {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0.3rem);
+  }
+  50% {
+    transform: translateX(-0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.bounce-left {
+  animation: bounce_left 1100ms infinite ease-in-out;
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.blink {
+  animation: blink 1000ms infinite;
+}
+
+/* ===== CUSTOM ANIMATION ELEMENTS ===== */
+.insertion-point {
+  position: relative;
+
+  &:before {
+    animation: blink 1000ms infinite;
+    position: absolute;
+    top: 0;
+    left: -0.2em;
+    width: 0.1em;
+    height: 1em;
+    background-color: $text_color;
+    content: '';
+  }
+}
+
+/* ===== HOVER TRANSITIONS ===== */
+.on-hover-grow {
+  transition: all 300ms ease-in-out;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    transform: scale(1.05) translateY(-3%);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+  }
+  &:active {
+    transform: scale(1.02) translateY(-1%);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+  }
+}

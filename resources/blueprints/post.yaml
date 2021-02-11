@@ -1,0 +1,63 @@
+title: Post
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          display: Title
+          width: 50
+          localizable: true
+      -
+        handle: slug
+        field:
+          type: text
+          display: Slug
+          width: 50
+      -
+        handle: date
+        field:
+          type: date
+          display: Date
+          allow_blank: false
+          allow_time: true
+          require_time: true
+          earliest_date: 'January 1, 1900'
+          width: 50
+          format: Y-m-d
+      -
+        handle: tags
+        field:
+          type: tags
+          width: 50
+          display: Tags
+      -
+        handle: featured_image
+        field:
+          type: assets
+          container: main
+          folder: images
+          restrict: true
+          max_files: 1
+          width: 33
+          display: 'Featured Image'
+      -
+        handle: author
+        field:
+          type: users
+          max_items: 1
+          label: '{{ name }}'
+          mode: panes
+          display: Author
+          default: current
+          width: 66
+      -
+        handle: post_intro
+        field:
+          type: textarea
+          display: Intro
+          instructions: 'Write small intro for your post or grab a small snippet from the post itself that you want to feature.'
+      -
+        import: blog

@@ -1,0 +1,135 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: name
+        field:
+          type: text
+          width: 33
+          display: 'Site Name'
+      -
+        handle: description
+        field:
+          type: text
+          width: 66
+          display: 'Site Description'
+      -
+        handle: favicon
+        field:
+          container: images
+          mode: grid
+          folder: favicons
+          restrict: true
+          allow_uploads: true
+          max_files: 1
+          type: assets
+          width: 33
+          listable: hidden
+          display: Favicon
+      -
+        handle: phone
+        field:
+          type: text
+          width: 33
+          display: Phone
+          default: 555-555-5555
+          instructions: 'This is the phone number that will be displayed throughout the site.'
+      -
+        handle: email
+        field:
+          type: text
+          width: 33
+          display: Email
+          default: info@website.com
+          validate: email
+          instructions: 'This is the email that will be displayed throughout the site.'
+      -
+        handle: address
+        field:
+          mode: keyed
+          keys:
+            street: Street
+            city: City
+            state: State
+            zip: Zip
+          type: array
+          width: 33
+          listable: hidden
+          display: Address
+      -
+        handle: google_maps_url
+        field:
+          type: text
+          instructions: 'This is for the URL from google maps.'
+          display: 'Google Maps URL'
+          width: 66
+      -
+        handle: social_media
+        field:
+          type: section
+          display: 'Social Media'
+      -
+        handle: facebook
+        field:
+          type: text
+          instructions: 'Enter your Facebook URL'
+          width: 25
+          display: Facebook
+          validate: url
+      -
+        handle: instagram
+        field:
+          type: text
+          instructions: 'Enter your Instagram URL'
+          width: 25
+          display: Instagram
+          validate: url
+      -
+        handle: linkedin
+        field:
+          type: text
+          instructions: 'Enter your Linkedin URL'
+          width: 25
+          display: Linkedin
+          validate: url
+      -
+        handle: pinterest
+        field:
+          type: text
+          instructions: 'Enter your Pinterest URL'
+          width: 25
+          display: Pinterest
+          validate: url
+      -
+        handle: soundcloud
+        field:
+          type: text
+          instructions: 'Enter your SoundCloud URL'
+          width: 25
+          display: SoundCloud
+          validate: url
+      -
+        handle: twitter
+        field:
+          type: text
+          instructions: 'Enter your Twitter URL'
+          width: 25
+          display: Twitter
+          validate: url
+      -
+        handle: vimeo
+        field:
+          type: text
+          instructions: 'Enter your Vimeo URL'
+          width: 25
+          display: Vimeo
+          validate: url
+      -
+        handle: youtube
+        field:
+          type: text
+          instructions: 'Enter your YouTube URL'
+          width: 25
+          display: YouTube
+          validate: url
