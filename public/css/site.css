@@ -942,13 +942,6 @@ input[type=file] {
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 | BASE: Buttons 
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-|
-| The button or submit should by default have button styles,
-| but once a class is put on them, they should be wiped of styles so you dont have to backpedal.
-|
-| If you want to put a class on the button but keep the default styles,
-| just add the button class to the classes you want.
-|
 */
 button {
   display: inline-block;
@@ -3103,10 +3096,11 @@ blockquote.fancy + .accent::after {
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 .card {
-  display: flex;
+  display: block;
   box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
   background: #2e293a;
+  overflow: hidden;
 }
 .card__content {
   width: 100%;
@@ -3116,6 +3110,7 @@ blockquote.fancy + .accent::after {
   width: 100%;
 }
 .card--entry {
+  display: flex;
   flex-direction: row;
 }
 .card--entry .card__content {
@@ -3963,7 +3958,7 @@ blockquote.fancy + .accent::after {
 */
 /* show */
 .show {
-  display: inherit;
+  display: block;
 }
 
 /* hide */
@@ -3971,24 +3966,20 @@ blockquote.fancy + .accent::after {
   display: none;
 }
 
-/* block */
 .block {
-  display: inherit;
+  display: block;
 }
 
-/* inline */
 .inline {
   display: none;
 }
 
-/* inline-block */
 .inline-block {
-  display: inherit;
+  display: inline-block;
 }
 
-/* inline-flex */
 .inline-flex {
-  display: none;
+  display: inline-flex;
 }
 
 /* === Flex === */
@@ -4013,21 +4004,58 @@ blockquote.fancy + .accent::after {
   justify-content: space-between;
 }
 
-/* === Align === */
-.align-start {
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* === Align Items === */
+.items-start {
   align-items: flex-start;
 }
 
-.align-end {
+.items-end {
   align-items: flex-end;
 }
 
-.align-center {
+.items-center {
   align-items: center;
 }
 
-.align-between {
-  align-items: space-between;
+.items-stretch {
+  align-items: stretch;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+/* === Align Content === */
+.content-start {
+  align-content: flex-start;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.content-evenly {
+  align-content: space-evenly;
 }
 
 /* === Flex Row === */
@@ -4038,68 +4066,59 @@ blockquote.fancy + .accent::after {
 .row-reverse {
   flex-direction: row-reverse;
 }
-.row--t {
+.row-t {
   align-items: flex-start;
 }
-.row--r {
+.row-r {
   justify-content: flex-end;
 }
-.row--b {
+.row-b {
   align-items: flex-end;
 }
-.row--l {
+.row-l {
   justify-content: flex-start;
 }
-.row--h {
-  align-items: center;
-}
-.row--v {
+.row-h {
   justify-content: center;
 }
-.row--between {
+.row-v {
+  align-items: center;
+}
+.row-between {
   justify-content: space-between;
 }
-.row--around {
+.row-around {
   justify-content: space-around;
 }
-.row--evenly {
+.row-evenly {
   justify-content: space-evenly;
 }
 
 /* === Flex Columns === */
-.column {
+.col {
   display: flex;
   flex-direction: column;
 }
-.column-reverse {
+.col-reverse {
   flex-direction: column-reverse;
 }
-.column--t {
+.col-t {
   justify-content: flex-start;
 }
-.column--r {
+.col-r {
   align-items: flex-end;
 }
-.column--b {
+.col-b {
   justify-content: flex-end;
 }
-.column--l {
+.col-l {
   align-items: flex-start;
 }
-.column--h {
-  justify-content: center;
-}
-.column--v {
+.col-h {
   align-items: center;
 }
-.column--between {
-  align-content: space-between;
-}
-.column--around {
-  align-content: space-around;
-}
-.column--evenly {
-  align-content: space-evenly;
+.col-v {
+  justify-content: center;
 }
 
 @media (min-width: 480px) {
