@@ -88,42 +88,23 @@ $inner_main: ($inner / 2) + $section_difference;
 
 .frame {
   @include vert_mar;
-  
-  &--top {
-    margin-bottom: 0;
-  }
-  &--bot {
-    margin-top: 0;
-  }
 }
 
-@include below( md ) {
-  .mb\:frame {
-    &--top {
-      margin-bottom: 0;
-    }
-    &--bot {
-      margin-top: 0;
-    }
-    &--not {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
+@include above( sm ) {
+  .sm\:frame {
+    @include vert_mar;
   }
 }
 
 @include above( md ) {
-  .dt\:frame {
-    &--top {
-      margin-bottom: 0;
-    }
-    &--bot {
-      margin-top: 0;
-    }
-    &--not {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
+  .md\:frame {
+    @include vert_mar;
+  }
+}
+
+@include above( lg ) {
+  .lg\:frame {
+    @include vert_mar;
   }
 }
 
@@ -135,42 +116,23 @@ $inner_main: ($inner / 2) + $section_difference;
 
 .trim {
   @include vert_pad;
-
-  &--top {
-    padding-bottom: 0;
-  }
-  &--bot {
-    padding-top: 0;
-  }
 }
 
-@include below( md ) {
-  .mb\:trim {
-    &--top {
-      padding-bottom: 0;
-    }
-    &--bot {
-      padding-top: 0;
-    }
-    &--not {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
+@include above( sm ) {
+  .sm\:trim {
+    @include vert_pad;
   }
 }
 
 @include above( md ) {
-  .dt\:trim {
-    &--top {
-      padding-bottom: 0;
-    }
-    &--bot {
-      padding-top: 0;
-    }
-    &--not {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
+  .md\:trim {
+    @include vert_pad;
+  }
+}
+
+@include above( lg ) {
+  .lg\:trim {
+    @include vert_pad;
   }
 }
 
@@ -183,42 +145,23 @@ $inner_main: ($inner / 2) + $section_difference;
 
 .buffer {
   @include horz_mar;
-
-  &--left {
-    margin-right: 0;
-  }
-  &--right {
-    margin-left: 0;
-  }
 }
 
-@include below( md ) {
-  .mb\:buffer {
-    &--left {
-      margin-right: 0;
-    }
-    &--right {
-      margin-left: 0;
-    }
-    &--not {
-      margin-left: 0;
-      margin-right: 0;
-    }
+@include above( sm ) {
+  .sm\:buffer {
+    @include horz_mar;
   }
 }
 
 @include above( md ) {
-  .dt\:buffer {
-    &--left {
-      margin-right: 0;
-    }
-    &--right {
-      margin-left: 0;
-    }
-    &--not {
-      margin-left: 0;
-      margin-right: 0;
-    }
+  .md\:buffer {
+    @include horz_mar;
+  }
+}
+
+@include above( lg ) {
+  .lg\:buffer {
+    @include horz_mar;
   }
 }
 
@@ -231,42 +174,23 @@ $inner_main: ($inner / 2) + $section_difference;
 
 .gutter {
   @include horz_pad;
-
-  &--left {
-    padding-right: 0;
-  }
-  &--right {
-    padding-left: 0;
-  }
 }
 
-@include below( md ) {
-  .mb\:gutter {
-    &--left {
-      padding-right: 0;
-    }
-    &--right {
-      padding-left: 0;
-    }
-    &--not {
-      padding-left: 0;
-      padding-right: 0;
-    }
+@include above( sm ) {
+  .sm\:gutter {
+    @include horz_pad;
   }
 }
 
 @include above( md ) {
-  .dt\:gutter {
-    &--left {
-      padding-right: 0;
-    }
-    &--right {
-      padding-left: 0;
-    }
-    &--not {
-      padding-left: 0;
-      padding-right: 0;
-    }
+  .md\:gutter {
+    @include horz_pad;
+  }
+}
+
+@include above( lg ) {
+  .lg\:gutter {
+    @include horz_pad;
   }
 }
 
