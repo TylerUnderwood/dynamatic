@@ -57,14 +57,14 @@ $accent:            $sea_foam;
 
 // Background
 $background:        #1b1822;
-$contrast:          lighten($background, 8%);
+$contrast:          darken($background, 2%);
 
 // Border
-$border_color:      lighten($background, 16%);
+$border_color:      darken($background, 4%);
 
 // Text
 $text_color:        $light;
-$text_color_off:    lighten($background, 20%);
+$text_color_off:    darken($background, 6%);
 
 // Headings
 $heading_color:     $primary;

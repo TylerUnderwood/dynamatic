@@ -188,3 +188,31 @@ $half-bard-outer: $wrapper / 2;
     }
   }
 }
+
+
+
+
+
+
+.post-intro {
+  position: relative;
+  overflow: hidden;
+
+  &__accent {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    background: linear-gradient(90deg, rgb(27, 24, 34) 0%, rgb(128, 17, 255) 35%, rgb(0, 212, 255) 100%);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__figure {
+    position: relative;
+  }
+}

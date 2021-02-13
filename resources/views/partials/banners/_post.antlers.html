@@ -1,30 +1,36 @@
-<section id="banner" class="post-banner gutter {{ if featured_image }}has-image{{ /if }}">
+<section id="intro" class="post-intro {{ if featured_image }}has-image{{ /if }}">
 
-	<div class="frame inner">
-		<h1>{{ title }}</h1>
-		{{ if author }}
-		<div class="card row row-v mar-t">
-			{{ relate:author }}
-			<div class="">
-				<img src="{{ email | gravatar or profile_pic }}" alt="{{ name }}">
+	<div class="post-intro__accent"></div>
+
+	<div class="post-intro__content frame gutter">
+		<div class="inner column column-l">
+			<h1>{{ title }}</h1>
+			{{ if author }}
+			<div class="card row mar-t">
+				{{ relate:author }}
+				<figure class="block">
+					<img src="{{ email | gravatar or profile_pic }}" alt="{{ name }}">
+				</figure>
+				<div class="row row-v pad-v-2 pad-h-4">
+					<span>{{ name }}</span>
+				</div>
+				{{ /relate:author }}
 			</div>
-			<div class="mar-l">
-				<span>{{ name }}</span>
+			{{ /if }}
+			{{ if intro }}
+			<div class="markdown small mar-t">
+				{{ intro }}
 			</div>
-			{{ /relate:author }}
+			{{ /if }}
 		</div>
-		{{ /if }}
-		{{ if intro }}
-		<div class="markdown mar-t">
-			{{ intro }}
-		</div>
-		{{ /if }}
 	</div>
 
 	{{ if featured_image }}
-	<div class="wrapper">
-		<div class="bg-img bg-ultra-wide" style="background-image: url('{{ featured_image }}');"></div>
-	</div> <!-- END banner__image -->
+	<div class="sm:gutter">
+		<div class="post-intro__figure wrapper card mar-b-2">
+			<div class="bg-img bg-ultra-wide" style="background-image: url('{{ featured_image }}');"></div>
+		</div> 
+	</div> <!-- END background-image -->
 	{{ /if }}
 	
-</section> <!-- END banner -->
+</section> <!-- END post-intro -->

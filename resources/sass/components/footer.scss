@@ -11,8 +11,7 @@
 
 .footer {
   position: relative;
-  background-color: $accent;
-  background: linear-gradient(45deg, rgb(112, 43, 159) 0%, rgb(249, 36, 36) 100%);
+  background-color: $contrast;
   color: $white;
 
   &__inner {
