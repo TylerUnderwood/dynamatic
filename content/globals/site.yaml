@@ -2,6 +2,7 @@ title: Site
 data:
   name: Dynamatic
   description: 'Blog and library for clean, readable, dynamic code.'
+  favicon: favicons/gear-favicon.jpg
   phone: 555-555-5555
   email: info@website.com
   address:

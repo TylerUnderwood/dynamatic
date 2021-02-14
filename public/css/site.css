@@ -9,6 +9,11 @@
 = https://softwareengineering.stackexchange.com/questions/178927/is-there-a-difference-between-a-component-and-a-module
 =
 ========================================================================== */
+:root {
+  --background: #282a30;
+  --contrast: #202228;
+}
+
 /* ==========================================================================
 ===== BASE STYLES =====
 =
@@ -387,7 +392,7 @@ template {
 body {
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #1b1822;
+  background-color: var(--background);
   line-height: 1;
   font-size: 1rem;
   font-weight: normal;
@@ -837,9 +842,9 @@ fieldset,
   margin: 0;
   outline: none;
   box-shadow: none;
-  border: 2px solid #121016;
+  border: 2px solid #282a30;
   border-radius: 2px;
-  background-color: #16141c;
+  background-color: var(--contrast);
   width: 100%;
   padding: 0.5em 0.8em;
   line-height: 1;
@@ -873,14 +878,14 @@ fieldset:active,
 .input:focus,
 .input:active {
   border-color: #00ffc0;
-  background-color: #292534;
+  background-color: var(--contrast);
 }
 
 input[readonly]:focus, input[readonly]:active,
 fieldset:focus,
 fieldset:active {
-  border-color: #121016;
-  background-color: #16141c;
+  border-color: #282a30;
+  background-color: var(--contrast);
 }
 
 legend {
@@ -949,7 +954,7 @@ button {
   border: none;
   background-color: transparent;
   padding: 0;
-  color: #1b1822;
+  color: var(--background);
   cursor: pointer;
 }
 
@@ -968,7 +973,7 @@ button {
   line-height: 1;
   font-family: "Overpass Mono", monospace;
   font-weight: bold;
-  color: #1b1822;
+  color: var(--background);
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -984,7 +989,7 @@ button {
   outline: none;
   border-color: #0080ff;
   background-color: #0080ff;
-  color: #1b1822;
+  color: var(--background);
 }
 .btn[disabled] {
   opacity: 0.8;
@@ -993,7 +998,7 @@ button {
 .btn[disabled]:hover, .btn[disabled]:focus {
   border-color: #00ffc0;
   background-color: #00ffc0;
-  color: #1b1822;
+  color: var(--background);
 }
 .btn__text {
   display: inline-block;
@@ -1558,7 +1563,7 @@ svg {
   font-size: 1.6rem;
   font-weight: normal;
   font-family: "Kanit", Times, serif;
-  color: #0d0b10;
+  color: var(--contrast);
 }
 .h6:first-child, .transcription h6:first-child {
   margin-top: -0.25em;
@@ -2884,7 +2889,7 @@ blockquote.fancy + .accent::after {
   flex-flow: column;
   width: 100vw;
   height: 100vh;
-  background-color: #16141c;
+  background-color: var(--contrast);
   padding: 0 1rem;
   padding-top: 6rem;
   line-height: 1;
@@ -2901,11 +2906,11 @@ blockquote.fancy + .accent::after {
 }
 .menu:before {
   top: 6rem;
-  background: linear-gradient(#16141c 0%, rgba(22, 20, 28, 0) 100%);
+  background: linear-gradient(rgba(var(--contrast), 1) 0%, rgba(var(--contrast), 0) 100%);
 }
 .menu:after {
   bottom: 0;
-  background: linear-gradient(rgba(22, 20, 28, 0) 0%, #16141c 100%);
+  background: linear-gradient(rgba(var(--contrast), 0) 0%, rgba(var(--contrast), 1) 100%);
 }
 .menu__inner {
   position: relative;
@@ -3081,7 +3086,7 @@ blockquote.fancy + .accent::after {
 /* ===== LAYOUT ===== */
 .footer {
   position: relative;
-  background-color: #16141c;
+  background-color: var(--contrast);
   color: #ffffff;
   /* === NAVIGATION === */
   /* ===== RESPONSIVE ===== */
@@ -3123,7 +3128,7 @@ blockquote.fancy + .accent::after {
   height: 1em;
   padding: 0.25em;
   font-size: 4rem;
-  background-color: #1b1822;
+  background-color: var(--background);
   fill: #00ffc0;
 }
 
@@ -3198,7 +3203,7 @@ blockquote.fancy + .accent::after {
   display: block;
   box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
-  background: #16141c;
+  background: var(--contrast);
   overflow: hidden;
 }
 .card__content {
@@ -3217,7 +3222,7 @@ blockquote.fancy + .accent::after {
 }
 .card--entry .card__figure {
   max-width: 8rem;
-  background-color: #121016;
+  background-color: #282a30;
 }
 
 /*
@@ -3553,7 +3558,7 @@ blockquote.fancy + .accent::after {
   transform: translate(60%, -60%);
 }
 .modal--full {
-  background-color: #1b1822;
+  background-color: var(--background);
 }
 .modal--full .modal__container {
   box-shadow: none;
@@ -3617,7 +3622,7 @@ blockquote.fancy + .accent::after {
   font-weight: bold;
   font-size: inherit;
   font-family: "Overpass Mono", monospace;
-  color: #1b1822;
+  color: var(--background);
 }
 .pagination__item:first-child {
   margin-left: 0;
@@ -3627,22 +3632,22 @@ blockquote.fancy + .accent::after {
 }
 .pagination__link {
   background-color: #00ffc0;
-  color: #1b1822;
+  color: var(--background);
   transition: background 300ms ease, color 300ms ease;
   cursor: pointer;
 }
 .pagination__link:hover, .pagination__link:active {
   background-color: #0080ff;
-  color: #1b1822;
+  color: var(--background);
 }
 .pagination__active {
-  background-color: #16141c;
+  background-color: var(--contrast);
   color: #00ffc0;
   cursor: default;
 }
 .pagination__disabled {
   background-color: #0080ff;
-  color: #1b1822;
+  color: var(--background);
   cursor: not-allowed;
 }
 .pagination .icon-arrow-left,
@@ -3890,7 +3895,7 @@ blockquote.fancy + .accent::after {
 }
 
 .text-light {
-  color: #0d0b10;
+  color: var(--contrast);
 }
 
 .text-white {

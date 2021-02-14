@@ -50,21 +50,37 @@ $sea_foam:          #00ffc0;
 $azure:             #0080ff;
 
 // site dynamic
+$dark_100:          #282a30;
+$dark_200:          #202228;
+$dark_400:          #181a20;
+$dark_600:          #101218;
+$dark_800:          #080a10;
+
+$light_100:         #ffffff;
+$light_200:         #f8f8f8;
+$light_400:         #f0f0f0;
+$light_600:         #e8e8e8;
+$light_800:         #e0e0e0;
+
+:root {
+    --background:   #{$dark_100};
+    --contrast:     #{$dark_200};
+}
 
 // Branding
 $primary:           $fuchsia;
 $accent:            $sea_foam;
 
 // Background
-$background:        #1b1822;
-$contrast:          darken($background, 2%);
+$background:        var(--background);
+$contrast:          var(--contrast);
 
 // Border
-$border_color:      darken($background, 4%);
+$border_color:      $dark_100;
 
 // Text
 $text_color:        $light;
-$text_color_off:    darken($background, 6%);
+$text_color_off:    $contrast;
 
 // Headings
 $heading_color:     $primary;

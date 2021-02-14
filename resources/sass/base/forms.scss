@@ -41,7 +41,7 @@ fieldset,
   &:focus,
   &:active {
     border-color: $link_color;
-    background-color: lighten($contrast, 8%);
+    background-color: $contrast;
   }
 }
 
