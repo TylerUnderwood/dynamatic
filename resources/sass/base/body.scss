@@ -10,11 +10,16 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none;
+}
+
 html {
   @include fluid-type(font-size, $min_width, $max_width, $font_min, $font_max);
 }
 
 body {
+  margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: $background;
@@ -38,9 +43,12 @@ body {
   }
 }
 
-.scrollable {
-  overflow-x: hidden;
-  overflow-y: auto;
+main {
+  display: block;
+}
+
+section {
+  display: block;
 }
 
 .scroll-lock {

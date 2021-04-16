@@ -13322,8 +13322,8 @@ new vue__WEBPACK_IMPORTED_MODULE_3___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /mnt/wsl/docker-desktop-bind-mounts/Ubuntu-18.04/c18fbf51d5c940b605ea9479bce43c5706db0e4cdd129a5b90eba566a05961ed/resources/js/site.js */"./resources/js/site.js");
-module.exports = __webpack_require__(/*! /mnt/wsl/docker-desktop-bind-mounts/Ubuntu-18.04/c18fbf51d5c940b605ea9479bce43c5706db0e4cdd129a5b90eba566a05961ed/resources/sass/site.scss */"./resources/sass/site.scss");
+__webpack_require__(/*! /Users/statetyler/Documents/Sites/dynamatic/resources/js/site.js */"./resources/js/site.js");
+module.exports = __webpack_require__(/*! /Users/statetyler/Documents/Sites/dynamatic/resources/sass/site.scss */"./resources/sass/site.scss");
 
 
 /***/ })

@@ -9,10 +9,10 @@
 .bg-img {
   display: block;
   position: relative;
+  width: 100%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
 
   // before is reserved for color overlays
   &::before {
@@ -86,6 +86,12 @@
 
 .pill {
   border-radius: 9999px;
+  overflow: hidden;
+}
+
+.round {
+  border-radius: $round;
+  overflow: hidden;
 }
 
 /* === BACKGROUND ELEMENTS === */

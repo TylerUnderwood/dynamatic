@@ -16,18 +16,8 @@
 
     &:hover,
     &:active {
-      color: $link_color;
+      color: $link_hover;
     }
-  }
-
-  &__text {
-    display: inline-block;
-    margin-top: 0.1em;
-    margin-bottom: -0.2em;
-    letter-spacing: 2px;
-    font-family: $monospace;
-    font-weight: bold;
-    text-transform: uppercase;
   }
 
   &--h {

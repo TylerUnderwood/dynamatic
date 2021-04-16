@@ -373,6 +373,10 @@ template {
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none;
+}
+
 @media (max-width: 479px) {
   html {
     font-size: 16px;
@@ -390,6 +394,7 @@ template {
 }
 
 body {
+  margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: var(--background);
@@ -408,9 +413,12 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.scrollable {
-  overflow-x: hidden;
-  overflow-y: auto;
+main {
+  display: block;
+}
+
+section {
+  display: block;
 }
 
 .scroll-lock {
@@ -595,7 +603,7 @@ sub,
 sup {
   position: relative;
   vertical-align: baseline;
-  font-size: 75%;
+  font-size: 0.75em;
   line-height: 0;
 }
 
@@ -1096,27 +1104,6 @@ svg {
   width: 100%;
 }
 
-.svg-fill {
-  fill: currentColor;
-}
-
-.svg-stroke {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10;
-}
-
-.no-linecap {
-  stroke-linecap: unset;
-}
-
-.no-linejoin {
-  stroke-linejoin: unset;
-}
-
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 | UTILITY: Backgrounds
@@ -1126,10 +1113,10 @@ svg {
 .bg-img {
   display: block;
   position: relative;
+  width: 100%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
 }
 .bg-img::before {
   position: absolute;
@@ -1196,6 +1183,12 @@ svg {
 
 .pill {
   border-radius: 9999px;
+  overflow: hidden;
+}
+
+.round {
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 /* === BACKGROUND ELEMENTS === */
@@ -2293,8 +2286,7 @@ blockquote.fancy + .accent::after {
     flex-direction: column-reverse;
   }
   .section__wrap {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
     max-width: unset;
     padding: 0;
   }
@@ -2782,16 +2774,7 @@ blockquote.fancy + .accent::after {
   color: inherit;
 }
 .nav__link:hover, .nav__link:active {
-  color: #00ffc0;
-}
-.nav__text {
-  display: inline-block;
-  margin-top: 0.1em;
-  margin-bottom: -0.2em;
-  letter-spacing: 2px;
-  font-family: "Overpass Mono", monospace;
-  font-weight: bold;
-  text-transform: uppercase;
+  color: #0080ff;
 }
 .nav--h {
   flex-direction: row;

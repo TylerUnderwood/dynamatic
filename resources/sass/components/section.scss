@@ -204,7 +204,7 @@ $inner_main: ($inner / 2) + $section_difference;
   flex-wrap: nowrap;
   width: 100%;
     
-  // columns have no padding or margin and only distinguish width
+  // columns have no padding or margin verticalty because they only distinguish width
   &__column {
     display: flex;
     flex-direction: column;
@@ -262,8 +262,7 @@ $inner_main: ($inner / 2) + $section_difference;
     }
     
     &__wrap {
-      margin-left: 0;
-      margin-right: 0;
+      margin: 0;
       max-width: unset;
       padding: 0;
     }

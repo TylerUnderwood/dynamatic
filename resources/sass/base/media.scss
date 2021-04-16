@@ -18,24 +18,3 @@ video, img, svg {
 svg {
   width: 100%;
 }
-
-.svg-fill {
-  fill: currentColor;
-}
-
-.svg-stroke {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10;
-}
-
-.no-linecap {
-  stroke-linecap: unset;
-}
-
-.no-linejoin {
-  stroke-linejoin: unset;
-}
