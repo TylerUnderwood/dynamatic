@@ -130,15 +130,15 @@ $menu_buffer: 1em;
 		visibility: visible;
   }
 
-  &[data-state="deactivating"] {
+  &[data-state="leave"] {
     animation: close_menu $menu_time ease-in-out forwards;
   }
 
-  &[data-state="inactive"] {
+  &[data-state="idle"] {
 		visibility: hidden;
   }
 
-  &[data-state="activating"] {
+  &[data-state="enter"] {
     animation: open_menu $menu_time ease-in-out forwards;
   }
 }
@@ -196,7 +196,7 @@ $menu_buffer: 1em;
 
   // ACTIVE STATES
   &[data-state="active"],
-  &[data-state="activating"] {
+  &[data-state="enter"] {
     visibility: visible;
     color: $white;
 
@@ -217,8 +217,8 @@ $menu_buffer: 1em;
     }
   }
 
-  &[data-state="inactive"],
-  &[data-state="deactivating"] {
+  &[data-state="idle"],
+  &[data-state="leave"] {
     visibility: visible;
 
     #{$self}__bar {

@@ -8,8 +8,8 @@
 /* ===== MAX WIDTHS ===== */
 
 /* dynamic */
-.mxw-text {
-  max-width: $text_max;
+.mxw-copy {
+  max-width: $copy_max;
 }
 
 .mxw-content {
@@ -25,8 +25,8 @@
 
 @include addBreakpoints() {
   // DYNAMIC
-  &mxw-text {
-    max-width: $text_max;
+  &mxw-copy {
+    max-width: $copy_max;
   }
   &mxw-content {
     max-width: $content_max;

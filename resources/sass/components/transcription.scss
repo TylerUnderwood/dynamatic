@@ -81,7 +81,7 @@
 
 .copy {
   margin: $space 0 0;
-  max-width: $text_max;
+  max-width: $copy_max;
   line-height: 1.6;
   hyphens: none;
 
@@ -190,7 +190,7 @@
   $list-left: 1.6em;
 
   margin: $space 0 0;
-  max-width: $text_max;
+  max-width: $copy_max;
   padding: 0;
   line-height: 1.4;
 
@@ -276,7 +276,7 @@
 
 .quote {
   margin: 1.6rem 0 0;
-  max-width: $text_max;
+  max-width: $copy_max;
   border-left: 0.2em solid $accent;
   padding: 0 0 0 1.2em;
   font-size: 1.2rem;
@@ -289,7 +289,7 @@
 .cite {
   display: block;
   margin: 0.2em 0 0;
-  max-width: $text_max;
+  max-width: $copy_max;
   padding: 0;
   text-align: right;
   line-height: 1.2rem;

@@ -6,7 +6,7 @@
 
 form {
   display: block;
-  max-width: $text_max;
+  max-width: $copy_max;
 }
 
 label[for] {
@@ -103,9 +103,11 @@ input[type="radio"] {
 }
 
 input[type="range"] {
+  display: inline-block;
   cursor: pointer;
 }
 
 input[type="file"] {
+  display: block;
   cursor: pointer;
 }

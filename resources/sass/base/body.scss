@@ -11,7 +11,11 @@
 }
 
 [hidden] {
-  display: none;
+  display: none !important;
+}
+
+[scroll-lock] {
+  overflow: hidden !important;
 }
 
 html {
@@ -43,22 +47,14 @@ body {
   }
 }
 
-main {
-  display: block;
-}
-
-section {
-  display: block;
-}
-
-.scroll-lock {
-  overflow: hidden !important;
-}
-
 #site {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+header {
+  display: block;
 }
 
 #header {
@@ -66,10 +62,22 @@ section {
   z-index: 3;
 }
 
+main {
+  display: block;
+}
+
 #main {
   position: relative;
   z-index: 2;
   flex: 1 0 auto;
+}
+
+section {
+  display: block;
+}
+
+footer {
+  display: block;
 }
 
 #footer {

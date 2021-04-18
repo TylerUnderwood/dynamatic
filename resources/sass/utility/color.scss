@@ -8,15 +8,15 @@
 
 /* === text === */
 
-.text-dark {
+.dark {
   color: $dark;
 }
 
-.text-light {
+.light {
   color: $text_color_off;
 }
 
-.text-white {
+.white {
   color: $white;
 }
 
@@ -48,11 +48,11 @@
   border-color: $text_color;
 }
 
-.border-primary {
+.border-primary-color {
   border-color: $primary;
 }
 
-.border-accent {
+.border-accent-color {
   border-color: $accent;
 }
 
@@ -68,11 +68,11 @@
   fill: $text_color;
 }
 
-.fill-primary {
+.fill-primary-color {
   fill: $primary;
 }
 
-.fill-accent {
+.fill-accent-color {
   fill: $accent;
 }
 
@@ -97,10 +97,10 @@
   background-color: $off_black;
 }
 
-.bg-primary {
+.bg-primary-color {
   background-color: $primary;
 }
 
-.bg-accent {
+.bg-accent-color {
   background-color: $accent;
 }

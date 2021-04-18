@@ -156,7 +156,7 @@ $modal_time: 300ms;
     }
   }
 
-  &[data-state="deactivating"] {
+  &[data-state="leave"] {
     animation: modal_fade_out $modal_time forwards ease-out;
 
     #{$self}__container {
@@ -164,7 +164,7 @@ $modal_time: 300ms;
     }
   }
 
-  &[data-state="inactive"] {
+  &[data-state="idle"] {
     visibility: hidden;
 
     #{$self}__container {
@@ -172,7 +172,7 @@ $modal_time: 300ms;
     }
   }
 
-  &[data-state="activating"] {
+  &[data-state="enter"] {
     animation: modal_fade_in $modal_time forwards ease-in;
 
     #{$self}__container {	

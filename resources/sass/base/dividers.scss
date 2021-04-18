@@ -11,15 +11,13 @@ hr,
   clear: both;
   margin: 0;
   border: unset;
-  border-top: 1px solid currentColor;
-  border-bottom: 1px solid currentColor;
   width: 100%;
-  color: inherit;
+  height: 2px;
+  background-color: currentColor;
 }
 
 /* === line-break === */
-br,
-.line-break {
+br {
   clear: both;
   display: inline-block;
   width: 0;
@@ -28,22 +26,39 @@ br,
 }
 
 
+/* === FILLER === */
+// This is used as a sibling element inside a flex element to fill empty space
+.filler {
+  display: block;
+  flex: 1 1 auto;
+  content: '';
+}
+// This is for an element you want to fill the space between others
+.fill {
+  flex: 1 1 auto;
+}
 
-/* === break === */
+
+
+/* === BREAK === */
 .break {
-  padding-top: $space;
   min-width: 100%;
+  padding-top: $space;
   content: '';
 }
 
-/* === space === */
+
+
+/* === SPACE === */
 .space {
-  padding-left: $space;
   min-height: 100%;
+  padding-left: $space;
   content: '';
 }
 
-/* === gap === */
+
+
+/* === GAP === */
 .gap {
   padding-top: $space;
   padding-left: $space;
@@ -58,18 +73,4 @@ br,
   }
   
   @include makeAllForBreakpoints( gap, padding-top padding-left, $spacing );
-}
-
-
-/* === FILLER === */
-// This is used as a sibling element inside a flex element to fill empty space
-
-.filler {
-  display: block;
-  flex: 1 1 auto;
-  content: '';
-}
-
-.fill {
-  flex: 1 1 auto;
 }

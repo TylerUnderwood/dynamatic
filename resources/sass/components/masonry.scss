@@ -72,7 +72,7 @@
   }
 }
 
-@mixin makeGrout( $array ) {
+@mixin makeGroutClasses( $array ) {
   @each $index, $value in $array {
     .grout-#{$index} {
       margin: -#{$value / 2};
@@ -84,7 +84,7 @@
   }
 }
 
-@include makeGrout( $spacing );
+@include makeGroutClasses( $spacing );
 
 
 //////////////////////////

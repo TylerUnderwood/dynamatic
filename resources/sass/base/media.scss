@@ -9,12 +9,20 @@ figure {
   margin: 0;
 }
 
-video, img, svg {
+svg {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-svg {
-  width: 100%;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

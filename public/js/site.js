@@ -12862,6 +12862,18 @@ document.addEventListener("DOMContentLoaded", function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -12879,231 +12891,182 @@ var Modal = /*#__PURE__*/function () {
     this.toggleButtons = document.querySelectorAll("[toggle*=\"".concat(elementId, "\"]"));
     this.openButtons = document.querySelectorAll("[open*=\"".concat(elementId, "\"]"));
     this.closeButtons = document.querySelectorAll("[close*=\"".concat(elementId, "\"]"));
-    this.allButtonsArray = this.getAllButtonsArray();
-    this.isActive = false;
-    this.isAnimating = false;
+    this.allButtons = [].concat(_toConsumableArray(this.toggleButtons), _toConsumableArray(this.openButtons), _toConsumableArray(this.closeButtons));
+    this.activatorButton = this.allButtons[0];
     this.duration = this.modal.dataset.duration ? this.modal.dataset.duration : 300;
+    this.init();
   }
 
   _createClass(Modal, [{
-    key: "log",
-    value: function log() {
-      console.log(this.getData());
-    }
-  }, {
-    key: "getData",
-    value: function getData() {
-      return {
-        id: this.id,
-        isActive: this.isActive,
-        isAnimating: this.isAnimating,
-        duration: this.duration
-      };
-    }
-  }, {
-    key: "turnFocusTrap",
-    value: function turnFocusTrap(toggle) {
-      var focusableList = "\n            a:not([disabled]), \n            button:not([disabled]), \n            textarea:not([disabled]), \n            input:not([disabled]), \n            select:not([disabled])",
-          focusableEls = this.modal.querySelectorAll(focusableList),
-          firstFocusableEl = focusableEls[0],
-          lastFocusableEl = focusableEls[focusableEls.length - 1];
+    key: "focusTrap",
+    value: function focusTrap(event) {
+      var focusableList = 'a, button, textarea, input, select',
+          focusableElements = this.querySelectorAll(focusableList),
+          firstFocusableElement = focusableElements[0],
+          lastFocusableElement = focusableElements[focusableElements.length - 1];
+      var isKeyPressed = event.key === 'Tab' || event.keyCode === '9';
 
-      var tabListener = function tabListener(event) {
-        var isTabPressed = event.key === 'Tab' || event.keyCode === '9';
+      if (!isKeyPressed) {
+        return;
+      }
 
-        if (!isTabPressed) {
-          return;
-        }
-
-        if (event.shiftKey)
-          /* shift + tab */
-          {
-            if (document.activeElement === firstFocusableEl) {
-              lastFocusableEl.focus();
-              event.preventDefault();
-            }
-          } else
-          /* tab */
-          {
-            if (document.activeElement === lastFocusableEl) {
-              firstFocusableEl.focus();
-              event.preventDefault();
-            }
+      if (event.shiftKey)
+        /* shift + tab */
+        {
+          if (document.activeElement === firstFocusableElement) {
+            lastFocusableElement.focus();
+            event.preventDefault();
           }
-      };
+        } else
+        /* tab */
+        {
+          if (document.activeElement === lastFocusableElement) {
+            firstFocusableElement.focus();
+            event.preventDefault();
+          }
+        }
+    }
+  }, {
+    key: "escClose",
+    value: function escClose(event) {
+      var isKeyPressed = event.key === 'Escape' || event.keyCode === '27';
 
-      if (toggle === "on") {
-        this.modal.addEventListener('keydown', tabListener, false);
+      if (!this.isActive() || !isKeyPressed) {
+        return;
       }
 
-      if (toggle === "off") {
-        this.modal.addEventListener('keydown', tabListener, false);
-      }
+      event.preventDefault();
+      this.deactivate();
     }
   }, {
-    key: "escEvent",
-    value: function escEvent() {
-      var _this = this;
-
-      document.addEventListener('keydown', function (event) {
-        var isEscPressed = event.keyCode == '27' || event.key === "Escape";
-
-        if (!isEscPressed) {
-          return;
-        }
-
-        if (_this.isActive) {
-          event.preventDefault();
-
-          _this.deactivate();
-        }
-      });
+    key: "isActive",
+    value: function isActive() {
+      return this.modal.dataset.state === 'active';
     }
   }, {
-    key: "getAllButtonsArray",
-    value: function getAllButtonsArray() {
-      var allButtons = [];
-      allButtons = allButtons.concat(Array.from(this.toggleButtons));
-      allButtons = allButtons.concat(Array.from(this.openButtons));
-      allButtons = allButtons.concat(Array.from(this.closeButtons));
-      return allButtons;
+    key: "isAnimating",
+    value: function isAnimating() {
+      return this.modal.dataset.state === 'enter' || this.modal.dataset.state === 'leave';
     }
   }, {
-    key: "toggleAllButtons",
-    value: function toggleAllButtons(state) {
-      this.allButtonsArray.forEach(function (button) {
+    key: "setStateAttribute",
+    value: function setStateAttribute(state) {
+      this.modal.dataset.state = state;
+      this.allButtons.forEach(function (button) {
         button.dataset.state = state;
       });
     }
   }, {
-    key: "setStateActivating",
-    value: function setStateActivating() {
-      this.modal.dataset.state = 'activating';
-      this.toggleAllButtons('activating');
+    key: "setModalActive",
+    value: function setModalActive() {
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add(this.id + '--active');
+      this.modal.removeAttribute('hidden');
+      this.modal.addEventListener('keydown', this.focusTrap);
+      this.modal.focus();
     }
   }, {
-    key: "setStateActive",
-    value: function setStateActive() {
-      this.modal.dataset.state = 'active';
-      this.toggleAllButtons('active');
-    }
-  }, {
-    key: "setStateDeactivating",
-    value: function setStateDeactivating() {
-      this.modal.dataset.state = 'deactivating';
-      this.toggleAllButtons('deactivating');
-    }
-  }, {
-    key: "setStateInactive",
-    value: function setStateInactive() {
-      this.modal.dataset.state = 'inactive';
-      this.toggleAllButtons('inactive');
-    }
-  }, {
-    key: "modalIsActive",
-    value: function modalIsActive() {
-      this.isActive = true;
-      document.body.classList.add('scroll-lock');
-      this.turnFocusTrap("on");
-    }
-  }, {
-    key: "modalIsInactive",
-    value: function modalIsInactive() {
-      this.isActive = false;
-      document.body.classList.remove('scroll-lock');
-      this.turnFocusTrap("off");
+    key: "setModalInactive",
+    value: function setModalInactive() {
+      document.body.style.overflow = null;
+      document.body.classList.remove(this.id + '--active');
+      this.modal.setAttribute('hidden', null);
+      this.modal.removeEventListener('keydown', this.focusTrap);
+
+      if (this.activatorButton) {
+        this.activatorButton.focus();
+      }
     }
   }, {
     key: "activate",
-    value: function activate() {
-      var _this2 = this;
+    value: function activate(button) {
+      var _this = this;
 
-      this.setStateActivating();
-      this.modalIsActive();
+      this.activatorButton = button;
+      this.setStateAttribute('enter');
+      this.setModalActive();
       setTimeout(function () {
-        _this2.setStateActive();
+        _this.setStateAttribute('active');
       }, this.duration);
     }
   }, {
     key: "deactivate",
     value: function deactivate() {
-      var _this3 = this;
+      var _this2 = this;
 
-      this.setStateDeactivating();
+      this.setStateAttribute('leave');
       setTimeout(function () {
-        _this3.setStateInactive();
+        _this2.setStateAttribute('idle');
 
-        _this3.modalIsInactive();
+        _this2.setModalInactive();
+
+        _this2.activatorButton = null;
       }, this.duration);
     }
   }, {
     key: "buttonAction",
     value: function buttonAction(button, action) {
-      var _this4 = this;
+      var _this3 = this;
 
       button.addEventListener("click", function (event) {
-        event.preventDefault(); // if there is a current animation stop
+        event.preventDefault();
 
-        if (_this4.isAnimating) {
+        if (_this3.isAnimating()) {
           return;
         }
 
-        _this4.isAnimating = true;
-        action(); // what happens after animation
-
-        setTimeout(function () {
-          // turn off the animation check
-          _this4.isAnimating = false;
-        }, _this4.duration);
+        action();
       });
-    }
-  }, {
-    key: "roughScale",
-    value: function roughScale(num) {
-      var parsed = parseInt(num, 10);
-
-      if (isNaN(parsed)) {
-        return 0;
-      }
-
-      return parsed;
     }
   }, {
     key: "init",
     value: function init() {
-      var _this5 = this;
+      var _this4 = this;
+
+      document.addEventListener('keydown', function (event) {
+        _this4.escClose(event);
+      });
 
       if (this.modal.hasAttribute('active')) {
-        var time = this.roughScale(this.modal.getAttribute('active'));
-        this.modal.removeAttribute('active');
+        var roughScale = function roughScale(num) {
+          var parsed = parseInt(num, 10);
+
+          if (isNaN(parsed)) {
+            return 0;
+          }
+
+          return parsed;
+        };
+
+        var time = roughScale(this.modal.getAttribute('active'));
 
         if (time > 0) {
-          this.setStateInactive();
+          this.setStateAttribute('idle');
           setTimeout(function () {
-            _this5.activate();
+            _this4.activate();
           }, time * 1000);
         } else {
-          this.setStateActive();
-          this.modalIsActive();
+          this.activate();
         }
+
+        this.modal.removeAttribute('active');
       } else {
-        this.setStateInactive();
+        this.setStateAttribute('idle');
       }
 
-      this.escEvent();
       this.toggleButtons.forEach(function (button) {
-        _this5.buttonAction(button, function () {
-          !_this5.isActive ? _this5.activate() : _this5.deactivate();
+        _this4.buttonAction(button, function () {
+          !_this4.isActive() ? _this4.activate(button) : _this4.deactivate();
         });
       });
       this.openButtons.forEach(function (button) {
-        _this5.buttonAction(button, function () {
-          !_this5.isActive ? _this5.activate() : null;
+        _this4.buttonAction(button, function () {
+          !_this4.isActive() ? _this4.activate(button) : null;
         });
       });
       this.closeButtons.forEach(function (button) {
-        _this5.buttonAction(button, function () {
-          _this5.isActive ? _this5.deactivate() : null;
+        _this4.buttonAction(button, function () {
+          _this4.isActive() ? _this4.deactivate() : null;
         });
       });
     }
@@ -13117,7 +13080,7 @@ var initializeModal = function initializeModal() {
     if (!element.id) {
       console.log("Modal element needs ID to reference");
     } else {
-      new Modal(element.id).init();
+      new Modal(element.id);
     }
   });
 };
