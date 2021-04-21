@@ -21,9 +21,9 @@ $true_fuchsia:      #FF0080;
 $white:             #ffffff;
 $off_white:         #f8f8f8;
 $light:             #eeeeee;
-$grey_light:        #c0c0c0;
+$light_grey:        #c0c0c0;
 $grey:              #808080;
-$grey_dark:         #404040;
+$dark_grey:         #404040;
 $dark:              #333333;
 $off_black:         #202020;
 $black:             #000000;
@@ -69,19 +69,11 @@ $light_800:         #e0e0e0;
   --accent:            #{$sea_foam};
   --border-color:      #{$dark_800};
   --text-color:        #{$light};
-  --text-color-off:    #{$dark_200};
+  --text-color-off:    #{$grey};
   --heading-color:     var(--primary);
   --heading-color-alt: #{$lava_orange};
   --link-color:        var(--accent);
   --link-hover:        #{$azure};
-  --min-width:         480;
-  --max-width:         1600;
-  --font-min:          16;
-  --font-max:          20;
-  --horz-space-min:    32;
-  --horz-space-max:    64;
-  --vert-space-min:    64;
-  --vert-space-max:    96;
 }
 
 // Branding
@@ -137,10 +129,40 @@ $copy_font:         $overpass;
 $meta_font:         $overpass_mono;
 
 // FONT SIZE
-$font_min:          var(--font-min);
-$font_max:          var(--font-max);
 $font_min:          16px;
 $font_max:          20px;
+
+// Line height fix
+@mixin line_height_fix( $top, $bottom ) {
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+  }
+
+  &::before {
+    margin-top: $top;
+  }
+  &::after {
+    margin-bottom: $bottom;
+  }
+}
+
+@mixin heading_120_fix {
+  @include line_height_fix( -0.25em, -0.2em );
+}
+
+@mixin copy_140_fix {
+  @include line_height_fix( -0.3em, -0.4em );
+}
+
+@mixin copy_160_fix {
+  @include line_height_fix( -0.4em, -0.5em );
+}
+
+@mixin meta_100_fix {
+  @include line_height_fix( 0.15em, -0.1em );
+}
 
 
 
@@ -241,7 +263,7 @@ $vert_space_min:    64px;
 $vert_space_max:    96px;
 
 // default
-$space:             1.6rem;
+$space:             1.8rem;
 
 // utility
 // the most common spacing amounts

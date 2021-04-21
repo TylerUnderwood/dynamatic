@@ -13,7 +13,7 @@
 			{{ nav }}
 
 				<a class="nav__link link" href="{{ url }}">
-					<span class="meta meta-fix">{{ title }}</span>
+					<span class="meta">{{ title }}</span>
 				</a>
 				
 			{{ /nav }}
@@ -23,22 +23,22 @@
 			
 			<address class="inline-list inline-list--pipline meta small thin">
 				<a class="item" href="{{ site:google_maps_url }}" target="_blank">
-					<span class="meta-fix">{{ site:address:city }} &middot; {{ site:address:state }}</span>
+					<span class="meta">{{ site:address:city }} &middot; {{ site:address:state }}</span>
 				</a>
 				<a class="item" href="tel:{{ site:phone }}">
-					<span class="meta-fix">{{ site:phone }}</span>
+					<span class="meta">{{ site:phone }}</span>
 				</a>
 				<a class="item" href="mailto:{{ site:email }}">
-					<span class="meta-fix">{{ site:email }}</span>
+					<span class="meta">{{ site:email }}</span>
 				</a>
 			</address> <!-- END site-info -->
 
 			<div class="break"></div>
 	
 			<div class="copyright meta small thin">
-				<span class="meta-fix">Copyright &copy; {{ date format="Y" }} {{ site:name }}.</span>
-				<span class="meta-fix">All Rights Reserved.</span>
-				<span class="meta-fix">
+				<span class="meta">Copyright &copy; {{ date format="Y" }} {{ site:name }}.</span>
+				<span class="meta">All Rights Reserved.</span>
+				<span class="meta">
 					<a 
 						href="https://github.com/cyborgspaceviking" 
 						target="_blank" 

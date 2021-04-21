@@ -26,9 +26,7 @@ $half-bard-outer: $wrapper / 2;
     }
   }
 
-  // Dropcap
-  .transcription:first-child {
-    
+  .bard-block:first-child > {
     p:first-child::first-letter {
       float: left;
       margin: 0;
@@ -39,37 +37,10 @@ $half-bard-outer: $wrapper / 2;
     }
   }
 
-  .blockquote {
-    padding: $space 0;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.6rem;
-  }
-
-  h4, h5 {
-    font-size: 1.2rem;
-    font-weight: normal;
-    letter-spacing: 2px;
-  }
-
-  h5 {
-    color: $accent;
-  }
-
   hr {
     margin: 3.2rem auto;
     width: $bard-inner * 0.8;
     max-width: 80%;
-    border-color: $light;
-    
-    & + * {
-      margin-top: 0;
-    }
   }
 
   figure,

@@ -9,31 +9,21 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
+
+
 /* === Headings === */
 
 // Padding top is used so if you want to link to a heading there will be space above it
-@mixin heading( $size: 1.6rem, $color: inherit ) {
-  margin: 0 0 0.5rem;
-  padding-top: 1em;
+@mixin heading( $size: inherit, $color: inherit ) {
+  display: block;
+  margin: 0;
   line-height: 1.2;
   font-size: $size;
   font-weight: normal;
   font-family: $heading_font;
   color: $color;
-
-  &:first-child {
-    margin-top: -0.25em;
-    padding-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: -0.2em;
-    padding-bottom: 0;
-  }
-
-  & + p {
-    margin-top: 0;
-  }
+  
+  @include heading_120_fix;
 }
 
 .heading {
@@ -68,18 +58,10 @@
   @include heading( 1.2rem, $heading_color_alt );
 }
 
-.hgroup {
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: -0.25em;
-    margin-bottom: -0.2em;
-    padding: 0;
-    line-height: 1.2;
-  }
-}
-
 /* === Standard Text === */
 
 .copy {
+  display: block;
   margin: $space 0 0;
   max-width: $copy_max;
   line-height: 1.6;
@@ -103,16 +85,13 @@
 .meta {
   display: inline-block;
   white-space: nowrap;
+  line-height: 1;
   letter-spacing: 2px;
   font-family: $meta_font;
   font-weight: bold;
   text-transform: uppercase;
-}
 
-.meta-fix {
-  display: inline-block;
-  margin-top: 0.15em;
-  margin-bottom: -0.1em;
+  @include meta_100_fix;
 }
 
 .small {
@@ -189,6 +168,7 @@
   $list-top: 0.8em;
   $list-left: 1.6em;
 
+  display: inline-block;
   margin: $space 0 0;
   max-width: $copy_max;
   padding: 0;
@@ -207,6 +187,8 @@
   &:first-child {
     margin-top: 0;
   }
+
+  @include copy_140_fix;
 
   @if $type == list {
     > li {
@@ -231,10 +213,10 @@
 
       &:before {
         position: absolute;
-        top: 0.4em;
+        top: 0.55em;
         left: 0;
-        width: 0.4em;
-        height: 0.4em;
+        width: 6px;
+        height: 6px;
         background-color: $accent;
         content: '';
       }
@@ -275,15 +257,19 @@
 /* === Blockquote === */
 
 .quote {
-  margin: 1.6rem 0 0;
+  display: inline-block;
+  margin: $space 0 0;
   max-width: $copy_max;
-  border-left: 0.2em solid $accent;
+  border-left: 4px solid $accent;
   padding: 0 0 0 1.2em;
+  line-height: 1.4;
   font-size: 1.2rem;
       
   &:first-child {
     margin-top: 0;
   }
+
+  @include copy_160_fix;
 }
 
 .cite {
@@ -292,7 +278,7 @@
   max-width: $copy_max;
   padding: 0;
   text-align: right;
-  line-height: 1.2rem;
+  line-height: 1.2;
   font-size: 0.8rem;
 
   &:before {
@@ -303,9 +289,35 @@
 
 /* === Putting it all together === */
 
-// This class is often used anywhere you want some default text styling
+// This class is used anywhere you want some default text styling
 .transcription {
-  display: block;
+  // display block so margins will collapse
+  display: block !important;
+
+  h1, h2, h3, h4, h5, h6 {
+    padding-top: 2em;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    + {
+      h1, h2, h3, h4, h5, h6 {
+        padding-top: 0;
+        margin-top: 0.2rem;
+      }
+    }
+
+    & + p {
+      margin-top: 1rem;
+    }
+  }
+
+  hr + {
+    h1, h2, h3, h4, h5, h6 {
+      padding-top: 0;
+    }
+  }
 
   h1 {
     @extend .h1;
@@ -357,6 +369,16 @@
 
   cite {
     @extend .cite;
+  }
+
+  .float-right {
+    display: block;
+    max-width: 400px;
+    float: right;
+    margin-top: $space + 0.3rem;
+    margin-left: $space;
+    margin-bottom: $space;
+    margin-right: 0;
   }
 }
 

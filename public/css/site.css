@@ -16,19 +16,11 @@
   --accent: #00ffc0;
   --border-color: #080a10;
   --text-color: #eeeeee;
-  --text-color-off: #202228;
+  --text-color-off: #808080;
   --heading-color: var(--primary);
   --heading-color-alt: #ff4000;
   --link-color: var(--accent);
   --link-hover: #0080ff;
-  --min-width: 480;
-  --max-width: 1600;
-  --font-min: 16;
-  --font-max: 20;
-  --horz-space-min: 32;
-  --horz-space-max: 64;
-  --vert-space-min: 64;
-  --vert-space-max: 96;
 }
 
 /* ==========================================================================
@@ -48,6 +40,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  /* border: 1px solid blueviolet; */
 }
 
 [hidden] {
@@ -58,7 +51,7 @@
   overflow: hidden !important;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   html {
     font-size: 16px;
   }
@@ -153,13 +146,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: 1.2;
   font-weight: normal;
-  font-family: "Kanit", Times, serif;
-}
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
-  margin-top: -0.25em;
-}
-h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
-  margin-bottom: 0;
 }
 
 h1 {
@@ -206,7 +192,6 @@ ol {
 blockquote {
   margin: 0;
   padding: 0;
-  line-height: 1.6;
   font-size: 1.2rem;
 }
 
@@ -215,7 +200,8 @@ cite {
 }
 
 figcaption {
-  font: 0.8rem/1.2 "Overpass Mono", monospace;
+  line-height: 1.2;
+  font-size: 0.8rem;
 }
 
 a {
@@ -238,15 +224,15 @@ time {
 
 code {
   border-radius: 2px;
-  background: #dddddd;
+  background: white;
   padding: 4px;
   line-height: 1.6;
-  font-family: "Overpass Mono", monospace;
+  font-family: monospace;
   font-size: inherit;
-  color: #333333;
+  color: black;
 }
 
-pre code {
+pre {
   display: block;
   padding: 1rem;
   white-space: normal;
@@ -339,21 +325,21 @@ br {
 /* === BREAK === */
 .break {
   min-width: 100%;
-  padding-top: 1.6rem;
+  padding-top: 1.8rem;
   content: "";
 }
 
 /* === SPACE === */
 .space {
   min-height: 100%;
-  padding-left: 1.6rem;
+  padding-left: 1.8rem;
   content: "";
 }
 
 /* === GAP === */
 .gap {
-  padding-top: 1.6rem;
-  padding-left: 1.6rem;
+  padding-top: 1.8rem;
+  padding-left: 1.8rem;
 }
 
 .gap-0 {
@@ -398,8 +384,8 @@ br {
 
 @media (min-width: 480px) {
   .sm\:gap {
-    padding-top: 1.6rem;
-    padding-left: 1.6rem;
+    padding-top: 1.8rem;
+    padding-left: 1.8rem;
   }
   .sm\:gap-0 {
     padding-top: 0;
@@ -436,8 +422,8 @@ br {
 }
 @media (min-width: 768px) {
   .md\:gap {
-    padding-top: 1.6rem;
-    padding-left: 1.6rem;
+    padding-top: 1.8rem;
+    padding-left: 1.8rem;
   }
   .md\:gap-0 {
     padding-top: 0;
@@ -474,8 +460,8 @@ br {
 }
 @media (min-width: 1024px) {
   .lg\:gap {
-    padding-top: 1.6rem;
-    padding-left: 1.6rem;
+    padding-top: 1.8rem;
+    padding-left: 1.8rem;
   }
   .lg\:gap-0 {
     padding-top: 0;
@@ -1117,183 +1103,169 @@ video {
 */
 /* === Headings === */
 .heading {
-  margin: 0 0 0.5rem;
-  padding-top: 1em;
+  display: block;
+  margin: 0;
   line-height: 1.2;
-  font-size: 1.6rem;
+  font-size: inherit;
   font-weight: normal;
   font-family: "Kanit", Times, serif;
   color: inherit;
 }
-.heading:first-child {
+.heading::before, .heading::after {
+  display: block;
+  content: "";
+}
+.heading::before {
   margin-top: -0.25em;
-  padding-top: 0;
 }
-.heading:last-child {
+.heading::after {
   margin-bottom: -0.2em;
-  padding-bottom: 0;
-}
-.heading + p {
-  margin-top: 0;
 }
 
 .h1, .transcription h1 {
-  margin: 0 0 0.5rem;
-  padding-top: 1em;
+  display: block;
+  margin: 0;
   line-height: 1.2;
   font-size: 3.6rem;
   font-weight: normal;
   font-family: "Kanit", Times, serif;
   color: var(--heading-color);
 }
-.h1:first-child, .transcription h1:first-child {
+.h1::before, .transcription h1::before, .h1::after, .transcription h1::after {
+  display: block;
+  content: "";
+}
+.h1::before, .transcription h1::before {
   margin-top: -0.25em;
-  padding-top: 0;
 }
-.h1:last-child, .transcription h1:last-child {
+.h1::after, .transcription h1::after {
   margin-bottom: -0.2em;
-  padding-bottom: 0;
-}
-.h1 + p, .transcription h1 + p {
-  margin-top: 0;
 }
 
 .h2, .transcription h2 {
-  margin: 0 0 0.5rem;
-  padding-top: 1em;
+  display: block;
+  margin: 0;
   line-height: 1.2;
   font-size: 2.4rem;
   font-weight: normal;
   font-family: "Kanit", Times, serif;
   color: var(--heading-color);
 }
-.h2:first-child, .transcription h2:first-child {
+.h2::before, .transcription h2::before, .h2::after, .transcription h2::after {
+  display: block;
+  content: "";
+}
+.h2::before, .transcription h2::before {
   margin-top: -0.25em;
-  padding-top: 0;
 }
-.h2:last-child, .transcription h2:last-child {
+.h2::after, .transcription h2::after {
   margin-bottom: -0.2em;
-  padding-bottom: 0;
-}
-.h2 + p, .transcription h2 + p {
-  margin-top: 0;
 }
 
 .h3, .transcription h3 {
-  margin: 0 0 0.5rem;
-  padding-top: 1em;
+  display: block;
+  margin: 0;
   line-height: 1.2;
   font-size: 2rem;
   font-weight: normal;
   font-family: "Kanit", Times, serif;
   color: var(--heading-color);
 }
-.h3:first-child, .transcription h3:first-child {
+.h3::before, .transcription h3::before, .h3::after, .transcription h3::after {
+  display: block;
+  content: "";
+}
+.h3::before, .transcription h3::before {
   margin-top: -0.25em;
-  padding-top: 0;
 }
-.h3:last-child, .transcription h3:last-child {
+.h3::after, .transcription h3::after {
   margin-bottom: -0.2em;
-  padding-bottom: 0;
-}
-.h3 + p, .transcription h3 + p {
-  margin-top: 0;
 }
 
 .h4, .transcription h4 {
-  margin: 0 0 0.5rem;
-  padding-top: 1em;
+  display: block;
+  margin: 0;
   line-height: 1.2;
   font-size: 1.6rem;
   font-weight: normal;
   font-family: "Kanit", Times, serif;
   color: var(--heading-color);
 }
-.h4:first-child, .transcription h4:first-child {
+.h4::before, .transcription h4::before, .h4::after, .transcription h4::after {
+  display: block;
+  content: "";
+}
+.h4::before, .transcription h4::before {
   margin-top: -0.25em;
-  padding-top: 0;
 }
-.h4:last-child, .transcription h4:last-child {
+.h4::after, .transcription h4::after {
   margin-bottom: -0.2em;
-  padding-bottom: 0;
-}
-.h4 + p, .transcription h4 + p {
-  margin-top: 0;
 }
 
 .h5, .transcription h5 {
-  margin: 0 0 0.5rem;
-  padding-top: 1em;
+  display: block;
+  margin: 0;
   line-height: 1.2;
   font-size: 1.6rem;
   font-weight: normal;
   font-family: "Kanit", Times, serif;
   color: var(--heading-color-alt);
 }
-.h5:first-child, .transcription h5:first-child {
+.h5::before, .transcription h5::before, .h5::after, .transcription h5::after {
+  display: block;
+  content: "";
+}
+.h5::before, .transcription h5::before {
   margin-top: -0.25em;
-  padding-top: 0;
 }
-.h5:last-child, .transcription h5:last-child {
+.h5::after, .transcription h5::after {
   margin-bottom: -0.2em;
-  padding-bottom: 0;
-}
-.h5 + p, .transcription h5 + p {
-  margin-top: 0;
 }
 
 .h6, .transcription h6 {
-  margin: 0 0 0.5rem;
-  padding-top: 1em;
+  display: block;
+  margin: 0;
   line-height: 1.2;
   font-size: 1.6rem;
   font-weight: normal;
   font-family: "Kanit", Times, serif;
   color: var(--text-color-off);
 }
-.h6:first-child, .transcription h6:first-child {
+.h6::before, .transcription h6::before, .h6::after, .transcription h6::after {
+  display: block;
+  content: "";
+}
+.h6::before, .transcription h6::before {
   margin-top: -0.25em;
-  padding-top: 0;
 }
-.h6:last-child, .transcription h6:last-child {
+.h6::after, .transcription h6::after {
   margin-bottom: -0.2em;
-  padding-bottom: 0;
-}
-.h6 + p, .transcription h6 + p {
-  margin-top: 0;
 }
 
 .subheading {
-  margin: 0 0 0.5rem;
-  padding-top: 1em;
+  display: block;
+  margin: 0;
   line-height: 1.2;
   font-size: 1.2rem;
   font-weight: normal;
   font-family: "Kanit", Times, serif;
   color: var(--heading-color-alt);
 }
-.subheading:first-child {
+.subheading::before, .subheading::after {
+  display: block;
+  content: "";
+}
+.subheading::before {
   margin-top: -0.25em;
-  padding-top: 0;
 }
-.subheading:last-child {
+.subheading::after {
   margin-bottom: -0.2em;
-  padding-bottom: 0;
-}
-.subheading + p {
-  margin-top: 0;
-}
-
-.hgroup h1, .hgroup h2, .hgroup h3, .hgroup h4, .hgroup h5, .hgroup h6 {
-  margin-top: -0.25em;
-  margin-bottom: -0.2em;
-  padding: 0;
-  line-height: 1.2;
 }
 
 /* === Standard Text === */
 .copy, .transcription p {
-  margin: 1.6rem 0 0;
+  display: block;
+  margin: 1.8rem 0 0;
   max-width: 36rem;
   line-height: 1.6;
   -webkit-hyphens: none;
@@ -1317,15 +1289,20 @@ video {
 .meta {
   display: inline-block;
   white-space: nowrap;
+  line-height: 1;
   letter-spacing: 2px;
   font-family: "Overpass Mono", monospace;
   font-weight: bold;
   text-transform: uppercase;
 }
-
-.meta-fix {
-  display: inline-block;
+.meta::before, .meta::after {
+  display: block;
+  content: "";
+}
+.meta::before {
   margin-top: 0.15em;
+}
+.meta::after {
   margin-bottom: -0.1em;
 }
 
@@ -1393,7 +1370,8 @@ video {
 
 /* === List Types === */
 .list {
-  margin: 1.6rem 0 0;
+  display: inline-block;
+  margin: 1.8rem 0 0;
   max-width: 36rem;
   padding: 0;
   line-height: 1.4;
@@ -1401,6 +1379,16 @@ video {
 }
 .list:first-child {
   margin-top: 0;
+}
+.list::before, .list::after {
+  display: block;
+  content: "";
+}
+.list::before {
+  margin-top: -0.3em;
+}
+.list::after {
+  margin-bottom: -0.4em;
 }
 .list > li {
   margin: 0.8em 0 0;
@@ -1415,7 +1403,8 @@ video {
 }
 
 .ul, .transcription ul {
-  margin: 1.6rem 0 0;
+  display: inline-block;
+  margin: 1.8rem 0 0;
   max-width: 36rem;
   padding: 0;
   line-height: 1.4;
@@ -1423,6 +1412,16 @@ video {
 }
 .ul:first-child, .transcription ul:first-child {
   margin-top: 0;
+}
+.ul::before, .transcription ul::before, .ul::after, .transcription ul::after {
+  display: block;
+  content: "";
+}
+.ul::before, .transcription ul::before {
+  margin-top: -0.3em;
+}
+.ul::after, .transcription ul::after {
+  margin-bottom: -0.4em;
 }
 .ul > li, .transcription ul > li {
   position: relative;
@@ -1434,10 +1433,10 @@ video {
 }
 .ul > li:before, .transcription ul > li:before {
   position: absolute;
-  top: 0.4em;
+  top: 0.55em;
   left: 0;
-  width: 0.4em;
-  height: 0.4em;
+  width: 6px;
+  height: 6px;
   background-color: var(--accent);
   content: "";
 }
@@ -1447,7 +1446,8 @@ video {
 }
 
 .ol, .transcription ol {
-  margin: 1.6rem 0 0;
+  display: inline-block;
+  margin: 1.8rem 0 0;
   max-width: 36rem;
   padding: 0;
   line-height: 1.4;
@@ -1455,6 +1455,16 @@ video {
 }
 .ol:first-child, .transcription ol:first-child {
   margin-top: 0;
+}
+.ol::before, .transcription ol::before, .ol::after, .transcription ol::after {
+  display: block;
+  content: "";
+}
+.ol::before, .transcription ol::before {
+  margin-top: -0.3em;
+}
+.ol::after, .transcription ol::after {
+  margin-bottom: -0.4em;
 }
 .ol > li, .transcription ol > li {
   margin: 0.8em 0 0 0.8em;
@@ -1471,14 +1481,26 @@ video {
 
 /* === Blockquote === */
 .quote, .transcription blockquote {
-  margin: 1.6rem 0 0;
+  display: inline-block;
+  margin: 1.8rem 0 0;
   max-width: 36rem;
-  border-left: 0.2em solid var(--accent);
+  border-left: 4px solid var(--accent);
   padding: 0 0 0 1.2em;
+  line-height: 1.4;
   font-size: 1.2rem;
 }
 .quote:first-child, .transcription blockquote:first-child {
   margin-top: 0;
+}
+.quote::before, .transcription blockquote::before, .quote::after, .transcription blockquote::after {
+  display: block;
+  content: "";
+}
+.quote::before, .transcription blockquote::before {
+  margin-top: -0.4em;
+}
+.quote::after, .transcription blockquote::after {
+  margin-bottom: -0.5em;
 }
 
 .cite, .transcription cite {
@@ -1487,7 +1509,7 @@ video {
   max-width: 36rem;
   padding: 0;
   text-align: right;
-  line-height: 1.2rem;
+  line-height: 1.2;
   font-size: 0.8rem;
 }
 .cite:before, .transcription cite:before {
@@ -1497,8 +1519,34 @@ video {
 
 /* === Putting it all together === */
 .transcription {
-  display: block;
+  display: block !important;
 }
+.transcription h1, .transcription h2, .transcription h3, .transcription h4, .transcription h5, .transcription h6 {
+  padding-top: 2em;
+}
+.transcription h1:first-child, .transcription h2:first-child, .transcription h3:first-child, .transcription h4:first-child, .transcription h5:first-child, .transcription h6:first-child {
+  padding-top: 0;
+}
+.transcription h1 + h1, .transcription h1 + h2, .transcription h1 + h3, .transcription h1 + h4, .transcription h1 + h5, .transcription h1 + h6, .transcription h2 + h1, .transcription h2 + h2, .transcription h2 + h3, .transcription h2 + h4, .transcription h2 + h5, .transcription h2 + h6, .transcription h3 + h1, .transcription h3 + h2, .transcription h3 + h3, .transcription h3 + h4, .transcription h3 + h5, .transcription h3 + h6, .transcription h4 + h1, .transcription h4 + h2, .transcription h4 + h3, .transcription h4 + h4, .transcription h4 + h5, .transcription h4 + h6, .transcription h5 + h1, .transcription h5 + h2, .transcription h5 + h3, .transcription h5 + h4, .transcription h5 + h5, .transcription h5 + h6, .transcription h6 + h1, .transcription h6 + h2, .transcription h6 + h3, .transcription h6 + h4, .transcription h6 + h5, .transcription h6 + h6 {
+  padding-top: 0;
+  margin-top: 0.2rem;
+}
+.transcription h1 + p, .transcription h2 + p, .transcription h3 + p, .transcription h4 + p, .transcription h5 + p, .transcription h6 + p {
+  margin-top: 1rem;
+}
+.transcription hr + h1, .transcription hr + h2, .transcription hr + h3, .transcription hr + h4, .transcription hr + h5, .transcription hr + h6 {
+  padding-top: 0;
+}
+.transcription .float-right {
+  display: block;
+  max-width: 400px;
+  float: right;
+  margin-top: 2.1rem;
+  margin-left: 1.8rem;
+  margin-bottom: 1.8rem;
+  margin-right: 0;
+}
+
 /* ===== Extra Componants ===== */
 blockquote.fancy {
   margin-top: -0.36em;
@@ -1637,7 +1685,7 @@ blockquote.fancy + .accent::after {
 
 /* ===== WHITESPACE ===== */
 /* === frame === */
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .frame {
     margin-top: 64px;
     margin-bottom: 64px;
@@ -1656,7 +1704,7 @@ blockquote.fancy + .accent::after {
   }
 }
 
-@media (min-width: 480px) and (max-width: 479px) {
+@media (min-width: 480px) and (max-width: 480px) {
   .sm\:frame {
     margin-top: 64px;
     margin-bottom: 64px;
@@ -1674,7 +1722,7 @@ blockquote.fancy + .accent::after {
     margin-bottom: 96px;
   }
 }
-@media (min-width: 768px) and (max-width: 479px) {
+@media (min-width: 768px) and (max-width: 480px) {
   .md\:frame {
     margin-top: 64px;
     margin-bottom: 64px;
@@ -1692,7 +1740,7 @@ blockquote.fancy + .accent::after {
     margin-bottom: 96px;
   }
 }
-@media (min-width: 1024px) and (max-width: 479px) {
+@media (min-width: 1024px) and (max-width: 480px) {
   .lg\:frame {
     margin-top: 64px;
     margin-bottom: 64px;
@@ -1711,7 +1759,7 @@ blockquote.fancy + .accent::after {
   }
 }
 /* === trim === */
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .trim {
     padding-top: 64px;
     padding-bottom: 64px;
@@ -1730,7 +1778,7 @@ blockquote.fancy + .accent::after {
   }
 }
 
-@media (min-width: 480px) and (max-width: 479px) {
+@media (min-width: 480px) and (max-width: 480px) {
   .sm\:trim {
     padding-top: 64px;
     padding-bottom: 64px;
@@ -1748,7 +1796,7 @@ blockquote.fancy + .accent::after {
     padding-bottom: 96px;
   }
 }
-@media (min-width: 768px) and (max-width: 479px) {
+@media (min-width: 768px) and (max-width: 480px) {
   .md\:trim {
     padding-top: 64px;
     padding-bottom: 64px;
@@ -1766,7 +1814,7 @@ blockquote.fancy + .accent::after {
     padding-bottom: 96px;
   }
 }
-@media (min-width: 1024px) and (max-width: 479px) {
+@media (min-width: 1024px) and (max-width: 480px) {
   .lg\:trim {
     padding-top: 64px;
     padding-bottom: 64px;
@@ -1785,7 +1833,7 @@ blockquote.fancy + .accent::after {
   }
 }
 /* === buffer === */
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .buffer {
     margin-right: 32px;
     margin-left: 32px;
@@ -1804,7 +1852,7 @@ blockquote.fancy + .accent::after {
   }
 }
 
-@media (min-width: 480px) and (max-width: 479px) {
+@media (min-width: 480px) and (max-width: 480px) {
   .sm\:buffer {
     margin-right: 32px;
     margin-left: 32px;
@@ -1822,7 +1870,7 @@ blockquote.fancy + .accent::after {
     margin-left: 64px;
   }
 }
-@media (min-width: 768px) and (max-width: 479px) {
+@media (min-width: 768px) and (max-width: 480px) {
   .md\:buffer {
     margin-right: 32px;
     margin-left: 32px;
@@ -1840,7 +1888,7 @@ blockquote.fancy + .accent::after {
     margin-left: 64px;
   }
 }
-@media (min-width: 1024px) and (max-width: 479px) {
+@media (min-width: 1024px) and (max-width: 480px) {
   .lg\:buffer {
     margin-right: 32px;
     margin-left: 32px;
@@ -1859,7 +1907,7 @@ blockquote.fancy + .accent::after {
   }
 }
 /* === gutter === */
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   .gutter {
     padding-right: 32px;
     padding-left: 32px;
@@ -1878,7 +1926,7 @@ blockquote.fancy + .accent::after {
   }
 }
 
-@media (min-width: 480px) and (max-width: 479px) {
+@media (min-width: 480px) and (max-width: 480px) {
   .sm\:gutter {
     padding-right: 32px;
     padding-left: 32px;
@@ -1896,7 +1944,7 @@ blockquote.fancy + .accent::after {
     padding-left: 64px;
   }
 }
-@media (min-width: 768px) and (max-width: 479px) {
+@media (min-width: 768px) and (max-width: 480px) {
   .md\:gutter {
     padding-right: 32px;
     padding-left: 32px;
@@ -1914,7 +1962,7 @@ blockquote.fancy + .accent::after {
     padding-left: 64px;
   }
 }
-@media (min-width: 1024px) and (max-width: 479px) {
+@media (min-width: 1024px) and (max-width: 480px) {
   .lg\:gutter {
     padding-right: 32px;
     padding-left: 32px;
@@ -2151,34 +2199,34 @@ blockquote.fancy + .accent::after {
   }
 }
 .grout {
-  margin: -0.8rem;
+  margin: -0.9rem;
 }
 .grout .tile {
-  padding: 0.8rem;
+  padding: 0.9rem;
 }
 
 @media (min-width: 480px) {
   .sm\:grout {
-    margin: -0.8rem;
+    margin: -0.9rem;
   }
   .sm\:grout .tile {
-    padding: 0.8rem;
+    padding: 0.9rem;
   }
 }
 @media (min-width: 768px) {
   .md\:grout {
-    margin: -0.8rem;
+    margin: -0.9rem;
   }
   .md\:grout .tile {
-    padding: 0.8rem;
+    padding: 0.9rem;
   }
 }
 @media (min-width: 1024px) {
   .lg\:grout {
-    margin: -0.8rem;
+    margin: -0.9rem;
   }
   .lg\:grout .tile {
-    padding: 0.8rem;
+    padding: 0.9rem;
   }
 }
 .grout-0 {
@@ -2884,7 +2932,7 @@ blockquote.fancy + .accent::after {
 }
 .card__content {
   width: 100%;
-  padding: 1.6rem;
+  padding: 1.8rem;
 }
 .card__figure {
   width: 100%;
@@ -2917,13 +2965,13 @@ blockquote.fancy + .accent::after {
   /* === Alignment === */
 }
 .bard .bard-block {
-  margin: 1.6rem auto 0;
+  margin: 1.8rem auto 0;
   max-width: 36rem;
 }
 .bard .bard-block:first-child {
   margin-top: 0;
 }
-.bard .transcription:first-child p:first-child::first-letter {
+.bard .bard-block:first-child > p:first-child::first-letter {
   float: left;
   margin: 0;
   padding: 0.15em 0.2em 0 0;
@@ -2931,31 +2979,10 @@ blockquote.fancy + .accent::after {
   font-size: 3.3rem;
   line-height: 2rem;
 }
-.bard .blockquote {
-  padding: 1.6rem 0;
-}
-.bard h2 {
-  font-size: 2rem;
-}
-.bard h3 {
-  font-size: 1.6rem;
-}
-.bard h4, .bard h5 {
-  font-size: 1.2rem;
-  font-weight: normal;
-  letter-spacing: 2px;
-}
-.bard h5 {
-  color: var(--accent);
-}
 .bard hr {
   margin: 3.2rem auto;
   width: 28.8rem;
   max-width: 80%;
-  border-color: #eeeeee;
-}
-.bard hr + * {
-  margin-top: 0;
 }
 .bard figure,
 .bard figcaption {
@@ -2963,7 +2990,7 @@ blockquote.fancy + .accent::after {
   margin: 0 auto;
 }
 .bard figure {
-  margin: 1.6rem auto 0;
+  margin: 1.8rem auto 0;
 }
 .bard figure:first-child {
   margin-top: 0;
@@ -2985,8 +3012,8 @@ blockquote.fancy + .accent::after {
 }
 .bard .align-full,
 .bard .align-wide {
-  margin-top: 1.6rem;
-  margin-bottom: 1.6rem;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
 }
 .bard .align-left,
 .bard .align-right {
@@ -3018,11 +3045,11 @@ blockquote.fancy + .accent::after {
 }
 .bard .align-left {
   float: left;
-  margin-right: 1.6rem;
+  margin-right: 1.8rem;
 }
 .bard .align-right {
   float: right;
-  margin-left: 1.6rem;
+  margin-left: 1.8rem;
 }
 @media (max-width: 767px) {
   .bard .align-left,
@@ -4626,7 +4653,7 @@ blockquote.fancy + .accent::after {
 /* === PADDING === */
 /* surrounding */
 .pad {
-  padding: 1.6rem;
+  padding: 1.8rem;
 }
 
 .pad-0 {
@@ -4663,8 +4690,8 @@ blockquote.fancy + .accent::after {
 
 /* vertical */
 .pad-v {
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
 }
 
 .pad-v-0 {
@@ -4709,8 +4736,8 @@ blockquote.fancy + .accent::after {
 
 /* horizontal */
 .pad-h {
-  padding-right: 1.6rem;
-  padding-left: 1.6rem;
+  padding-right: 1.8rem;
+  padding-left: 1.8rem;
 }
 
 .pad-h-0 {
@@ -4755,7 +4782,7 @@ blockquote.fancy + .accent::after {
 
 /* top */
 .pad-t {
-  padding-top: 1.6rem;
+  padding-top: 1.8rem;
 }
 
 .pad-t-0 {
@@ -4792,7 +4819,7 @@ blockquote.fancy + .accent::after {
 
 /* right */
 .pad-r {
-  padding-right: 1.6rem;
+  padding-right: 1.8rem;
 }
 
 .pad-r-0 {
@@ -4829,7 +4856,7 @@ blockquote.fancy + .accent::after {
 
 /* bottom */
 .pad-b {
-  padding-bottom: 1.6rem;
+  padding-bottom: 1.8rem;
 }
 
 .pad-b-0 {
@@ -4866,7 +4893,7 @@ blockquote.fancy + .accent::after {
 
 /* left */
 .pad-l {
-  padding-left: 1.6rem;
+  padding-left: 1.8rem;
 }
 
 .pad-l-0 {
@@ -4904,7 +4931,7 @@ blockquote.fancy + .accent::after {
 /* padding breakpoints */
 @media (min-width: 480px) {
   .sm\:pad {
-    padding: 1.6rem;
+    padding: 1.8rem;
   }
   .sm\:pad-0 {
     padding: 0;
@@ -4931,8 +4958,8 @@ blockquote.fancy + .accent::after {
     padding: 6.4rem;
   }
   .sm\:pad-v {
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
   }
   .sm\:pad-v-0 {
     padding-top: 0;
@@ -4967,8 +4994,8 @@ blockquote.fancy + .accent::after {
     padding-bottom: 6.4rem;
   }
   .sm\:pad-h {
-    padding-right: 1.6rem;
-    padding-left: 1.6rem;
+    padding-right: 1.8rem;
+    padding-left: 1.8rem;
   }
   .sm\:pad-h-0 {
     padding-right: 0;
@@ -5003,7 +5030,7 @@ blockquote.fancy + .accent::after {
     padding-left: 6.4rem;
   }
   .sm\:pad-t {
-    padding-top: 1.6rem;
+    padding-top: 1.8rem;
   }
   .sm\:pad-t-0 {
     padding-top: 0;
@@ -5030,7 +5057,7 @@ blockquote.fancy + .accent::after {
     padding-top: 6.4rem;
   }
   .sm\:pad-r {
-    padding-right: 1.6rem;
+    padding-right: 1.8rem;
   }
   .sm\:pad-r-0 {
     padding-right: 0;
@@ -5057,7 +5084,7 @@ blockquote.fancy + .accent::after {
     padding-right: 6.4rem;
   }
   .sm\:pad-b {
-    padding-bottom: 1.6rem;
+    padding-bottom: 1.8rem;
   }
   .sm\:pad-b-0 {
     padding-bottom: 0;
@@ -5084,7 +5111,7 @@ blockquote.fancy + .accent::after {
     padding-bottom: 6.4rem;
   }
   .sm\:pad-l {
-    padding-left: 1.6rem;
+    padding-left: 1.8rem;
   }
   .sm\:pad-l-0 {
     padding-left: 0;
@@ -5113,7 +5140,7 @@ blockquote.fancy + .accent::after {
 }
 @media (min-width: 768px) {
   .md\:pad {
-    padding: 1.6rem;
+    padding: 1.8rem;
   }
   .md\:pad-0 {
     padding: 0;
@@ -5140,8 +5167,8 @@ blockquote.fancy + .accent::after {
     padding: 6.4rem;
   }
   .md\:pad-v {
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
   }
   .md\:pad-v-0 {
     padding-top: 0;
@@ -5176,8 +5203,8 @@ blockquote.fancy + .accent::after {
     padding-bottom: 6.4rem;
   }
   .md\:pad-h {
-    padding-right: 1.6rem;
-    padding-left: 1.6rem;
+    padding-right: 1.8rem;
+    padding-left: 1.8rem;
   }
   .md\:pad-h-0 {
     padding-right: 0;
@@ -5212,7 +5239,7 @@ blockquote.fancy + .accent::after {
     padding-left: 6.4rem;
   }
   .md\:pad-t {
-    padding-top: 1.6rem;
+    padding-top: 1.8rem;
   }
   .md\:pad-t-0 {
     padding-top: 0;
@@ -5239,7 +5266,7 @@ blockquote.fancy + .accent::after {
     padding-top: 6.4rem;
   }
   .md\:pad-r {
-    padding-right: 1.6rem;
+    padding-right: 1.8rem;
   }
   .md\:pad-r-0 {
     padding-right: 0;
@@ -5266,7 +5293,7 @@ blockquote.fancy + .accent::after {
     padding-right: 6.4rem;
   }
   .md\:pad-b {
-    padding-bottom: 1.6rem;
+    padding-bottom: 1.8rem;
   }
   .md\:pad-b-0 {
     padding-bottom: 0;
@@ -5293,7 +5320,7 @@ blockquote.fancy + .accent::after {
     padding-bottom: 6.4rem;
   }
   .md\:pad-l {
-    padding-left: 1.6rem;
+    padding-left: 1.8rem;
   }
   .md\:pad-l-0 {
     padding-left: 0;
@@ -5322,7 +5349,7 @@ blockquote.fancy + .accent::after {
 }
 @media (min-width: 1024px) {
   .lg\:pad {
-    padding: 1.6rem;
+    padding: 1.8rem;
   }
   .lg\:pad-0 {
     padding: 0;
@@ -5349,8 +5376,8 @@ blockquote.fancy + .accent::after {
     padding: 6.4rem;
   }
   .lg\:pad-v {
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
   }
   .lg\:pad-v-0 {
     padding-top: 0;
@@ -5385,8 +5412,8 @@ blockquote.fancy + .accent::after {
     padding-bottom: 6.4rem;
   }
   .lg\:pad-h {
-    padding-right: 1.6rem;
-    padding-left: 1.6rem;
+    padding-right: 1.8rem;
+    padding-left: 1.8rem;
   }
   .lg\:pad-h-0 {
     padding-right: 0;
@@ -5421,7 +5448,7 @@ blockquote.fancy + .accent::after {
     padding-left: 6.4rem;
   }
   .lg\:pad-t {
-    padding-top: 1.6rem;
+    padding-top: 1.8rem;
   }
   .lg\:pad-t-0 {
     padding-top: 0;
@@ -5448,7 +5475,7 @@ blockquote.fancy + .accent::after {
     padding-top: 6.4rem;
   }
   .lg\:pad-r {
-    padding-right: 1.6rem;
+    padding-right: 1.8rem;
   }
   .lg\:pad-r-0 {
     padding-right: 0;
@@ -5475,7 +5502,7 @@ blockquote.fancy + .accent::after {
     padding-right: 6.4rem;
   }
   .lg\:pad-b {
-    padding-bottom: 1.6rem;
+    padding-bottom: 1.8rem;
   }
   .lg\:pad-b-0 {
     padding-bottom: 0;
@@ -5502,7 +5529,7 @@ blockquote.fancy + .accent::after {
     padding-bottom: 6.4rem;
   }
   .lg\:pad-l {
-    padding-left: 1.6rem;
+    padding-left: 1.8rem;
   }
   .lg\:pad-l-0 {
     padding-left: 0;
@@ -5532,7 +5559,7 @@ blockquote.fancy + .accent::after {
 /* === MARGIN === */
 /* surrounding */
 .mar {
-  margin: 1.6rem;
+  margin: 1.8rem;
 }
 
 .mar-0 {
@@ -5573,7 +5600,7 @@ blockquote.fancy + .accent::after {
 
 /* top */
 .mar-t {
-  margin-top: 1.6rem;
+  margin-top: 1.8rem;
 }
 
 .mar-t-0 {
@@ -5614,7 +5641,7 @@ blockquote.fancy + .accent::after {
 
 /* right */
 .mar-r {
-  margin-right: 1.6rem;
+  margin-right: 1.8rem;
 }
 
 .mar-r-0 {
@@ -5655,7 +5682,7 @@ blockquote.fancy + .accent::after {
 
 /* bottom */
 .mar-b {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.8rem;
 }
 
 .mar-b-0 {
@@ -5696,7 +5723,7 @@ blockquote.fancy + .accent::after {
 
 /* left */
 .mar-l {
-  margin-left: 1.6rem;
+  margin-left: 1.8rem;
 }
 
 .mar-l-0 {
@@ -5738,7 +5765,7 @@ blockquote.fancy + .accent::after {
 /* margin breakpoints */
 @media (min-width: 480px) {
   .sm\:mar {
-    margin: 1.6rem;
+    margin: 1.8rem;
   }
   .sm\:mar-0 {
     margin: 0;
@@ -5768,7 +5795,7 @@ blockquote.fancy + .accent::after {
     margin: auto;
   }
   .sm\:mar-t {
-    margin-top: 1.6rem;
+    margin-top: 1.8rem;
   }
   .sm\:mar-t-0 {
     margin-top: 0;
@@ -5798,7 +5825,7 @@ blockquote.fancy + .accent::after {
     margin-top: auto;
   }
   .sm\:mar-r {
-    margin-right: 1.6rem;
+    margin-right: 1.8rem;
   }
   .sm\:mar-r-0 {
     margin-right: 0;
@@ -5828,7 +5855,7 @@ blockquote.fancy + .accent::after {
     margin-right: auto;
   }
   .sm\:mar-b {
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.8rem;
   }
   .sm\:mar-b-0 {
     margin-bottom: 0;
@@ -5858,7 +5885,7 @@ blockquote.fancy + .accent::after {
     margin-bottom: auto;
   }
   .sm\:mar-l {
-    margin-left: 1.6rem;
+    margin-left: 1.8rem;
   }
   .sm\:mar-l-0 {
     margin-left: 0;
@@ -5890,7 +5917,7 @@ blockquote.fancy + .accent::after {
 }
 @media (min-width: 768px) {
   .md\:mar {
-    margin: 1.6rem;
+    margin: 1.8rem;
   }
   .md\:mar-0 {
     margin: 0;
@@ -5920,7 +5947,7 @@ blockquote.fancy + .accent::after {
     margin: auto;
   }
   .md\:mar-t {
-    margin-top: 1.6rem;
+    margin-top: 1.8rem;
   }
   .md\:mar-t-0 {
     margin-top: 0;
@@ -5950,7 +5977,7 @@ blockquote.fancy + .accent::after {
     margin-top: auto;
   }
   .md\:mar-r {
-    margin-right: 1.6rem;
+    margin-right: 1.8rem;
   }
   .md\:mar-r-0 {
     margin-right: 0;
@@ -5980,7 +6007,7 @@ blockquote.fancy + .accent::after {
     margin-right: auto;
   }
   .md\:mar-b {
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.8rem;
   }
   .md\:mar-b-0 {
     margin-bottom: 0;
@@ -6010,7 +6037,7 @@ blockquote.fancy + .accent::after {
     margin-bottom: auto;
   }
   .md\:mar-l {
-    margin-left: 1.6rem;
+    margin-left: 1.8rem;
   }
   .md\:mar-l-0 {
     margin-left: 0;
@@ -6042,7 +6069,7 @@ blockquote.fancy + .accent::after {
 }
 @media (min-width: 1024px) {
   .lg\:mar {
-    margin: 1.6rem;
+    margin: 1.8rem;
   }
   .lg\:mar-0 {
     margin: 0;
@@ -6072,7 +6099,7 @@ blockquote.fancy + .accent::after {
     margin: auto;
   }
   .lg\:mar-t {
-    margin-top: 1.6rem;
+    margin-top: 1.8rem;
   }
   .lg\:mar-t-0 {
     margin-top: 0;
@@ -6102,7 +6129,7 @@ blockquote.fancy + .accent::after {
     margin-top: auto;
   }
   .lg\:mar-r {
-    margin-right: 1.6rem;
+    margin-right: 1.8rem;
   }
   .lg\:mar-r-0 {
     margin-right: 0;
@@ -6132,7 +6159,7 @@ blockquote.fancy + .accent::after {
     margin-right: auto;
   }
   .lg\:mar-b {
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.8rem;
   }
   .lg\:mar-b-0 {
     margin-bottom: 0;
@@ -6162,7 +6189,7 @@ blockquote.fancy + .accent::after {
     margin-bottom: auto;
   }
   .lg\:mar-l {
-    margin-left: 1.6rem;
+    margin-left: 1.8rem;
   }
   .lg\:mar-l-0 {
     margin-left: 0;
