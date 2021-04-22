@@ -11,11 +11,46 @@
 
 
 
+// Line height fix
+@mixin line_height_fix( $top, $bottom ) {
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+  }
+
+  &::before {
+    margin-top: $top;
+  }
+  &::after {
+    margin-bottom: $bottom;
+  }
+}
+
+@mixin heading_120_fix {
+  @include line_height_fix( -0.25em, -0.2em );
+}
+
+@mixin copy_140_fix {
+  @include line_height_fix( -0.3em, -0.4em );
+}
+
+@mixin copy_160_fix {
+  @include line_height_fix( -0.4em, -0.5em );
+}
+
+@mixin meta_100_fix {
+  @include line_height_fix( 0.15em, -0.1em );
+}
+
+
+
 /* === Headings === */
 
 // Padding top is used so if you want to link to a heading there will be space above it
 @mixin heading( $size: inherit, $color: inherit ) {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   line-height: 1.2;
   font-size: $size;
@@ -295,27 +330,26 @@
   display: block !important;
 
   h1, h2, h3, h4, h5, h6 {
-    padding-top: 2em;
+    margin-top: 2em;
 
     &:first-child {
-      padding-top: 0;
+      margin-top: 0;
+    }
+
+    & + p {
+      margin-top: 0.6rem;
     }
 
     + {
       h1, h2, h3, h4, h5, h6 {
-        padding-top: 0;
-        margin-top: 0.2rem;
+        margin: 0.4em 0;
       }
-    }
-
-    & + p {
-      margin-top: 1rem;
     }
   }
 
   hr + {
     h1, h2, h3, h4, h5, h6 {
-      padding-top: 0;
+      margin-top: 0;
     }
   }
 
@@ -345,10 +379,6 @@
 
   p {
     @extend .copy;
-  }
-
-  label {
-    @extend .label;
   }
 
   a {

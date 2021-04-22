@@ -21,6 +21,14 @@
   --heading-color-alt: #ff4000;
   --link-color: var(--accent);
   --link-hover: #0080ff;
+  --space: 1.8rem;
+}
+
+.light-theme {
+  --background: #ffffff;
+  --contrast: #f8f8f8;
+  --text-color: #333333;
+  --border-color: #e0e0e0;
 }
 
 /* ==========================================================================
@@ -1103,7 +1111,8 @@ video {
 */
 /* === Headings === */
 .heading {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   line-height: 1.2;
   font-size: inherit;
@@ -1123,7 +1132,8 @@ video {
 }
 
 .h1, .transcription h1 {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   line-height: 1.2;
   font-size: 3.6rem;
@@ -1143,7 +1153,8 @@ video {
 }
 
 .h2, .transcription h2 {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   line-height: 1.2;
   font-size: 2.4rem;
@@ -1163,7 +1174,8 @@ video {
 }
 
 .h3, .transcription h3 {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   line-height: 1.2;
   font-size: 2rem;
@@ -1183,7 +1195,8 @@ video {
 }
 
 .h4, .transcription h4 {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   line-height: 1.2;
   font-size: 1.6rem;
@@ -1203,7 +1216,8 @@ video {
 }
 
 .h5, .transcription h5 {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   line-height: 1.2;
   font-size: 1.6rem;
@@ -1223,7 +1237,8 @@ video {
 }
 
 .h6, .transcription h6 {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   line-height: 1.2;
   font-size: 1.6rem;
@@ -1243,7 +1258,8 @@ video {
 }
 
 .subheading {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   line-height: 1.2;
   font-size: 1.2rem;
@@ -1276,7 +1292,7 @@ video {
   margin-top: 0;
 }
 
-.label, .transcription label {
+.label {
   text-transform: uppercase;
   font-family: "Overpass Mono", monospace;
 }
@@ -1522,20 +1538,19 @@ video {
   display: block !important;
 }
 .transcription h1, .transcription h2, .transcription h3, .transcription h4, .transcription h5, .transcription h6 {
-  padding-top: 2em;
+  margin-top: 2em;
 }
 .transcription h1:first-child, .transcription h2:first-child, .transcription h3:first-child, .transcription h4:first-child, .transcription h5:first-child, .transcription h6:first-child {
-  padding-top: 0;
-}
-.transcription h1 + h1, .transcription h1 + h2, .transcription h1 + h3, .transcription h1 + h4, .transcription h1 + h5, .transcription h1 + h6, .transcription h2 + h1, .transcription h2 + h2, .transcription h2 + h3, .transcription h2 + h4, .transcription h2 + h5, .transcription h2 + h6, .transcription h3 + h1, .transcription h3 + h2, .transcription h3 + h3, .transcription h3 + h4, .transcription h3 + h5, .transcription h3 + h6, .transcription h4 + h1, .transcription h4 + h2, .transcription h4 + h3, .transcription h4 + h4, .transcription h4 + h5, .transcription h4 + h6, .transcription h5 + h1, .transcription h5 + h2, .transcription h5 + h3, .transcription h5 + h4, .transcription h5 + h5, .transcription h5 + h6, .transcription h6 + h1, .transcription h6 + h2, .transcription h6 + h3, .transcription h6 + h4, .transcription h6 + h5, .transcription h6 + h6 {
-  padding-top: 0;
-  margin-top: 0.2rem;
+  margin-top: 0;
 }
 .transcription h1 + p, .transcription h2 + p, .transcription h3 + p, .transcription h4 + p, .transcription h5 + p, .transcription h6 + p {
-  margin-top: 1rem;
+  margin-top: 0.6rem;
+}
+.transcription h1 + h1, .transcription h1 + h2, .transcription h1 + h3, .transcription h1 + h4, .transcription h1 + h5, .transcription h1 + h6, .transcription h2 + h1, .transcription h2 + h2, .transcription h2 + h3, .transcription h2 + h4, .transcription h2 + h5, .transcription h2 + h6, .transcription h3 + h1, .transcription h3 + h2, .transcription h3 + h3, .transcription h3 + h4, .transcription h3 + h5, .transcription h3 + h6, .transcription h4 + h1, .transcription h4 + h2, .transcription h4 + h3, .transcription h4 + h4, .transcription h4 + h5, .transcription h4 + h6, .transcription h5 + h1, .transcription h5 + h2, .transcription h5 + h3, .transcription h5 + h4, .transcription h5 + h5, .transcription h5 + h6, .transcription h6 + h1, .transcription h6 + h2, .transcription h6 + h3, .transcription h6 + h4, .transcription h6 + h5, .transcription h6 + h6 {
+  margin: 0.4em 0;
 }
 .transcription hr + h1, .transcription hr + h2, .transcription hr + h3, .transcription hr + h4, .transcription hr + h5, .transcription hr + h6 {
-  padding-top: 0;
+  margin-top: 0;
 }
 .transcription .float-right {
   display: block;

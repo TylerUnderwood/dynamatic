@@ -62,20 +62,6 @@ $light_400:         #f0f0f0;
 $light_600:         #e8e8e8;
 $light_800:         #e0e0e0;
 
-:root {
-  --background:        #{$dark_100};
-  --contrast:          #{$dark_200};
-  --primary:           #{$fuchsia};
-  --accent:            #{$sea_foam};
-  --border-color:      #{$dark_800};
-  --text-color:        #{$light};
-  --text-color-off:    #{$grey};
-  --heading-color:     var(--primary);
-  --heading-color-alt: #{$lava_orange};
-  --link-color:        var(--accent);
-  --link-hover:        #{$azure};
-}
-
 // Branding
 $primary:           var(--primary);
 $accent:            var(--accent);
@@ -131,38 +117,6 @@ $meta_font:         $overpass_mono;
 // FONT SIZE
 $font_min:          16px;
 $font_max:          20px;
-
-// Line height fix
-@mixin line_height_fix( $top, $bottom ) {
-  &::before,
-  &::after {
-    display: block;
-    content: "";
-  }
-
-  &::before {
-    margin-top: $top;
-  }
-  &::after {
-    margin-bottom: $bottom;
-  }
-}
-
-@mixin heading_120_fix {
-  @include line_height_fix( -0.25em, -0.2em );
-}
-
-@mixin copy_140_fix {
-  @include line_height_fix( -0.3em, -0.4em );
-}
-
-@mixin copy_160_fix {
-  @include line_height_fix( -0.4em, -0.5em );
-}
-
-@mixin meta_100_fix {
-  @include line_height_fix( 0.15em, -0.1em );
-}
 
 
 
@@ -263,6 +217,7 @@ $vert_space_min:    64px;
 $vert_space_max:    96px;
 
 // default
+// $space:             var(--space);
 $space:             1.8rem;
 
 // utility
@@ -277,3 +232,27 @@ $spacing: (
   6:                3.2rem,
   7:                6.4rem,
 );
+
+
+
+:root {
+  --background:        #{$dark_100};
+  --contrast:          #{$dark_200};
+  --primary:           #{$fuchsia};
+  --accent:            #{$sea_foam};
+  --border-color:      #{$dark_800};
+  --text-color:        #{$light};
+  --text-color-off:    #{$grey};
+  --heading-color:     var(--primary);
+  --heading-color-alt: #{$lava_orange};
+  --link-color:        var(--accent);
+  --link-hover:        #{$azure};
+  --space:             1.8rem;
+}
+
+.light-theme {
+  --background:        #{$light_100};
+  --contrast:          #{$light_200};
+  --text-color:        #{$dark};
+  --border-color:      #{$light_800};
+}
