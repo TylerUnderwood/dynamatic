@@ -6,8 +6,8 @@
 
 /* ===== VARIABLES ===== */
 
-$menu_bg: $contrast;
-$menu_color: $white;
+$menu_bg: $dark_200;
+$menu_color: $text_color;
 $menu_time: 240ms;
 
 // this is the space between the nav items and the top and bottom when the height is smaller than the nav
@@ -33,6 +33,7 @@ $menu_buffer: 1em;
   padding-top: $header_height;
   line-height: 1;
   font-size: 2.4rem;
+  transform-origin: bottom left;
 
   // These ::before and ::afters are for fading the nav items
   // top and bottom as you scroll through them.
@@ -81,16 +82,12 @@ $menu_buffer: 1em;
     display: flex;
     flex-flow: column;
     align-items: flex-start;
-    margin: -0.8rem;
+    margin: -0.4em;
   }
 
   &__link {
     display: inline-flex;
-    padding: 0.8rem;
-    text-transform: capitalize;
-    font-family: $heading_font;
-    font-weight: normal;
-    color: $menu_color;
+    padding: 0.4em;
 
     .icon {
       &:first-child {
@@ -106,7 +103,7 @@ $menu_buffer: 1em;
   @keyframes open_menu {
     from {
       opacity: 0;
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
     to {
       opacity: 1;
@@ -121,7 +118,7 @@ $menu_buffer: 1em;
     }
     to {
       opacity: 0;
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
   }
 
@@ -198,7 +195,6 @@ $menu_buffer: 1em;
   &[data-state="active"],
   &[data-state="enter"] {
     visibility: visible;
-    color: $white;
 
     #{$self}__bar {
       visibility: visible;

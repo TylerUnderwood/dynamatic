@@ -7,7 +7,7 @@
 /* ===== VARIABLES ===== */
 
 $header_padding: 1rem;
-$header_logo_height: 5rem;
+$header_logo_height: 4rem;
 $header_height: $header_padding + $header_logo_height;
 
 
@@ -31,6 +31,7 @@ $header_height: $header_padding + $header_logo_height;
     position: relative;
     z-index: 3;
     margin: -1.2rem 0;
+    height: $header_logo_height;
     color: $white;
   }
 
@@ -38,16 +39,6 @@ $header_height: $header_padding + $header_logo_height;
     position: relative;
     z-index: 1;
     display: flex;
-  
-    .link {
-      color: inherit;
-      transition: color 300ms ease-in-out;
-  
-      &:hover,
-      &:active {
-        color: $link_hover;
-      }
-    }
   }
 
   .menu-button {
@@ -55,13 +46,13 @@ $header_height: $header_padding + $header_logo_height;
     z-index: 99;
   }
 
-  @include below( lg ) {
+  @include below( md ) {
     &__nav {
       display: none;
     }
   }
 
-  @include above( lg ) {
+  @include above( md ) {
     .menu-button {
       display: none;
     }

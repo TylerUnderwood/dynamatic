@@ -26,6 +26,7 @@ $btn_slim_height: 1.6em;
   justify-content: center;
   align-items: center;
   flex: 0 0 auto;
+  outline: none;
   border: 2px solid $link_color;
   border-radius: $round;
   min-width: 8em;
@@ -34,8 +35,10 @@ $btn_slim_height: 1.6em;
   padding: 0.6em 1.4em;
   letter-spacing: 2px;
   line-height: 1;
+  vertical-align: middle;
   font-family: $meta_font;
   font-weight: bold;
+  font-size: inherit;
   color: $background;
   text-align: center;
   text-decoration: none;
@@ -47,6 +50,13 @@ $btn_slim_height: 1.6em;
   user-select: none;
   cursor: pointer;
 
+  // active first so :hover overrides it
+  &[active] {
+    border-color: $link_active;
+    background-color: $link_active;
+    color: $background;
+  }
+
   &:hover,
   &:focus {
     outline: none;
@@ -55,16 +65,13 @@ $btn_slim_height: 1.6em;
     color: $background;
   }
 
+  // disabled last so it overrides all
   &[disabled] {
-    opacity: 0.8;
+    border-color: $link_color;
+    background-color: $link_color;
+    color: $background;
+    opacity: 0.5;
     cursor: not-allowed;
-
-    &:hover,
-    &:focus {
-      border-color: $link_color;
-      background-color: $link_color;
-      color: $background;
-    }
   }
 
   // === button components === //
@@ -74,7 +81,9 @@ $btn_slim_height: 1.6em;
   }
 
   &__icon {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     max-width: 1em;
     max-height: 1em;
   }
@@ -86,12 +95,24 @@ $btn_slim_height: 1.6em;
     border-color: $link_color;
     background: transparent;
     color: $link_color;
+
+    &[active] {
+      border-color: $link_active;
+      background-color: transparent;
+      color: $link_active;
+    }
     
     &:hover,
     &:focus {
       border-color: $link_hover;
       background-color: transparent;
       color: $link_hover;
+    }
+
+    &[disabled] {
+      border-color: $link_color;
+      background-color: transparent;
+      color: $link_color;
     }
 
     #{$self}__text {
@@ -157,7 +178,7 @@ $btn_slim_height: 1.6em;
   // square //
   &--square {
     min-width: unset;
-    padding: 0.2em;
+    padding: 0;
     width: $btn_height;
     height: $btn_height;
 

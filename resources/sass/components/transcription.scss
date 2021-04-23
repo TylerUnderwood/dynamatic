@@ -157,30 +157,25 @@
   vertical-align: baseline;
 }
 
-.icon {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1em;
-  max-height: 1em;
-
-  svg {
-    max-width: inherit;
-    max-height: inherit;
-  }
-}
-
 /* === Anchor Tags === */
 
 .link {
   color: $link_color;
-  transition: color 200ms ease-in-out;
+  transition: color 300ms ease;
   cursor: pointer;
+  
+  &[active] {
+    color: $link_active;
+  }
 
   &:hover,
   &:focus {
     color: $link_hover;
   }
+}
+
+.stealth-link {
+  color: inherit;
 }
 
 .hyperlink {
@@ -189,9 +184,15 @@
                     linear-gradient(transparent calc(100% - 0.2em), $link_color 0);
   background-size: 0 100%, 100% 100%;
   color: inherit;
-  transition: background 200ms ease-in-out;
+  transition: background 300ms ease;
+  
+  &[active] {
+    background-image: linear-gradient(transparent calc(100% - 0.2em), $link_hover 0),
+                      linear-gradient(transparent calc(100% - 0.2em), $link_active 0);
+  }
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: inherit;
     background-size: 100% 100%, 100% 100%;
   }

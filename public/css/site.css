@@ -21,6 +21,7 @@
   --heading-color-alt: #ff4000;
   --link-color: var(--accent);
   --link-hover: #0080ff;
+  --link-active: #c000ff;
   --space: 1.8rem;
 }
 
@@ -650,6 +651,7 @@ button {
   justify-content: center;
   align-items: center;
   flex: 0 0 auto;
+  outline: none;
   border: 2px solid var(--link-color);
   border-radius: 2px;
   min-width: 8em;
@@ -658,8 +660,10 @@ button {
   padding: 0.6em 1.4em;
   letter-spacing: 2px;
   line-height: 1;
+  vertical-align: middle;
   font-family: "Overpass Mono", monospace;
   font-weight: bold;
+  font-size: inherit;
   color: var(--background);
   text-align: center;
   text-decoration: none;
@@ -672,6 +676,11 @@ button {
           user-select: none;
   cursor: pointer;
 }
+.btn[active] {
+  border-color: var(--link-active);
+  background-color: var(--link-active);
+  color: var(--background);
+}
 .btn:hover, .btn:focus {
   outline: none;
   border-color: var(--link-hover);
@@ -679,20 +688,20 @@ button {
   color: var(--background);
 }
 .btn[disabled] {
-  opacity: 0.8;
-  cursor: not-allowed;
-}
-.btn[disabled]:hover, .btn[disabled]:focus {
   border-color: var(--link-color);
   background-color: var(--link-color);
   color: var(--background);
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 .btn__text {
   display: inline-block;
   font-size: 0.8em;
 }
 .btn__icon {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   max-width: 1em;
   max-height: 1em;
 }
@@ -701,10 +710,20 @@ button {
   background: transparent;
   color: var(--link-color);
 }
+.btn--border[active] {
+  border-color: var(--link-active);
+  background-color: transparent;
+  color: var(--link-active);
+}
 .btn--border:hover, .btn--border:focus {
   border-color: var(--link-hover);
   background-color: transparent;
   color: var(--link-hover);
+}
+.btn--border[disabled] {
+  border-color: var(--link-color);
+  background-color: transparent;
+  color: var(--link-color);
 }
 .btn--border .btn__text {
   font-size: 0.7em;
@@ -750,7 +769,7 @@ button {
 }
 .btn--square {
   min-width: unset;
-  padding: 0.2em;
+  padding: 0;
   width: 2.2em;
   height: 2.2em;
 }
@@ -789,6 +808,26 @@ video {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1em;
+  max-height: 1em;
+}
+.icon svg {
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.fa {
+  display: block;
+}
+
+.fa-plus {
+  margin: 0.1em 0 0 0.1em;
 }
 
 /*
@@ -1350,26 +1389,21 @@ video {
   vertical-align: baseline;
 }
 
-.icon {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1em;
-  max-height: 1em;
-}
-.icon svg {
-  max-width: inherit;
-  max-height: inherit;
-}
-
 /* === Anchor Tags === */
 .link {
   color: var(--link-color);
-  transition: color 200ms ease-in-out;
+  transition: color 300ms ease;
   cursor: pointer;
+}
+.link[active] {
+  color: var(--link-active);
 }
 .link:hover, .link:focus {
   color: var(--link-hover);
+}
+
+.stealth-link {
+  color: inherit;
 }
 
 .hyperlink, .transcription a {
@@ -1377,9 +1411,12 @@ video {
   background-image: linear-gradient(transparent calc(100% - 0.2em), var(--link-hover) 0), linear-gradient(transparent calc(100% - 0.2em), var(--link-color) 0);
   background-size: 0 100%, 100% 100%;
   color: inherit;
-  transition: background 200ms ease-in-out;
+  transition: background 300ms ease;
 }
-.hyperlink:hover, .transcription a:hover {
+.hyperlink[active], .transcription a[active] {
+  background-image: linear-gradient(transparent calc(100% - 0.2em), var(--link-hover) 0), linear-gradient(transparent calc(100% - 0.2em), var(--link-active) 0);
+}
+.hyperlink:hover, .transcription a:hover, .hyperlink:focus, .transcription a:focus {
   color: inherit;
   background-size: 100% 100%, 100% 100%;
 }
@@ -2568,6 +2605,7 @@ blockquote.fancy + .accent::after {
   position: relative;
   z-index: 3;
   margin: -1.2rem 0;
+  height: 4rem;
   color: #ffffff;
 }
 .header__nav {
@@ -2575,23 +2613,16 @@ blockquote.fancy + .accent::after {
   z-index: 1;
   display: flex;
 }
-.header__nav .link {
-  color: inherit;
-  transition: color 300ms ease-in-out;
-}
-.header__nav .link:hover, .header__nav .link:active {
-  color: var(--link-hover);
-}
 .header .menu-button {
   position: relative;
   z-index: 99;
 }
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   .header__nav {
     display: none;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .header .menu-button {
     display: none;
   }
@@ -2603,7 +2634,7 @@ blockquote.fancy + .accent::after {
   flex-flow: row nowrap;
   align-items: center;
   width: auto;
-  height: 5rem;
+  height: 4rem;
 }
 .logo svg {
   width: 100%;
@@ -2628,11 +2659,12 @@ blockquote.fancy + .accent::after {
   flex-flow: column;
   width: 100vw;
   height: 100vh;
-  background-color: var(--contrast);
+  background-color: #202228;
   padding: 0 1rem;
-  padding-top: 6rem;
+  padding-top: 5rem;
   line-height: 1;
   font-size: 2.4rem;
+  transform-origin: bottom left;
   /* === NAVIGATION LINKS === */
 }
 .menu:before, .menu:after {
@@ -2644,12 +2676,12 @@ blockquote.fancy + .accent::after {
   content: "";
 }
 .menu:before {
-  top: 6rem;
-  background: linear-gradient(rgba(var(--contrast), 1) 0%, rgba(var(--contrast), 0) 100%);
+  top: 5rem;
+  background: linear-gradient(#202228 0%, rgba(32, 34, 40, 0) 100%);
 }
 .menu:after {
   bottom: 0;
-  background: linear-gradient(rgba(var(--contrast), 0) 0%, rgba(var(--contrast), 1) 100%);
+  background: linear-gradient(rgba(32, 34, 40, 0) 0%, #202228 100%);
 }
 .menu__inner {
   position: relative;
@@ -2669,15 +2701,11 @@ blockquote.fancy + .accent::after {
   display: flex;
   flex-flow: column;
   align-items: flex-start;
-  margin: -0.8rem;
+  margin: -0.4em;
 }
 .menu__link {
   display: inline-flex;
-  padding: 0.8rem;
-  text-transform: capitalize;
-  font-family: "Kanit", Times, serif;
-  font-weight: normal;
-  color: #ffffff;
+  padding: 0.4em;
 }
 .menu__link .icon:first-child {
   margin-right: 0.5em;
@@ -2688,7 +2716,7 @@ blockquote.fancy + .accent::after {
 @-webkit-keyframes open_menu {
   from {
     opacity: 0;
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
   to {
     opacity: 1;
@@ -2698,7 +2726,7 @@ blockquote.fancy + .accent::after {
 @keyframes open_menu {
   from {
     opacity: 0;
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
   to {
     opacity: 1;
@@ -2712,7 +2740,7 @@ blockquote.fancy + .accent::after {
   }
   to {
     opacity: 0;
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 }
 @keyframes close_menu {
@@ -2722,7 +2750,7 @@ blockquote.fancy + .accent::after {
   }
   to {
     opacity: 0;
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 }
 .menu[data-state=active] {
@@ -2784,7 +2812,6 @@ blockquote.fancy + .accent::after {
 }
 .menu-button[data-state=active], .menu-button[data-state=enter] {
   visibility: visible;
-  color: #ffffff;
 }
 .menu-button[data-state=active] .menu-button__bar, .menu-button[data-state=enter] .menu-button__bar {
   visibility: visible;
@@ -3608,20 +3635,24 @@ blockquote.fancy + .accent::after {
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 /* === text === */
-.dark {
-  color: #333333;
-}
-
-.light {
-  color: var(--text-color-off);
-}
-
 .white {
   color: #ffffff;
 }
 
+.text-dark {
+  color: #333333;
+}
+
+.text-light {
+  color: #eeeeee;
+}
+
 .text-color {
   color: var(--text-color);
+}
+
+.text-color-off {
+  color: var(--text-color-off);
 }
 
 .heading-color {
@@ -4396,6 +4427,10 @@ blockquote.fancy + .accent::after {
 | UTILITY: WIDTH
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
+.no-shrink {
+  flex: 0 0 auto;
+}
+
 /* ===== MAX WIDTHS ===== */
 /* dynamic */
 .mxw-copy {

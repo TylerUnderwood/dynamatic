@@ -84,6 +84,7 @@ $heading_color_alt: var(--heading-color-alt);
 // Links
 $link_color:        var(--link-color);
 $link_hover:        var(--link-hover);
+$link_active:       var(--link-active);
 
 
 
@@ -247,6 +248,7 @@ $spacing: (
   --heading-color-alt: #{$lava_orange};
   --link-color:        var(--accent);
   --link-hover:        #{$azure};
+  --link-active:       #{$royal_purple};
   --space:             1.8rem;
 }
 

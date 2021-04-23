@@ -8,11 +8,12 @@
 			{{ if author }}
 			<div class="card row mar-t">
 				{{ relate:author }}
-				<figure class="block">
+				<figure class="no-shrink">
 					<img src="{{ email | gravatar or profile_pic }}" alt="{{ name }}">
 				</figure>
-				<div class="row row-v pad-v-2 pad-h-4">
-					<span>{{ name }}</span>
+				<div class="column column-v pad-v-2 pad-h-4">
+					<span class="heading large text-light">{{ name }}</span>
+					<time class="small meta mar-t-2">{{ date }}</time>
 				</div>
 				{{ /relate:author }}
 			</div>
@@ -26,8 +27,8 @@
 	</div>
 
 	{{ if featured_image }}
-	<div class="md:gutter">
-		<div class="post-intro__figure wrapper card">
+	<div class="post-intro__figure md:gutter">
+		<div class="wrapper card">
 			<div class="bg-img bg-ultra-wide" style="background-image: url('{{ featured_image }}');"></div>
 		</div> 
 	</div> <!-- END background-image -->

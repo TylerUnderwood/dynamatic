@@ -26,3 +26,24 @@ video {
   max-width: 100%;
   height: auto;
 }
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1em;
+  max-height: 1em;
+
+  svg {
+    max-width: inherit;
+    max-height: inherit;
+  }
+}
+
+.fa {
+  display: block;
+}
+
+.fa-plus {
+  margin: 0.1em 0 0 0.1em;
+}

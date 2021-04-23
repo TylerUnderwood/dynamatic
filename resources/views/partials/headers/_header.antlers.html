@@ -7,23 +7,23 @@
 
 	<div class="filler"></div>
 
-	<nav class="header__nav nav">
+	<nav class="header__nav nav hide md:show">
 	{{ nav:header }}
 
-		<a class="nav__link link" href="{{ url }}">
+		<a class="nav__link link stealth-link" href="{{ url }}">
 			<span class="meta">{{ title }}</span>
 		</a>
 		
 	{{ /nav:header }}
 	</nav> <!-- END header__nav -->
 
-	<div class="mar-l hide lg:show">
+	<div class="mar-l hide md:show">
 		<a href="/documentation" class="btn btn--stout">
 			<span class="meta">Docs</span>
 		</a>
 	</div>
 	
-	<button class="menu-button" toggle="menu">
+	<button class="menu-button md:hide" toggle="menu">
 		<span class="menu-button__bar"></span>
 		<span class="menu-button__bar"></span>
 		<span class="menu-button__bar"></span>
@@ -34,24 +34,30 @@
 			<nav class="menu__nav">
 			{{ nav }}
 
-				<a class="menu__link link" href="{{ url }}">{{ title }}</a>
+				<span class="h3 text-color">
+					<a class="menu__link link stealth-link" href="{{ url }}">
+						{{ title }}
+					</a>
+				</span>
 					
 			{{ /nav }}
-
-			{{ if site:phone }}
-			<a class="menu__link link" href="tel:{{ site:phone }}">
-				<span class="icon">{{ theme:output src="svg/icon-phone.svg" }}</span>
-				<span class="text">{{ site:phone }}</span>
-			</a>
-			{{ /if }}
-
-			{{ if site:email }}
-			<a class="menu__link link" href="mailto:{{ site:email }}">
-				<span class="icon">{{ theme:output src="svg/icon-at.svg" }}</span>
-				<span class="text">Email Us</span>
-			</a>
-			{{ /if }}
 			</nav>
+			<div class="gap-6"></div>
+			<div class="menu__nav large">
+				{{ if site:phone }}
+				<a class="menu__link link stealth-link" disabled href="tel:{{ site:phone }}">
+					<span class="icon">{{ theme:output src="svg/icon-hashtag.svg" }}</span>
+					<span class="meta">Call us</span>
+				</a>
+				{{ /if }}
+	
+				{{ if site:email }}
+				<a class="menu__link link stealth-link" href="mailto:{{ site:email }}">
+					<span class="icon">{{ theme:output src="svg/icon-at.svg" }}</span>
+					<span class="meta">Email us</span>
+				</a>
+				{{ /if }}
+				</div>
 		</div>
 	</div> <!-- END menu -->
 
