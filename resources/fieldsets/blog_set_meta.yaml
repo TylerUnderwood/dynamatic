@@ -1,0 +1,23 @@
+title: 'Blog Set Meta'
+fields:
+  -
+    handle: alignment
+    field:
+      placeholder: Alignment
+      options:
+        bard__left: Left
+        bard__right: Right
+        bard__center: Center
+        bard__wide: Wide
+        bard__full: Full
+      multiple: false
+      clearable: true
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      default: bard__center
+      display: Alignment
+      type: select
+      icon: select
+      listable: hidden

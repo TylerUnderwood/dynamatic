@@ -1,12 +1,21 @@
 title: Blog
 fields:
   -
+    handle: blog_section
+    field:
+      display: Blog
+      type: section
+      icon: section
+      listable: hidden
+  -
     handle: blog
     field:
       sets:
         blockquote:
           display: Blockquote
           fields:
+            -
+              import: blog_set_meta
             -
               handle: quote
               field:
@@ -24,6 +33,8 @@ fields:
           display: 'Ordered List'
           fields:
             -
+              import: blog_set_meta
+            -
               handle: list
               field:
                 type: list
@@ -33,11 +44,40 @@ fields:
           display: 'Unordered List'
           fields:
             -
+              import: blog_set_meta
+            -
               handle: list
               field:
                 type: list
                 listable: hidden
                 display: List
+        image:
+          display: Image
+          fields:
+            -
+              import: blog_set_meta
+            -
+              handle: image
+              field:
+                mode: grid
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: Image
+                type: assets
+                icon: assets
+                listable: hidden
+        fancy_quote:
+          display: 'Fancy Quote'
+          fields:
+            -
+              handle: copy
+              field:
+                antlers: false
+                display: Copy
+                type: textarea
+                icon: textarea
+                listable: hidden
       buttons:
         - h2
         - h3

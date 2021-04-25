@@ -36,7 +36,7 @@
 }
 
 @mixin copy_160_fix {
-  @include line_height_fix( -0.4em, -0.5em );
+  @include line_height_fix( -0.35em, -0.5em );
 }
 
 @mixin meta_100_fix {
@@ -415,6 +415,6 @@
 
 /* ===== Extra Componants ===== */
 
-@import './transcription/blockquote-fancy.scss';
+@import './transcription/fancy-quote.scss';
 
 @import './transcription/inline-list.scss';

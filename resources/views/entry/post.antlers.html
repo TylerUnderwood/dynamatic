@@ -5,7 +5,15 @@
 	<article class="bard">
 	{{ blog }}
 
-		{{ partial src="sets/_{type}" }}
+		{{ if type === "text" }}
+		<div class="bard__block transcription">
+			{{ text }}
+		</div> <!-- END transcription -->
+		{{ else }}
+		<div class="bard__block {{ alignment }}">
+			{{ partial src="sets/_{type}" }}
+		</div> <!-- END {{ type }} -->
+		{{ endif }}
 	
 	{{ /blog }}
 	</article>
