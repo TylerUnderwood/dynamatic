@@ -4,28 +4,6 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-
-/* === line === */
-hr,
-.line {
-  clear: both;
-  margin: 0;
-  border: unset;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-}
-
-/* === line-break === */
-br {
-  clear: both;
-  display: inline-block;
-  width: 0;
-  height: 1em;
-  line-height: inherit;
-}
-
-
 /* === FILLER === */
 // This is used as a sibling element inside a flex element to fill empty space
 .filler {

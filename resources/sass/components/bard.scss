@@ -31,7 +31,9 @@
     &:last-child {
       margin-top: 0;
     }
+  }
 
+  &--dropcap > &__block {
     // Dropcap for first paragraph in a bard
     &:first-child > p:first-child::first-letter {
       float: left;
@@ -82,17 +84,13 @@
   }
 
   @include above( sm ) {
-    &__left,
-    &__right,
     &__center {
       margin-left: auto;
       margin-right: auto;
       width: 80%;
       max-width: calc(#{$bard_inner} * 0.8);
     }
-  }
 
-  @include above( md ) {
     &__left,
     &__right {
       margin-top: 0.3rem;

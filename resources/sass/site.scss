@@ -22,12 +22,12 @@
 ========================================================================== */
 @import "base/body";
 @import "base/typography";
-@import "base/dividers";
-@import "base/forms";
 @import "base/buttons";
+@import "base/fields";
 @import "base/media";
 @import "base/backgrounds";
 @import "base/animations";
+@import "base/dividers";
 
 
 
@@ -53,6 +53,8 @@
 @import "components/social-icons";
 @import "components/contact-form";
 @import "components/single-form";
+@import 'components/fancy-quote.scss';
+@import 'components/inline-list.scss';
 
 
 

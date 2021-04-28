@@ -17,13 +17,13 @@ svg {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
 video {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -33,6 +33,7 @@ video {
   align-items: center;
   max-width: 1em;
   max-height: 1em;
+  font-size: 1em;
 
   svg {
     max-width: inherit;
@@ -41,7 +42,7 @@ video {
 }
 
 .fa {
-  display: block;
+  display: inline-flex !important;
 }
 
 .fa-plus {

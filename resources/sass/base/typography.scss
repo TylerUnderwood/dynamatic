@@ -4,9 +4,48 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-span {
-  display: inline;
+
+ ///////////////////////
+// Line height fix
+@mixin line_height_fix( $top, $bottom ) {
+  &::before,
+  &::after {
+    display: block;
+    height: 0;
+    content: "";
+  }
+
+  &::before {
+    margin-top: $top;
+  }
+  &::after {
+    margin-bottom: $bottom;
+  }
 }
+
+@mixin heading_120_fix {
+  @include line_height_fix( -0.25em, -0.2em );
+}
+
+@mixin copy_140_fix {
+  @include line_height_fix( -0.3em, -0.4em );
+}
+
+@mixin copy_160_fix {
+  @include line_height_fix( -0.35em, -0.5em );
+}
+
+@mixin meta_100_fix {
+  @include line_height_fix( 0.15em, -0.1em );
+}
+
+
+
+/* 
+|–––––––––––––––––––––––––
+| Copy
+|–––––––––––––––––––––––––
+*/
 
 p {
   margin: 0;
@@ -14,8 +53,27 @@ p {
   hyphens: none;
 }
 
-// HEADINGS
+.copy {
+  display: block;
+  margin: $space 0 0;
+  max-width: $copy_max;
+  line-height: 1.6;
+  hyphens: none;
 
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+
+
+/* 
+|–––––––––––––––––––––––––
+| Headings
+|–––––––––––––––––––––––––
+*/
+
+// elements
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: 1.2;
@@ -46,47 +104,62 @@ h6 {
   font-size: 1.6rem;
 }
 
-
-// LISTS
-
-li {
-  line-height: 1.4;
-  list-style: inherit;
-}
-
-ul {
+// mixin
+@mixin heading( $size: inherit, $color: inherit ) {
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-ol {
-  margin: 0;
-  padding: 0;
-  list-style: decimal outside;
-}
-
-
-// QUOTE
-
-blockquote {
-  margin: 0;
-  padding: 0;
-  font-size: 1.2rem;
-}
-
-cite {
-  font-size: 0.8rem;
-}
-
-figcaption {
   line-height: 1.2;
-  font-size: 0.8rem;
+  font-size: $size;
+  font-weight: normal;
+  font-family: $heading_font;
+  color: $color;
+  
+  @include heading_120_fix;
+}
+
+// class
+.heading {
+  @include heading;
+}
+
+.h1 {
+  @include heading( 3.6rem, $heading_color );
+}
+
+.h2 {
+  @include heading( 2.4rem, $heading_color );
+}
+
+.h3 {
+  @include heading( 2.0rem, $heading_color );
+}
+
+.h4 {
+  @include heading( 1.6rem, $heading_color );
+}
+
+.h5 {
+  @include heading( 1.6rem, $heading_color_alt );
+}
+
+.h6 {
+  @include heading( 1.6rem, $text_color_off );
+}
+
+.subheading {
+  @include heading( 1.2rem, $heading_color_alt );
 }
 
 
-// Link
 
+/* 
+|–––––––––––––––––––––––––
+| Links
+|–––––––––––––––––––––––––
+*/
+
+// element
 a {
   text-decoration: none;
   color: inherit;
@@ -99,76 +172,312 @@ a {
   }
 }
 
+// class
+.link {
+  color: $link_color;
+  transition: color 300ms ease;
+  cursor: pointer;
+  
+  &[active] {
+    color: $link_active;
+  }
 
-// Other
-
-address {
-  font-style: normal;
+  &:hover,
+  &:focus {
+    color: $link_hover;
+  }
 }
 
-time {
-  font-style: normal;
+.stealth-link {
+  color: inherit;
+}
+
+.hyperlink {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(transparent calc(100% - 0.2em), $link_hover 0),
+                    linear-gradient(transparent calc(100% - 0.2em), $link_color 0);
+  background-size: 0 100%, 100% 100%;
+  color: inherit;
+  transition: background 300ms ease;
+  
+  &[active] {
+    background-image: linear-gradient(transparent calc(100% - 0.2em), $link_hover 0),
+                      linear-gradient(transparent calc(100% - 0.2em), $link_active 0);
+  }
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    background-size: 100% 100%, 100% 100%;
+  }
 }
 
 
-// CODE
 
-code {
-  border-radius: 2px;
-  background: white;
-  padding: 4px;
-  line-height: 1.6;
-  font-family: monospace;
-  font-size: inherit;
-  color: black;
+/* 
+|–––––––––––––––––––––––––
+| Lists
+|–––––––––––––––––––––––––
+*/
+
+li {
+  list-style: inherit;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: decimal;
+}
+
+@mixin list( $type: list ) {
+  $list_top: 0.8em;
+  $list_left: 1.6em;
+
+  display: inline-block;
+  margin: $space 0 0;
+  max-width: $copy_max;
+  padding: 0;
+  line-height: 1.4;
+
+  @if $type == list {
+    list-style: none;
+  }
+  @if $type == unordered {
+    list-style: none;
+  }
+  @if $type == ordered {
+    list-style: decimal;
+  }
+
+  @include copy_140_fix;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @if $type == list {
+    > li {
+      margin: $list_top 0 0;
+      padding: 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @if $type == unordered {
+    > li {
+      position: relative;
+      margin: $list_top 0 0;
+      padding: 0 0 0 $list_left;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:before {
+        position: absolute;
+        top: 0.55em;
+        left: 0;
+        width: 6px;
+        height: 6px;
+        background-color: $accent;
+        content: '';
+      }
+    }
+  }
+
+  @if $type == ordered {
+    > li {
+      margin: $list_top 0 0 #{$list_left * 0.6};
+      padding: 0 0 0 #{$list_left * 0.4};
+      list-style: inherit;
+    
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  & > ul,
+  & > ol {
+    margin-top: $list_top;
+    margin-left: $list_left;
+  }
+}
+
+.list {
+  @include list;
+}
+
+.ul {
+  @include list( unordered );
+}
+
+.ol {
+  @include list( ordered );
+}
+
+
+
+/* 
+|–––––––––––––––––––––––––
+| Quotes
+|–––––––––––––––––––––––––
+*/
+
+blockquote {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+cite {
+  font-size: 0.8rem;
+}
+
+.quote {
+  display: inline-block;
+  margin: $space 0 0;
+  max-width: $copy_max;
+  border-left: 4px solid $accent;
+  padding: 0 0 0 1.2em;
+  line-height: 1.4;
+  font-size: 1.2rem;
+      
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include copy_160_fix;
+}
+
+.cite {
+  display: block;
+  margin: 0.2em 0 0;
+  max-width: $copy_max;
+  padding: 0;
+  text-align: right;
+  line-height: 1.2;
+  font-size: 0.8rem;
+
+  &:before {
+    padding: 0 0.5em 0 0;
+    content: '\2014';
+  }
+}
+
+
+
+/* 
+|–––––––––––––––––––––––––
+| Meta
+|–––––––––––––––––––––––––
+*/
+
+.meta {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: 2px;
+  font-family: $meta_font;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @include meta_100_fix;
+}
+
+
+
+/* 
+|–––––––––––––––––––––––––
+| Code
+|–––––––––––––––––––––––––
+*/
 
 pre {
   display: block;
-  padding: 1rem;
-  white-space: normal;
+}
+
+code {
+  font-family: monospace;
+}
+
+.pre {
+  display: block;
+  margin: $space 0 0;
+  border: 1px solid $border_color;
+  background: $contrast;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+
+  @include meta_100_fix();
+
+  &:first-child {
+    margin-top: 0;
+  }
+  
+  .code {
+    border: none;
+    background: none;
+    padding: 0;
+  }
+}
+
+.code {
+  border-radius: $round;
+  border: 1px solid $border_color;
+  background: $contrast;
+  padding: 0.2em;
+  line-height: 1.6;
+  font-family: $meta_font;
+  font-size: inherit;
+  color: $primary;
 }
 
 
-// SEMANTICS
 
-// bold
-b {
-  font-weight: bold;
+/* 
+|–––––––––––––––––––––––––
+| Other Typeography
+|–––––––––––––––––––––––––
+*/
+
+span {
+  display: inline;
 }
 
-strong {
-  font-weight: bold;
+// label
+label {
+  text-transform: uppercase;
+  font-family: monospace;
 }
 
-// italics
-i {
-  font-style: italic;
+.label {
+  text-transform: uppercase;
+  font-family: $meta_font;
 }
 
-em {
-  font-style: italic;
+
+// caption
+figcaption {
+  line-height: 1.2;
+  letter-spacing: 2px;
 }
 
-// highlighted
-mark {
-  background-color: yellow;
+.caption {
+  line-height: 1.2;
+  letter-spacing: 2px;
 }
 
-// underline
-ins {
-  text-decoration: underline;
-}
-
-// striketrough
-del {
-  text-decoration: line-through;
-}
-
-// small text
-small {
-  font-size: 0.8em;
-}
 
 // subscript / superscript
 sub,
@@ -185,4 +494,221 @@ sup {
 
 sub {
   bottom: -0.25em;
+}
+
+
+// small text
+small {
+  font-size: 0.8em;
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+.large {
+  font-size: 1.2rem;
+}
+
+
+// bold
+b {
+  font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+
+// italics
+i {
+  font-style: italic;
+}
+
+em {
+  font-style: italic;
+}
+
+.italic {
+  font-style: italic;
+}
+
+// highlighted
+mark {
+  background-color: yellow;
+}
+
+.highlight {
+  background-color: $accent;
+}
+
+// underline
+ins {
+  text-decoration: underline;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+// striketrough
+del {
+  text-decoration: line-through;
+}
+
+.striketrough {
+  text-decoration: line-through;
+}
+
+// other 
+address {
+  font-style: normal;
+}
+
+time {
+  font-style: normal;
+}
+
+/* === line === */
+hr {
+  clear: both;
+  border: 1px solid currentColor;
+  color: inherit;
+}
+
+.line {
+  clear: both;
+  margin: 0;
+  border: unset;
+  border-radius: 1px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  color: inherit;
+}
+
+/* === line-break === */
+br {
+  clear: both;
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  line-height: inherit;
+}
+
+
+/* === text alignment === */
+.midline {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.baseline {
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: baseline;
+}
+
+
+
+/* === Putting it all together === */
+
+// This class is used anywhere you want some default text styling
+.transcription {
+  // display block so margins will collapse
+  display: block !important;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    & + p {
+      margin-top: 0.6rem;
+    }
+
+    + {
+      h1, h2, h3, h4, h5, h6 {
+        margin: 0.4em 0;
+      }
+    }
+  }
+
+  hr + {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    @extend .h1;
+  }
+
+  h2 {
+    @extend .h2;
+  }
+
+  h3 {
+    @extend .h3;
+  }
+
+  h4 {
+    @extend .h4;
+  }
+
+  h5 {
+    @extend .h5;
+  }
+
+  h6 {
+    @extend .h6;
+  }
+
+  p {
+    @extend .copy;
+  }
+
+  a {
+    @extend .hyperlink;
+  }
+
+  ul {
+    @extend .ul;
+  }
+
+  ol {
+    @extend .ol;
+  }
+
+  blockquote {
+    @extend .quote;
+  }
+
+  cite {
+    @extend .cite;
+  }
+
+  hr {
+    @extend .line;
+  }
+
+  pre {
+    @extend .pre;
+  }
+
+  code {
+    @extend .code;
+  }
 }

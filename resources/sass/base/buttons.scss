@@ -10,15 +10,21 @@ button {
   border: none;
   background-color: transparent;
   padding: 0;
-  color: $background;
+  color: inherit;
   cursor: pointer;
 }
 
 
-$btn_phat_height: 2.8em;
-$btn_height: 2.2em;
-$btn_slim_height: 1.6em;
 
+:root {
+  --btn-phat-height: 2.8em;
+  --btn-height: 2.2em;
+  --btn-slim-height: 1.6em;
+}
+
+$btn_phat_height: var(--btn-phat-height);
+$btn_height: var(--btn-height);
+$btn_slim_height: var(--btn-slim-height);
 
 .btn {
   $self: &;
@@ -32,7 +38,7 @@ $btn_slim_height: 1.6em;
   min-width: 8em;
   height: $btn_height;
   background-color: $link_color;
-  padding: 0.6em 1.4em;
+  padding: 0 1.4em;
   letter-spacing: 2px;
   line-height: 1;
   vertical-align: middle;
@@ -86,6 +92,7 @@ $btn_slim_height: 1.6em;
     align-items: center;
     max-width: 1em;
     max-height: 1em;
+    font-size: 1em;
   }
 
   // === button types === //
@@ -126,7 +133,7 @@ $btn_slim_height: 1.6em;
     min-width: 6em;
     height: $btn_slim_height;
     border-width: 1px;
-    padding: 0.4em 1.2em;
+    padding: 0 1.2em;
     font-weight: normal;
 
     #{$self}__text {
@@ -136,6 +143,7 @@ $btn_slim_height: 1.6em;
     #{$self}__icon {
       max-width: 0.8em;
       max-height: 0.8em;
+      font-size: 0.8em;
     }
 
     &#{$self}--border #{$self}__text {
@@ -149,7 +157,7 @@ $btn_slim_height: 1.6em;
     min-width: 12em;
     height: $btn_phat_height;
     border-width: 2px;
-    padding: 0.8em 2.4em;
+    padding: 0 2.4em;
     font-weight: bold;
 
     #{$self}__text {
@@ -159,6 +167,7 @@ $btn_slim_height: 1.6em;
     #{$self}__icon {
       max-width: 1.2em;
       max-height: 1.2em;
+      font-size: 1.2em;
     }
 
     &#{$self}--border #{$self}__text {

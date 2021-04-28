@@ -11,6 +11,38 @@ fields:
     handle: blog
     field:
       sets:
+        heading:
+          display: Heading
+          fields:
+            -
+              handle: id
+              field:
+                input_type: text
+                antlers: false
+                display: Id
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: heading
+              field:
+                input_type: text
+                antlers: false
+                display: Heading
+                type: text
+                icon: text
+                listable: hidden
+        ordered_list:
+          display: 'Ordered List'
+          fields:
+            -
+              import: blog_set_meta
+            -
+              handle: list
+              field:
+                type: list
+                listable: hidden
+                display: List
         blockquote:
           display: Blockquote
           fields:
@@ -29,17 +61,6 @@ fields:
                 type: text
                 listable: hidden
                 display: Cite
-        ordered_list:
-          display: 'Ordered List'
-          fields:
-            -
-              import: blog_set_meta
-            -
-              handle: list
-              field:
-                type: list
-                listable: hidden
-                display: List
         unordered_list:
           display: 'Unordered List'
           fields:
