@@ -13,6 +13,7 @@
   $bard_inner: $copy_max;
   $half_bard_outer: $bard_outer / 2;
 
+  // display block so margins will collapse
   display: block !important;
   margin-left: auto;
   margin-right: auto;
@@ -33,7 +34,7 @@
     }
   }
 
-  &--dropcap > &__block {
+  &--dropcap &__block {
     // Dropcap for first paragraph in a bard
     &:first-child > p:first-child::first-letter {
       float: left;
@@ -45,10 +46,36 @@
     }
   }
 
+  // headins
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    & + p {
+      margin-top: 0.6rem;
+    }
+
+    + {
+      h1, h2, h3, h4, h5, h6 {
+        margin: 0.4em 0;
+      }
+    }
+  }
+
+  // horizontal row
   hr {
     margin: 3.2rem auto;
     width: 80%;
     max-width: calc(#{$bard_inner} * 0.8);
+  }
+
+  hr + {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
   }
       
   /* === Alignment === */

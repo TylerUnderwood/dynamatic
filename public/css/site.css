@@ -653,7 +653,8 @@ code {
   margin: 1.8rem 0 0;
   border: 1px solid var(--border-color);
   background: var(--contrast);
-  padding: 0.5em 1em;
+  padding: 1em;
+  line-height: 1.6;
   font-size: 0.9em;
 }
 .pre::before, .transcription pre::before, .pre::after, .transcription pre::after {
@@ -662,10 +663,10 @@ code {
   content: "";
 }
 .pre::before, .transcription pre::before {
-  margin-top: 0.15em;
+  margin-top: -0.3em;
 }
 .pre::after, .transcription pre::after {
-  margin-bottom: -0.1em;
+  margin-bottom: -0.4em;
 }
 .pre:first-child, .transcription pre:first-child {
   margin-top: 0;
@@ -674,17 +675,33 @@ code {
   border: none;
   background: none;
   padding: 0;
+  line-height: inherit;
+}
+.pre .code::before, .pre .transcription code::before, .transcription .pre code::before, .transcription pre .code::before, .transcription pre code::before, .pre .code::after, .pre .transcription code::after, .transcription .pre code::after, .transcription pre .code::after, .transcription pre code::after {
+  display: none;
 }
 
 .code, .transcription code {
+  display: inline-block;
   border-radius: 2px;
   border: 1px solid var(--border-color);
   background: var(--contrast);
   padding: 0.2em;
-  line-height: 1.6;
+  line-height: 1;
   font-family: "Overpass Mono", monospace;
   font-size: inherit;
   color: var(--primary);
+}
+.code::before, .transcription code::before, .code::after, .transcription code::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.code::before, .transcription code::before {
+  margin-top: 0.15em;
+}
+.code::after, .transcription code::after {
+  margin-bottom: -0.1em;
 }
 
 /* 
@@ -846,22 +863,7 @@ br {
 
 /* === Putting it all together === */
 .transcription {
-  display: block !important;
-}
-.transcription h1, .transcription h2, .transcription h3, .transcription h4, .transcription h5, .transcription h6 {
-  margin-top: 2em;
-}
-.transcription h1:first-child, .transcription h2:first-child, .transcription h3:first-child, .transcription h4:first-child, .transcription h5:first-child, .transcription h6:first-child {
-  margin-top: 0;
-}
-.transcription h1 + p, .transcription h2 + p, .transcription h3 + p, .transcription h4 + p, .transcription h5 + p, .transcription h6 + p {
-  margin-top: 0.6rem;
-}
-.transcription h1 + h1, .transcription h1 + h2, .transcription h1 + h3, .transcription h1 + h4, .transcription h1 + h5, .transcription h1 + h6, .transcription h2 + h1, .transcription h2 + h2, .transcription h2 + h3, .transcription h2 + h4, .transcription h2 + h5, .transcription h2 + h6, .transcription h3 + h1, .transcription h3 + h2, .transcription h3 + h3, .transcription h3 + h4, .transcription h3 + h5, .transcription h3 + h6, .transcription h4 + h1, .transcription h4 + h2, .transcription h4 + h3, .transcription h4 + h4, .transcription h4 + h5, .transcription h4 + h6, .transcription h5 + h1, .transcription h5 + h2, .transcription h5 + h3, .transcription h5 + h4, .transcription h5 + h5, .transcription h5 + h6, .transcription h6 + h1, .transcription h6 + h2, .transcription h6 + h3, .transcription h6 + h4, .transcription h6 + h5, .transcription h6 + h6 {
-  margin: 0.4em 0;
-}
-.transcription hr + h1, .transcription hr + h2, .transcription hr + h3, .transcription hr + h4, .transcription hr + h5, .transcription hr + h6 {
-  margin-top: 0;
+  display: block;
 }
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -3067,7 +3069,7 @@ video {
 .bard__block:last-child {
   margin-top: 0;
 }
-.bard--dropcap > .bard__block:first-child > p:first-child::first-letter {
+.bard--dropcap .bard__block:first-child > p:first-child::first-letter {
   float: left;
   margin: 0;
   padding: 0.15em 0.2em 0 0;
@@ -3075,10 +3077,25 @@ video {
   font-size: 3.3rem;
   line-height: 2rem;
 }
+.bard h1, .bard h2, .bard h3, .bard h4, .bard h5, .bard h6 {
+  margin-top: 2em;
+}
+.bard h1:first-child, .bard h2:first-child, .bard h3:first-child, .bard h4:first-child, .bard h5:first-child, .bard h6:first-child {
+  margin-top: 0;
+}
+.bard h1 + p, .bard h2 + p, .bard h3 + p, .bard h4 + p, .bard h5 + p, .bard h6 + p {
+  margin-top: 0.6rem;
+}
+.bard h1 + h1, .bard h1 + h2, .bard h1 + h3, .bard h1 + h4, .bard h1 + h5, .bard h1 + h6, .bard h2 + h1, .bard h2 + h2, .bard h2 + h3, .bard h2 + h4, .bard h2 + h5, .bard h2 + h6, .bard h3 + h1, .bard h3 + h2, .bard h3 + h3, .bard h3 + h4, .bard h3 + h5, .bard h3 + h6, .bard h4 + h1, .bard h4 + h2, .bard h4 + h3, .bard h4 + h4, .bard h4 + h5, .bard h4 + h6, .bard h5 + h1, .bard h5 + h2, .bard h5 + h3, .bard h5 + h4, .bard h5 + h5, .bard h5 + h6, .bard h6 + h1, .bard h6 + h2, .bard h6 + h3, .bard h6 + h4, .bard h6 + h5, .bard h6 + h6 {
+  margin: 0.4em 0;
+}
 .bard hr {
   margin: 3.2rem auto;
   width: 80%;
   max-width: calc(36rem * 0.8);
+}
+.bard hr + h1, .bard hr + h2, .bard hr + h3, .bard hr + h4, .bard hr + h5, .bard hr + h6 {
+  margin-top: 0;
 }
 .bard__left, .bard__right {
   float: none;

@@ -39,6 +39,10 @@
   @include line_height_fix( 0.15em, -0.1em );
 }
 
+@mixin meta_600_fix {
+  @include line_height_fix( -0.3em, -0.4em );
+}
+
 
 
 /* 
@@ -416,10 +420,11 @@ code {
   margin: $space 0 0;
   border: 1px solid $border_color;
   background: $contrast;
-  padding: 0.5em 1em;
+  padding: 1em;
+  line-height: 1.6;
   font-size: 0.9em;
 
-  @include meta_100_fix();
+  @include meta_600_fix();
 
   &:first-child {
     margin-top: 0;
@@ -429,18 +434,27 @@ code {
     border: none;
     background: none;
     padding: 0;
+    line-height: inherit;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 }
 
 .code {
+  display: inline-block;
   border-radius: $round;
   border: 1px solid $border_color;
   background: $contrast;
   padding: 0.2em;
-  line-height: 1.6;
+  line-height: 1;
   font-family: $meta_font;
   font-size: inherit;
   color: $primary;
+
+  @include meta_100_fix();
 }
 
 
@@ -625,32 +639,7 @@ br {
 
 // This class is used anywhere you want some default text styling
 .transcription {
-  // display block so margins will collapse
-  display: block !important;
-
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 2em;
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    & + p {
-      margin-top: 0.6rem;
-    }
-
-    + {
-      h1, h2, h3, h4, h5, h6 {
-        margin: 0.4em 0;
-      }
-    }
-  }
-
-  hr + {
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 0;
-    }
-  }
+  display: block;
 
   h1 {
     @extend .h1;
