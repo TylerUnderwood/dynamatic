@@ -8,14 +8,14 @@
 		<h3>More posts coming soon!</h3>
 		{{ /if }}
 
-		<div class="masonry grout-6">
+		<div class="masonry grout-xl">
 		{{ posts }}
 
 			<article class="tile tile-12">
 				<a href="{{ url }}" class="card row">
 					<div class="column fill pad">
 						<h3 class="h4">{{ title }}</h3>
-						<div class="mar-t-2">{{ intro }}</div>
+						<div class="mar-t-xs">{{ intro }}</div>
 					</div>
 					<div class="w-100 bg-primary" style="max-width: 8rem;">
 						<div class="bg-img bg-square" style="background-image: url('{{ featured_image }}');"></div>

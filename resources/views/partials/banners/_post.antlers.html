@@ -6,20 +6,20 @@
 		<div class="inner column column-l">
 			<h1 class="h1 text-color">{{ title }}</h1>
 			{{ if author }}
-			<div class="card row mar-t">
+			<div class="card row mar-t-md">
 				{{ relate:author }}
 				<figure class="no-shrink">
 					<img src="{{ email | gravatar or profile_pic }}" alt="{{ name }}">
 				</figure>
 				<div class="column column-v pad-v-2 pad-h-4">
 					<span class="heading large text-light">{{ name }}</span>
-					<time class="small meta mar-t-2">{{ date }}</time>
+					<time class="small meta mar-t-xs">{{ date }}</time>
 				</div>
 				{{ /relate:author }}
 			</div>
 			{{ /if }}
 			{{ if intro }}
-			<div class="transcription markdown large mar-t">
+			<div class="transcription markdown large mar-t-md">
 				{{ intro }}
 			</div>
 			{{ /if }}

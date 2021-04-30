@@ -92,7 +92,7 @@ $link_active:       var(--link-active);
 // Settings: TYPOGRAPHY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono:wght@200;400;600|Kanit:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono:wght@300;400;700;|Kanit:wght@300;400;700&display=swap');
 
 // FONT FAM
 
@@ -141,6 +141,7 @@ $border:            2px solid $border_color;
 // Settings: LAYOUT
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+//////////////////////////
 // RESPONSIVE
 $mobile:           480px;
 $tablet:           768px;
@@ -152,7 +153,8 @@ $breakpoints: (
   lg:             $desktop,
 );
 
-// MAX WIDTHS
+//////////////////////////
+// WIDTH
 
 // base structure
 $min_width:       480px;
@@ -181,11 +183,10 @@ $max_widths: (
 );
 
 $widths: (
-  25:             25%,
-  33:             33.3333%,
-  50:             50%,
-  66:             66.6667%,
-  75:             75%,
+  20:             20%,
+  40:             40%,
+  60:             60%,
+  80:             80%,
   100:            100%,
 );
 
@@ -205,6 +206,7 @@ $columns: (
   12:             #{(12 / 12) * 100 + '%'},
 );
 
+//////////////////////////
 // WHITESPACE
 
 // Mobile horizontal space
@@ -224,13 +226,13 @@ $space:             var(--space);
 // the most common spacing amounts
 $spacing: (
   0:                0,
-  1:                0.4rem, // 2xs
-  2:                0.8rem, // xs
-  3:                1.2rem, // sm
-  4:                1.6rem, // md
-  5:                2.4rem, // lg
-  6:                3.2rem, // xl
-  7:                6.4rem, // 2xl
+  2xs:              0.4rem,
+  xs:               0.8rem,
+  sm:               1.2rem,
+  md:               1.6rem,
+  lg:               2.4rem,
+  xl:               3.2rem,
+  2xl:              6.4rem,
 );
 
 
