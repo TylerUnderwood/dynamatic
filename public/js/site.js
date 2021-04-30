@@ -12970,7 +12970,7 @@ var Modal = /*#__PURE__*/function () {
     value: function setModalInactive() {
       document.body.style.overflow = null;
       document.body.classList.remove(this.id + '--active');
-      this.modal.setAttribute('hidden', null);
+      this.modal.setAttribute('hidden', '');
       this.modal.removeEventListener('keydown', this.focusTrap);
 
       if (this.activatorButton) {
@@ -13051,7 +13051,7 @@ var Modal = /*#__PURE__*/function () {
 
         this.modal.removeAttribute('active');
       } else {
-        this.setStateAttribute('idle');
+        this.setModalInactive();
       }
 
       this.toggleButtons.forEach(function (button) {

@@ -21,7 +21,7 @@
 
   &__block {
     display: block;
-    margin: map-get($spacing, 4) auto;
+    margin: map-get($spacing, "md") auto;
     width: 100%;
     max-width: $bard_inner;
     
@@ -129,12 +129,12 @@
     &__left {
       float: left;
       margin-left: unset;
-      margin-right: map-get($spacing, 4);
+      margin-right: map-get($spacing, "md");
     }
   
     &__right {
       float: right;
-      margin-left: map-get($spacing, 4);
+      margin-left: map-get($spacing, "md");
       margin-right: unset;
     }
   }

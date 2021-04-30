@@ -10,10 +10,30 @@ colors:
   - border-color
 ---
 
+<div class="block frame mar-t-0">
+  <div class="masonry grout-2xs">
+  {{ view:colors }}
+
+    <div class="tile">
+      <a class="btn btn--slim btn--stout" href="#{{ value }}">
+        <span class="btn__text meta">{{ value }}</span>
+      </a>
+    </div>
+
+  {{ /view:colors }}
+  </div>
+</div>
+
 <div class="masonry grout-xs">
   {{ view:colors }}
-  <div class="column tile tile-12 sm:tile-6 md:tile-4">
+
+  <div class="column tile tile-6 sm:tile-4 lg:tile-3">
     {{ partial src="_swatch_card" value="{{ value }}" }}
   </div>
+
   {{ /view:colors }}
+</div>
+
+<div class="mar-t-lg">
+  {{ partial src="_triangle_flower"}}
 </div>

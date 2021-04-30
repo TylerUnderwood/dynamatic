@@ -242,7 +242,7 @@ p {
 
 .copy, .transcription p {
   display: block;
-  margin: 0 0;
+  margin: 1.6rem 0 0;
   max-width: 36rem;
   line-height: 1.6;
   -webkit-hyphens: none;
@@ -533,7 +533,7 @@ ol {
 
 .list {
   display: inline-block;
-  margin: 0 0;
+  margin: 1.6rem 0 0;
   max-width: 36rem;
   padding: 0;
   line-height: 1.4;
@@ -567,7 +567,7 @@ ol {
 
 .ul, .transcription ul {
   display: inline-block;
-  margin: 0 0;
+  margin: 1.6rem 0 0;
   max-width: 36rem;
   padding: 0;
   line-height: 1.4;
@@ -611,7 +611,7 @@ ol {
 
 .ol, .transcription ol {
   display: inline-block;
-  margin: 0 0;
+  margin: 1.6rem 0 0;
   max-width: 36rem;
   padding: 0;
   line-height: 1.4;
@@ -661,7 +661,7 @@ cite {
 
 .quote, .transcription blockquote {
   display: inline-block;
-  margin: 0 0;
+  margin: 1.6rem 0 0;
   max-width: 36rem;
   border-left: 4px solid var(--accent);
   padding: 0 0 0 1.2em;
@@ -738,7 +738,7 @@ code {
 
 .pre, .transcription pre {
   display: block;
-  margin: 0 0;
+  margin: 1.6rem 0 0;
   border: 1px solid var(--border-color);
   background: var(--contrast);
   padding: 1em;
@@ -2080,7 +2080,7 @@ input[type=file] {
 .grout {
   margin: -0.8rem;
 }
-.grout .tile {
+.grout > * {
   padding: 0.8rem;
 }
 
@@ -2132,87 +2132,87 @@ input[type=file] {
 .grout {
   margin: calc(-1 * (var(--space) / 2));
 }
-.grout .tile {
+.grout > * {
   padding: calc(var(--space) / 2);
 }
 
 @media (min-width: 480px) {
   .sm\:grout {
-    margin: -var(--space)/2;
+    margin: calc(-1 * (var(--space) / 2));
   }
-  .sm\:grout .tile {
-    padding: var(--space)/2;
+  .sm\:grout > * {
+    padding: calc(var(--space) / 2);
   }
 }
 @media (min-width: 768px) {
   .md\:grout {
-    margin: -var(--space)/2;
+    margin: calc(-1 * (var(--space) / 2));
   }
-  .md\:grout .tile {
-    padding: var(--space)/2;
+  .md\:grout > * {
+    padding: calc(var(--space) / 2);
   }
 }
 @media (min-width: 1024px) {
   .lg\:grout {
-    margin: -var(--space)/2;
+    margin: calc(-1 * (var(--space) / 2));
   }
-  .lg\:grout .tile {
-    padding: var(--space)/2;
+  .lg\:grout > * {
+    padding: calc(var(--space) / 2);
   }
 }
 .grout-0 {
   margin: -0;
 }
-.grout-0 .tile {
+.grout-0 > * {
   padding: 0;
 }
 
 .grout-2xs {
   margin: -0.2rem;
 }
-.grout-2xs .tile {
+.grout-2xs > * {
   padding: 0.2rem;
 }
 
 .grout-xs {
   margin: -0.4rem;
 }
-.grout-xs .tile {
+.grout-xs > * {
   padding: 0.4rem;
 }
 
 .grout-sm {
   margin: -0.6rem;
 }
-.grout-sm .tile {
+.grout-sm > * {
   padding: 0.6rem;
 }
 
 .grout-md {
   margin: -0.8rem;
 }
-.grout-md .tile {
+.grout-md > * {
   padding: 0.8rem;
 }
 
 .grout-lg {
   margin: -1.2rem;
 }
-.grout-lg .tile {
+.grout-lg > * {
   padding: 1.2rem;
 }
 
 .grout-xl {
   margin: -1.6rem;
 }
-.grout-xl .tile {
+.grout-xl > * {
   padding: 1.6rem;
 }
 
 .grout-2xl {
   margin: -3.2rem;
 }
-.grout-2xl .tile {
+.grout-2xl > * {
   padding: 3.2rem;
 }
 
@@ -2895,7 +2895,7 @@ input[type=file] {
 }
 .bard__block {
   display: block;
-  margin: auto;
+  margin: 1.6rem auto;
   width: 100%;
   max-width: 36rem;
 }
@@ -2975,9 +2975,11 @@ input[type=file] {
   .bard__left {
     float: left;
     margin-left: unset;
+    margin-right: 1.6rem;
   }
   .bard__right {
     float: right;
+    margin-left: 1.6rem;
     margin-right: unset;
   }
 }
@@ -3468,7 +3470,7 @@ input[type=file] {
 | COMPONENTS: Inverse Corner
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
-.inverse-corner {
+.arch {
   display: block;
   position: relative;
   width: 1em;
@@ -3478,7 +3480,7 @@ input[type=file] {
   color: inherit;
   content: "";
 }
-.inverse-corner::after {
+.arch::after {
   display: block;
   position: absolute;
   width: 2em;
@@ -3487,29 +3489,29 @@ input[type=file] {
   box-shadow: 0 0 0 1em currentColor;
   content: "";
 }
-.inverse-corner--top-right::after {
+.arch--t-r::after {
   top: 0;
   left: unset;
   bottom: unset;
   right: 0;
 }
-.inverse-corner--top-left::after {
+.arch--t-l::after {
   top: 0;
   left: 0;
   bottom: unset;
   right: unset;
 }
-.inverse-corner--bottom-left::after {
-  top: unset;
-  left: 0;
-  bottom: 0;
-  right: unset;
-}
-.inverse-corner--bottom-right::after {
+.arch--b-r::after {
   top: unset;
   left: unset;
   bottom: 0;
   right: 0;
+}
+.arch--b-l::after {
+  top: unset;
+  left: 0;
+  bottom: 0;
+  right: unset;
 }
 
 /* ==========================================================================
@@ -3786,7 +3788,7 @@ input[type=file] {
   color: var(--link-color);
 }
 
-.background-color {
+.color-background {
   color: var(--background);
 }
 
@@ -3874,6 +3876,36 @@ input[type=file] {
   border: 2px solid var(--border-color);
 }
 
+.border-v {
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.border-h {
+  border-right: 2px solid var(--border-color);
+  border-left: 2px solid var(--border-color);
+}
+
+.border-t-r {
+  border-top: 2px solid var(--border-color);
+  border-right: 2px solid var(--border-color);
+}
+
+.border-t-l {
+  border-top: 2px solid var(--border-color);
+  border-left: 2px solid var(--border-color);
+}
+
+.border-b-r {
+  border-right: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.border-b-l {
+  border-bottom: 2px solid var(--border-color);
+  border-left: 2px solid var(--border-color);
+}
+
 .border-t {
   border-top: 2px solid var(--border-color);
 }
@@ -3890,24 +3922,125 @@ input[type=file] {
   border-left: 2px solid var(--border-color);
 }
 
-.border-v {
-  border-top: 2px solid var(--border-color);
-  border-bottom: 2px solid var(--border-color);
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Shapes
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+/* === SQUARE === */
+.square::before {
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  content: "";
 }
 
-.border-h {
-  border-right: 2px solid var(--border-color);
-  border-left: 2px solid var(--border-color);
+/* === CIRCLE === */
+.circle::before {
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  content: "";
+}
+
+/* === TRIANGLE === */
+.triangle {
+  display: flex;
+  width: 1em;
+  height: 1em;
+  --triangle-ratio: 0.5em;
+  --triangle-corner: calc(var(--triangle-ratio) * .7071);
+}
+.triangle::before {
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: var(--triangle-ratio);
+  border-style: solid;
+  border-color: transparent;
+  content: "";
+}
+.triangle--north {
+  align-items: flex-end;
+}
+.triangle--north::before {
+  border-top: none;
+  border-bottom-color: currentColor;
+}
+.triangle--north-east {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.triangle--north-east::before {
+  border-width: var(--triangle-corner);
+  border-top-color: currentColor;
+  border-right-color: currentColor;
+}
+.triangle--east {
+  justify-content: flex-start;
+}
+.triangle--east::before {
+  border-right: none;
+  border-left-color: currentColor;
+}
+.triangle--south-east {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.triangle--south-east::before {
+  border-width: var(--triangle-corner);
+  border-bottom-color: currentColor;
+  border-right-color: currentColor;
+}
+.triangle--south {
+  align-items: flex-start;
+}
+.triangle--south::before {
+  border-top-color: currentColor;
+  border-bottom: none;
+}
+.triangle--south-west {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.triangle--south-west::before {
+  border-width: var(--triangle-corner);
+  border-bottom-color: currentColor;
+  border-left-color: currentColor;
+}
+.triangle--west {
+  justify-content: flex-end;
+}
+.triangle--west::before {
+  border-left: none;
+  border-right-color: currentColor;
+}
+.triangle--north-west {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.triangle--north-west::before {
+  border-width: var(--triangle-corner);
+  border-top-color: currentColor;
+  border-left-color: currentColor;
 }
 
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| UTILITY: Extention
+| UTILITY: Position
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 |
 | For when you want a box to continue outside its parent
 |
 */
+.static {
+  position: static;
+}
+
 .relative {
   position: relative;
 }
@@ -3974,6 +4107,38 @@ input[type=file] {
 }
 
 /* === outset === */
+.outset-t-r {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 100%;
+  left: 100%;
+}
+
+.outset-t-l {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 100%;
+  left: 0;
+}
+
+.outset-b-r {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+}
+
+.outset-b-l {
+  position: absolute;
+  top: 100%;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+}
+
 .outset-t {
   position: absolute;
   top: 0;
@@ -3999,6 +4164,38 @@ input[type=file] {
 }
 
 /* === inset === */
+.inset-t-r {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: unset;
+  left: unset;
+}
+
+.inset-t-l {
+  position: absolute;
+  top: 0;
+  right: unset;
+  bottom: unset;
+  left: 0;
+}
+
+.inset-b-r {
+  position: absolute;
+  top: unset;
+  right: 0;
+  bottom: 0;
+  left: unset;
+}
+
+.inset-b-l {
+  position: absolute;
+  top: unset;
+  right: unset;
+  bottom: 0;
+  left: 0;
+}
+
 .inset-t {
   position: absolute;
   top: 0;

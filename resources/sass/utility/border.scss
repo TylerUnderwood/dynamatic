@@ -12,6 +12,36 @@
   border: $border;
 }
 
+.border-v {
+  border-top: $border;
+  border-bottom: $border;
+}
+
+.border-h {
+  border-right: $border;
+  border-left: $border;
+}
+
+.border-t-r {
+  border-top: $border;
+  border-right: $border;
+}
+
+.border-t-l {
+  border-top: $border;
+  border-left: $border;
+}
+
+.border-b-r {
+  border-right: $border;
+  border-bottom: $border;
+}
+
+.border-b-l {
+  border-bottom: $border;
+  border-left: $border;
+}
+
 .border-t {
   border-top: $border;
 }
@@ -25,15 +55,5 @@
 }
 
 .border-l {
-  border-left: $border;
-}
-
-.border-v {
-  border-top: $border;
-  border-bottom: $border;
-}
-
-.border-h {
-  border-right: $border;
   border-left: $border;
 }

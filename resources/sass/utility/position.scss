@@ -1,11 +1,15 @@
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| UTILITY: Extention
+| UTILITY: Position
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 |
 | For when you want a box to continue outside its parent
 |
 */
+
+.static {
+  position: static;
+}
 
 .relative {
   position: relative;
@@ -78,7 +82,40 @@
 }
 
 /* === outset === */
+// corner
+.outset-t-r {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 100%;
+  left: 100%;
+}
 
+.outset-t-l {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 100%;
+  left: 0;
+}
+
+.outset-b-r {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+}
+
+.outset-b-l {
+  position: absolute;
+  top: 100%;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+// side
 .outset-t {
   position: absolute;
   top: 0;
@@ -104,7 +141,40 @@
 }
 
 /* === inset === */
+// corner
+.inset-t-r {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: unset;
+  left: unset;
+}
 
+.inset-t-l {
+  position: absolute;
+  top: 0;
+  right: unset;
+  bottom: unset;
+  left: 0;
+}
+
+.inset-b-r {
+  position: absolute;
+  top: unset;
+  right: 0;
+  bottom: 0;
+  left: unset;
+}
+
+.inset-b-l {
+  position: absolute;
+  top: unset;
+  right: unset;
+  bottom: 0;
+  left: 0;
+}
+
+// side
 .inset-t {
   position: absolute;
   top: 0;

@@ -1,0 +1,124 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Shapes
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/* === SQUARE === */
+.square::before {
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  content: '';
+}
+
+/* === CIRCLE === */
+.circle::before {
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  content: '';
+}
+
+/* === TRIANGLE === */
+.triangle {
+  display: flex;
+  width: 1em;
+  height: 1em;
+  --triangle-ratio: 0.5em;
+  --triangle-corner: calc(var(--triangle-ratio) * .7071);
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: var(--triangle-ratio);
+    border-style: solid;
+    border-color: transparent;
+    content: '';
+  }
+
+  &--north {
+    align-items: flex-end;
+
+    &::before {
+      border-top: none;
+      border-bottom-color: currentColor;
+    }
+  }
+  
+  &--north-east {
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    &::before {
+      border-width: var(--triangle-corner);
+      border-top-color: currentColor;
+      border-right-color: currentColor;
+    }
+  }
+
+  &--east {
+    justify-content: flex-start;
+
+    &::before {
+      border-right: none;
+      border-left-color: currentColor;
+    }
+  }
+  
+  &--south-east {
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    &::before {
+      border-width: var(--triangle-corner);
+      border-bottom-color: currentColor;
+      border-right-color: currentColor;
+    }
+  }
+  
+  &--south {
+    align-items: flex-start;
+
+    &::before {
+      border-top-color: currentColor;
+      border-bottom: none;
+    }
+  }
+  
+  &--south-west {
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    &::before {
+      border-width: var(--triangle-corner);
+      border-bottom-color: currentColor;
+      border-left-color: currentColor;
+    }
+  }
+
+  &--west {
+    justify-content: flex-end;
+
+    &::before {
+      border-left: none;
+      border-right-color: currentColor;
+    }
+  }
+  
+  &--north-west {
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &::before {
+      border-width: var(--triangle-corner);
+      border-top-color: currentColor;
+      border-left-color: currentColor;
+    }
+  }
+}

@@ -4,7 +4,7 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-.inverse-corner {
+.arch {
   display: block;
   position: relative;
   width: 1em;
@@ -24,28 +24,28 @@
     content: '';
   }
   
-  &--top-right::after {
+  &--t-r::after {
     top: 0;
     left: unset;
     bottom: unset;
     right: 0;
   }
-  &--top-left::after {
+  &--t-l::after {
     top: 0;
     left: 0;
     bottom: unset;
     right: unset;
   }
-  &--bottom-left::after {
-    top: unset;
-    left: 0;
-    bottom: 0;
-    right: unset;
-  }
-  &--bottom-right::after {
+  &--b-r::after {
     top: unset;
     left: unset;
     bottom: 0;
     right: 0;
+  }
+  &--b-l::after {
+    top: unset;
+    left: 0;
+    bottom: 0;
+    right: unset;
   }
 }

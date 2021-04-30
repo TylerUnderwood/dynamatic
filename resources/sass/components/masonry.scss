@@ -12,7 +12,7 @@
 .grout {
   margin: -0.8rem;
 }
-.grout .tile {
+.grout > * {
   padding: 0.8rem;
 }
 
@@ -57,17 +57,17 @@
 .grout {
   margin: calc(-1 * (#{$space} / 2));
 
-  .tile {
+  & > * {
     padding: calc(#{$space} / 2);
   }
 }
 
 @include addBreakpoints() {
   &grout {
-    margin: -$space / 2;
+    margin: calc(-1 * (#{$space} / 2));
   
-    .tile {
-      padding: $space / 2;
+    & > * {
+      padding: calc(#{$space} / 2);;
     }
   }
 }
@@ -77,7 +77,7 @@
     .grout-#{$index} {
       margin: -#{$value / 2};
 
-      .tile {
+      & > * {
         padding: #{$value / 2};
       }
     }
