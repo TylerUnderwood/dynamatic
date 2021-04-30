@@ -2,6 +2,7 @@
 import "./classes/smooth-scroll";
 import "./classes/appear";
 import "./classes/modal";
+import "./classes/match-height";
 
 
 // Vue

@@ -136,6 +136,94 @@ footer {
 
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Media
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+figure {
+  display: block;
+  margin: 0;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1em;
+  max-height: 1em;
+  font-size: 1em;
+}
+.icon svg {
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.fa {
+  display: inline-flex !important;
+}
+
+.fa-plus {
+  margin: 0.1em 0 0 0.1em;
+}
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Dividers
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+/* === FILLER === */
+.fill {
+  flex: 1 1 auto;
+}
+
+.filler {
+  display: block;
+  flex: 1 1 auto;
+  content: "";
+}
+
+/* === BREAK === */
+.break {
+  min-width: 100%;
+  padding-top: 1em;
+  content: "";
+}
+
+/* === SPACE === */
+.space {
+  min-height: 100%;
+  padding-left: 1em;
+  content: "";
+}
+
+/* === GAP === */
+.spacer {
+  display: inline-block;
+  max-width: 1em;
+  max-height: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
 | BASE: Typography
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
@@ -1153,55 +1241,6 @@ input[type=file] {
 
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| BASE: Media
-|––––––––––––––––––––––––––––––––––––––––––––––––––
-*/
-figure {
-  display: block;
-  margin: 0;
-}
-
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-video {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.icon {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1em;
-  max-height: 1em;
-  font-size: 1em;
-}
-.icon svg {
-  max-width: inherit;
-  max-height: inherit;
-}
-
-.fa {
-  display: inline-flex !important;
-}
-
-.fa-plus {
-  margin: 0.1em 0 0 0.1em;
-}
-
-/*
-|––––––––––––––––––––––––––––––––––––––––––––––––––
 | UTILITY: Backgrounds
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
@@ -1502,196 +1541,6 @@ video {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-/*
-|––––––––––––––––––––––––––––––––––––––––––––––––––
-| BASE: Dividers
-|––––––––––––––––––––––––––––––––––––––––––––––––––
-*/
-/* === FILLER === */
-.filler {
-  display: block;
-  flex: 1 1 auto;
-  content: "";
-}
-
-.fill {
-  flex: 1 1 auto;
-}
-
-/* === BREAK === */
-.break {
-  min-width: 100%;
-  padding-top: 1.8rem;
-  content: "";
-}
-
-/* === SPACE === */
-.space {
-  min-height: 100%;
-  padding-left: 1.8rem;
-  content: "";
-}
-
-/* === GAP === */
-.gap {
-  padding-top: 1.8rem;
-  padding-left: 1.8rem;
-}
-
-.gap-0 {
-  padding-top: 0;
-  padding-left: 0;
-}
-
-.gap-1 {
-  padding-top: 0.4rem;
-  padding-left: 0.4rem;
-}
-
-.gap-2 {
-  padding-top: 0.8rem;
-  padding-left: 0.8rem;
-}
-
-.gap-3 {
-  padding-top: 1.2rem;
-  padding-left: 1.2rem;
-}
-
-.gap-4 {
-  padding-top: 1.6rem;
-  padding-left: 1.6rem;
-}
-
-.gap-5 {
-  padding-top: 2.4rem;
-  padding-left: 2.4rem;
-}
-
-.gap-6 {
-  padding-top: 3.2rem;
-  padding-left: 3.2rem;
-}
-
-.gap-7 {
-  padding-top: 6.4rem;
-  padding-left: 6.4rem;
-}
-
-@media (min-width: 480px) {
-  .sm\:gap {
-    padding-top: 1.8rem;
-    padding-left: 1.8rem;
-  }
-  .sm\:gap-0 {
-    padding-top: 0;
-    padding-left: 0;
-  }
-  .sm\:gap-1 {
-    padding-top: 0.4rem;
-    padding-left: 0.4rem;
-  }
-  .sm\:gap-2 {
-    padding-top: 0.8rem;
-    padding-left: 0.8rem;
-  }
-  .sm\:gap-3 {
-    padding-top: 1.2rem;
-    padding-left: 1.2rem;
-  }
-  .sm\:gap-4 {
-    padding-top: 1.6rem;
-    padding-left: 1.6rem;
-  }
-  .sm\:gap-5 {
-    padding-top: 2.4rem;
-    padding-left: 2.4rem;
-  }
-  .sm\:gap-6 {
-    padding-top: 3.2rem;
-    padding-left: 3.2rem;
-  }
-  .sm\:gap-7 {
-    padding-top: 6.4rem;
-    padding-left: 6.4rem;
-  }
-}
-@media (min-width: 768px) {
-  .md\:gap {
-    padding-top: 1.8rem;
-    padding-left: 1.8rem;
-  }
-  .md\:gap-0 {
-    padding-top: 0;
-    padding-left: 0;
-  }
-  .md\:gap-1 {
-    padding-top: 0.4rem;
-    padding-left: 0.4rem;
-  }
-  .md\:gap-2 {
-    padding-top: 0.8rem;
-    padding-left: 0.8rem;
-  }
-  .md\:gap-3 {
-    padding-top: 1.2rem;
-    padding-left: 1.2rem;
-  }
-  .md\:gap-4 {
-    padding-top: 1.6rem;
-    padding-left: 1.6rem;
-  }
-  .md\:gap-5 {
-    padding-top: 2.4rem;
-    padding-left: 2.4rem;
-  }
-  .md\:gap-6 {
-    padding-top: 3.2rem;
-    padding-left: 3.2rem;
-  }
-  .md\:gap-7 {
-    padding-top: 6.4rem;
-    padding-left: 6.4rem;
-  }
-}
-@media (min-width: 1024px) {
-  .lg\:gap {
-    padding-top: 1.8rem;
-    padding-left: 1.8rem;
-  }
-  .lg\:gap-0 {
-    padding-top: 0;
-    padding-left: 0;
-  }
-  .lg\:gap-1 {
-    padding-top: 0.4rem;
-    padding-left: 0.4rem;
-  }
-  .lg\:gap-2 {
-    padding-top: 0.8rem;
-    padding-left: 0.8rem;
-  }
-  .lg\:gap-3 {
-    padding-top: 1.2rem;
-    padding-left: 1.2rem;
-  }
-  .lg\:gap-4 {
-    padding-top: 1.6rem;
-    padding-left: 1.6rem;
-  }
-  .lg\:gap-5 {
-    padding-top: 2.4rem;
-    padding-left: 2.4rem;
-  }
-  .lg\:gap-6 {
-    padding-top: 3.2rem;
-    padding-left: 3.2rem;
-  }
-  .lg\:gap-7 {
-    padding-top: 6.4rem;
-    padding-left: 6.4rem;
-  }
-}
 /* ==========================================================================
 ===== COMPONENTS STYLES =====
 =
@@ -2673,7 +2522,7 @@ video {
 
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| COMPONENTS: Site Header 
+| COMPONENTS: Menu 
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 /* ===== VARIABLES ===== */
@@ -2691,25 +2540,30 @@ video {
   height: 100vh;
   background-color: #202228;
   padding: 0 1rem;
-  padding-top: 5rem;
   line-height: 1;
   font-size: 2.4rem;
   transform-origin: bottom left;
   /* === NAVIGATION LINKS === */
 }
-.menu:before, .menu:after {
+.menu__wrapper {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  overflow: auto;
+}
+.menu__wrapper:before, .menu__wrapper:after {
   position: absolute;
-  z-index: 9;
+  z-index: 99;
   left: 0;
   width: 100%;
   min-height: 1em;
   content: "";
 }
-.menu:before {
-  top: 5rem;
+.menu__wrapper:before {
+  top: 0;
   background: linear-gradient(#202228 0%, rgba(32, 34, 40, 0) 100%);
 }
-.menu:after {
+.menu__wrapper:after {
   bottom: 0;
   background: linear-gradient(rgba(32, 34, 40, 0) 0%, #202228 100%);
 }
@@ -2882,8 +2736,6 @@ video {
 /* ===== LAYOUT ===== */
 .footer {
   position: relative;
-  background-color: var(--contrast);
-  color: #ffffff;
   /* === NAVIGATION === */
   /* ===== RESPONSIVE ===== */
   /* === BELOW MOBILE === */
@@ -2915,17 +2767,19 @@ video {
 
 /* ===== COMPONENTS ===== */
 /* === SCROLL TO TOP BUTTON === */
-.scroll-to-top {
+.back-to-top {
   display: flex;
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 1em;
   height: 1em;
   padding: 0.25em;
-  font-size: 4rem;
   background-color: var(--background);
-  fill: var(--link-color);
+  font-size: 4rem;
+  color: var(--link-color);
+  fill: currentColor;
+  transition: color 300ms ease;
+}
+.back-to-top:hover, .back-to-top:focus {
+  color: var(--link-hover);
 }
 
 /* === COPYRIGHT === */
@@ -3640,6 +3494,141 @@ video {
 | UTILITY: Text
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
+.size {
+  font-size: 1.8rem;
+}
+
+.size-0 {
+  font-size: 0;
+}
+
+.size-1 {
+  font-size: 0.4rem;
+}
+
+.size-2 {
+  font-size: 0.8rem;
+}
+
+.size-3 {
+  font-size: 1.2rem;
+}
+
+.size-4 {
+  font-size: 1.6rem;
+}
+
+.size-5 {
+  font-size: 2.4rem;
+}
+
+.size-6 {
+  font-size: 3.2rem;
+}
+
+.size-7 {
+  font-size: 6.4rem;
+}
+
+@media (min-width: 480px) {
+  .sm\:size {
+    font-size: 1.8rem;
+  }
+  .sm\:size-0 {
+    font-size: 0;
+  }
+  .sm\:size-1 {
+    font-size: 0.4rem;
+  }
+  .sm\:size-2 {
+    font-size: 0.8rem;
+  }
+  .sm\:size-3 {
+    font-size: 1.2rem;
+  }
+  .sm\:size-4 {
+    font-size: 1.6rem;
+  }
+  .sm\:size-5 {
+    font-size: 2.4rem;
+  }
+  .sm\:size-6 {
+    font-size: 3.2rem;
+  }
+  .sm\:size-7 {
+    font-size: 6.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .md\:size {
+    font-size: 1.8rem;
+  }
+  .md\:size-0 {
+    font-size: 0;
+  }
+  .md\:size-1 {
+    font-size: 0.4rem;
+  }
+  .md\:size-2 {
+    font-size: 0.8rem;
+  }
+  .md\:size-3 {
+    font-size: 1.2rem;
+  }
+  .md\:size-4 {
+    font-size: 1.6rem;
+  }
+  .md\:size-5 {
+    font-size: 2.4rem;
+  }
+  .md\:size-6 {
+    font-size: 3.2rem;
+  }
+  .md\:size-7 {
+    font-size: 6.4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:size {
+    font-size: 1.8rem;
+  }
+  .lg\:size-0 {
+    font-size: 0;
+  }
+  .lg\:size-1 {
+    font-size: 0.4rem;
+  }
+  .lg\:size-2 {
+    font-size: 0.8rem;
+  }
+  .lg\:size-3 {
+    font-size: 1.2rem;
+  }
+  .lg\:size-4 {
+    font-size: 1.6rem;
+  }
+  .lg\:size-5 {
+    font-size: 2.4rem;
+  }
+  .lg\:size-6 {
+    font-size: 3.2rem;
+  }
+  .lg\:size-7 {
+    font-size: 6.4rem;
+  }
+}
+.f-16 {
+  font-size: 18px;
+}
+
+.f-18 {
+  font-size: 18px;
+}
+
+.f-20 {
+  font-size: 18px;
+}
+
 .font-serif {
   font-family: "Kanit", Times, serif;
 }
@@ -3648,7 +3637,7 @@ video {
   font-family: "Overpass", Arial, sans-serif;
 }
 
-.font-geo {
+.font-mono {
   font-family: "Overpass Mono", monospace;
 }
 
@@ -3813,6 +3802,14 @@ video {
 
 .bg-off-black {
   background-color: #202020;
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-contrast {
+  background-color: var(--contrast);
 }
 
 .bg-primary-color {

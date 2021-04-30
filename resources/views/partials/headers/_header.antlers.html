@@ -1,4 +1,4 @@
-<header id="header" class="header">
+<header id="header" class="header js--match-height">
 	<div class="header__inner outer">
 
 	<a id="logo" class="header__logo logo" href="/" title="{{ site:name }} | Home">
@@ -24,40 +24,46 @@
 	</div>
 	
 	<button class="menu-button md:hide" toggle="menu">
-		<span class="menu-button__bar"></span>
-		<span class="menu-button__bar"></span>
-		<span class="menu-button__bar"></span>
+		<div class="menu-button__bar"></div>
+		<div class="menu-button__bar"></div>
+		<div class="menu-button__bar"></div>
 	</button> <!-- END menu-button -->
 	
 	<div id="menu" class="menu gutter js--modal">
-		<div class="menu__inner wrapper">
-			<nav class="menu__nav">
-			{{ nav }}
+		<div match-height="header"></div>
+		<div class="menu__wrapper wrapper">
+			<div class="menu__inner">
+				<nav class="menu__nav">
+				{{ nav }}
 
-				<span class="h3 text-color">
 					<a class="menu__link link stealth-link" href="{{ url }}">
-						{{ title }}
+						<span class="heading">{{ title }}</span>
 					</a>
-				</span>
-					
-			{{ /nav }}
-			</nav>
-			<div class="gap-6"></div>
-			<div class="menu__nav large">
-				{{ if site:phone }}
-				<a class="menu__link link stealth-link" disabled href="tel:{{ site:phone }}">
-					<span class="icon">{{ theme:output src="svg/icon-hashtag.svg" }}</span>
-					<span class="meta">Call us</span>
-				</a>
-				{{ /if }}
-	
-				{{ if site:email }}
-				<a class="menu__link link stealth-link" href="mailto:{{ site:email }}">
-					<span class="icon">{{ theme:output src="svg/icon-at.svg" }}</span>
-					<span class="meta">Email us</span>
-				</a>
-				{{ /if }}
+						
+				{{ /nav }}
+				</nav>
+
+				{{ if site:phone or site:email }}
+				<div class="spacer size-6"></div>
+
+				<div class="menu__nav large">
+					{{ if site:phone }}
+					<a class="menu__link link stealth-link" disabled href="tel:{{ site:phone }}">
+						<span class="icon">{{ theme:output src="svg/icon-hashtag.svg" }}</span>
+						<span class="meta">Call us</span>
+					</a>
+					{{ /if }}
+		
+					{{ if site:email }}
+					<a class="menu__link link stealth-link" href="mailto:{{ site:email }}">
+						<span class="icon">{{ theme:output src="svg/icon-at.svg" }}</span>
+						<span class="meta">Email us</span>
+					</a>
+					{{ /if }}
 				</div>
+				{{ /if }}
+			
+			</div>
 		</div>
 	</div> <!-- END menu -->
 

@@ -4,6 +4,30 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
+.size {
+  font-size: $space;
+}
+
+@include makeAll( size, font-size, $spacing );
+
+@include addBreakpoints() {
+  &size {
+    font-size: $space;
+  }
+  
+  @include makeAllForBreakpoints( size, font-size, $spacing );
+}
+
+.f-16 {
+  font-size: 18px;
+}
+.f-18 {
+  font-size: 18px;
+}
+.f-20 {
+  font-size: 18px;
+}
+
 .font-serif {
   font-family: $serif;
 }
@@ -12,7 +36,7 @@
   font-family: $sans_serif;
 }
 
-.font-geo {
+.font-mono {
   font-family: $monospace;
 }
 

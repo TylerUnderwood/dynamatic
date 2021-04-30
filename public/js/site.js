@@ -12855,6 +12855,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./resources/js/classes/match-height.js":
+/*!**********************************************!*\
+  !*** ./resources/js/classes/match-height.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//////////////////////////////
+// Match Height
+var matchHeightAttribute = function matchHeightAttribute() {
+  document.querySelectorAll('[match-height]').forEach(function (element) {
+    var machableElementId = element.getAttribute('match-height');
+    var machableElement = document.getElementById("".concat(machableElementId));
+
+    if (machableElement !== null) {
+      element.style.minHeight = "".concat(machableElement.offsetHeight, "px");
+    } else {
+      console.log("There is no #".concat(machableElementId, " to match height."));
+    }
+  });
+};
+
+window.addEventListener('DOMContentLoaded', function () {
+  matchHeightAttribute();
+});
+window.addEventListener('resize', function () {
+  matchHeightAttribute();
+});
+
+/***/ }),
+
 /***/ "./resources/js/classes/modal.js":
 /*!***************************************!*\
   !*** ./resources/js/classes/modal.js ***!
@@ -13248,20 +13279,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_classes_appear__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./classes/modal */ "./resources/js/classes/modal.js");
 /* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_classes_modal__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_DemoComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/DemoComponent */ "./resources/js/components/DemoComponent.vue");
+/* harmony import */ var _classes_match_height__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./classes/match-height */ "./resources/js/classes/match-height.js");
+/* harmony import */ var _classes_match_height__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_classes_match_height__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_DemoComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/DemoComponent */ "./resources/js/components/DemoComponent.vue");
 // ES6 Classes
+
 
 
  // Vue
 
 
 
-new vue__WEBPACK_IMPORTED_MODULE_3___default.a({
+new vue__WEBPACK_IMPORTED_MODULE_4___default.a({
   el: '#site',
   components: {
-    DemoComponent: _components_DemoComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
+    DemoComponent: _components_DemoComponent__WEBPACK_IMPORTED_MODULE_5__["default"]
   }
 });
 

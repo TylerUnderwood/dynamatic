@@ -1,6 +1,6 @@
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| COMPONENTS: Site Header 
+| COMPONENTS: Menu 
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
@@ -30,33 +30,39 @@ $menu_buffer: 1em;
   height: 100vh;
   background-color: $menu_bg;
   padding: 0 $header_padding;
-  padding-top: $header_height;
   line-height: 1;
   font-size: 2.4rem;
   transform-origin: bottom left;
 
-  // These ::before and ::afters are for fading the nav items
-  // top and bottom as you scroll through them.
-  &:before,
-  &:after {
-    position: absolute;
-    z-index: 9;
-    left: 0;
-    width: 100%;
-    min-height: $menu_buffer;
-    content: '';
-  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    overflow: auto;
 
-  &:before {
-    top: $header_height;
-    background: linear-gradient(rgba($menu_bg, 1) 0%, 
-                                rgba($menu_bg, 0) 100%);
-  }
+    // These ::before and ::afters are for fading the nav items
+    // top and bottom as you scroll through them.
+    &:before,
+    &:after {
+      position: absolute;
+      z-index: 99;
+      left: 0;
+      width: 100%;
+      min-height: $menu_buffer;
+      content: '';
+    }
 
-  &:after {
-    bottom: 0;
-    background: linear-gradient(rgba($menu_bg, 0) 0%, 
-                                rgba($menu_bg, 1) 100%);
+    &:before {
+      top: 0;
+      background: linear-gradient(rgba($menu_bg, 1) 0%, 
+                                  rgba($menu_bg, 0) 100%);
+    }
+
+    &:after {
+      bottom: 0;
+      background: linear-gradient(rgba($menu_bg, 0) 0%, 
+                                  rgba($menu_bg, 1) 100%);
+    }
   }
 
   &__inner {

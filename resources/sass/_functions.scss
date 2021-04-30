@@ -43,8 +43,8 @@
 
 //  Make All Classes In a SCSS Array
 @mixin makeAll( $class, $properties, $array ) {
-  @each $index, $value in $array {
-    .#{$class}-#{$index} {
+  @each $key, $value in $array {
+    .#{$class}-#{$key} {
       @each $property in $properties {
         #{$property}: $value;
       }
@@ -66,8 +66,8 @@
 
 // This is the same as the make all mixin but it is expected to be inside the addBreakpoints mixin
 @mixin makeAllForBreakpoints( $class, $properties, $array ) {
-  @each $index, $value in $array {
-    &#{$class}-#{$index} {
+  @each $key, $value in $array {
+    &#{$class}-#{$key} {
       @each $property in $properties {
         #{$property}: $value;
       }

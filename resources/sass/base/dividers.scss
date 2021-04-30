@@ -5,50 +5,36 @@
 */
 
 /* === FILLER === */
+// This is for an element you want to fill the space between others
+.fill {
+  flex: 1 1 auto;
+}
 // This is used as a sibling element inside a flex element to fill empty space
 .filler {
   display: block;
   flex: 1 1 auto;
   content: '';
 }
-// This is for an element you want to fill the space between others
-.fill {
-  flex: 1 1 auto;
-}
-
-
 
 /* === BREAK === */
 .break {
   min-width: 100%;
-  padding-top: $space;
+  padding-top: 1em;
   content: '';
 }
-
-
 
 /* === SPACE === */
 .space {
   min-height: 100%;
-  padding-left: $space;
+  padding-left: 1em;
   content: '';
 }
 
-
-
 /* === GAP === */
-.gap {
-  padding-top: $space;
-  padding-left: $space;
-}
-
-@include makeAll( gap, padding-top padding-left, $spacing );
-
-@include addBreakpoints() {
-  &gap {
-    padding-top: $space;
-    padding-left: $space;
-  }
-  
-  @include makeAllForBreakpoints( gap, padding-top padding-left, $spacing );
+.spacer {
+  display: inline-block;
+  max-width: 1em;
+  max-height: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
 }

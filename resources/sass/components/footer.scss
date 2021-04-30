@@ -11,8 +11,6 @@
 
 .footer {
   position: relative;
-  background-color: $contrast;
-  color: $white;
 
   &__inner {
     position: relative;
@@ -53,21 +51,21 @@
 /* ===== COMPONENTS ===== */
 
 /* === SCROLL TO TOP BUTTON === */
-
-// Scroll To Top Size
-$stt-size: 4rem;
-
-.scroll-to-top {
+.back-to-top {
   display: flex;
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 1em;
   height: 1em;
   padding: 0.25em;
-  font-size: $stt-size;
   background-color: $background;
-  fill: $link_color;
+  font-size: 4rem;
+  color: $link_color;
+  fill: currentColor;
+  transition: color 300ms ease;
+
+  &:hover,
+  &:focus {
+    color: $link_hover;
+  }
 }
 
 /* === COPYRIGHT === */

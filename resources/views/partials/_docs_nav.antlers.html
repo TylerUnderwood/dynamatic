@@ -1,6 +1,6 @@
 <nav class="nav nav--v">
 {{ nav:documentation }}
-    <div class="column column-l mar-b">
+    <div class="column column-l">
 
         <a class="nav__link link" href="{{ url }}">
             <span class="meta">{{ title }}</span>
@@ -13,5 +13,9 @@
         {{ /children }}
 
     </div>
+
+    {{ if not last }}
+    <div class="spacer"></div>
+    {{ /if }}
 {{ /nav:documentation }}
 </nav>
