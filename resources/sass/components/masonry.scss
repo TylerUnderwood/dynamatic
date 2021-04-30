@@ -55,10 +55,10 @@
 //////////////////////////
 // .grout
 .grout {
-  margin: -$space / 2;
+  margin: calc(-1 * (#{$space} / 2));
 
   .tile {
-    padding: $space / 2;
+    padding: calc(#{$space} / 2);
   }
 }
 

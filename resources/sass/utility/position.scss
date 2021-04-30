@@ -77,28 +77,54 @@
   }
 }
 
-/* === for child === */
+/* === outset === */
 
-.put-t {
+.outset-t {
   position: absolute;
   top: 0;
   bottom: 100%;
 }
 
-.put-r {
+.outset-r {
   position: absolute;
   right: 0;
   left: 100%;
 }
 
-.put-b {
+.outset-b {
   position: absolute;
   top: 100%;
   bottom: 0;
 }
 
-.put-l {
+.outset-l {
   position: absolute;
   right: 100%;
+  left: 0;
+}
+
+/* === inset === */
+
+.inset-t {
+  position: absolute;
+  top: 0;
+  bottom: unset;
+}
+
+.inset-r {
+  position: absolute;
+  right: 0;
+  left: unset;
+}
+
+.inset-b {
+  position: absolute;
+  top: unset;
+  bottom: 0;
+}
+
+.inset-l {
+  position: absolute;
+  right: unset;
   left: 0;
 }

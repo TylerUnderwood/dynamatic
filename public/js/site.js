@@ -12855,37 +12855,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
-/***/ "./resources/js/classes/match-height.js":
-/*!**********************************************!*\
-  !*** ./resources/js/classes/match-height.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-//////////////////////////////
-// Match Height
-var matchHeightAttribute = function matchHeightAttribute() {
-  document.querySelectorAll('[match-height]').forEach(function (element) {
-    var machableElementId = element.getAttribute('match-height');
-    var machableElement = document.getElementById("".concat(machableElementId));
-
-    if (machableElement !== null) {
-      element.style.minHeight = "".concat(machableElement.offsetHeight, "px");
-    } else {
-      console.log("There is no #".concat(machableElementId, " to match height."));
-    }
-  });
-};
-
-window.addEventListener('DOMContentLoaded', function () {
-  matchHeightAttribute();
-});
-window.addEventListener('resize', function () {
-  matchHeightAttribute();
-});
-
-/***/ }),
-
 /***/ "./resources/js/classes/modal.js":
 /*!***************************************!*\
   !*** ./resources/js/classes/modal.js ***!
@@ -13264,6 +13233,60 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/functions/display-var.js":
+/*!***********************************************!*\
+  !*** ./resources/js/functions/display-var.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//////////////////////////////
+// Match Height
+var displayVarAttribute = function displayVarAttribute() {
+  document.querySelectorAll('[display-var]').forEach(function (element) {
+    var cssVar = element.getAttribute('display-var');
+    var cssVarValue = getComputedStyle(document.documentElement).getPropertyValue("".concat(cssVar));
+    element.innerHTML = cssVarValue;
+  });
+};
+
+window.addEventListener('DOMContentLoaded', function () {
+  displayVarAttribute();
+});
+
+/***/ }),
+
+/***/ "./resources/js/functions/match-height.js":
+/*!************************************************!*\
+  !*** ./resources/js/functions/match-height.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//////////////////////////////
+// Match Height
+var matchHeightAttribute = function matchHeightAttribute() {
+  document.querySelectorAll('[match-height]').forEach(function (element) {
+    var machableElementId = element.getAttribute('match-height');
+    var machableElement = document.getElementById("".concat(machableElementId));
+
+    if (machableElement !== null) {
+      element.style.minHeight = "".concat(machableElement.offsetHeight, "px");
+    } else {
+      console.log("There is no #".concat(machableElementId, " to match height."));
+    }
+  });
+};
+
+window.addEventListener('DOMContentLoaded', function () {
+  matchHeightAttribute();
+});
+window.addEventListener('resize', function () {
+  matchHeightAttribute();
+});
+
+/***/ }),
+
 /***/ "./resources/js/site.js":
 /*!******************************!*\
   !*** ./resources/js/site.js ***!
@@ -13273,18 +13296,22 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/smooth-scroll */ "./resources/js/classes/smooth-scroll.js");
-/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/appear */ "./resources/js/classes/appear.js");
-/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_classes_appear__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./classes/modal */ "./resources/js/classes/modal.js");
-/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_classes_modal__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _classes_match_height__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./classes/match-height */ "./resources/js/classes/match-height.js");
-/* harmony import */ var _classes_match_height__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_classes_match_height__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_DemoComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/DemoComponent */ "./resources/js/components/DemoComponent.vue");
-// ES6 Classes
+/* harmony import */ var _functions_match_height__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/match-height */ "./resources/js/functions/match-height.js");
+/* harmony import */ var _functions_match_height__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_functions_match_height__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _functions_display_var__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/display-var */ "./resources/js/functions/display-var.js");
+/* harmony import */ var _functions_display_var__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_functions_display_var__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./classes/smooth-scroll */ "./resources/js/classes/smooth-scroll.js");
+/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./classes/appear */ "./resources/js/classes/appear.js");
+/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_classes_appear__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./classes/modal */ "./resources/js/classes/modal.js");
+/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_classes_modal__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_DemoComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/DemoComponent */ "./resources/js/components/DemoComponent.vue");
+// ES6 Functions
+
+ // ES6 Classes
 
 
 
@@ -13292,10 +13319,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-new vue__WEBPACK_IMPORTED_MODULE_4___default.a({
+new vue__WEBPACK_IMPORTED_MODULE_5___default.a({
   el: '#site',
   components: {
-    DemoComponent: _components_DemoComponent__WEBPACK_IMPORTED_MODULE_5__["default"]
+    DemoComponent: _components_DemoComponent__WEBPACK_IMPORTED_MODULE_6__["default"]
   }
 });
 

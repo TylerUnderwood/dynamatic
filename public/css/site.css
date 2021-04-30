@@ -22,7 +22,7 @@
   --link-color: var(--accent);
   --link-hover: #0080ff;
   --link-active: #c000ff;
-  --space: 1.8rem;
+  --space: 1em;
 }
 
 .light-theme {
@@ -242,7 +242,7 @@ p {
 
 .copy, .transcription p {
   display: block;
-  margin: 1.8rem 0 0;
+  margin: 1.6rem 0 0;
   max-width: 36rem;
   line-height: 1.6;
   -webkit-hyphens: none;
@@ -533,7 +533,7 @@ ol {
 
 .list {
   display: inline-block;
-  margin: 1.8rem 0 0;
+  margin: 1.6rem 0 0;
   max-width: 36rem;
   padding: 0;
   line-height: 1.4;
@@ -567,7 +567,7 @@ ol {
 
 .ul, .transcription ul {
   display: inline-block;
-  margin: 1.8rem 0 0;
+  margin: 1.6rem 0 0;
   max-width: 36rem;
   padding: 0;
   line-height: 1.4;
@@ -611,7 +611,7 @@ ol {
 
 .ol, .transcription ol {
   display: inline-block;
-  margin: 1.8rem 0 0;
+  margin: 1.6rem 0 0;
   max-width: 36rem;
   padding: 0;
   line-height: 1.4;
@@ -661,7 +661,7 @@ cite {
 
 .quote, .transcription blockquote {
   display: inline-block;
-  margin: 1.8rem 0 0;
+  margin: 1.6rem 0 0;
   max-width: 36rem;
   border-left: 4px solid var(--accent);
   padding: 0 0 0 1.2em;
@@ -738,7 +738,7 @@ code {
 
 .pre, .transcription pre {
   display: block;
-  margin: 1.8rem 0 0;
+  margin: 1.6rem 0 0;
   border: 1px solid var(--border-color);
   background: var(--contrast);
   padding: 1em;
@@ -2130,34 +2130,34 @@ input[type=file] {
   }
 }
 .grout {
-  margin: -0.9rem;
+  margin: calc(-1 * (var(--space) / 2));
 }
 .grout .tile {
-  padding: 0.9rem;
+  padding: calc(var(--space) / 2);
 }
 
 @media (min-width: 480px) {
   .sm\:grout {
-    margin: -0.9rem;
+    margin: -var(--space)/2;
   }
   .sm\:grout .tile {
-    padding: 0.9rem;
+    padding: var(--space)/2;
   }
 }
 @media (min-width: 768px) {
   .md\:grout {
-    margin: -0.9rem;
+    margin: -var(--space)/2;
   }
   .md\:grout .tile {
-    padding: 0.9rem;
+    padding: var(--space)/2;
   }
 }
 @media (min-width: 1024px) {
   .lg\:grout {
-    margin: -0.9rem;
+    margin: -var(--space)/2;
   }
   .lg\:grout .tile {
-    padding: 0.9rem;
+    padding: var(--space)/2;
   }
 }
 .grout-0 {
@@ -2876,24 +2876,6 @@ input[type=file] {
   background: var(--contrast);
   overflow: hidden;
 }
-.card__content {
-  width: 100%;
-  padding: 1.8rem;
-}
-.card__figure {
-  width: 100%;
-}
-.card--entry {
-  display: flex;
-  flex-direction: row;
-}
-.card--entry .card__content {
-  padding: 1rem;
-}
-.card--entry .card__figure {
-  max-width: 8rem;
-  background-color: var(--border-color);
-}
 
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -2913,7 +2895,7 @@ input[type=file] {
 }
 .bard__block {
   display: block;
-  margin: 1.8rem auto;
+  margin: 1.6rem auto;
   width: 100%;
   max-width: 36rem;
 }
@@ -2993,11 +2975,11 @@ input[type=file] {
   .bard__left {
     float: left;
     margin-left: unset;
-    margin-right: 1.8rem;
+    margin-right: 1.6rem;
   }
   .bard__right {
     float: right;
-    margin-left: 1.8rem;
+    margin-left: 1.6rem;
     margin-right: unset;
   }
 }
@@ -3483,6 +3465,55 @@ input[type=file] {
   }
 }
 
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Inverse Corner
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+.inverse-corner {
+  display: block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  font-size: inherit;
+  color: inherit;
+  content: "";
+}
+.inverse-corner::after {
+  display: block;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  border-radius: 100%;
+  box-shadow: 0 0 0 1em currentColor;
+  content: "";
+}
+.inverse-corner--top-right::after {
+  top: 0;
+  left: unset;
+  bottom: unset;
+  right: 0;
+}
+.inverse-corner--top-left::after {
+  top: 0;
+  left: 0;
+  bottom: unset;
+  right: unset;
+}
+.inverse-corner--bottom-left::after {
+  top: unset;
+  left: 0;
+  bottom: 0;
+  right: unset;
+}
+.inverse-corner--bottom-right::after {
+  top: unset;
+  left: unset;
+  bottom: 0;
+  right: 0;
+}
+
 /* ==========================================================================
 ===== UTILITY STYLES =====
 =
@@ -3495,7 +3526,7 @@ input[type=file] {
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 .size {
-  font-size: 1.8rem;
+  font-size: var(--space);
 }
 
 .size-0 {
@@ -3532,7 +3563,7 @@ input[type=file] {
 
 @media (min-width: 480px) {
   .sm\:size {
-    font-size: 1.8rem;
+    font-size: var(--space);
   }
   .sm\:size-0 {
     font-size: 0;
@@ -3561,7 +3592,7 @@ input[type=file] {
 }
 @media (min-width: 768px) {
   .md\:size {
-    font-size: 1.8rem;
+    font-size: var(--space);
   }
   .md\:size-0 {
     font-size: 0;
@@ -3590,7 +3621,7 @@ input[type=file] {
 }
 @media (min-width: 1024px) {
   .lg\:size {
-    font-size: 1.8rem;
+    font-size: var(--space);
   }
   .lg\:size-0 {
     font-size: 0;
@@ -3753,6 +3784,14 @@ input[type=file] {
   color: var(--link-color);
 }
 
+.background-color {
+  color: var(--background);
+}
+
+.contrast-color {
+  color: var(--contrast);
+}
+
 /* === border === */
 .border-white {
   border-color: #ffffff;
@@ -3804,7 +3843,7 @@ input[type=file] {
   background-color: #202020;
 }
 
-.bg-background {
+.bg-background-color {
   background-color: var(--background);
 }
 
@@ -3818,6 +3857,45 @@ input[type=file] {
 
 .bg-accent-color {
   background-color: var(--accent);
+}
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Border
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+.shadow {
+  box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.border {
+  border: 2px solid var(--border-color);
+}
+
+.border-t {
+  border-top: 2px solid var(--border-color);
+}
+
+.border-r {
+  border-right: 2px solid var(--border-color);
+}
+
+.border-b {
+  border-bottom: 2px solid var(--border-color);
+}
+
+.border-l {
+  border-left: 2px solid var(--border-color);
+}
+
+.border-v {
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.border-h {
+  border-right: 2px solid var(--border-color);
+  border-left: 2px solid var(--border-color);
 }
 
 /*
@@ -3893,28 +3971,53 @@ input[type=file] {
   content: "";
 }
 
-/* === for child === */
-.put-t {
+/* === outset === */
+.outset-t {
   position: absolute;
   top: 0;
   bottom: 100%;
 }
 
-.put-r {
+.outset-r {
   position: absolute;
   right: 0;
   left: 100%;
 }
 
-.put-b {
+.outset-b {
   position: absolute;
   top: 100%;
   bottom: 0;
 }
 
-.put-l {
+.outset-l {
   position: absolute;
   right: 100%;
+  left: 0;
+}
+
+/* === inset === */
+.inset-t {
+  position: absolute;
+  top: 0;
+  bottom: unset;
+}
+
+.inset-r {
+  position: absolute;
+  right: 0;
+  left: unset;
+}
+
+.inset-b {
+  position: absolute;
+  top: unset;
+  bottom: 0;
+}
+
+.inset-l {
+  position: absolute;
+  right: unset;
   left: 0;
 }
 
@@ -4797,7 +4900,7 @@ input[type=file] {
 /* === PADDING === */
 /* surrounding */
 .pad {
-  padding: 1.8rem;
+  padding: var(--space);
 }
 
 .pad-0 {
@@ -4834,8 +4937,8 @@ input[type=file] {
 
 /* vertical */
 .pad-v {
-  padding-top: 1.8rem;
-  padding-bottom: 1.8rem;
+  padding-top: var(--space);
+  padding-bottom: var(--space);
 }
 
 .pad-v-0 {
@@ -4880,8 +4983,8 @@ input[type=file] {
 
 /* horizontal */
 .pad-h {
-  padding-right: 1.8rem;
-  padding-left: 1.8rem;
+  padding-right: var(--space);
+  padding-left: var(--space);
 }
 
 .pad-h-0 {
@@ -4926,7 +5029,7 @@ input[type=file] {
 
 /* top */
 .pad-t {
-  padding-top: 1.8rem;
+  padding-top: var(--space);
 }
 
 .pad-t-0 {
@@ -4963,7 +5066,7 @@ input[type=file] {
 
 /* right */
 .pad-r {
-  padding-right: 1.8rem;
+  padding-right: var(--space);
 }
 
 .pad-r-0 {
@@ -5000,7 +5103,7 @@ input[type=file] {
 
 /* bottom */
 .pad-b {
-  padding-bottom: 1.8rem;
+  padding-bottom: var(--space);
 }
 
 .pad-b-0 {
@@ -5037,7 +5140,7 @@ input[type=file] {
 
 /* left */
 .pad-l {
-  padding-left: 1.8rem;
+  padding-left: var(--space);
 }
 
 .pad-l-0 {
@@ -5075,7 +5178,7 @@ input[type=file] {
 /* padding breakpoints */
 @media (min-width: 480px) {
   .sm\:pad {
-    padding: 1.8rem;
+    padding: var(--space);
   }
   .sm\:pad-0 {
     padding: 0;
@@ -5102,8 +5205,8 @@ input[type=file] {
     padding: 6.4rem;
   }
   .sm\:pad-v {
-    padding-top: 1.8rem;
-    padding-bottom: 1.8rem;
+    padding-top: var(--space);
+    padding-bottom: var(--space);
   }
   .sm\:pad-v-0 {
     padding-top: 0;
@@ -5138,8 +5241,8 @@ input[type=file] {
     padding-bottom: 6.4rem;
   }
   .sm\:pad-h {
-    padding-right: 1.8rem;
-    padding-left: 1.8rem;
+    padding-right: var(--space);
+    padding-left: var(--space);
   }
   .sm\:pad-h-0 {
     padding-right: 0;
@@ -5174,7 +5277,7 @@ input[type=file] {
     padding-left: 6.4rem;
   }
   .sm\:pad-t {
-    padding-top: 1.8rem;
+    padding-top: var(--space);
   }
   .sm\:pad-t-0 {
     padding-top: 0;
@@ -5201,7 +5304,7 @@ input[type=file] {
     padding-top: 6.4rem;
   }
   .sm\:pad-r {
-    padding-right: 1.8rem;
+    padding-right: var(--space);
   }
   .sm\:pad-r-0 {
     padding-right: 0;
@@ -5228,7 +5331,7 @@ input[type=file] {
     padding-right: 6.4rem;
   }
   .sm\:pad-b {
-    padding-bottom: 1.8rem;
+    padding-bottom: var(--space);
   }
   .sm\:pad-b-0 {
     padding-bottom: 0;
@@ -5255,7 +5358,7 @@ input[type=file] {
     padding-bottom: 6.4rem;
   }
   .sm\:pad-l {
-    padding-left: 1.8rem;
+    padding-left: var(--space);
   }
   .sm\:pad-l-0 {
     padding-left: 0;
@@ -5284,7 +5387,7 @@ input[type=file] {
 }
 @media (min-width: 768px) {
   .md\:pad {
-    padding: 1.8rem;
+    padding: var(--space);
   }
   .md\:pad-0 {
     padding: 0;
@@ -5311,8 +5414,8 @@ input[type=file] {
     padding: 6.4rem;
   }
   .md\:pad-v {
-    padding-top: 1.8rem;
-    padding-bottom: 1.8rem;
+    padding-top: var(--space);
+    padding-bottom: var(--space);
   }
   .md\:pad-v-0 {
     padding-top: 0;
@@ -5347,8 +5450,8 @@ input[type=file] {
     padding-bottom: 6.4rem;
   }
   .md\:pad-h {
-    padding-right: 1.8rem;
-    padding-left: 1.8rem;
+    padding-right: var(--space);
+    padding-left: var(--space);
   }
   .md\:pad-h-0 {
     padding-right: 0;
@@ -5383,7 +5486,7 @@ input[type=file] {
     padding-left: 6.4rem;
   }
   .md\:pad-t {
-    padding-top: 1.8rem;
+    padding-top: var(--space);
   }
   .md\:pad-t-0 {
     padding-top: 0;
@@ -5410,7 +5513,7 @@ input[type=file] {
     padding-top: 6.4rem;
   }
   .md\:pad-r {
-    padding-right: 1.8rem;
+    padding-right: var(--space);
   }
   .md\:pad-r-0 {
     padding-right: 0;
@@ -5437,7 +5540,7 @@ input[type=file] {
     padding-right: 6.4rem;
   }
   .md\:pad-b {
-    padding-bottom: 1.8rem;
+    padding-bottom: var(--space);
   }
   .md\:pad-b-0 {
     padding-bottom: 0;
@@ -5464,7 +5567,7 @@ input[type=file] {
     padding-bottom: 6.4rem;
   }
   .md\:pad-l {
-    padding-left: 1.8rem;
+    padding-left: var(--space);
   }
   .md\:pad-l-0 {
     padding-left: 0;
@@ -5493,7 +5596,7 @@ input[type=file] {
 }
 @media (min-width: 1024px) {
   .lg\:pad {
-    padding: 1.8rem;
+    padding: var(--space);
   }
   .lg\:pad-0 {
     padding: 0;
@@ -5520,8 +5623,8 @@ input[type=file] {
     padding: 6.4rem;
   }
   .lg\:pad-v {
-    padding-top: 1.8rem;
-    padding-bottom: 1.8rem;
+    padding-top: var(--space);
+    padding-bottom: var(--space);
   }
   .lg\:pad-v-0 {
     padding-top: 0;
@@ -5556,8 +5659,8 @@ input[type=file] {
     padding-bottom: 6.4rem;
   }
   .lg\:pad-h {
-    padding-right: 1.8rem;
-    padding-left: 1.8rem;
+    padding-right: var(--space);
+    padding-left: var(--space);
   }
   .lg\:pad-h-0 {
     padding-right: 0;
@@ -5592,7 +5695,7 @@ input[type=file] {
     padding-left: 6.4rem;
   }
   .lg\:pad-t {
-    padding-top: 1.8rem;
+    padding-top: var(--space);
   }
   .lg\:pad-t-0 {
     padding-top: 0;
@@ -5619,7 +5722,7 @@ input[type=file] {
     padding-top: 6.4rem;
   }
   .lg\:pad-r {
-    padding-right: 1.8rem;
+    padding-right: var(--space);
   }
   .lg\:pad-r-0 {
     padding-right: 0;
@@ -5646,7 +5749,7 @@ input[type=file] {
     padding-right: 6.4rem;
   }
   .lg\:pad-b {
-    padding-bottom: 1.8rem;
+    padding-bottom: var(--space);
   }
   .lg\:pad-b-0 {
     padding-bottom: 0;
@@ -5673,7 +5776,7 @@ input[type=file] {
     padding-bottom: 6.4rem;
   }
   .lg\:pad-l {
-    padding-left: 1.8rem;
+    padding-left: var(--space);
   }
   .lg\:pad-l-0 {
     padding-left: 0;
@@ -5703,7 +5806,7 @@ input[type=file] {
 /* === MARGIN === */
 /* surrounding */
 .mar {
-  margin: 1.8rem;
+  margin: var(--space);
 }
 
 .mar-0 {
@@ -5744,7 +5847,7 @@ input[type=file] {
 
 /* top */
 .mar-t {
-  margin-top: 1.8rem;
+  margin-top: var(--space);
 }
 
 .mar-t-0 {
@@ -5785,7 +5888,7 @@ input[type=file] {
 
 /* right */
 .mar-r {
-  margin-right: 1.8rem;
+  margin-right: var(--space);
 }
 
 .mar-r-0 {
@@ -5826,7 +5929,7 @@ input[type=file] {
 
 /* bottom */
 .mar-b {
-  margin-bottom: 1.8rem;
+  margin-bottom: var(--space);
 }
 
 .mar-b-0 {
@@ -5867,7 +5970,7 @@ input[type=file] {
 
 /* left */
 .mar-l {
-  margin-left: 1.8rem;
+  margin-left: var(--space);
 }
 
 .mar-l-0 {
@@ -5909,7 +6012,7 @@ input[type=file] {
 /* margin breakpoints */
 @media (min-width: 480px) {
   .sm\:mar {
-    margin: 1.8rem;
+    margin: var(--space);
   }
   .sm\:mar-0 {
     margin: 0;
@@ -5939,7 +6042,7 @@ input[type=file] {
     margin: auto;
   }
   .sm\:mar-t {
-    margin-top: 1.8rem;
+    margin-top: var(--space);
   }
   .sm\:mar-t-0 {
     margin-top: 0;
@@ -5969,7 +6072,7 @@ input[type=file] {
     margin-top: auto;
   }
   .sm\:mar-r {
-    margin-right: 1.8rem;
+    margin-right: var(--space);
   }
   .sm\:mar-r-0 {
     margin-right: 0;
@@ -5999,7 +6102,7 @@ input[type=file] {
     margin-right: auto;
   }
   .sm\:mar-b {
-    margin-bottom: 1.8rem;
+    margin-bottom: var(--space);
   }
   .sm\:mar-b-0 {
     margin-bottom: 0;
@@ -6029,7 +6132,7 @@ input[type=file] {
     margin-bottom: auto;
   }
   .sm\:mar-l {
-    margin-left: 1.8rem;
+    margin-left: var(--space);
   }
   .sm\:mar-l-0 {
     margin-left: 0;
@@ -6061,7 +6164,7 @@ input[type=file] {
 }
 @media (min-width: 768px) {
   .md\:mar {
-    margin: 1.8rem;
+    margin: var(--space);
   }
   .md\:mar-0 {
     margin: 0;
@@ -6091,7 +6194,7 @@ input[type=file] {
     margin: auto;
   }
   .md\:mar-t {
-    margin-top: 1.8rem;
+    margin-top: var(--space);
   }
   .md\:mar-t-0 {
     margin-top: 0;
@@ -6121,7 +6224,7 @@ input[type=file] {
     margin-top: auto;
   }
   .md\:mar-r {
-    margin-right: 1.8rem;
+    margin-right: var(--space);
   }
   .md\:mar-r-0 {
     margin-right: 0;
@@ -6151,7 +6254,7 @@ input[type=file] {
     margin-right: auto;
   }
   .md\:mar-b {
-    margin-bottom: 1.8rem;
+    margin-bottom: var(--space);
   }
   .md\:mar-b-0 {
     margin-bottom: 0;
@@ -6181,7 +6284,7 @@ input[type=file] {
     margin-bottom: auto;
   }
   .md\:mar-l {
-    margin-left: 1.8rem;
+    margin-left: var(--space);
   }
   .md\:mar-l-0 {
     margin-left: 0;
@@ -6213,7 +6316,7 @@ input[type=file] {
 }
 @media (min-width: 1024px) {
   .lg\:mar {
-    margin: 1.8rem;
+    margin: var(--space);
   }
   .lg\:mar-0 {
     margin: 0;
@@ -6243,7 +6346,7 @@ input[type=file] {
     margin: auto;
   }
   .lg\:mar-t {
-    margin-top: 1.8rem;
+    margin-top: var(--space);
   }
   .lg\:mar-t-0 {
     margin-top: 0;
@@ -6273,7 +6376,7 @@ input[type=file] {
     margin-top: auto;
   }
   .lg\:mar-r {
-    margin-right: 1.8rem;
+    margin-right: var(--space);
   }
   .lg\:mar-r-0 {
     margin-right: 0;
@@ -6303,7 +6406,7 @@ input[type=file] {
     margin-right: auto;
   }
   .lg\:mar-b {
-    margin-bottom: 1.8rem;
+    margin-bottom: var(--space);
   }
   .lg\:mar-b-0 {
     margin-bottom: 0;
@@ -6333,7 +6436,7 @@ input[type=file] {
     margin-bottom: auto;
   }
   .lg\:mar-l {
-    margin-left: 1.8rem;
+    margin-left: var(--space);
   }
   .lg\:mar-l-0 {
     margin-left: 0;

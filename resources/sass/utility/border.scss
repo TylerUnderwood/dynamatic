@@ -1,0 +1,39 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Border
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.shadow {
+  box-shadow: $shadow;
+}
+
+.border {
+  border: $border;
+}
+
+.border-t {
+  border-top: $border;
+}
+
+.border-r {
+  border-right: $border;
+}
+
+.border-b {
+  border-bottom: $border;
+}
+
+.border-l {
+  border-left: $border;
+}
+
+.border-v {
+  border-top: $border;
+  border-bottom: $border;
+}
+
+.border-h {
+  border-right: $border;
+  border-left: $border;
+}

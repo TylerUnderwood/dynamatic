@@ -59,7 +59,7 @@ p {
 
 .copy {
   display: block;
-  margin: $space 0 0;
+  margin: map-get($spacing, 4) 0 0;
   max-width: $copy_max;
   line-height: 1.6;
   hyphens: none;
@@ -245,7 +245,7 @@ ol {
   $list_left: 1.6em;
 
   display: inline-block;
-  margin: $space 0 0;
+  margin: map-get($spacing, 4) 0 0;
   max-width: $copy_max;
   padding: 0;
   line-height: 1.4;
@@ -350,7 +350,7 @@ cite {
 
 .quote {
   display: inline-block;
-  margin: $space 0 0;
+  margin: map-get($spacing, 4) 0 0;
   max-width: $copy_max;
   border-left: 4px solid $accent;
   padding: 0 0 0 1.2em;
@@ -417,7 +417,7 @@ code {
 
 .pre {
   display: block;
-  margin: $space 0 0;
+  margin: map-get($spacing, 4) 0 0;
   border: 1px solid $border_color;
   background: $contrast;
   padding: 1em;

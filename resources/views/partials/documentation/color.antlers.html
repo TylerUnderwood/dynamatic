@@ -1,0 +1,19 @@
+---
+colors:
+  - primary
+  - accent
+  - link-hover
+  - link-active
+  - text-color
+  - background
+  - contrast
+  - border-color
+---
+
+<div class="masonry grout-2">
+  {{ view:colors }}
+  <div class="column tile tile-12 sm:tile-6 md:tile-4">
+    {{ partial src="_swatch_card" value="{{ value }}" }}
+  </div>
+  {{ /view:colors }}
+</div>

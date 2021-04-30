@@ -218,20 +218,19 @@ $vert_space_min:    64px;
 $vert_space_max:    96px;
 
 // default
-// $space:             var(--space);
-$space:             1.8rem;
+$space:             var(--space);
 
 // utility
 // the most common spacing amounts
 $spacing: (
   0:                0,
-  1:                0.4rem,
-  2:                0.8rem,
-  3:                1.2rem,
-  4:                1.6rem,
-  5:                2.4rem,
-  6:                3.2rem,
-  7:                6.4rem,
+  1:                0.4rem, // 2xs
+  2:                0.8rem, // xs
+  3:                1.2rem, // sm
+  4:                1.6rem, // md
+  5:                2.4rem, // lg
+  6:                3.2rem, // xl
+  7:                6.4rem, // 2xl
 );
 
 
@@ -249,7 +248,7 @@ $spacing: (
   --link-color:        var(--accent);
   --link-hover:        #{$azure};
   --link-active:       #{$royal_purple};
-  --space:             1.8rem;
+  --space:             1em;
 }
 
 .light-theme {

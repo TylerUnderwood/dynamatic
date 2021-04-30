@@ -40,6 +40,14 @@
   color: $link_color;
 }
 
+.background-color {
+  color: $background;
+}
+
+.contrast-color {
+  color: $contrast;
+}
+
 
 
 /* === border === */
@@ -101,7 +109,7 @@
   background-color: $off_black;
 }
 
-.bg-background {
+.bg-background-color {
   background-color: $background;
 }
 

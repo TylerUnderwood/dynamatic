@@ -12,12 +12,12 @@
 		{{ posts }}
 
 			<article class="tile tile-12">
-				<a href="{{ url }}" class="card card--entry">
-					<div class="card__content">
+				<a href="{{ url }}" class="card row">
+					<div class="column fill pad">
 						<h3 class="h4">{{ title }}</h3>
 						<div class="mar-t-2">{{ intro }}</div>
 					</div>
-					<div class="card__figure">
+					<div class="w-100 bg-primary" style="max-width: 8rem;">
 						<div class="bg-img bg-square" style="background-image: url('{{ featured_image }}');"></div>
 					</div>
 				</a>

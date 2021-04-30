@@ -1,0 +1,27 @@
+<div 
+  id="{{ value }}" 
+  class="card fill border-r border-b"
+  style="border-top-left-radius: 1rem"
+>
+  <a 
+    class="bg-img bg-square"
+    style="
+      background-color: var(--{{ value }});
+      border-bottom-right-radius: 1rem;
+    "
+    href="#{{ value }}"
+  >
+  </a>
+  <div class="column column-l pad relative">
+    <div 
+      class="inverse-corner inverse-corner--top-left inset-t inset-l" 
+      style="
+        font-size: 1rem;
+        color: var(--{{ value }})
+      "
+    ></div>
+    <span class="meta small pad-l-1" display-var="--{{ value }}"></span>
+    <div class="spacer size-1"></div>
+    <code class="code small">{{ value }}</code>
+  </div>
+</div>
