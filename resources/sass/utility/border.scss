@@ -4,9 +4,38 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
+
+/* === SHADOW === */
+
 .shadow {
   box-shadow: $shadow;
 }
+
+
+/* === BORDER RADIUS === */
+
+.circular {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.pill {
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.round {
+  border-radius: $round;
+  overflow: hidden;
+}
+
+.rounder {
+  border-radius: $rounder;
+  overflow: hidden;
+}
+
+
+/* === BORDER === */
 
 .border {
   border: $border;

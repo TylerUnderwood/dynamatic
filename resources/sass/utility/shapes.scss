@@ -42,7 +42,7 @@
     content: '';
   }
 
-  &--north {
+  &--t {
     align-items: flex-end;
 
     &::before {
@@ -51,7 +51,7 @@
     }
   }
   
-  &--north-east {
+  &--t-l {
     justify-content: flex-end;
     align-items: flex-start;
 
@@ -62,7 +62,7 @@
     }
   }
 
-  &--east {
+  &--l {
     justify-content: flex-start;
 
     &::before {
@@ -71,7 +71,7 @@
     }
   }
   
-  &--south-east {
+  &--b-l {
     justify-content: flex-end;
     align-items: flex-end;
 
@@ -82,7 +82,7 @@
     }
   }
   
-  &--south {
+  &--b {
     align-items: flex-start;
 
     &::before {
@@ -91,7 +91,7 @@
     }
   }
   
-  &--south-west {
+  &--b-r {
     justify-content: flex-start;
     align-items: flex-end;
 
@@ -102,7 +102,7 @@
     }
   }
 
-  &--west {
+  &--r {
     justify-content: flex-end;
 
     &::before {
@@ -111,7 +111,7 @@
     }
   }
   
-  &--north-west {
+  &--t-r {
     justify-content: flex-start;
     align-items: flex-start;
 

@@ -418,8 +418,10 @@ code {
 .pre {
   display: block;
   margin: map-get($spacing, "md") 0 0;
+  border-radius: $rounder;
   border: 1px solid $border_color;
   background: $contrast;
+  box-shadow: $shadow_in;
   padding: 1em;
   line-height: 1.6;
   font-size: 0.9em;

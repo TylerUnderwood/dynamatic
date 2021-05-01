@@ -739,8 +739,10 @@ code {
 .pre, .transcription pre {
   display: block;
   margin: 1.6rem 0 0;
+  border-radius: 4px;
   border: 1px solid var(--border-color);
   background: var(--contrast);
+  box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.25) inset;
   padding: 1em;
   line-height: 1.6;
   font-size: 0.9em;
@@ -1244,86 +1246,86 @@ input[type=file] {
 | UTILITY: Backgrounds
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
-/* === BACKGROUND IMAGE === */
-.bg-img {
+[background] {
   display: block;
   position: relative;
   width: 100%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
-.bg-img::before {
+[background]::before {
   position: absolute;
+  z-index: 0;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   content: "";
 }
-.bg-img::after {
+[background]::after {
   display: block;
   content: "";
 }
 
 /* === BACKGROUND OVERLAYS === */
-.bg-overlay-lighten::before {
-  background-color: rgba(255, 255, 255, 0.3);
+[background*=lighter]::before {
+  background-color: white;
+  opacity: 0.5;
 }
 
-.bg-overlay-darken::before {
-  background-color: rgba(0, 0, 0, 0.3);
+[background*=lighten]::before {
+  background-color: white;
+  opacity: 0.3;
 }
 
-.bg-overlay-primary::before {
-  background-color: rgba(var(--primary), 0.8);
+[background*=darken]::before {
+  background-color: black;
+  opacity: 0.3;
 }
 
-/* === IMAGE RATIOS === */
-.bg-square::after,
-.ratio-1-1::after {
+[background*=darker]::before {
+  background-color: black;
+  opacity: 0.5;
+}
+
+[background*=colorize]::before {
+  background-color: currentColor;
+  opacity: 0.3;
+}
+
+/* === BACKGROUND RATIOS === */
+[background*="1:1"]::after {
   padding-top: 100%;
 }
 
-.bg-landscape::after,
-.ratio-4-3::after {
+[background*="4:3"]::after {
   padding-top: 75%;
 }
 
-.bg-portrait::after,
-.ratio-3-4::after {
+[background*="3:4"]::after {
   padding-top: 133.333333%;
 }
 
-.bg-wide::after,
-.ratio-16-9::after {
+[background*="16:9"]::after {
   padding-top: 56.25%;
 }
 
-.bg-tall::after,
-.ratio-9-16::after {
+[background*="9:16"]::after {
   padding-top: 177.777777%;
 }
 
-.bg-ultra-wide::after,
-.ratio-21-9::after {
+[background*="21:9"]::after {
   padding-top: 42.8571%;
 }
 
-/* === BORDER RADIUS === */
-.circle {
-  border-radius: 50%;
-  overflow: hidden;
+/* === BACKGROUND IMAGE === */
+[background*=image] {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.pill {
-  border-radius: 9999px;
-  overflow: hidden;
-}
-
-.round {
-  border-radius: 2px;
-  overflow: hidden;
+/* === BACKGROUND COLORS === */
+[background*=currentColor] {
+  background-color: currentColor;
 }
 
 /* === BACKGROUND ELEMENTS === */
@@ -2866,15 +2868,25 @@ input[type=file] {
 
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| COMPONENTS: Excerpt
+| COMPONENTS: Card
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 .card {
   display: block;
   box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 2px;
+  border-radius: 4px;
   background: var(--contrast);
   overflow: hidden;
+  transition: box-shadow 300ms ease;
+}
+.card__text {
+  transition: color 300ms ease;
+}
+.card\:hover:hover {
+  box-shadow: 0px 14px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.card\:hover:hover .card__text {
+  color: var(--link-hover);
 }
 
 /*
@@ -3467,7 +3479,7 @@ input[type=file] {
 
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| COMPONENTS: Inverse Corner
+| COMPONENTS: Arch
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 .arch {
@@ -3868,10 +3880,33 @@ input[type=file] {
 | UTILITY: Border
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
+/* === SHADOW === */
 .shadow {
   box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
+/* === BORDER RADIUS === */
+.circular {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.pill {
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.round {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.rounder {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* === BORDER === */
 .border {
   border: 2px solid var(--border-color);
 }
@@ -3964,66 +3999,66 @@ input[type=file] {
   border-color: transparent;
   content: "";
 }
-.triangle--north {
+.triangle--t {
   align-items: flex-end;
 }
-.triangle--north::before {
+.triangle--t::before {
   border-top: none;
   border-bottom-color: currentColor;
 }
-.triangle--north-east {
+.triangle--t-l {
   justify-content: flex-end;
   align-items: flex-start;
 }
-.triangle--north-east::before {
+.triangle--t-l::before {
   border-width: var(--triangle-corner);
   border-top-color: currentColor;
   border-right-color: currentColor;
 }
-.triangle--east {
+.triangle--l {
   justify-content: flex-start;
 }
-.triangle--east::before {
+.triangle--l::before {
   border-right: none;
   border-left-color: currentColor;
 }
-.triangle--south-east {
+.triangle--b-l {
   justify-content: flex-end;
   align-items: flex-end;
 }
-.triangle--south-east::before {
+.triangle--b-l::before {
   border-width: var(--triangle-corner);
   border-bottom-color: currentColor;
   border-right-color: currentColor;
 }
-.triangle--south {
+.triangle--b {
   align-items: flex-start;
 }
-.triangle--south::before {
+.triangle--b::before {
   border-top-color: currentColor;
   border-bottom: none;
 }
-.triangle--south-west {
+.triangle--b-r {
   justify-content: flex-start;
   align-items: flex-end;
 }
-.triangle--south-west::before {
+.triangle--b-r::before {
   border-width: var(--triangle-corner);
   border-bottom-color: currentColor;
   border-left-color: currentColor;
 }
-.triangle--west {
+.triangle--r {
   justify-content: flex-end;
 }
-.triangle--west::before {
+.triangle--r::before {
   border-left: none;
   border-right-color: currentColor;
 }
-.triangle--north-west {
+.triangle--t-r {
   justify-content: flex-start;
   align-items: flex-start;
 }
-.triangle--north-west::before {
+.triangle--t-r::before {
   border-width: var(--triangle-corner);
   border-top-color: currentColor;
   border-left-color: currentColor;

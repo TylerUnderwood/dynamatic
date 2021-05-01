@@ -1,6 +1,6 @@
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| COMPONENTS: Excerpt
+| COMPONENTS: Card
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
@@ -8,7 +8,20 @@
   $self: &;
   display: block;
   box-shadow: $shadow;
-  border-radius: $round;
+  border-radius: $rounder;
   background: $contrast;
   overflow: hidden;
+  transition: box-shadow 300ms ease;
+
+  &__text {
+    transition: color 300ms ease;
+  }
+
+  &\:hover:hover {
+    box-shadow: $shadow_up;
+
+    #{$self}__text {
+      color: $link_hover;
+    }
+  }
 }

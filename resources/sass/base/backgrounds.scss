@@ -4,19 +4,15 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-/* === BACKGROUND IMAGE === */
-
-.bg-img {
+[background] {
   display: block;
   position: relative;
   width: 100%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 
   // before is reserved for color overlays
   &::before {
     position: absolute;
+    z-index: 0;
     top: 0;
     right: 0;
     bottom: 0;
@@ -31,67 +27,71 @@
   }
 }
 
+
 /* === BACKGROUND OVERLAYS === */
-
-.bg-overlay-lighten::before {
-  background-color: rgba(255, 255, 255, 0.3);
+[background*="lighter"]::before {
+  background-color: white;
+  opacity: 0.5;
 }
 
-.bg-overlay-darken::before {
-  background-color: rgba(0, 0, 0, 0.3);
+[background*="lighten"]::before {
+  background-color: white;
+  opacity: 0.3;
 }
 
-.bg-overlay-primary::before {
-  background-color: rgba($primary, 0.8);
+[background*="darken"]::before {
+  background-color: black;
+  opacity: 0.3;
 }
 
-/* === IMAGE RATIOS === */
+[background*="darker"]::before {
+  background-color: black;
+  opacity: 0.5;
+}
 
-.bg-square::after,
-.ratio-1-1::after {
+[background*="colorize"]::before {
+  background-color: currentColor;
+  opacity: 0.3;
+}
+
+
+/* === BACKGROUND RATIOS === */
+[background*="1:1"]::after {
   padding-top: 100%;
 }
 
-.bg-landscape::after,
-.ratio-4-3::after {
+[background*="4:3"]::after {
   padding-top: 75%;
 }
 
-.bg-portrait::after,
-.ratio-3-4::after {
+[background*="3:4"]::after {
   padding-top: 133.333333%;
 }
 
-.bg-wide::after,
-.ratio-16-9::after {
+[background*="16:9"]::after {
   padding-top: 56.25%;
 }
 
-.bg-tall::after,
-.ratio-9-16::after {
+[background*="9:16"]::after {
   padding-top: 177.777777%;
 }
 
-.bg-ultra-wide::after,
-.ratio-21-9::after {
+[background*="21:9"]::after {
   padding-top: 42.8571%;
 }
 
-/* === BORDER RADIUS === */
 
-.circle {
-  border-radius: 50%;
-  overflow: hidden;
+/* === BACKGROUND IMAGE === */
+[background*="image"] {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.pill {
-  border-radius: 9999px;
-  overflow: hidden;
-}
 
-.round {
-  border-radius: $round;
-  overflow: hidden;
+/* === BACKGROUND COLORS === */
+[background*="currentColor"] {
+  background-color: currentColor;
 }
 
 /* === BACKGROUND ELEMENTS === */
