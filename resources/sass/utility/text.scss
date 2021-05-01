@@ -43,6 +43,7 @@
 .letter-space {
   letter-spacing: 2px;
 }
+
 .letter-space-0 {
   letter-spacing: 0;
 }
@@ -56,21 +57,20 @@
   hyphens: auto;
 }
 
-/* === Font Weight === */
-
-.font-lighter {
-  font-weight: lighter;
+/* === Vert Text Alignment === */
+.midline {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
 }
 
-.font-normal {
-  font-weight: normal;
+.baseline {
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: baseline;
 }
 
-.font-bold {
-  font-weight: bold;
-}
-
-/* === Alignment === */
+/* === Horz Text Alignment === */
 
 .text-left {
   text-align: left;

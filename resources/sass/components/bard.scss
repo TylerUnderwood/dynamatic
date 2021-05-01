@@ -12,6 +12,8 @@
   $bard_outer: $content_max;
   $bard_inner: $copy_max;
   $half_bard_outer: $bard_outer / 2;
+  $bard_space: map-get($spacing, "md");
+  $bard_space_lg: map-get($spacing, "xl");
 
   // display block so margins will collapse
   display: block !important;
@@ -21,7 +23,7 @@
 
   &__block {
     display: block;
-    margin: map-get($spacing, "md") auto;
+    margin: $bard_space auto;
     width: 100%;
     max-width: $bard_inner;
     
@@ -67,7 +69,7 @@
 
   // horizontal row
   hr {
-    margin: 3.2rem auto;
+    margin: $bard_space_lg auto;
     width: 80%;
     max-width: calc(#{$bard_inner} * 0.8);
   }
@@ -129,12 +131,12 @@
     &__left {
       float: left;
       margin-left: unset;
-      margin-right: map-get($spacing, "md");
+      margin-right: $bard_space;
     }
   
     &__right {
       float: right;
-      margin-left: map-get($spacing, "md");
+      margin-left: $bard_space;
       margin-right: unset;
     }
   }

@@ -7,8 +7,20 @@
 
 /* === SHADOW === */
 
+.shadow-in {
+  box-shadow: $shadow_in;
+}
+
+.shadow-down {
+  box-shadow: $shadow_down;
+}
+
 .shadow {
   box-shadow: $shadow;
+}
+
+.shadow-up {
+  box-shadow: $shadow_up;
 }
 
 

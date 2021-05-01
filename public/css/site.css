@@ -213,7 +213,7 @@ video {
   content: "";
 }
 
-/* === GAP === */
+/* === SPACER === */
 .spacer {
   display: inline-block;
   max-width: 1em;
@@ -240,7 +240,7 @@ p {
           hyphens: none;
 }
 
-.copy, .transcription p {
+.copy {
   display: block;
   margin: 1.6rem 0 0;
   max-width: 36rem;
@@ -249,7 +249,7 @@ p {
       -ms-hyphens: none;
           hyphens: none;
 }
-.copy:first-child, .transcription p:first-child {
+.copy:first-child {
   margin-top: 0;
 }
 
@@ -262,30 +262,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: 1.2;
   font-weight: normal;
-}
-
-h1 {
-  font-size: 3.6rem;
-}
-
-h2 {
-  font-size: 2.4rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-h4 {
-  font-size: 1.6rem;
-}
-
-h5 {
-  font-size: 1.6rem;
-}
-
-h6 {
-  font-size: 1.6rem;
+  font-size: inherit;
 }
 
 .heading {
@@ -310,204 +287,34 @@ h6 {
   margin-bottom: -0.2em;
 }
 
-.h1, .transcription h1 {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  line-height: 1.2;
+.h1 {
   font-size: 3.6rem;
-  font-weight: normal;
-  font-family: "Kanit", Times, serif;
   color: var(--heading-color);
 }
-.h1::before, .transcription h1::before, .h1::after, .transcription h1::after {
-  display: block;
-  height: 0;
-  content: "";
-}
-.h1::before, .transcription h1::before {
-  margin-top: -0.25em;
-}
-.h1::after, .transcription h1::after {
-  margin-bottom: -0.2em;
-}
 
-.h2, .transcription h2 {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  line-height: 1.2;
+.h2 {
   font-size: 2.4rem;
-  font-weight: normal;
-  font-family: "Kanit", Times, serif;
   color: var(--heading-color);
 }
-.h2::before, .transcription h2::before, .h2::after, .transcription h2::after {
-  display: block;
-  height: 0;
-  content: "";
-}
-.h2::before, .transcription h2::before {
-  margin-top: -0.25em;
-}
-.h2::after, .transcription h2::after {
-  margin-bottom: -0.2em;
-}
 
-.h3, .transcription h3 {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  line-height: 1.2;
+.h3 {
   font-size: 2rem;
-  font-weight: normal;
-  font-family: "Kanit", Times, serif;
   color: var(--heading-color);
 }
-.h3::before, .transcription h3::before, .h3::after, .transcription h3::after {
-  display: block;
-  height: 0;
-  content: "";
-}
-.h3::before, .transcription h3::before {
-  margin-top: -0.25em;
-}
-.h3::after, .transcription h3::after {
-  margin-bottom: -0.2em;
-}
 
-.h4, .transcription h4 {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  line-height: 1.2;
+.h4 {
   font-size: 1.6rem;
-  font-weight: normal;
-  font-family: "Kanit", Times, serif;
   color: var(--heading-color);
 }
-.h4::before, .transcription h4::before, .h4::after, .transcription h4::after {
-  display: block;
-  height: 0;
-  content: "";
-}
-.h4::before, .transcription h4::before {
-  margin-top: -0.25em;
-}
-.h4::after, .transcription h4::after {
-  margin-bottom: -0.2em;
-}
 
-.h5, .transcription h5 {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  line-height: 1.2;
+.h5 {
   font-size: 1.6rem;
-  font-weight: normal;
-  font-family: "Kanit", Times, serif;
   color: var(--heading-color-alt);
 }
-.h5::before, .transcription h5::before, .h5::after, .transcription h5::after {
-  display: block;
-  height: 0;
-  content: "";
-}
-.h5::before, .transcription h5::before {
-  margin-top: -0.25em;
-}
-.h5::after, .transcription h5::after {
-  margin-bottom: -0.2em;
-}
 
-.h6, .transcription h6 {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  line-height: 1.2;
+.h6 {
   font-size: 1.6rem;
-  font-weight: normal;
-  font-family: "Kanit", Times, serif;
   color: var(--text-color-off);
-}
-.h6::before, .transcription h6::before, .h6::after, .transcription h6::after {
-  display: block;
-  height: 0;
-  content: "";
-}
-.h6::before, .transcription h6::before {
-  margin-top: -0.25em;
-}
-.h6::after, .transcription h6::after {
-  margin-bottom: -0.2em;
-}
-
-.subheading {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  line-height: 1.2;
-  font-size: 1.2rem;
-  font-weight: normal;
-  font-family: "Kanit", Times, serif;
-  color: var(--heading-color-alt);
-}
-.subheading::before, .subheading::after {
-  display: block;
-  height: 0;
-  content: "";
-}
-.subheading::before {
-  margin-top: -0.25em;
-}
-.subheading::after {
-  margin-bottom: -0.2em;
-}
-
-/* 
-|–––––––––––––––––––––––––
-| Links
-|–––––––––––––––––––––––––
-*/
-a {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-a:hover, a:focus {
-  outline: none;
-  color: inherit;
-}
-
-.link {
-  color: var(--link-color);
-  transition: color 300ms ease;
-  cursor: pointer;
-}
-.link[active] {
-  color: var(--link-active);
-}
-.link:hover, .link:focus {
-  color: var(--link-hover);
-}
-
-.stealth-link {
-  color: inherit;
-}
-
-.hyperlink, .transcription a {
-  background-repeat: no-repeat;
-  background-image: linear-gradient(transparent calc(100% - 0.2em), var(--link-hover) 0), linear-gradient(transparent calc(100% - 0.2em), var(--link-color) 0);
-  background-size: 0 100%, 100% 100%;
-  color: inherit;
-  transition: background 300ms ease;
-}
-.hyperlink[active], .transcription a[active] {
-  background-image: linear-gradient(transparent calc(100% - 0.2em), var(--link-hover) 0), linear-gradient(transparent calc(100% - 0.2em), var(--link-active) 0);
-}
-.hyperlink:hover, .transcription a:hover, .hyperlink:focus, .transcription a:focus {
-  color: inherit;
-  background-size: 100% 100%, 100% 100%;
 }
 
 /* 
@@ -555,7 +362,8 @@ ol {
 }
 .list > li {
   margin: 0.8em 0 0;
-  padding: 0;
+  padding: 0 0 0 1.6em;
+  list-style: inherit;
 }
 .list > li:first-child {
   margin-top: 0;
@@ -565,7 +373,7 @@ ol {
   margin-left: 1.6em;
 }
 
-.ul, .transcription ul {
+.ul {
   display: inline-block;
   margin: 1.6rem 0 0;
   max-width: 36rem;
@@ -573,29 +381,30 @@ ol {
   line-height: 1.4;
   list-style: none;
 }
-.ul::before, .transcription ul::before, .ul::after, .transcription ul::after {
+.ul::before, .ul::after {
   display: block;
   height: 0;
   content: "";
 }
-.ul::before, .transcription ul::before {
+.ul::before {
   margin-top: -0.3em;
 }
-.ul::after, .transcription ul::after {
+.ul::after {
   margin-bottom: -0.4em;
 }
-.ul:first-child, .transcription ul:first-child {
+.ul:first-child {
   margin-top: 0;
 }
-.ul > li, .transcription ul > li {
-  position: relative;
+.ul > li {
   margin: 0.8em 0 0;
   padding: 0 0 0 1.6em;
+  list-style: inherit;
+  position: relative;
 }
-.ul > li:first-child, .transcription ul > li:first-child {
+.ul > li:first-child {
   margin-top: 0;
 }
-.ul > li:before, .transcription ul > li:before {
+.ul > li:before {
   position: absolute;
   top: 0.55em;
   left: 0;
@@ -604,12 +413,12 @@ ol {
   background-color: var(--accent);
   content: "";
 }
-.ul > ul, .transcription ul > ul, .ul > ol, .transcription ul > ol {
+.ul > ul, .ul > ol {
   margin-top: 0.8em;
   margin-left: 1.6em;
 }
 
-.ol, .transcription ol {
+.ol {
   display: inline-block;
   margin: 1.6rem 0 0;
   max-width: 36rem;
@@ -617,29 +426,31 @@ ol {
   line-height: 1.4;
   list-style: decimal;
 }
-.ol::before, .transcription ol::before, .ol::after, .transcription ol::after {
+.ol::before, .ol::after {
   display: block;
   height: 0;
   content: "";
 }
-.ol::before, .transcription ol::before {
+.ol::before {
   margin-top: -0.3em;
 }
-.ol::after, .transcription ol::after {
+.ol::after {
   margin-bottom: -0.4em;
 }
-.ol:first-child, .transcription ol:first-child {
+.ol:first-child {
   margin-top: 0;
 }
-.ol > li, .transcription ol > li {
-  margin: 0.8em 0 0 0.96em;
-  padding: 0 0 0 0.64em;
+.ol > li {
+  margin: 0.8em 0 0;
+  padding: 0 0 0 1.6em;
   list-style: inherit;
+  margin-left: 0.96em;
+  padding-left: 0.64em;
 }
-.ol > li:first-child, .transcription ol > li:first-child {
+.ol > li:first-child {
   margin-top: 0;
 }
-.ol > ul, .transcription ol > ul, .ol > ol, .transcription ol > ol {
+.ol > ul, .ol > ol {
   margin-top: 0.8em;
   margin-left: 1.6em;
 }
@@ -659,7 +470,7 @@ cite {
   font-size: 0.8rem;
 }
 
-.quote, .transcription blockquote {
+.quote {
   display: inline-block;
   margin: 1.6rem 0 0;
   max-width: 36rem;
@@ -668,22 +479,22 @@ cite {
   line-height: 1.4;
   font-size: 1.2rem;
 }
-.quote:first-child, .transcription blockquote:first-child {
+.quote:first-child {
   margin-top: 0;
 }
-.quote::before, .transcription blockquote::before, .quote::after, .transcription blockquote::after {
+.quote::before, .quote::after {
   display: block;
   height: 0;
   content: "";
 }
-.quote::before, .transcription blockquote::before {
+.quote::before {
   margin-top: -0.35em;
 }
-.quote::after, .transcription blockquote::after {
+.quote::after {
   margin-bottom: -0.5em;
 }
 
-.cite, .transcription cite {
+.cite {
   display: block;
   margin: 0.2em 0 0;
   max-width: 36rem;
@@ -692,9 +503,55 @@ cite {
   line-height: 1.2;
   font-size: 0.8rem;
 }
-.cite:before, .transcription cite:before {
+.cite:before {
   padding: 0 0.5em 0 0;
   content: "\2014";
+}
+
+/* 
+|–––––––––––––––––––––––––
+| Links
+|–––––––––––––––––––––––––
+*/
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a:hover, a:focus {
+  outline: none;
+  color: inherit;
+}
+
+.link {
+  color: var(--link-color);
+  transition: color 300ms ease;
+  cursor: pointer;
+}
+.link[active] {
+  color: var(--link-active);
+}
+.link:hover, .link:focus {
+  color: var(--link-hover);
+}
+
+.stealth-link {
+  color: inherit;
+}
+
+.hyperlink {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(transparent calc(100% - 0.2em), var(--link-hover) 0), linear-gradient(transparent calc(100% - 0.2em), var(--link-color) 0);
+  background-size: 0 100%, 100% 100%;
+  color: inherit;
+  transition: background 300ms ease;
+}
+.hyperlink[active] {
+  background-image: linear-gradient(transparent calc(100% - 0.2em), var(--link-hover) 0), linear-gradient(transparent calc(100% - 0.2em), var(--link-active) 0);
+}
+.hyperlink:hover, .hyperlink:focus {
+  color: inherit;
+  background-size: 100% 100%, 100% 100%;
 }
 
 /* 
@@ -736,7 +593,7 @@ code {
   font-family: monospace;
 }
 
-.pre, .transcription pre {
+.pre {
   display: block;
   margin: 1.6rem 0 0;
   border-radius: 4px;
@@ -747,31 +604,34 @@ code {
   line-height: 1.6;
   font-size: 0.9em;
 }
-.pre::before, .transcription pre::before, .pre::after, .transcription pre::after {
+.pre::before, .pre::after {
   display: block;
   height: 0;
   content: "";
 }
-.pre::before, .transcription pre::before {
+.pre::before {
   margin-top: -0.3em;
 }
-.pre::after, .transcription pre::after {
+.pre::after {
   margin-bottom: -0.4em;
 }
-.pre:first-child, .transcription pre:first-child {
+.pre:first-child {
   margin-top: 0;
 }
-.pre .code, .pre .transcription code, .transcription .pre code, .transcription pre .code, .transcription pre code {
+.pre code,
+.pre .code {
   border: none;
   background: none;
   padding: 0;
   line-height: inherit;
 }
-.pre .code::before, .pre .transcription code::before, .transcription .pre code::before, .transcription pre .code::before, .transcription pre code::before, .pre .code::after, .pre .transcription code::after, .transcription .pre code::after, .transcription pre .code::after, .transcription pre code::after {
+.pre code::before, .pre code::after,
+.pre .code::before,
+.pre .code::after {
   display: none;
 }
 
-.code, .transcription code {
+.code {
   display: inline-block;
   border-radius: 2px;
   border: 1px solid var(--border-color);
@@ -782,15 +642,15 @@ code {
   font-size: inherit;
   color: var(--primary);
 }
-.code::before, .transcription code::before, .code::after, .transcription code::after {
+.code::before, .code::after {
   display: block;
   height: 0;
   content: "";
 }
-.code::before, .transcription code::before {
+.code::before {
   margin-top: 0.15em;
 }
-.code::after, .transcription code::after {
+.code::after {
   margin-bottom: -0.1em;
 }
 
@@ -844,11 +704,11 @@ small {
 }
 
 .small {
-  font-size: 0.8rem;
+  font-size: 0.8em;
 }
 
 .large {
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 
 b {
@@ -911,14 +771,18 @@ time {
   font-style: normal;
 }
 
-/* === line === */
+/* 
+|–––––––––––––––––––––––––
+| Horizontal Row
+|–––––––––––––––––––––––––
+*/
 hr {
   clear: both;
   border: 1px solid currentColor;
   color: inherit;
 }
 
-.line, .transcription hr {
+.line {
   clear: both;
   margin: 0;
   border: unset;
@@ -938,23 +802,275 @@ br {
   line-height: inherit;
 }
 
-/* === text alignment === */
-.midline {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
-}
-
-.baseline {
-  display: inline-flex;
-  align-items: baseline;
-  vertical-align: baseline;
-}
-
-/* === Putting it all together === */
+/* 
+|–––––––––––––––––––––––––
+| Transcription
+|–––––––––––––––––––––––––
+|
+| Putting it all together.
+| This class is used anywhere you want some default text styling.
+|
+*/
 .transcription {
-  display: block;
+  display: block !important;
 }
+.transcription p {
+  display: block;
+  margin: 1.6rem 0 0;
+  max-width: 36rem;
+  line-height: 1.6;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
+}
+.transcription p:first-child {
+  margin-top: 0;
+}
+.transcription h1, .transcription h2, .transcription h3, .transcription h4, .transcription h5, .transcription h6 {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  line-height: 1.2;
+  font-size: inherit;
+  font-weight: normal;
+  font-family: "Kanit", Times, serif;
+  color: inherit;
+}
+.transcription h1::before, .transcription h1::after, .transcription h2::before, .transcription h2::after, .transcription h3::before, .transcription h3::after, .transcription h4::before, .transcription h4::after, .transcription h5::before, .transcription h5::after, .transcription h6::before, .transcription h6::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription h1::before, .transcription h2::before, .transcription h3::before, .transcription h4::before, .transcription h5::before, .transcription h6::before {
+  margin-top: -0.25em;
+}
+.transcription h1::after, .transcription h2::after, .transcription h3::after, .transcription h4::after, .transcription h5::after, .transcription h6::after {
+  margin-bottom: -0.2em;
+}
+.transcription h1 {
+  font-size: 3.6rem;
+  color: var(--heading-color);
+}
+.transcription h2 {
+  font-size: 2.4rem;
+  color: var(--heading-color);
+}
+.transcription h3 {
+  font-size: 2rem;
+  color: var(--heading-color);
+}
+.transcription h4 {
+  font-size: 1.6rem;
+  color: var(--heading-color);
+}
+.transcription h5 {
+  font-size: 1.6rem;
+  color: var(--heading-color-alt);
+}
+.transcription h6 {
+  font-size: 1.6rem;
+  color: var(--text-color-off);
+}
+.transcription ul {
+  display: inline-block;
+  margin: 1.6rem 0 0;
+  max-width: 36rem;
+  padding: 0;
+  line-height: 1.4;
+  list-style: none;
+}
+.transcription ul::before, .transcription ul::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription ul::before {
+  margin-top: -0.3em;
+}
+.transcription ul::after {
+  margin-bottom: -0.4em;
+}
+.transcription ul:first-child {
+  margin-top: 0;
+}
+.transcription ul > li {
+  margin: 0.8em 0 0;
+  padding: 0 0 0 1.6em;
+  list-style: inherit;
+  position: relative;
+}
+.transcription ul > li:first-child {
+  margin-top: 0;
+}
+.transcription ul > li:before {
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+  content: "";
+}
+.transcription ul > ul, .transcription ul > ol {
+  margin-top: 0.8em;
+  margin-left: 1.6em;
+}
+.transcription ol {
+  display: inline-block;
+  margin: 1.6rem 0 0;
+  max-width: 36rem;
+  padding: 0;
+  line-height: 1.4;
+  list-style: decimal;
+}
+.transcription ol::before, .transcription ol::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription ol::before {
+  margin-top: -0.3em;
+}
+.transcription ol::after {
+  margin-bottom: -0.4em;
+}
+.transcription ol:first-child {
+  margin-top: 0;
+}
+.transcription ol > li {
+  margin: 0.8em 0 0;
+  padding: 0 0 0 1.6em;
+  list-style: inherit;
+  margin-left: 0.96em;
+  padding-left: 0.64em;
+}
+.transcription ol > li:first-child {
+  margin-top: 0;
+}
+.transcription ol > ul, .transcription ol > ol {
+  margin-top: 0.8em;
+  margin-left: 1.6em;
+}
+.transcription blockquote {
+  display: inline-block;
+  margin: 1.6rem 0 0;
+  max-width: 36rem;
+  border-left: 4px solid var(--accent);
+  padding: 0 0 0 1.2em;
+  line-height: 1.4;
+  font-size: 1.2rem;
+}
+.transcription blockquote:first-child {
+  margin-top: 0;
+}
+.transcription blockquote::before, .transcription blockquote::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription blockquote::before {
+  margin-top: -0.35em;
+}
+.transcription blockquote::after {
+  margin-bottom: -0.5em;
+}
+.transcription a {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(transparent calc(100% - 0.2em), var(--link-hover) 0), linear-gradient(transparent calc(100% - 0.2em), var(--link-color) 0);
+  background-size: 0 100%, 100% 100%;
+  color: inherit;
+  transition: background 300ms ease;
+}
+.transcription a[active] {
+  background-image: linear-gradient(transparent calc(100% - 0.2em), var(--link-hover) 0), linear-gradient(transparent calc(100% - 0.2em), var(--link-active) 0);
+}
+.transcription a:hover, .transcription a:focus {
+  color: inherit;
+  background-size: 100% 100%, 100% 100%;
+}
+.transcription cite {
+  display: block;
+  margin: 0.2em 0 0;
+  max-width: 36rem;
+  padding: 0;
+  text-align: right;
+  line-height: 1.2;
+  font-size: 0.8rem;
+}
+.transcription cite:before {
+  padding: 0 0.5em 0 0;
+  content: "\2014";
+}
+.transcription pre {
+  display: block;
+  margin: 1.6rem 0 0;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background: var(--contrast);
+  box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.25) inset;
+  padding: 1em;
+  line-height: 1.6;
+  font-size: 0.9em;
+}
+.transcription pre::before, .transcription pre::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription pre::before {
+  margin-top: -0.3em;
+}
+.transcription pre::after {
+  margin-bottom: -0.4em;
+}
+.transcription pre:first-child {
+  margin-top: 0;
+}
+.transcription pre code,
+.transcription pre .code {
+  border: none;
+  background: none;
+  padding: 0;
+  line-height: inherit;
+}
+.transcription pre code::before, .transcription pre code::after,
+.transcription pre .code::before,
+.transcription pre .code::after {
+  display: none;
+}
+.transcription code {
+  display: inline-block;
+  border-radius: 2px;
+  border: 1px solid var(--border-color);
+  background: var(--contrast);
+  padding: 0.2em;
+  line-height: 1;
+  font-family: "Overpass Mono", monospace;
+  font-size: inherit;
+  color: var(--primary);
+}
+.transcription code::before, .transcription code::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription code::before {
+  margin-top: 0.15em;
+}
+.transcription code::after {
+  margin-bottom: -0.1em;
+}
+.transcription hr {
+  clear: both;
+  margin: 0;
+  border: unset;
+  border-radius: 1px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  color: inherit;
+}
+
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 | BASE: Buttons 
@@ -3703,20 +3819,20 @@ input[type=file] {
           hyphens: auto;
 }
 
-/* === Font Weight === */
-.font-lighter {
-  font-weight: lighter;
+/* === Vert Text Alignment === */
+.midline {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
 }
 
-.font-normal {
-  font-weight: normal;
+.baseline {
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: baseline;
 }
 
-.font-bold {
-  font-weight: bold;
-}
-
-/* === Alignment === */
+/* === Horz Text Alignment === */
 .text-left {
   text-align: left;
 }
@@ -3881,8 +3997,20 @@ input[type=file] {
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 /* === SHADOW === */
+.shadow-in {
+  box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.shadow-down {
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
 .shadow {
   box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-up {
+  box-shadow: 0px 14px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
 /* === BORDER RADIUS === */

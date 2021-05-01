@@ -76,10 +76,10 @@ $border_color:      var(--border-color);
 // Text
 $text_color:        var(--text-color);
 $text_color_off:    var(--text-color-off);
+$text_color_alt:    var(--heading-color-alt);
 
 // Headings
 $heading_color:     var(--heading-color);
-$heading_color_alt: var(--heading-color-alt);
 
 // Links
 $link_color:        var(--link-color);
@@ -118,6 +118,34 @@ $meta_font:         $overpass_mono;
 // FONT SIZE
 $font_min:          16px;
 $font_max:          20px;
+
+// HEADINGS
+$headings: (
+  h1: (
+    size: 3.6rem,
+    color: $heading_color,
+  ),
+  h2: (
+    size: 2.4rem,
+    color: $heading_color,
+  ),
+  h3: (
+    size: 2.0rem,
+    color: $heading_color,
+  ),
+  h4: (
+    size: 1.6rem,
+    color: $heading_color,
+  ),
+  h5: (
+    size: 1.6rem,
+    color: $text_color_alt,
+  ),
+  h6: (
+    size: 1.6rem,
+    color: $text_color_off,
+  ),
+);
 
 
 
