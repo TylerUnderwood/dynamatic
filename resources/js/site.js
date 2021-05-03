@@ -1,6 +1,7 @@
 // ES6 Functions
 import "./functions/match-height";
 import "./functions/display-var";
+import "./functions/copy-to-clipboard";
 
 // ES6 Classes
 import "./classes/smooth-scroll";

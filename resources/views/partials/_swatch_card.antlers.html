@@ -3,14 +3,14 @@
   class="card fill border-b-r"
   style="border-top-left-radius: 1rem"
 >
-  <a 
+  <button 
     background="1:1"
     style="
       background-color: var(--{{ value }});
       border-bottom-right-radius: 1rem;
     "
-    href="#{{ value }}"
-  ></a>
+    copy-this="--{{ value }}"
+  ></button>
   <div class="column column-l pad relative">
     <div 
       class="arch arch--t-l inset-t-l" 
@@ -19,8 +19,13 @@
         color: var(--{{ value }})
       "
     ></div>
-    <span class="meta small letter-space-0" display-var="--{{ value }}"></span>
+    <button class="small" copy-inner-text>
+      <span class="meta letter-space-0" display-var="--{{ value }}"></span>
+      <i class="mar-l-2xs small fa fa-clone" aria-hidden="true"></i>
+    </button>
     <div class="spacer size-2xs"></div>
-    <code class="code small">{{ value }}</code>
+    <button class="small" copy-this="--{{ value }}">
+      <code class="code">{{ value }}</code>
+    </button>
   </div>
 </div>

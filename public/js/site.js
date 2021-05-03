@@ -13233,6 +13233,52 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/functions/copy-to-clipboard.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/functions/copy-to-clipboard.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//////////////////////////////
+// Match Height
+var copyToClipboardAttribute = function copyToClipboardAttribute() {
+  var sendThisToClipboard = function sendThisToClipboard(thisText) {
+    // create and remove a textarea to copy the text from
+    var textarea = document.createElement('textarea');
+    textarea.textContent = thisText;
+    textarea.style.position = 'fixed'; // Prevent scrolling to bottom of page in MS Edge.
+
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+  };
+
+  document.querySelectorAll('[copy-this]').forEach(function (element) {
+    element.addEventListener('click', function (event) {
+      event.preventDefault();
+      var copyText = element.getAttribute('copy-this');
+      sendThisToClipboard(copyText);
+      alert('Copied the text: ' + copyText);
+    });
+  });
+  document.querySelectorAll('[copy-inner-text]').forEach(function (element) {
+    element.addEventListener('click', function (event) {
+      event.preventDefault();
+      var copyText = element.innerText;
+      sendThisToClipboard(copyText);
+      alert('Copied the text: ' + copyText);
+    });
+  });
+};
+
+window.addEventListener('DOMContentLoaded', function () {
+  copyToClipboardAttribute();
+});
+
+/***/ }),
+
 /***/ "./resources/js/functions/display-var.js":
 /*!***********************************************!*\
   !*** ./resources/js/functions/display-var.js ***!
@@ -13300,16 +13346,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_match_height__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_functions_match_height__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _functions_display_var__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/display-var */ "./resources/js/functions/display-var.js");
 /* harmony import */ var _functions_display_var__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_functions_display_var__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./classes/smooth-scroll */ "./resources/js/classes/smooth-scroll.js");
-/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./classes/appear */ "./resources/js/classes/appear.js");
-/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_classes_appear__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./classes/modal */ "./resources/js/classes/modal.js");
-/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_classes_modal__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_DemoComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/DemoComponent */ "./resources/js/components/DemoComponent.vue");
+/* harmony import */ var _functions_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./functions/copy-to-clipboard */ "./resources/js/functions/copy-to-clipboard.js");
+/* harmony import */ var _functions_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_functions_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./classes/smooth-scroll */ "./resources/js/classes/smooth-scroll.js");
+/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./classes/appear */ "./resources/js/classes/appear.js");
+/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_classes_appear__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./classes/modal */ "./resources/js/classes/modal.js");
+/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_classes_modal__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_DemoComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/DemoComponent */ "./resources/js/components/DemoComponent.vue");
 // ES6 Functions
+
 
  // ES6 Classes
 
@@ -13319,10 +13368,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-new vue__WEBPACK_IMPORTED_MODULE_5___default.a({
+new vue__WEBPACK_IMPORTED_MODULE_6___default.a({
   el: '#site',
   components: {
-    DemoComponent: _components_DemoComponent__WEBPACK_IMPORTED_MODULE_6__["default"]
+    DemoComponent: _components_DemoComponent__WEBPACK_IMPORTED_MODULE_7__["default"]
   }
 });
 
