@@ -11,9 +11,12 @@
 				<figure class="no-shrink">
 					<img src="{{ email | gravatar or profile_pic }}" alt="{{ name }}">
 				</figure>
-				<div class="column column-v pad-v-xs pad-h-md">
-					<span class="heading large text-light">{{ name }}</span>
-					<time class="small meta mar-t-xs">{{ date }}</time>
+				<div class="column column-v pad-v-xs pad-h-md relative">
+					<div class="triangle triangle--t-l inset-t-l border-color" style="font-size: 12rem"></div>
+					<div class="relative">
+						<span class="heading large text-light">{{ name }}</span>
+						<time class="small meta mar-t-xs">{{ date }}</time>
+					</div>
 				</div>
 				{{ /relate:author }}
 			</div>

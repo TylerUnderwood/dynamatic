@@ -29,56 +29,61 @@
 
 
 /* === BACKGROUND OVERLAYS === */
-[background*="lighter"]::before {
+[background~="lighter"]::before {
   background-color: white;
   opacity: 0.5;
 }
 
-[background*="lighten"]::before {
+[background~="lighten"]::before {
   background-color: white;
   opacity: 0.3;
 }
 
-[background*="darken"]::before {
+[background~="darken"]::before {
   background-color: black;
   opacity: 0.3;
 }
 
-[background*="darker"]::before {
+[background~="darker"]::before {
   background-color: black;
   opacity: 0.5;
 }
 
-[background*="colorize"]::before {
+[background~="colorize"]::before {
   background-color: currentColor;
   opacity: 0.3;
 }
 
 
 /* === BACKGROUND RATIOS === */
-[background*="1:1"]::after {
-  padding-top: 100%;
+
+$ratios: (
+  '1:1':  100%,
+  '4:3':  75%,
+  '3:4':  133.333333%,
+  '16:9': 56.25%,
+  '9:16': 177.777777%,
+  '21:9': 42.8571%,
+);
+
+@mixin makeBackgroundRatios( $ratios ) {
+  @each $key, $value in $ratios {
+    [background~="#{$key}"] {
+      padding-top: $value;
+    }
+  }
+  @each $point, $width in $breakpoints {
+    @media ( min-width: #{$width} ) {
+      @each $key, $value in $ratios {
+        [background~="#{$point}\:#{$key}"] {
+          padding-top: $value;
+        }
+      }
+    }
+  }
 }
 
-[background*="4:3"]::after {
-  padding-top: 75%;
-}
-
-[background*="3:4"]::after {
-  padding-top: 133.333333%;
-}
-
-[background*="16:9"]::after {
-  padding-top: 56.25%;
-}
-
-[background*="9:16"]::after {
-  padding-top: 177.777777%;
-}
-
-[background*="21:9"]::after {
-  padding-top: 42.8571%;
-}
+@include makeBackgroundRatios( $ratios );
 
 
 /* === BACKGROUND IMAGE === */
@@ -90,7 +95,7 @@
 
 
 /* === BACKGROUND COLORS === */
-[background*="currentColor"] {
+[background~="currentColor"] {
   background-color: currentColor;
 }
 

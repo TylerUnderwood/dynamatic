@@ -12,13 +12,20 @@
 		{{ posts }}
 
 			<article class="tile tile-12">
-				<a href="{{ url }}" class="card card:hover row">
-					<div class="column fill pad">
-						<h3 class="card__text h4">{{ title }}</h3>
-						<div class="mar-t-xs">{{ intro }}</div>
+				<a href="{{ url }}" class="card card:hover lift column sm:row">
+					<div class="column fill pad relative">
+						<hr class="triangle triangle--b-r inset-b-r border-color" style="font-size: 20rem" />
+						<div class="relative">
+							<h3 class="card__text h4">{{ title }}</h3>
+							<div class="mar-t-xs">{{ intro }}</div>
+						</div>
 					</div>
-					<div class="w-100" style="max-width: 8rem;">
-						<div background="image 1:1" style="background-image: url('{{ featured_image }}');"></div>
+					<div class="flex sm:tile-4">
+						<div 
+							class="fill" 
+							background="image 16:9 sm:4:3" 
+							style="background-image: url('{{ featured_image }}');"
+						></div>
 					</div>
 				</a>
 			</article>

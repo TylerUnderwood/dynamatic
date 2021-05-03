@@ -76,7 +76,7 @@ $border_color:      var(--border-color);
 // Text
 $text_color:        var(--text-color);
 $text_color_off:    var(--text-color-off);
-$text_color_alt:    var(--heading-color-alt);
+$text_color_alt:    var(--text-color-alt);
 
 // Headings
 $heading_color:     var(--heading-color);
@@ -158,10 +158,10 @@ $round:             2px;
 $rounder:           4px;
 
 // SHADOW
-$shadow_in:         0px -2px 10px 0px rgba(0,0,0,0.25) inset;
+$shadow_in:         0px 3px 10px 0px rgba(0,0,0,0.25) inset;
 $shadow_down:       0px 3px 10px 0px rgba(0,0,0,0.25);
 $shadow:            0px 7px 10px 0px rgba(0,0,0,0.25);
-$shadow_up:         0px 14px 10px 0px rgba(0,0,0,0.25);
+$shadow_up:         0px 10px 18px 3px rgba(0,0,0,0.25);
 
 // BORDER
 $border:            2px solid $border_color;
@@ -273,11 +273,11 @@ $spacing: (
   --contrast:          #{$dark_200};
   --primary:           #{$fuchsia};
   --accent:            #{$sea_foam};
-  --border-color:      #{$dark_800};
+  --border-color:      #{$dark_400};
   --text-color:        #{$light};
   --text-color-off:    #{$grey};
+  --text-color-alt:    #{$lava_orange};
   --heading-color:     var(--primary);
-  --heading-color-alt: #{$lava_orange};
   --link-color:        var(--accent);
   --link-hover:        #{$azure};
   --link-active:       #{$royal_purple};

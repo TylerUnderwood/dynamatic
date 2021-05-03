@@ -590,9 +590,8 @@ time {
 */
 
 hr {
-  clear: both;
-  border: 1px solid currentColor;
-  color: inherit;
+  margin: 0;
+  border: none;
 }
 
 @mixin class_line {

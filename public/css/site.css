@@ -14,11 +14,11 @@
   --contrast: #202228;
   --primary: #ff0080;
   --accent: #00ffc0;
-  --border-color: #080a10;
+  --border-color: #181a20;
   --text-color: #eeeeee;
   --text-color-off: #808080;
+  --text-color-alt: #ff4000;
   --heading-color: var(--primary);
-  --heading-color-alt: #ff4000;
   --link-color: var(--accent);
   --link-hover: #0080ff;
   --link-active: #c000ff;
@@ -309,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .h5 {
   font-size: 1.6rem;
-  color: var(--heading-color-alt);
+  color: var(--text-color-alt);
 }
 
 .h6 {
@@ -599,7 +599,7 @@ code {
   border-radius: 4px;
   border: 1px solid var(--border-color);
   background: var(--contrast);
-  box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25) inset;
   padding: 1em;
   line-height: 1.6;
   font-size: 0.9em;
@@ -777,9 +777,8 @@ time {
 |–––––––––––––––––––––––––
 */
 hr {
-  clear: both;
-  border: 1px solid currentColor;
-  color: inherit;
+  margin: 0;
+  border: none;
 }
 
 .line {
@@ -865,7 +864,7 @@ br {
 }
 .transcription h5 {
   font-size: 1.6rem;
-  color: var(--heading-color-alt);
+  color: var(--text-color-alt);
 }
 .transcription h6 {
   font-size: 1.6rem;
@@ -1007,7 +1006,7 @@ br {
   border-radius: 4px;
   border: 1px solid var(--border-color);
   background: var(--contrast);
-  box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25) inset;
   padding: 1em;
   line-height: 1.6;
   font-size: 0.9em;
@@ -1382,56 +1381,131 @@ input[type=file] {
 }
 
 /* === BACKGROUND OVERLAYS === */
-[background*=lighter]::before {
+[background~=lighter]::before {
   background-color: white;
   opacity: 0.5;
 }
 
-[background*=lighten]::before {
+[background~=lighten]::before {
   background-color: white;
   opacity: 0.3;
 }
 
-[background*=darken]::before {
+[background~=darken]::before {
   background-color: black;
   opacity: 0.3;
 }
 
-[background*=darker]::before {
+[background~=darker]::before {
   background-color: black;
   opacity: 0.5;
 }
 
-[background*=colorize]::before {
+[background~=colorize]::before {
   background-color: currentColor;
   opacity: 0.3;
 }
 
 /* === BACKGROUND RATIOS === */
-[background*="1:1"]::after {
+[background~="1:1"] {
   padding-top: 100%;
 }
 
-[background*="4:3"]::after {
+[background~="4:3"] {
   padding-top: 75%;
 }
 
-[background*="3:4"]::after {
+[background~="3:4"] {
   padding-top: 133.333333%;
 }
 
-[background*="16:9"]::after {
+[background~="16:9"] {
   padding-top: 56.25%;
 }
 
-[background*="9:16"]::after {
+[background~="9:16"] {
   padding-top: 177.777777%;
 }
 
-[background*="21:9"]::after {
+[background~="21:9"] {
   padding-top: 42.8571%;
 }
 
+@media (min-width: 480px) {
+  [background~="sm:1:1"] {
+    padding-top: 100%;
+  }
+
+  [background~="sm:4:3"] {
+    padding-top: 75%;
+  }
+
+  [background~="sm:3:4"] {
+    padding-top: 133.333333%;
+  }
+
+  [background~="sm:16:9"] {
+    padding-top: 56.25%;
+  }
+
+  [background~="sm:9:16"] {
+    padding-top: 177.777777%;
+  }
+
+  [background~="sm:21:9"] {
+    padding-top: 42.8571%;
+  }
+}
+@media (min-width: 768px) {
+  [background~="md:1:1"] {
+    padding-top: 100%;
+  }
+
+  [background~="md:4:3"] {
+    padding-top: 75%;
+  }
+
+  [background~="md:3:4"] {
+    padding-top: 133.333333%;
+  }
+
+  [background~="md:16:9"] {
+    padding-top: 56.25%;
+  }
+
+  [background~="md:9:16"] {
+    padding-top: 177.777777%;
+  }
+
+  [background~="md:21:9"] {
+    padding-top: 42.8571%;
+  }
+}
+@media (min-width: 1024px) {
+  [background~="lg:1:1"] {
+    padding-top: 100%;
+  }
+
+  [background~="lg:4:3"] {
+    padding-top: 75%;
+  }
+
+  [background~="lg:3:4"] {
+    padding-top: 133.333333%;
+  }
+
+  [background~="lg:16:9"] {
+    padding-top: 56.25%;
+  }
+
+  [background~="lg:9:16"] {
+    padding-top: 177.777777%;
+  }
+
+  [background~="lg:21:9"] {
+    padding-top: 42.8571%;
+  }
+}
 /* === BACKGROUND IMAGE === */
 [background*=image] {
   background-position: center;
@@ -1440,7 +1514,7 @@ input[type=file] {
 }
 
 /* === BACKGROUND COLORS === */
-[background*=currentColor] {
+[background~=currentColor] {
   background-color: currentColor;
 }
 
@@ -2992,17 +3066,27 @@ input[type=file] {
   box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   background: var(--contrast);
-  overflow: hidden;
-  transition: box-shadow 300ms ease;
+  overflow: clip;
 }
 .card__text {
-  transition: color 300ms ease;
+  color: var(--heading-color);
 }
-.card\:hover:hover {
-  box-shadow: 0px 14px 10px 0px rgba(0, 0, 0, 0.25);
+.card\:hover .card__text {
+  transition: color 500ms ease;
 }
 .card\:hover:hover .card__text {
-  color: var(--link-hover);
+  color: var(--text-color-alt);
+}
+
+.lift {
+  position: relative;
+  transform: scale(1);
+  box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.25);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.lift:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 10px 18px 3px rgba(0, 0, 0, 0.25);
 }
 
 /*
@@ -3909,19 +3993,23 @@ input[type=file] {
 }
 
 .heading-color-alt {
-  color: var(--heading-color-alt);
+  color: var(--text-color-alt);
 }
 
 .link-color {
   color: var(--link-color);
 }
 
-.color-background {
+.background-color {
   color: var(--background);
 }
 
 .contrast-color {
   color: var(--contrast);
+}
+
+.border-color {
+  color: var(--border-color);
 }
 
 /* === border === */
@@ -3941,23 +4029,6 @@ input[type=file] {
   border-color: var(--accent);
 }
 
-/* === svg === */
-.fill-white {
-  fill: #ffffff;
-}
-
-.fill-text-color {
-  fill: var(--text-color);
-}
-
-.fill-primary-color {
-  fill: var(--primary);
-}
-
-.fill-accent-color {
-  fill: var(--accent);
-}
-
 /* === BACKGROUND COLORS === */
 .bg-white {
   background-color: #ffffff;
@@ -3975,7 +4046,7 @@ input[type=file] {
   background-color: #202020;
 }
 
-.bg-background-color {
+.bg-background {
   background-color: var(--background);
 }
 
@@ -3983,11 +4054,11 @@ input[type=file] {
   background-color: var(--contrast);
 }
 
-.bg-primary-color {
+.bg-primary {
   background-color: var(--primary);
 }
 
-.bg-accent-color {
+.bg-accent {
   background-color: var(--accent);
 }
 
@@ -3998,7 +4069,7 @@ input[type=file] {
 */
 /* === SHADOW === */
 .shadow-in {
-  box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
 .shadow-down {
@@ -4010,7 +4081,7 @@ input[type=file] {
 }
 
 .shadow-up {
-  box-shadow: 0px 14px 10px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 10px 18px 3px rgba(0, 0, 0, 0.25);
 }
 
 /* === BORDER RADIUS === */
@@ -4134,27 +4205,27 @@ input[type=file] {
   border-top: none;
   border-bottom-color: currentColor;
 }
-.triangle--t-l {
+.triangle--t-r {
   justify-content: flex-end;
   align-items: flex-start;
 }
-.triangle--t-l::before {
+.triangle--t-r::before {
   border-width: var(--triangle-corner);
   border-top-color: currentColor;
   border-right-color: currentColor;
 }
-.triangle--l {
+.triangle--r {
   justify-content: flex-start;
 }
-.triangle--l::before {
+.triangle--r::before {
   border-right: none;
   border-left-color: currentColor;
 }
-.triangle--b-l {
+.triangle--b-r {
   justify-content: flex-end;
   align-items: flex-end;
 }
-.triangle--b-l::before {
+.triangle--b-r::before {
   border-width: var(--triangle-corner);
   border-bottom-color: currentColor;
   border-right-color: currentColor;
@@ -4166,27 +4237,27 @@ input[type=file] {
   border-top-color: currentColor;
   border-bottom: none;
 }
-.triangle--b-r {
+.triangle--b-l {
   justify-content: flex-start;
   align-items: flex-end;
 }
-.triangle--b-r::before {
+.triangle--b-l::before {
   border-width: var(--triangle-corner);
   border-bottom-color: currentColor;
   border-left-color: currentColor;
 }
-.triangle--r {
+.triangle--l {
   justify-content: flex-end;
 }
-.triangle--r::before {
+.triangle--l::before {
   border-left: none;
   border-right-color: currentColor;
 }
-.triangle--t-r {
+.triangle--t-l {
   justify-content: flex-start;
   align-items: flex-start;
 }
-.triangle--t-r::before {
+.triangle--t-l::before {
   border-width: var(--triangle-corner);
   border-top-color: currentColor;
   border-left-color: currentColor;

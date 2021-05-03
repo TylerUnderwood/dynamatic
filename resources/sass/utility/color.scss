@@ -40,12 +40,16 @@
   color: $link_color;
 }
 
-.color-background {
+.background-color {
   color: $background;
 }
 
 .contrast-color {
   color: $contrast;
+}
+
+.border-color {
+  color: $border_color;
 }
 
 
@@ -70,26 +74,6 @@
 
 
 
-/* === svg === */
-
-.fill-white {
-  fill: $white;
-}
-
-.fill-text-color {
-  fill: $text_color;
-}
-
-.fill-primary-color {
-  fill: $primary;
-}
-
-.fill-accent-color {
-  fill: $accent;
-}
-
-
-
 /* === BACKGROUND COLORS === */
 
 
@@ -109,7 +93,7 @@
   background-color: $off_black;
 }
 
-.bg-background-color {
+.bg-background {
   background-color: $background;
 }
 
@@ -117,10 +101,10 @@
   background-color: $contrast;
 }
 
-.bg-primary-color {
+.bg-primary {
   background-color: $primary;
 }
 
-.bg-accent-color {
+.bg-accent {
   background-color: $accent;
 }

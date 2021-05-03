@@ -10,18 +10,34 @@
   box-shadow: $shadow;
   border-radius: $rounder;
   background: $contrast;
-  overflow: hidden;
-  transition: box-shadow 300ms ease;
+  overflow: clip;
 
   &__text {
-    transition: color 300ms ease;
+    color: $heading_color;
   }
 
-  &\:hover:hover {
-    box-shadow: $shadow_up;
-
+  &\:hover {
     #{$self}__text {
-      color: $link_hover;
+      transition: color 500ms ease;
     }
+
+    &:hover {
+      #{$self}__text {
+        color: $text_color_alt;
+      }
+    }
+  }
+}
+
+.lift {
+  position: relative;
+  transform: scale(1);
+  box-shadow: $shadow;
+  transition: transform 300ms ease,
+              box-shadow 300ms ease;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: $shadow_up;
   }
 }
