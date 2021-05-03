@@ -13241,8 +13241,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 //////////////////////////////
-// Match Height
-var copyToClipboardAttribute = function copyToClipboardAttribute() {
+// Copy to Clipboard
+var copyToClipboardAttributes = function copyToClipboardAttributes() {
   var sendThisToClipboard = function sendThisToClipboard(thisText) {
     // create and remove a textarea to copy the text from
     var textarea = document.createElement('textarea');
@@ -13255,26 +13255,36 @@ var copyToClipboardAttribute = function copyToClipboardAttribute() {
     document.body.removeChild(textarea);
   };
 
-  document.querySelectorAll('[copy-this]').forEach(function (element) {
-    element.addEventListener('click', function (event) {
-      event.preventDefault();
-      var copyText = element.getAttribute('copy-this');
+  var addAttributeClickAction = function addAttributeClickAction(attrName, callBack) {
+    document.querySelectorAll("[".concat(attrName, "]")).forEach(function (element) {
+      element.addEventListener('click', function (event) {
+        event.preventDefault();
+        callBack(element);
+      });
+    });
+  };
+
+  var copyFromThisAttribute = function copyFromThisAttribute(attrName, getFrom) {
+    addAttributeClickAction(attrName, function (element) {
+      var copyText = getFrom(element);
       sendThisToClipboard(copyText);
       alert('Copied the text: ' + copyText);
     });
+  };
+
+  copyFromThisAttribute('copy-this', function (element) {
+    return element.getAttribute('copy-this');
   });
-  document.querySelectorAll('[copy-inner-text]').forEach(function (element) {
-    element.addEventListener('click', function (event) {
-      event.preventDefault();
-      var copyText = element.innerText;
-      sendThisToClipboard(copyText);
-      alert('Copied the text: ' + copyText);
-    });
+  copyFromThisAttribute('copy-inner-text', function (element) {
+    return element.innerText;
+  });
+  copyFromThisAttribute('copy-input-value', function (element) {
+    return document.getElementById("".concat(element.getAttribute('copy-input-value'))).value;
   });
 };
 
 window.addEventListener('DOMContentLoaded', function () {
-  copyToClipboardAttribute();
+  copyToClipboardAttributes();
 });
 
 /***/ }),

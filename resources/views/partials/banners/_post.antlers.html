@@ -4,7 +4,7 @@
 
 	<div class="post-intro__content frame gutter">
 		<div class="inner column column-l">
-			<h1 class="heading h1 text-color">{{ title }}</h1>
+			<h1 class="heading h1 text-light">{{ title }}</h1>
 			{{ if author }}
 			<div class="card row mar-t-md">
 				{{ relate:author }}
@@ -14,7 +14,7 @@
 				<div class="column column-v pad-v-xs pad-h-md relative">
 					<div class="triangle triangle--t-l inset-t-l border-color" style="font-size: 12rem"></div>
 					<div class="relative">
-						<span class="heading large text-light">{{ name }}</span>
+						<span class="heading large text-color">{{ name }}</span>
 						<time class="small meta mar-t-xs">{{ date }}</time>
 					</div>
 				</div>
@@ -22,7 +22,7 @@
 			</div>
 			{{ /if }}
 			{{ if intro }}
-			<div class="transcription markdown large mar-t-md">
+			<div class="transcription markdown large mar-t-md text-light">
 				{{ intro }}
 			</div>
 			{{ /if }}

@@ -44,9 +44,8 @@ $btn_slim_height: var(--btn-slim-height);
   line-height: 1;
   vertical-align: middle;
   font-family: $meta_font;
-  font-weight: bold;
   font-size: inherit;
-  color: $background;
+  color: $dark;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -61,7 +60,7 @@ $btn_slim_height: var(--btn-slim-height);
   &[active] {
     border-color: $link_active;
     background-color: $link_active;
-    color: $background;
+    color: $dark;
   }
 
   &:hover,
@@ -69,7 +68,7 @@ $btn_slim_height: var(--btn-slim-height);
     outline: none;
     border-color: $link_hover;
     background-color: $link_hover;
-    color: $background;
+    color: $dark;
   }
 
   // disabled last so it overrides all
@@ -138,6 +137,7 @@ $btn_slim_height: var(--btn-slim-height);
     font-weight: normal;
 
     #{$self}__text {
+      font-weight: 300;
       font-size: 0.7em;
     }
 
@@ -162,6 +162,7 @@ $btn_slim_height: var(--btn-slim-height);
     font-weight: bold;
 
     #{$self}__text {
+      font-weight: 700;
       font-size: 0.9em;
     }
 

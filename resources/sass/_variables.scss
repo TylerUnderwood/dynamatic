@@ -62,6 +62,10 @@ $light_400:         #f0f0f0;
 $light_600:         #e8e8e8;
 $light_800:         #e0e0e0;
 
+
+$dark:              var(--dark);
+$light:             var(--light);
+
 // Branding
 $primary:           var(--primary);
 $accent:            var(--accent);
@@ -92,7 +96,7 @@ $link_active:       var(--link-active);
 // Settings: TYPOGRAPHY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono:wght@300;400;700;|Kanit:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono:wght@300;500;700;|Kanit:wght@300;500;700&display=swap');
 
 // FONT FAM
 
@@ -269,6 +273,8 @@ $spacing: (
 
 
 :root {
+  --dark:              #{$dark_100};
+  --light:             #{$light_100};
   --background:        #{$dark_100};
   --contrast:          #{$dark_200};
   --primary:           #{$fuchsia};
@@ -288,5 +294,5 @@ $spacing: (
   --background:        #{$light_100};
   --contrast:          #{$light_200};
   --text-color:        #{$dark};
-  --border-color:      #{$light_800};
+  --border-color:      #{$light_400};
 }
