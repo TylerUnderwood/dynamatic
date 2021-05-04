@@ -1,21 +1,21 @@
 <nav class="nav nav--v">
 {{ nav:documentation }}
-    <div class="column column-l">
+  <div class="column column-l">
 
-        <a class="nav__link link" href="{{ url }}">
-            <span class="meta">{{ title }}</span>
-        </a>
+    <a class="nav__link link" href="{{ url }}">
+      <span class="meta">{{ title }}</span>
+    </a>
 
-        {{ children }}
-            <a class="nav__link link mar-l" href="{{ url }}">
-                <span class="meta">{{ title }}</span>
-            </a>
-        {{ /children }}
+    {{ children }}
+      <a class="nav__link link mar-l" href="{{ url }}">
+        <span class="meta">{{ title }}</span>
+      </a>
+    {{ /children }}
 
-    </div>
+  </div>
 
-    {{ if not last }}
-    <div class="spacer"></div>
-    {{ /if }}
+  {{ if not last }}
+  <div class="break"></div>
+  {{ /if }}
 {{ /nav:documentation }}
 </nav>

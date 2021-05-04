@@ -84,7 +84,7 @@
   0% {
     opacity: 1;
   }
-  49% {
+  49.999% {
     opacity: 1;
   }
   50% {
@@ -98,33 +98,18 @@
   animation: blink 1000ms infinite;
 }
 
-/* ===== CUSTOM ANIMATION ELEMENTS ===== */
 .insertion-point {
   position: relative;
 
-  &:before {
+  &:after {
     animation: blink 1000ms infinite;
     position: absolute;
     top: 0;
-    left: -0.2em;
-    width: 0.1em;
+    right: -0.2em;
+    left: unset;
+    width: 0.05em;
     height: 1em;
     background-color: $text_color;
     content: '';
-  }
-}
-
-/* ===== HOVER TRANSITIONS ===== */
-.on-hover-grow {
-  transition: all 300ms ease-in-out;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3);
-
-  &:hover {
-    transform: scale(1.05) translateY(-3%);
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
-  }
-  &:active {
-    transform: scale(1.02) translateY(-1%);
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
   }
 }

@@ -20,13 +20,13 @@ button {
 
 :root {
   --btn-phat-height: 2.8em;
-  --btn-height: 2.2em;
+  --btn-height:      2.2em;
   --btn-slim-height: 1.6em;
 }
 
-$btn_phat_height: var(--btn-phat-height);
-$btn_height: var(--btn-height);
-$btn_slim_height: var(--btn-slim-height);
+$btn_phat_height:    var(--btn-phat-height);
+$btn_height:         var(--btn-height);
+$btn_slim_height:    var(--btn-slim-height);
 
 .btn {
   $self: &;
@@ -41,16 +41,12 @@ $btn_slim_height: var(--btn-slim-height);
   height: $btn_height;
   background-color: $link_color;
   padding: 0 1.4em;
-  letter-spacing: 2px;
-  line-height: 1;
   vertical-align: middle;
-  font-family: $meta_font;
-  font-size: inherit;
-  color: $dark;
+  white-space: nowrap;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
+  font-size: inherit;
+  color: $dark;
   transition: border-color 300ms ease-in-out,
               background-color 300ms ease-in-out,
               color 300ms ease-in-out;
@@ -84,15 +80,11 @@ $btn_slim_height: var(--btn-slim-height);
   // === button components === //
   &__text {
     display: inline-block;
+    font-weight: 500;
     font-size: 0.8em;
   }
 
   &__icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1em;
-    max-height: 1em;
     font-size: 1em;
   }
 
@@ -143,8 +135,6 @@ $btn_slim_height: var(--btn-slim-height);
     }
 
     #{$self}__icon {
-      max-width: 0.8em;
-      max-height: 0.8em;
       font-size: 0.8em;
     }
 
@@ -168,8 +158,6 @@ $btn_slim_height: var(--btn-slim-height);
     }
 
     #{$self}__icon {
-      max-width: 1.2em;
-      max-height: 1.2em;
       font-size: 1.2em;
     }
 

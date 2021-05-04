@@ -11,6 +11,7 @@
 
 @import "variables";
 @import "functions";
+@import "animations";
 
 /* ==========================================================================
 ===== BASE STYLES =====
@@ -21,13 +22,12 @@
 =
 ========================================================================== */
 @import "base/body";
-@import "base/media";
 @import "base/dividers";
 @import "base/typography";
 @import "base/buttons";
 @import "base/fields";
+@import "base/media";
 @import "base/backgrounds";
-@import "base/animations";
 
 
 
@@ -74,3 +74,17 @@
 @import "utility/alignment";
 @import "utility/width";
 @import "utility/whitespace";
+
+
+
+/* ==========================================================================
+===== MISC =====
+========================================================================== */
+
+.fa {
+  display: inline-flex !important;
+}
+
+.fa-plus {
+  margin: 0.1em 0 0 0;
+}

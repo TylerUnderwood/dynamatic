@@ -4,29 +4,68 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
+
+
+/* === THEME SIZES === */
+
 .size {
-  font-size: 1rem;
+  font-size: $space;
 }
 
 @include makeClasses( size, font-size, $spacing );
 
 @include addBreakpointPrefixes() {
   &size {
-    font-size: 1rem;
+    font-size: $space;
   }
   
   @include makeClassesForBreakpoints( size, font-size, $spacing );
 }
 
+
+/* === PIXEL SIZES === */
+
 .f-16 {
   font-size: 16px;
 }
+
 .f-18 {
   font-size: 18px;
 }
+
 .f-20 {
   font-size: 20px;
 }
+
+
+/* === RELATIVE SIZES === */
+
+.small {
+  font-size: 0.8rem;
+}
+
+.smaller {
+  font-size: 0.8em;
+}
+
+.large {
+  font-size: 1.2rem;
+}
+
+.larger {
+  font-size: 1.2em;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+
+/* === FAMILIES === */
 
 .font-serif {
   font-family: $serif;
@@ -40,16 +79,38 @@
   font-family: $monospace;
 }
 
+
+/* === TEXT DECORATION === */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.striketrough {
+  text-decoration: line-through;
+}
+
+.highlight {
+  background-color: $accent;
+}
+
+
+/* === LETTER ADJUSTMENTS === */
+
 .letter-space {
   letter-spacing: 2px;
 }
 
-.letter-space-0 {
+.letter-hug {
   letter-spacing: 0;
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
 
 .break-words {

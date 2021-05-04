@@ -33,18 +33,5 @@ video {
   align-items: center;
   max-width: 1em;
   max-height: 1em;
-  font-size: 1em;
-
-  svg {
-    max-width: inherit;
-    max-height: inherit;
-  }
-}
-
-.fa {
-  display: inline-flex !important;
-}
-
-.fa-plus {
-  margin: 0.1em 0 0 0.1em;
+  font-size: inherit;
 }

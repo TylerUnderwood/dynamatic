@@ -366,16 +366,20 @@ a {
 |–––––––––––––––––––––––––
 */
 
-.meta {
+@mixin class_meta {
   display: inline-block;
-  white-space: nowrap;
   line-height: 1;
-  letter-spacing: 2px;
+  letter-spacing: 0.1em;
   font-family: $meta_font;
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
+  white-space: nowrap;
 
   @include meta_100_fix;
+}
+
+.meta {
+  @include class_meta;
 }
 
 
@@ -451,7 +455,7 @@ code {
 
 /* 
 |–––––––––––––––––––––––––
-| Other Typeography
+| Other Typography
 |–––––––––––––––––––––––––
 */
 
@@ -483,6 +487,15 @@ figcaption {
 }
 
 
+address {
+  font-style: normal;
+}
+
+time {
+  font-style: normal;
+}
+
+
 // subscript / superscript
 sub,
 sup {
@@ -506,14 +519,6 @@ small {
   font-size: 0.8em;
 }
 
-.small {
-  font-size: 0.8em;
-}
-
-.large {
-  font-size: 1.2em;
-}
-
 
 // bold
 b {
@@ -522,14 +527,6 @@ b {
 
 strong {
   font-weight: bold;
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.thin {
-  font-weight: 300;
 }
 
 
@@ -542,17 +539,9 @@ em {
   font-style: italic;
 }
 
-.italic {
-  font-style: italic;
-}
-
 // highlighted
 mark {
   background-color: yellow;
-}
-
-.highlight {
-  background-color: $accent;
 }
 
 // underline
@@ -560,26 +549,9 @@ ins {
   text-decoration: underline;
 }
 
-.underline {
-  text-decoration: underline;
-}
-
 // striketrough
 del {
   text-decoration: line-through;
-}
-
-.striketrough {
-  text-decoration: line-through;
-}
-
-// other 
-address {
-  font-style: normal;
-}
-
-time {
-  font-style: normal;
 }
 
 
