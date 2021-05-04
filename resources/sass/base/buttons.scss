@@ -10,6 +10,7 @@ button {
   border: none;
   background-color: transparent;
   padding: 0;
+  text-align: inherit;
   font-size: inherit;
   color: inherit;
   cursor: pointer;
@@ -75,7 +76,7 @@ $btn_slim_height: var(--btn-slim-height);
   &[disabled] {
     border-color: $link_color;
     background-color: $link_color;
-    color: $background_100;
+    color: $dark;
     opacity: 0.5;
     cursor: not-allowed;
   }
