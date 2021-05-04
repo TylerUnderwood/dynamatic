@@ -29,7 +29,7 @@
   padding: $space;
 }
 
-@include makeAll( pad, padding, $spacing );
+@include makeClasses( pad, padding, $spacing );
 
 /* vertical */
 .pad-v {
@@ -37,7 +37,7 @@
   padding-bottom: $space;
 }
 
-@include makeAll( pad-v, padding-top padding-bottom, $spacing );
+@include makeClasses( pad-v, padding-top padding-bottom, $spacing );
 
 /* horizontal */
 .pad-h {
@@ -45,44 +45,44 @@
   padding-left: $space;
 }
 
-@include makeAll( pad-h, padding-right padding-left, $spacing );
+@include makeClasses( pad-h, padding-right padding-left, $spacing );
 
 /* top */
 .pad-t {
   padding-top: $space;
 }
 
-@include makeAll( pad-t, padding-top, $spacing );
+@include makeClasses( pad-t, padding-top, $spacing );
 
 /* right */
 .pad-r {
   padding-right: $space;
 }
 
-@include makeAll( pad-r, padding-right, $spacing );
+@include makeClasses( pad-r, padding-right, $spacing );
 
 /* bottom */
 .pad-b {
   padding-bottom: $space;
 }
 
-@include makeAll( pad-b, padding-bottom, $spacing );
+@include makeClasses( pad-b, padding-bottom, $spacing );
 
 /* left */
 .pad-l {
   padding-left: $space;
 }
 
-@include makeAll( pad-l, padding-left, $spacing );
+@include makeClasses( pad-l, padding-left, $spacing );
 
 /* padding breakpoints */
-@include addBreakpoints() {
+@include addBreakpointPrefixes() {
   // surrounding
   &pad {
     padding: $space;
   }
   
-  @include makeAllForBreakpoints( pad, padding, $spacing );
+  @include makeClassesForBreakpoints( pad, padding, $spacing );
 
   // vertical
   &pad-v {
@@ -90,7 +90,7 @@
     padding-bottom: $space;
   }
   
-  @include makeAllForBreakpoints( pad-v, padding-top padding-bottom, $spacing );
+  @include makeClassesForBreakpoints( pad-v, padding-top padding-bottom, $spacing );
 
   // horizontal
   &pad-h {
@@ -98,35 +98,35 @@
     padding-left: $space;
   }
   
-  @include makeAllForBreakpoints( pad-h, padding-right padding-left, $spacing );
+  @include makeClassesForBreakpoints( pad-h, padding-right padding-left, $spacing );
 
   // top
   &pad-t {
     padding-top: $space;
   }
   
-  @include makeAllForBreakpoints( pad-t, padding-top, $spacing );
+  @include makeClassesForBreakpoints( pad-t, padding-top, $spacing );
 
   // right
   &pad-r {
     padding-right: $space;
   }
   
-  @include makeAllForBreakpoints( pad-r, padding-right, $spacing );
+  @include makeClassesForBreakpoints( pad-r, padding-right, $spacing );
 
   // bottom
   &pad-b {
     padding-bottom: $space;
   }
   
-  @include makeAllForBreakpoints( pad-b, padding-bottom, $spacing );
+  @include makeClassesForBreakpoints( pad-b, padding-bottom, $spacing );
 
   // left
   &pad-l {
     padding-left: $space;
   }
   
-  @include makeAllForBreakpoints( pad-l, padding-left, $spacing );
+  @include makeClassesForBreakpoints( pad-l, padding-left, $spacing );
 }
 
 
@@ -138,7 +138,7 @@
   margin: $space;
 }
 
-@include makeAll( mar, margin, $spacing );
+@include makeClasses( mar, margin, $spacing );
 
 .mar-auto {
   margin: auto;
@@ -149,7 +149,7 @@
   margin-top: $space;
 }
 
-@include makeAll( mar-t, margin-top, $spacing );
+@include makeClasses( mar-t, margin-top, $spacing );
 
 .mar-t-auto {
   margin-top: auto;
@@ -160,7 +160,7 @@
   margin-right: $space;
 }
 
-@include makeAll( mar-r, margin-right, $spacing );
+@include makeClasses( mar-r, margin-right, $spacing );
 
 .mar-r-auto {
   margin-right: auto;
@@ -171,7 +171,7 @@
   margin-bottom: $space;
 }
 
-@include makeAll( mar-b, margin-bottom, $spacing );
+@include makeClasses( mar-b, margin-bottom, $spacing );
 
 .mar-b-auto {
   margin-bottom: auto;
@@ -182,20 +182,20 @@
   margin-left: $space;
 }
 
-@include makeAll( mar-l, margin-left, $spacing );
+@include makeClasses( mar-l, margin-left, $spacing );
 
 .mar-l-auto {
   margin-left: auto;
 }
 
 /* margin breakpoints */
-@include addBreakpoints() {
+@include addBreakpointPrefixes() {
   // surrounding
   &mar {
     margin: $space;
   }
 
-  @include makeAllForBreakpoints( mar, margin, $spacing );
+  @include makeClassesForBreakpoints( mar, margin, $spacing );
 
   &mar-auto {
     margin: auto;
@@ -206,7 +206,7 @@
     margin-top: $space;
   }
 
-  @include makeAllForBreakpoints( mar-t, margin-top, $spacing );
+  @include makeClassesForBreakpoints( mar-t, margin-top, $spacing );
 
   &mar-t-auto {
     margin-top: auto;
@@ -217,7 +217,7 @@
     margin-right: $space;
   }
 
-  @include makeAllForBreakpoints( mar-r, margin-right, $spacing );
+  @include makeClassesForBreakpoints( mar-r, margin-right, $spacing );
 
   &mar-r-auto {
     margin-right: auto;
@@ -228,7 +228,7 @@
     margin-bottom: $space;
   }
 
-  @include makeAllForBreakpoints( mar-b, margin-bottom, $spacing );
+  @include makeClassesForBreakpoints( mar-b, margin-bottom, $spacing );
 
   &mar-b-auto {
     margin-bottom: auto;
@@ -239,7 +239,7 @@
     margin-left: $space;
   }
 
-  @include makeAllForBreakpoints( mar-l, margin-left, $spacing );
+  @include makeClassesForBreakpoints( mar-l, margin-left, $spacing );
 
   &mar-l-auto {
     margin-left: auto;

@@ -1,6 +1,6 @@
 
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-// Settings: COLOR
+// Variables: COLOR
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // common
@@ -58,24 +58,32 @@ $dark_800:          #080a10;
 
 $light_100:         #ffffff;
 $light_200:         #f8f8f8;
-$light_400:         #f0f0f0;
+$light_400:         #eeeeee;
 $light_600:         #e8e8e8;
-$light_800:         #e0e0e0;
+$light_800:         #dddddd;
 
+
+////////////////////////////
+// Variables for all the colors
+// This should just be a one to one of the css vars
 
 $dark:              var(--dark);
 $light:             var(--light);
 
-// Branding
-$primary:           var(--primary);
-$accent:            var(--accent);
-
 // Background
-$background:        var(--background);
+$background_100:    var(--background-100);
+$background_200:    var(--background-200);
+$background_400:    var(--background-400);
+$background_600:    var(--background-600);
+$background_800:    var(--background-800);
 $contrast:          var(--contrast);
 
 // Border
 $border_color:      var(--border-color);
+
+// Branding
+$primary:           var(--primary);
+$accent:            var(--accent);
 
 // Text
 $text_color:        var(--text-color);
@@ -90,10 +98,75 @@ $link_color:        var(--link-color);
 $link_hover:        var(--link-hover);
 $link_active:       var(--link-active);
 
+// default color theme
+:root {
+  --dark:              #{$dark_100};
+  --light:             #{$light_200};
+  --background-100:    #{$dark_100};
+  --background-200:    #{$dark_200};
+  --background-400:    #{$dark_400};
+  --background-600:    #{$dark_600};
+  --background-800:    #{$dark_800};
+  --contrast:          #{$background_200};
+  --primary:           #{$fuchsia};
+  --accent:            #{$sea_foam};
+  --border-color:      #{$background_400};
+  --text-color:        #{$light};
+  --text-color-off:    #{$grey};
+  --text-color-alt:    #{$lava_orange};
+  --heading-color:     #{$primary};
+  --link-color:        #{$accent};
+  --link-hover:        #{$azure};
+  --link-active:       #{$royal_purple};
+}
+
+// light color theme
+.light-theme {
+  --background:        #{$light_100};
+  --background-200:    #{$light_200};
+  --background-400:    #{$light_400};
+  --background-600:    #{$light_600};
+  --background-800:    #{$light_800};
+  --text-color:        #{$dark};
+}
+
+
+$theme_colors: (
+  // Branding
+  primary:           $primary,
+  accent:            $accent,
+
+  // Theme
+  dark:              $dark,
+  light:             $light,
+
+  // Background
+  background-100:    $background_100,
+  background-200:    $background_200,
+  background-400:    $background_400,
+  background-600:    $background_600,
+  background-800:    $background_800,
+  contrast:          $contrast,
+
+  // Border
+  border-color:      $border_color,
+
+  // Text
+  text-color:        $text_color,
+  text-color-off:    $text_color_off,
+  text-color-alt:    $text_color_alt,
+  heading-color:     $heading_color,
+
+  // Links
+  link-color:        $link_color,
+  link-hover:        $link_hover,
+  link-active:       $link_active,
+);
+
 
 
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-// Settings: TYPOGRAPHY
+// Variables: TYPOGRAPHY
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono:wght@300;500;700;|Kanit:wght@300;500;700&display=swap');
@@ -115,8 +188,8 @@ $sans_serif:        $overpass;
 $monospace:         $overpass_mono;
 
 // site dynamic fonts
-$heading_font:      $kanit;
 $copy_font:         $overpass;
+$heading_font:      $kanit;
 $meta_font:         $overpass_mono;
 
 // FONT SIZE
@@ -154,26 +227,7 @@ $headings: (
 
 
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-// Settings: SITE VARS
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-// BORDER RADIUS
-$round:             2px;
-$rounder:           4px;
-
-// SHADOW
-$shadow_in:         0px 3px 10px 0px rgba(0,0,0,0.25) inset;
-$shadow_down:       0px 3px 10px 0px rgba(0,0,0,0.25);
-$shadow:            0px 7px 10px 0px rgba(0,0,0,0.25);
-$shadow_up:         0px 10px 18px 3px rgba(0,0,0,0.25);
-
-// BORDER
-$border:            2px solid $border_color;
-
-
-
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-// Settings: LAYOUT
+// Variables: WIDTH
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 //////////////////////////
@@ -241,8 +295,11 @@ $columns: (
   12:             #{(12 / 12) * 100 + '%'},
 );
 
-//////////////////////////
-// WHITESPACE
+
+
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// Variables: WHITESPACE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // Mobile horizontal space
 $horz_space_min:    32px;
@@ -270,29 +327,25 @@ $spacing: (
   2xl:              6.4rem,
 );
 
-
-
 :root {
-  --dark:              #{$dark_100};
-  --light:             #{$light_100};
-  --background:        #{$dark_100};
-  --contrast:          #{$dark_200};
-  --primary:           #{$fuchsia};
-  --accent:            #{$sea_foam};
-  --border-color:      #{$dark_400};
-  --text-color:        #{$light};
-  --text-color-off:    #{$grey};
-  --text-color-alt:    #{$lava_orange};
-  --heading-color:     var(--primary);
-  --link-color:        var(--accent);
-  --link-hover:        #{$azure};
-  --link-active:       #{$royal_purple};
   --space:             1em;
 }
 
-.light-theme {
-  --background:        #{$light_100};
-  --contrast:          #{$light_200};
-  --text-color:        #{$dark};
-  --border-color:      #{$light_400};
-}
+
+
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// Variables: OTHER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// BORDER RADIUS
+$round:             2px;
+$rounder:           4px;
+
+// SHADOW
+$shadow_in:         0px 3px 10px 0px rgba(0,0,0,0.25) inset;
+$shadow_down:       0px 3px 10px 0px rgba(0,0,0,0.25);
+$shadow:            0px 7px 10px 0px rgba(0,0,0,0.25);
+$shadow_up:         0px 10px 18px 3px rgba(0,0,0,0.25);
+
+// BORDER
+$border:            2px solid $border_color;

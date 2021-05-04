@@ -9,10 +9,10 @@ $pagination_btn_bg_hover: $link_hover;
 $pagination_btn_bg_active: $contrast;
 $pagination_btn_bg_disabled: $link_hover;
 
-$pagination_btn_text: $background;
-$pagination_btn_text_hover: $background;
+$pagination_btn_text: $background_100;
+$pagination_btn_text_hover: $background_100;
 $pagination_btn_text_active: $link_color;
-$pagination_btn_text_disabled: $background;
+$pagination_btn_text_disabled: $background_100;
 
 .pagination {
   display: flex;

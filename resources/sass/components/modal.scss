@@ -141,7 +141,7 @@ $modal_time: 300ms;
   }
 
   &--full {
-    background-color: $background;
+    background-color: $background_100;
         
     #{$self}__container {
       box-shadow: none;

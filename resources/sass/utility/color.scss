@@ -4,107 +4,13 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
+/* === TEXT COLORS === */
+@include makePrefixedClasses( 'c', color, $theme_colors );
 
 
-/* === text === */
-
-.white {
-  color: $white;
-}
-
-.text-dark {
-  color: $dark;
-}
-
-.text-light {
-  color: $light;
-}
-
-.text-color {
-  color: $text_color;
-}
-
-.text-color-off {
-  color: $text_color_off;
-}
-
-.heading-color {
-  color: $heading_color;
-}
-
-.heading-color-alt {
-  color: $text_color_alt;
-}
-
-.link-color {
-  color: $link_color;
-}
-
-.background-color {
-  color: $background;
-}
-
-.contrast-color {
-  color: $contrast;
-}
-
-.border-color {
-  color: $border_color;
-}
-
-
-
-/* === border === */
-
-.border-white {
-  border-color: $white;
-}
-
-.border-text-color {
-  border-color: $text_color;
-}
-
-.border-primary-color {
-  border-color: $primary;
-}
-
-.border-accent-color {
-  border-color: $accent;
-}
-
+/* === BORDER COLORS === */
+@include makePrefixedClasses( 'bd', border-color, $theme_colors );
 
 
 /* === BACKGROUND COLORS === */
-
-
-.bg-white {
-  background-color: $white;
-}
-
-.bg-off-white {
-  background-color: $off_white;
-}
-
-.bg-gray {
-  background-color: $grey;
-}
-
-.bg-off-black {
-  background-color: $off_black;
-}
-
-.bg-background {
-  background-color: $background;
-}
-
-.bg-contrast {
-  background-color: $contrast;
-}
-
-.bg-primary {
-  background-color: $primary;
-}
-
-.bg-accent {
-  background-color: $accent;
-}
+@include makePrefixedClasses( 'bg', background-color, $theme_colors );

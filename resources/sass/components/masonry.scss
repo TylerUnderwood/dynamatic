@@ -43,7 +43,7 @@
   flex-wrap: wrap;
 }
 
-@include addBreakpoints() {
+@include addBreakpointPrefixes() {
   &masonry {
     display: flex;
     flex-direction: row;
@@ -62,7 +62,7 @@
   }
 }
 
-@include addBreakpoints() {
+@include addBreakpointPrefixes() {
   &grout {
     margin: calc(-1 * (#{$space} / 2));
   

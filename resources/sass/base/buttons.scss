@@ -75,7 +75,7 @@ $btn_slim_height: var(--btn-slim-height);
   &[disabled] {
     border-color: $link_color;
     background-color: $link_color;
-    color: $background;
+    color: $background_100;
     opacity: 0.5;
     cursor: not-allowed;
   }

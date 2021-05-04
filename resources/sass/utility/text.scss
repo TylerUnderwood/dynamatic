@@ -8,14 +8,14 @@
   font-size: 1rem;
 }
 
-@include makeAll( size, font-size, $spacing );
+@include makeClasses( size, font-size, $spacing );
 
-@include addBreakpoints() {
+@include addBreakpointPrefixes() {
   &size {
     font-size: 1rem;
   }
   
-  @include makeAllForBreakpoints( size, font-size, $spacing );
+  @include makeClassesForBreakpoints( size, font-size, $spacing );
 }
 
 .f-16 {
@@ -82,7 +82,7 @@
   text-align: center;
 }
 
-@include addBreakpoints() {
+@include addBreakpointPrefixes() {
   &text-left {
     text-align: left;
   }

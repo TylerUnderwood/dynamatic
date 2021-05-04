@@ -41,9 +41,9 @@
 // ╚═╝  ╚═╝╚═════╝ ╚═════╝     ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝
 // ADD BREAKPOINTS
 
-//  Make All Classes In a SCSS Array
-@mixin makeAll( $class, $properties, $array ) {
-  @each $key, $value in $array {
+// Make All Classes In a SCSS list
+@mixin makeClasses( $class, $properties, $list ) {
+  @each $key, $value in $list {
     .#{$class}-#{$key} {
       @each $property in $properties {
         #{$property}: $value;
@@ -53,8 +53,8 @@
   }
 }
 
-//  Make All Classes in the Breakpoints Array
-@mixin addBreakpoints() {
+// Make All Classes in the Breakpoints list
+@mixin addBreakpointPrefixes() {
   @each $point, $width in $breakpoints {
     @media ( min-width: #{$width} ) {
       .#{$point}\: {
@@ -64,14 +64,24 @@
   }
 }
 
-// This is the same as the make all mixin but it is expected to be inside the addBreakpoints mixin
-@mixin makeAllForBreakpoints( $class, $properties, $array ) {
-  @each $key, $value in $array {
+// This is the same as the make all mixin but it is expected to be inside the addBreakpointPrefixes mixin
+@mixin makeClassesForBreakpoints( $class, $properties, $list ) {
+  @each $key, $value in $list {
     &#{$class}-#{$key} {
       @each $property in $properties {
         #{$property}: $value;
       }
       @content;
+    }
+  }
+}
+
+
+// this makes classes that are to be prefixed, separated by a colon
+@mixin makePrefixedClasses( $prefix, $rule, $list ) {
+  @each $key, $value in $list {
+    .#{$prefix}\:#{$key} {
+      #{$rule}: $value;
     }
   }
 }

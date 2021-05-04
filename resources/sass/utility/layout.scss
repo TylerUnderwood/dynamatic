@@ -162,7 +162,7 @@
   }
 }
 
-@include addBreakpoints() {
+@include addBreakpointPrefixes() {
   // show & hide
   &show {
     display: initial;
