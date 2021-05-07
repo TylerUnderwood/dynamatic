@@ -336,6 +336,22 @@ $spacing: (
 
 
 //––––––––––––––––––––––––––––––––––––––––––––––––––
+// Variables: INPUTS
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+:root {
+  --btn-tall-height: 2.8em;
+  --btn-height:      2.2em;
+  --btn-slim-height: 1.6em;
+}
+
+$btn_tall_height:    var(--btn-tall-height);
+$btn_height:         var(--btn-height);
+$btn_thin_height:    var(--btn-slim-height);
+
+
+
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 // Variables: OTHER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 

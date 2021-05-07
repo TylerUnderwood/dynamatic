@@ -4,41 +4,40 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-.single-form {
+.soloform {
+  $self: &;
   display: flex;
-  flex-flow: row wrap;
-  max-width: $copy_max;
+  flex-direction: row;
 
-  &__label,
   &__input,
   &__submit {
-    display: block;
-    height: 2rem;
-    line-height: 1;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  &__label:first-child {
-    flex: 1;
+    // height: $btn_height;
   }
 
   &__input {
-    width: 100%;
+    flex: 1 0 auto;
+    width: unset;
+    // min-height: $btn_height;
   }
 
   &__submit {
-    padding-left: 1.4em;
-    padding-right: 1.4em;
+    min-width: unset;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
   }
+
+  // &:hover {
+  //   #{$self}__input,
+  //   #{$self}__submit {
+  //     border-color: $link_hover;
+  //   }
+  // }
 
   @include below( sm ) {
     flex-direction: column;
 
-    &__label:not(:first-child) {
-      margin-top: 1rem;
-    }
     &__submit {
+      margin-top: $space;
       width: 100%;
     }
   }	
@@ -49,9 +48,11 @@
       border-bottom-right-radius: unset;
       border-right: transparent;
     }
+
     &__submit {
       border-top-left-radius: unset;
       border-bottom-left-radius: unset;
+      border-left: transparent;
     }
   }
 }

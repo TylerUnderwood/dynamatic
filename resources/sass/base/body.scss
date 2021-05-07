@@ -25,7 +25,7 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-y: auto;
   background-color: $background_color;
   line-height: 1;

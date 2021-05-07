@@ -19,14 +19,14 @@
 /* === BREAK === */
 .break {
   min-width: 100%;
-  padding-top: 1em;
+  height: 1em;
   content: '';
 }
 
 /* === SPACE === */
 .space {
+  width: 1em;
   min-height: 100%;
-  padding-left: 1em;
   content: '';
 }
 

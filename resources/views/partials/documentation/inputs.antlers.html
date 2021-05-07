@@ -1,155 +1,188 @@
 <div class="block">
-    <form>
-        <input 
-            type="text" 
-            name="text" 
-            placeholder="text"
-        />
-        <br/>
-        <input 
-            type="url" 
-            name="url" 
-            placeholder="url"
-        />
-        <br/>
-        <input 
-            type="email" 
-            name="email" 
-            placeholder="email"
-        />
-        <br/>
-        <input 
-            type="password" 
-            name="password" 
-            placeholder="password"
-        />
-        <br/>
-        <input 
-            type="number" 
-            name="number" 
-            placeholder="number"
-        />
-        <br/>
-        <input 
-            type="tel" 
-            name="tel" 
-            placeholder="tel"
-        />
-        <br/>
-        <textarea></textarea>
-        <br/>
-        <button class="btn" type="submit">Submit</button>
-    </form>
+  <form>
+    <label class="soloform" for="copyMePlease1">
+      <input id="copyMePlease1" class="soloform__input input input--tall" type="text" placeholder="Some Text">
+      <button class="soloform__submit btn btn--tall" copy-input-value="copyMePlease1">
+        <span class="btn__text meta">Copy</span>
+      </button>
+    </label>
+  
+    <hr class="break size-sm">
+  
+    <label class="soloform" for="copyMePlease2">
+      <input id="copyMePlease2" class="soloform__input input" type="text" placeholder="Some Text">
+      <button class="soloform__submit btn" copy-input-value="copyMePlease2">
+        <span class="btn__text meta">Copy</span>
+      </button>
+    </label>
+  
+    <hr class="break size-sm">
+  
+    <label class="soloform" for="copyMePlease3">
+      <input id="copyMePlease3" class="soloform__input input input--thin" type="text" placeholder="Some Text">
+      <button class="soloform__submit btn btn--thin" copy-input-value="copyMePlease3">
+        <span class="btn__text meta">Copy</span>
+      </button>
+    </label>
+  
+    <hr class="break size-sm">
+  
+    <input placeholder="Some Text" class="input" type="text" stealth>
+  </form>
 
-    <hr class="frame"/>
+  <hr class="line frame"/>
 
-    <form>
-        <select name="select" onChange={this.onChange}>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-            <option value="option4">Option 4</option>
-        </select>
-        <br/>
-        <label for="checkbox">
-            <input
-                id="checkbox"
-                name="checkbox"
-                label="Checkbox"
-                type="checkbox" />
-            <span class="mar-l-xs">Checkbox</span>
-        </label><br/>
-        <br/>
-        <fieldset>
-            <legend>Radio</legend>
-            <label for="radio1">
-                <input
-                    id="radio1"
-                    name="radio"
-                    label="Radio 1"
-                    type="radio" />
-                <span class="mar-l-xs">Radio 1</span>
-            </label>
-            <br/>
-            <label for="radio2">
-                <input
-                    id="radio2"
-                    name="radio"
-                    label="Radio 2"
-                    type="radio" />
-                <span class="mar-l-xs">Radio 2</span>
-            </label>
-            <br/>
-            <label for="radio3">
-                <input
-                    id="radio3"
-                    name="radio"
-                    label="Radio 3"
-                    type="radio" />
-                <span class="mar-l-xs">Radio 3</span>
-            </label>
-        </fieldset>
-        <br/>
+  <form>
+    <input 
+      type="text" 
+      name="text" 
+      placeholder="text"
+    />
+    <hr class="break"/>
+    <input 
+      type="url" 
+      name="url" 
+      placeholder="url"
+    />
+    <hr class="break"/>
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="email"
+    />
+    <hr class="break"/>
+    <input 
+      type="password" 
+      name="password" 
+      placeholder="password"
+    />
+    <hr class="break"/>
+    <input 
+      type="number" 
+      name="number" 
+      placeholder="number"
+    />
+    <hr class="break"/>
+    <input 
+      type="tel" 
+      name="tel" 
+      placeholder="tel"
+    />
+    <hr class="break"/>
+    <textarea></textarea>
+    <hr class="break"/>
+    <button class="btn" type="submit">Submit</button>
+  </form>
+
+  <hr class="line frame"/>
+
+  <form>
+    <select name="select" onChange={this.onChange}>
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+      <option value="option4">Option 4</option>
+    </select>
+    <hr class="break"/>
+    <label for="checkbox">
+      <input
+        id="checkbox"
+        name="checkbox"
+        label="Checkbox"
+        type="checkbox" />
+      <span class="mar-l-xs">Checkbox</span>
+    </label>
+    <hr class="break"/>
+    <fieldset>
+      <legend>Radio</legend>
+      <label for="radio1">
         <input
-            name="range"
-            label="Range"
-            type="range" 
-        />
-        <br/>
-        <button class="btn" type="submit">Submit</button>
-    </form>
-
-    <hr class="frame"/>
-
-    <form>
+          id="radio1"
+          name="radio"
+          label="Radio 1"
+          type="radio" />
+        <span class="mar-l-xs">Radio 1</span>
+      </label>
+      <hr class="break"/>
+      <label for="radio2">
         <input
-            placeholder="file"
-            name="file"
-            label="file"
-            type="file"
-        />
-        <br/>
+          id="radio2"
+          name="radio"
+          label="Radio 2"
+          type="radio" />
+        <span class="mar-l-xs">Radio 2</span>
+      </label>
+      <hr class="break"/>
+      <label for="radio3">
         <input
-            placeholder="color"
-            name="color"
-            label="color"
-            type="color"
-        />
-        <br/>
-        <button class="btn" type="submit">Submit</button>
-    </form>
+          id="radio3"
+          name="radio"
+          label="Radio 3"
+          type="radio" />
+        <span class="mar-l-xs">Radio 3</span>
+      </label>
+    </fieldset>
+    <hr class="break"/>
+    <input
+      name="range"
+      label="Range"
+      type="range" 
+    />
+    <hr class="break"/>
+    <button class="btn" type="submit">Submit</button>
+  </form>
 
-    <hr class="frame"/>
+  <hr class="line frame"/>
 
-    <form>
-        <input
-            placeholder="date"
-            name="date"
-            label="date"
-            type="date"
-        />
-        <br/>
-        <input
-            placeholder="time"
-            name="time"
-            label="time"
-            type="time"
-        />
-        <br/>
-        <button class="btn" type="submit">Submit</button>
-    </form>
+  <form>
+    <input
+      placeholder="file"
+      name="file"
+      label="file"
+      type="file"
+    />
+    <hr class="break"/>
+    <input
+      placeholder="color"
+      name="color"
+      label="color"
+      type="color"
+    />
+    <hr class="break"/>
+    <button class="btn" type="submit">Submit</button>
+  </form>
 
-    <hr class="frame"/>
+  <hr class="line frame"/>
 
-    <form>
-        <input
-            class="focus-underline"
-            placeholder="username" 
-            type="text" 
-            name="username"
-        />
-        <br/>
-        <button class="btn" type="submit">Submit</button>
-    </form>
+  <form>
+    <input
+      placeholder="date"
+      name="date"
+      label="date"
+      type="date"
+    />
+    <hr class="break"/>
+    <input
+      placeholder="time"
+      name="time"
+      label="time"
+      type="time"
+    />
+    <hr class="break"/>
+    <button class="btn" type="submit">Submit</button>
+  </form>
+
+  <hr class="line frame"/>
+
+  <form>
+    <input
+      class="focus-underline"
+      placeholder="username" 
+      type="text" 
+      name="username"
+    />
+    <hr class="break"/>
+    <button class="btn" type="submit">Submit</button>
+  </form>
 
 </div>

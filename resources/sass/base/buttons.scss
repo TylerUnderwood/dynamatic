@@ -16,18 +16,6 @@ button {
   cursor: pointer;
 }
 
-
-
-:root {
-  --btn-phat-height: 2.8em;
-  --btn-height:      2.2em;
-  --btn-slim-height: 1.6em;
-}
-
-$btn_phat_height:    var(--btn-phat-height);
-$btn_height:         var(--btn-height);
-$btn_slim_height:    var(--btn-slim-height);
-
 .btn {
   $self: &;
   display: inline-flex;
@@ -47,13 +35,13 @@ $btn_slim_height:    var(--btn-slim-height);
   text-decoration: none;
   font-size: inherit;
   color: $dark;
-  transition: border-color 300ms ease-in-out,
-              background-color 300ms ease-in-out,
-              color 300ms ease-in-out;
+  transition: border-color 300ms ease,
+              background-color 300ms ease,
+              color 300ms ease;
   user-select: none;
   cursor: pointer;
 
-  // active first so :hover overrides it
+  // [active] first so :hover overrides it
   &[active] {
     border-color: $link_active;
     background-color: $link_active;
@@ -68,7 +56,7 @@ $btn_slim_height:    var(--btn-slim-height);
     color: $dark;
   }
 
-  // disabled last so it overrides all
+  // [disabled] last so it overrides all
   &[disabled] {
     border-color: $link_color;
     background-color: $link_color;
@@ -121,10 +109,10 @@ $btn_slim_height:    var(--btn-slim-height);
   }
   
 
-  // slim button //
-  &--slim {
+  // thin button //
+  &--thin {
     min-width: 6em;
-    height: $btn_slim_height;
+    height: $btn_thin_height;
     border-width: 1px;
     padding: 0 1.2em;
     font-weight: normal;
@@ -144,10 +132,10 @@ $btn_slim_height:    var(--btn-slim-height);
   }
 
 
-  // phat button //
-  &--phat {
+  // tall button //
+  &--tall {
     min-width: 12em;
-    height: $btn_phat_height;
+    height: $btn_tall_height;
     border-width: 2px;
     padding: 0 2.4em;
     font-weight: bold;
@@ -182,14 +170,14 @@ $btn_slim_height:    var(--btn-slim-height);
     width: $btn_height;
     height: $btn_height;
 
-    &#{$self}--slim {
-      width: $btn_slim_height;
-      height: $btn_slim_height;
+    &#{$self}--thin {
+      width: $btn_thin_height;
+      height: $btn_thin_height;
     }
 
-    &#{$self}--phat {
-      width: $btn_phat_height;
-      height: $btn_phat_height;
+    &#{$self}--tall {
+      width: $btn_tall_height;
+      height: $btn_tall_height;
     }
   }
 }
