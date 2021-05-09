@@ -1,33 +1,54 @@
 <div class="block">
   <form>
-    <label class="soloform" for="copyMePlease1">
+    
+    <label class="small" for="copyMePlease1">Input Tall</label>
+    <div class="soloform mar-t-2xs">
       <input id="copyMePlease1" class="soloform__input input input--tall" type="text" placeholder="Some Text">
       <button class="soloform__submit btn btn--tall" copy-input-value="copyMePlease1">
         <span class="btn__text meta">Copy</span>
       </button>
-    </label>
+    </div>
   
-    <hr class="break size-sm">
+    <hr class="break size-lg">
   
-    <label class="soloform" for="copyMePlease2">
+    <label class="small" for="copyMePlease2">Input Default</label>
+    <div class="soloform mar-t-2xs">
       <input id="copyMePlease2" class="soloform__input input" type="text" placeholder="Some Text">
       <button class="soloform__submit btn" copy-input-value="copyMePlease2">
         <span class="btn__text meta">Copy</span>
       </button>
-    </label>
+    </div>
   
-    <hr class="break size-sm">
+    <hr class="break size-lg">
   
-    <label class="soloform" for="copyMePlease3">
+    <label class="small" for="copyMePlease3">Input Thin</label>
+    <div class="soloform mar-t-2xs">
       <input id="copyMePlease3" class="soloform__input input input--thin" type="text" placeholder="Some Text">
       <button class="soloform__submit btn btn--thin" copy-input-value="copyMePlease3">
         <span class="btn__text meta">Copy</span>
       </button>
-    </label>
+    </div>
   
-    <hr class="break size-sm">
-  
-    <input placeholder="Some Text" class="input" type="text" stealth>
+    <hr class="break size-lg">
+    
+    <label class="small" for="stealthField">Stealth Field</label>
+    <input id="stealthField" class="input mar-t-2xs" type="text" placeholder="Some Text" stealth>
+  </form>
+
+  <hr class="line frame"/>
+
+  <form>
+    <input 
+      id="text1"
+      class="input"
+      type="text" 
+      name="text" 
+      placeholder="text"
+    />
+    <hr class="break"/>
+    <textarea class="input textarea"></textarea>
+    <hr class="break"/>
+    <button class="btn btn--slim" type="submit">Submit</button>
   </form>
 
   <hr class="line frame"/>
@@ -103,7 +124,7 @@
           type="radio" />
         <span class="mar-l-xs">Radio 1</span>
       </label>
-      <hr class="break"/>
+      <hr class="break size-xs"/>
       <label for="radio2">
         <input
           id="radio2"
@@ -112,7 +133,7 @@
           type="radio" />
         <span class="mar-l-xs">Radio 2</span>
       </label>
-      <hr class="break"/>
+      <hr class="break size-xs"/>
       <label for="radio3">
         <input
           id="radio3"
@@ -176,7 +197,7 @@
 
   <form>
     <input
-      class="focus-underline"
+      class="input-underline"
       placeholder="username" 
       type="text" 
       name="username"

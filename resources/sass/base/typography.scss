@@ -8,18 +8,20 @@
  ///////////////////////
 // Line height fix
 @mixin line_height_fix( $top, $bottom ) {
-  &::before,
-  &::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-
-  &::before {
-    margin-top: $top;
-  }
-  &::after {
-    margin-bottom: $bottom;
+  @-moz-document url-prefix() {
+    &::before,
+    &::after {
+      display: block;
+      height: 0;
+      content: "";
+    }
+  
+    &::before {
+      margin-top: $top;
+    }
+    &::after {
+      margin-bottom: $bottom;
+    }  
   }
 }
 
@@ -147,6 +149,7 @@ h1, h2, h3, h4, h5, h6 {
 */
 
 li {
+  line-height: 1.2;
   list-style: inherit;
 }
 
@@ -247,6 +250,7 @@ ol {
 blockquote {
   margin: 0;
   padding: 0;
+  line-height: 1.4;
   font-size: 1.2rem;
 }
 
@@ -328,10 +332,10 @@ a {
   &:focus {
     color: $link_hover;
   }
-}
 
-.stealth-link {
-  color: inherit;
+  [stealth] {
+    color: inherit;
+  }
 }
 
 @mixin class_hyperlink {
@@ -461,17 +465,6 @@ code {
 
 span {
   display: inline;
-}
-
-// label
-label {
-  text-transform: uppercase;
-  font-family: monospace;
-}
-
-.label {
-  text-transform: uppercase;
-  font-family: $meta_font;
 }
 
 
