@@ -38,7 +38,7 @@
   --background-800: #dddddd;
   --contrast: var(--background-200);
   --border-color: var(--background-400);
-  --text-color: var(--dark);
+  --text-color: #333333;
 }
 
 :root {

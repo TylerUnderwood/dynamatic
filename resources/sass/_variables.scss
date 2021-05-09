@@ -39,7 +39,7 @@ $twitter:           #1da1f2;
 $vimeo:             #1ab7ea;
 $youtube:           #bb0000;
 
-// site specific
+// site theme
 $azure:             #0080ff;
 $royal_purple:      #c000ff;
 $fuchsia:           #ff0080;
@@ -49,13 +49,14 @@ $neon_yellow:       #c0ff00;
 $jade:              #00ff80;
 $sea_foam:          #00ffc0;
 
-// site dynamic
+// site dark
 $dark_100:          #282a30;
 $dark_200:          #202228;
 $dark_400:          #181a20;
 $dark_600:          #101218;
 $dark_800:          #080a10;
 
+// site light
 $light_100:         #ffffff;
 $light_200:         #f8f8f8;
 $light_400:         #eeeeee;
@@ -63,9 +64,43 @@ $light_600:         #e8e8e8;
 $light_800:         #dddddd;
 
 
-////////////////////////////
-// Variables for all the colors
-// This should just be a one to one of the css vars
+// --- define vars --- //
+
+:root {
+  --dark:              #{$dark_100};
+  --light:             #{$light_200};
+  --background-color:  #{$dark_100};
+  --background-200:    #{$dark_200};
+  --background-400:    #{$dark_400};
+  --background-600:    #{$dark_600};
+  --background-800:    #{$dark_800};
+  --contrast:          var(--background-200);
+  --primary:           #{$fuchsia};
+  --accent:            #{$sea_foam};
+  --border-color:      var(--background-400);
+  --text-color:        var(--light);
+  --text-color-off:    #{$grey};
+  --text-color-alt:    #{$lava_orange};
+  --heading-color:     var(--primary);
+  --link-color:        var(--accent);
+  --link-hover:        #{$azure};
+  --link-active:       #{$royal_purple};
+}
+
+// light color theme
+.light-theme {
+  --background-color:  #{$light_100};
+  --background-200:    #{$light_200};
+  --background-400:    #{$light_400};
+  --background-600:    #{$light_600};
+  --background-800:    #{$light_800};
+  --contrast:          var(--background-200);
+  --border-color:      var(--background-400);
+  --text-color:        #{$dark};
+}
+
+
+// --- convert to scss vars --- //
 
 // Branding
 $primary:           var(--primary);
@@ -97,68 +132,25 @@ $link_color:        var(--link-color);
 $link_hover:        var(--link-hover);
 $link_active:       var(--link-active);
 
-// default color theme
-:root {
-  --dark:              #{$dark_100};
-  --light:             #{$light_200};
-  --background-color:  #{$dark_100};
-  --background-200:    #{$dark_200};
-  --background-400:    #{$dark_400};
-  --background-600:    #{$dark_600};
-  --background-800:    #{$dark_800};
-  --contrast:          #{$background_200};
-  --primary:           #{$fuchsia};
-  --accent:            #{$sea_foam};
-  --border-color:      #{$background_400};
-  --text-color:        #{$light};
-  --text-color-off:    #{$grey};
-  --text-color-alt:    #{$lava_orange};
-  --heading-color:     #{$primary};
-  --link-color:        #{$accent};
-  --link-hover:        #{$azure};
-  --link-active:       #{$royal_purple};
-}
 
-// light color theme
-.light-theme {
-  --background-color:  #{$light_100};
-  --background-200:    #{$light_200};
-  --background-400:    #{$light_400};
-  --background-600:    #{$light_600};
-  --background-800:    #{$light_800};
-  --contrast:          #{$background_200};
-  --border-color:      #{$background_400};
-  --text-color:        #{$dark};
-}
-
+// --- add vars to scss list --- //
 
 $theme_colors: (
-  // Branding
   primary:           $primary,
   accent:            $accent,
-
-  // Theme
   dark:              $dark,
   light:             $light,
-
-  // Background
   background-color:  $background_color,
   background-200:    $background_200,
   background-400:    $background_400,
   background-600:    $background_600,
   background-800:    $background_800,
   contrast:          $contrast,
-
-  // Border
   border-color:      $border_color,
-
-  // Text
   text-color:        $text_color,
   text-color-alt:    $text_color_alt,
   text-color-off:    $text_color_off,
   heading-color:     $heading_color,
-
-  // Links
   link-color:        $link_color,
   link-hover:        $link_hover,
   link-active:       $link_active,
@@ -302,38 +294,8 @@ $columns: (
 // Variables: WHITESPACE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// Mobile horizontal space
-$horz_space_min:    32px;
-// Desktop horizontal space
-$horz_space_max:    64px;
 
-// Mobile vertical space
-$vert_space_min:    64px;
-// Desktop vertical space
-$vert_space_max:    96px;
-
-// default
-$space:             var(--space);
-$space_xxs:         var(--space-xxs);
-$space_xs:          var(--space-xs);
-$space_sm:          var(--space-sm);
-$space_md:          var(--space-md);
-$space_lg:          var(--space-lg);
-$space_xl:          var(--space-xl);
-$space_xxl:         var(--space-xxl);
-
-// utility
-// the most common spacing amounts
-$spacing: (
-  0:                0,
-  xxs:              $space_xxs,
-  xs:               $space_xs,
-  sm:               $space_sm,
-  md:               $space_md,
-  lg:               $space_lg,
-  xl:               $space_xl,
-  xxl:              $space_xxl,
-);
+// --- define vars --- //
 
 :root {
   --horz-space-min:    32px;
@@ -351,16 +313,61 @@ $spacing: (
 }
 
 
+// --- convert to scss vars --- //
+
+// Mobile horizontal space
+$horz_space_min:    32px;
+// Desktop horizontal space
+$horz_space_max:    64px;
+
+// Mobile vertical space
+$vert_space_min:    64px;
+// Desktop vertical space
+$vert_space_max:    96px;
+
+// default
+$space:             var(--space);
+
+// dynamic
+$space_xxs:         var(--space-xxs);
+$space_xs:          var(--space-xs);
+$space_sm:          var(--space-sm);
+$space_md:          var(--space-md);
+$space_lg:          var(--space-lg);
+$space_xl:          var(--space-xl);
+$space_xxl:         var(--space-xxl);
+
+
+// --- add vars to scss list --- //
+
+$spacing: (
+  0:                0,
+  xxs:              $space_xxs,
+  xs:               $space_xs,
+  sm:               $space_sm,
+  md:               $space_md,
+  lg:               $space_lg,
+  xl:               $space_xl,
+  xxl:              $space_xxl,
+);
+
+
 
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 // Variables: INPUTS
 //––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+// --- define vars --- //
 
 :root {
   --btn-tall-height: 2.8em;
   --btn-height:      2.2em;
   --btn-slim-height: 1.6em;
 }
+
+
+// --- convert to scss vars --- //
 
 $btn_tall_height:    var(--btn-tall-height);
 $btn_height:         var(--btn-height);
@@ -372,10 +379,6 @@ $btn_thin_height:    var(--btn-slim-height);
 // Variables: OTHER
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// BORDER RADIUS
-$round:             2px;
-$rounder:           4px;
-
 // SHADOW
 $shadow_in:         0px 3px 10px 0px rgba(0,0,0,0.25) inset;
 $shadow_down:       0px 3px 10px 0px rgba(0,0,0,0.25);
@@ -384,3 +387,7 @@ $shadow_up:         0px 10px 18px 3px rgba(0,0,0,0.25);
 
 // BORDER
 $border:            2px solid $border_color;
+
+// BORDER RADIUS
+$round:             2px;
+$rounder:           4px;
