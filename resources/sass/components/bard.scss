@@ -12,8 +12,8 @@
   $bard_outer: $content_max;
   $bard_inner: $copy_max;
   $half_bard_outer: $bard_outer / 2;
-  $bard_space: map-get($spacing, "md");
-  $bard_space_lg: map-get($spacing, "xl");
+  $bard_space: $space_md;
+  $bard_space_lg: $space_xl;
 
   // display block so margins will collapse
   display: block !important;

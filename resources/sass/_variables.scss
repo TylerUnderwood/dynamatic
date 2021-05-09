@@ -67,6 +67,11 @@ $light_800:         #dddddd;
 // Variables for all the colors
 // This should just be a one to one of the css vars
 
+// Branding
+$primary:           var(--primary);
+$accent:            var(--accent);
+
+// Theme
 $dark:              var(--dark);
 $light:             var(--light);
 
@@ -81,16 +86,10 @@ $contrast:          var(--contrast);
 // Border
 $border_color:      var(--border-color);
 
-// Branding
-$primary:           var(--primary);
-$accent:            var(--accent);
-
 // Text
 $text_color:        var(--text-color);
-$text_color_off:    var(--text-color-off);
 $text_color_alt:    var(--text-color-alt);
-
-// Headings
+$text_color_off:    var(--text-color-off);
 $heading_color:     var(--heading-color);
 
 // Links
@@ -155,8 +154,8 @@ $theme_colors: (
 
   // Text
   text-color:        $text_color,
-  text-color-off:    $text_color_off,
   text-color-alt:    $text_color_alt,
+  text-color-off:    $text_color_off,
   heading-color:     $heading_color,
 
   // Links
@@ -315,22 +314,40 @@ $vert_space_max:    96px;
 
 // default
 $space:             var(--space);
+$space_xxs:         var(--space-xxs);
+$space_xs:          var(--space-xs);
+$space_sm:          var(--space-sm);
+$space_md:          var(--space-md);
+$space_lg:          var(--space-lg);
+$space_xl:          var(--space-xl);
+$space_xxl:         var(--space-xxl);
 
 // utility
 // the most common spacing amounts
 $spacing: (
   0:                0,
-  2xs:              0.4rem,
-  xs:               0.8rem,
-  sm:               1.2rem,
-  md:               1.6rem,
-  lg:               2.4rem,
-  xl:               3.2rem,
-  2xl:              6.4rem,
+  xxs:              $space_xxs,
+  xs:               $space_xs,
+  sm:               $space_sm,
+  md:               $space_md,
+  lg:               $space_lg,
+  xl:               $space_xl,
+  xxl:              $space_xxl,
 );
 
 :root {
+  --horz-space-min:    32px;
+  --horz-space-max:    64px;
+  --vert-space-min:    64px;
+  --vert-space-max:    96px;
   --space:             1em;
+  --space-xxs:         0.4rem;
+  --space-xs:          0.8rem;
+  --space-sm:          1.2rem;
+  --space-md:          1.6rem;
+  --space-lg:          2.4rem;
+  --space-xl:          3.2rem;
+  --space-xxl:         6.4rem;
 }
 
 

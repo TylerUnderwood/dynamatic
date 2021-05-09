@@ -41,6 +41,17 @@
 // ╚═╝  ╚═╝╚═════╝ ╚═════╝     ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝
 // ADD BREAKPOINTS
 
+// Make All Classes in the Breakpoints list
+@mixin addBreakpointPrefixes( $breakpointsList: $breakpoints ) {
+  @each $point, $width in $breakpointsList {
+    @media ( min-width: #{$width} ) {
+      .#{$point}\: {
+        @content;
+      }
+    }
+  }
+}
+
 // Make All Classes In a SCSS list
 @mixin makeClasses( $class, $properties, $list ) {
   @each $key, $value in $list {
@@ -49,17 +60,6 @@
         #{$property}: $value;
       }
       @content;
-    }
-  }
-}
-
-// Make All Classes in the Breakpoints list
-@mixin addBreakpointPrefixes() {
-  @each $point, $width in $breakpoints {
-    @media ( min-width: #{$width} ) {
-      .#{$point}\: {
-        @content;
-      }
     }
   }
 }
@@ -76,12 +76,53 @@
   }
 }
 
-
 // this makes classes that are to be prefixed, separated by a colon
 @mixin makePrefixedClasses( $prefix, $rule, $list ) {
   @each $key, $value in $list {
     .#{$prefix}\:#{$key} {
       #{$rule}: $value;
+    }
+  }
+}
+
+@mixin makeClassWithBreakpointPrefixes( $className ) {
+  .#{$className} {
+    @content;
+  }
+
+  @each $point, $width in $breakpoints {
+    @media ( min-width: #{$width} ) {
+      .#{$point}\:#{$className} {
+        @content;
+      }
+    }
+  }
+}
+
+// this mixin puts all of the other makeClasses together
+@mixin makeClassesFromListWithBreakpointsPrefixes( $classTypesList, $defaultVar, $varList, $breakpointsList: $breakpoints ) {
+  // make the default class
+  @each $className, $properties in $classTypesList {
+    .#{$className} {
+      @each $property in $properties {
+        #{$property}: $defaultVar;
+      }
+    }
+    // make classes from list
+    @include makeClasses( $className, $properties, $varList );
+  }
+
+  // create breakpoints
+  @include addBreakpointPrefixes( $breakpointsList ) {
+    @each $className, $properties in $classTypesList {
+      // make default class inside breakpoints
+      &#{$className} {
+        @each $property in $properties {
+          #{$property}: $defaultVar;
+        }
+      }
+      // make classes from list inside breakpoints
+      @include makeClassesForBreakpoints( $className, $properties, $varList );
     }
   }
 }

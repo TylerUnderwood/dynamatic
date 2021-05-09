@@ -67,7 +67,7 @@
     margin: calc(-1 * (#{$space} / 2));
   
     & > * {
-      padding: calc(#{$space} / 2);;
+      padding: calc(#{$space} / 2);
     }
   }
 }
@@ -75,10 +75,10 @@
 @mixin makeGroutClasses( $array ) {
   @each $index, $value in $array {
     .grout-#{$index} {
-      margin: -#{$value / 2};
+      margin: calc(-1 * (#{$value} / 2));
 
       & > * {
-        padding: #{$value / 2};
+        padding: calc(#{$value} / 2);
       }
     }
   }
