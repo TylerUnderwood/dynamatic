@@ -474,18 +474,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Kanit", Times, serif;
   color: inherit;
 }
-@-moz-document url-prefix() {
-  .heading::before, .heading::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .heading::before {
-    margin-top: -0.25em;
-  }
-  .heading::after {
-    margin-bottom: -0.2em;
-  }
+.heading::before, .heading::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.heading::before {
+  margin-top: -0.25em;
+}
+.heading::after {
+  margin-bottom: -0.2em;
 }
 
 .h1 {
@@ -548,18 +546,16 @@ ol {
   line-height: 1.4;
   list-style: none;
 }
-@-moz-document url-prefix() {
-  .list::before, .list::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .list::before {
-    margin-top: -0.3em;
-  }
-  .list::after {
-    margin-bottom: -0.4em;
-  }
+.list::before, .list::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.list::before {
+  margin-top: -0.3em;
+}
+.list::after {
+  margin-bottom: -0.4em;
 }
 .list:first-child {
   margin-top: 0;
@@ -585,18 +581,16 @@ ol {
   line-height: 1.4;
   list-style: none;
 }
-@-moz-document url-prefix() {
-  .ul::before, .ul::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .ul::before {
-    margin-top: -0.3em;
-  }
-  .ul::after {
-    margin-bottom: -0.4em;
-  }
+.ul::before, .ul::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.ul::before {
+  margin-top: -0.3em;
+}
+.ul::after {
+  margin-bottom: -0.4em;
 }
 .ul:first-child {
   margin-top: 0;
@@ -632,18 +626,16 @@ ol {
   line-height: 1.4;
   list-style: decimal;
 }
-@-moz-document url-prefix() {
-  .ol::before, .ol::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .ol::before {
-    margin-top: -0.3em;
-  }
-  .ol::after {
-    margin-bottom: -0.4em;
-  }
+.ol::before, .ol::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.ol::before {
+  margin-top: -0.3em;
+}
+.ol::after {
+  margin-bottom: -0.4em;
 }
 .ol:first-child {
   margin-top: 0;
@@ -691,18 +683,16 @@ cite {
 .quote:first-child {
   margin-top: 0;
 }
-@-moz-document url-prefix() {
-  .quote::before, .quote::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .quote::before {
-    margin-top: -0.35em;
-  }
-  .quote::after {
-    margin-bottom: -0.5em;
-  }
+.quote::before, .quote::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.quote::before {
+  margin-top: -0.35em;
+}
+.quote::after {
+  margin-bottom: -0.5em;
 }
 
 .cite {
@@ -785,10 +775,10 @@ a:hover, a:focus {
     content: "";
   }
   .meta::before {
-    margin-top: 0.15em;
+    margin-top: 0em;
   }
   .meta::after {
-    margin-bottom: -0.1em;
+    margin-bottom: -0.25em;
   }
 }
 
@@ -816,18 +806,16 @@ code {
   line-height: 1.6;
   font-size: 0.9em;
 }
-@-moz-document url-prefix() {
-  .pre::before, .pre::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .pre::before {
-    margin-top: -0.3em;
-  }
-  .pre::after {
-    margin-bottom: -0.4em;
-  }
+.pre::before, .pre::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.pre::before {
+  margin-top: -0.3em;
+}
+.pre::after {
+  margin-bottom: -0.4em;
 }
 .pre:first-child {
   margin-top: 0;
@@ -863,10 +851,10 @@ code {
     content: "";
   }
   .code::before {
-    margin-top: 0.15em;
+    margin-top: 0em;
   }
   .code::after {
-    margin-bottom: -0.1em;
+    margin-bottom: -0.25em;
   }
 }
 
@@ -1088,6 +1076,32 @@ button {
 .btn--square.btn--tall {
   width: var(--btn-tall-height);
   height: var(--btn-tall-height);
+}
+.btn .btn--full {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: unset;
+}
+@media (min-width: 480px) {
+  .btn .sm\:btn--full {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: unset;
+  }
+}
+@media (min-width: 768px) {
+  .btn .md\:btn--full {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .btn .lg\:btn--full {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: unset;
+  }
 }
 
 /*
@@ -1641,18 +1655,16 @@ video {
   font-family: "Kanit", Times, serif;
   color: inherit;
 }
-@-moz-document url-prefix() {
-  .transcription h1::before, .transcription h1::after, .transcription h2::before, .transcription h2::after, .transcription h3::before, .transcription h3::after, .transcription h4::before, .transcription h4::after, .transcription h5::before, .transcription h5::after, .transcription h6::before, .transcription h6::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .transcription h1::before, .transcription h2::before, .transcription h3::before, .transcription h4::before, .transcription h5::before, .transcription h6::before {
-    margin-top: -0.25em;
-  }
-  .transcription h1::after, .transcription h2::after, .transcription h3::after, .transcription h4::after, .transcription h5::after, .transcription h6::after {
-    margin-bottom: -0.2em;
-  }
+.transcription h1::before, .transcription h1::after, .transcription h2::before, .transcription h2::after, .transcription h3::before, .transcription h3::after, .transcription h4::before, .transcription h4::after, .transcription h5::before, .transcription h5::after, .transcription h6::before, .transcription h6::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription h1::before, .transcription h2::before, .transcription h3::before, .transcription h4::before, .transcription h5::before, .transcription h6::before {
+  margin-top: -0.25em;
+}
+.transcription h1::after, .transcription h2::after, .transcription h3::after, .transcription h4::after, .transcription h5::after, .transcription h6::after {
+  margin-bottom: -0.2em;
 }
 .transcription h1 {
   font-size: 3.6rem;
@@ -1686,18 +1698,16 @@ video {
   line-height: 1.4;
   list-style: none;
 }
-@-moz-document url-prefix() {
-  .transcription ul::before, .transcription ul::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .transcription ul::before {
-    margin-top: -0.3em;
-  }
-  .transcription ul::after {
-    margin-bottom: -0.4em;
-  }
+.transcription ul::before, .transcription ul::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription ul::before {
+  margin-top: -0.3em;
+}
+.transcription ul::after {
+  margin-bottom: -0.4em;
 }
 .transcription ul:first-child {
   margin-top: 0;
@@ -1732,18 +1742,16 @@ video {
   line-height: 1.4;
   list-style: decimal;
 }
-@-moz-document url-prefix() {
-  .transcription ol::before, .transcription ol::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .transcription ol::before {
-    margin-top: -0.3em;
-  }
-  .transcription ol::after {
-    margin-bottom: -0.4em;
-  }
+.transcription ol::before, .transcription ol::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription ol::before {
+  margin-top: -0.3em;
+}
+.transcription ol::after {
+  margin-bottom: -0.4em;
 }
 .transcription ol:first-child {
   margin-top: 0;
@@ -1774,18 +1782,16 @@ video {
 .transcription blockquote:first-child {
   margin-top: 0;
 }
-@-moz-document url-prefix() {
-  .transcription blockquote::before, .transcription blockquote::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .transcription blockquote::before {
-    margin-top: -0.35em;
-  }
-  .transcription blockquote::after {
-    margin-bottom: -0.5em;
-  }
+.transcription blockquote::before, .transcription blockquote::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription blockquote::before {
+  margin-top: -0.35em;
+}
+.transcription blockquote::after {
+  margin-bottom: -0.5em;
 }
 .transcription a {
   background-repeat: no-repeat;
@@ -1825,18 +1831,16 @@ video {
   line-height: 1.6;
   font-size: 0.9em;
 }
-@-moz-document url-prefix() {
-  .transcription pre::before, .transcription pre::after {
-    display: block;
-    height: 0;
-    content: "";
-  }
-  .transcription pre::before {
-    margin-top: -0.3em;
-  }
-  .transcription pre::after {
-    margin-bottom: -0.4em;
-  }
+.transcription pre::before, .transcription pre::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.transcription pre::before {
+  margin-top: -0.3em;
+}
+.transcription pre::after {
+  margin-bottom: -0.4em;
 }
 .transcription pre:first-child {
   margin-top: 0;
@@ -1871,10 +1875,10 @@ video {
     content: "";
   }
   .transcription code::before {
-    margin-top: 0.15em;
+    margin-top: 0em;
   }
   .transcription code::after {
-    margin-bottom: -0.1em;
+    margin-bottom: -0.25em;
   }
 }
 .transcription hr {

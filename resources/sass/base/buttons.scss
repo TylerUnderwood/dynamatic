@@ -17,7 +17,7 @@ button {
 }
 
 .btn {
-  $self: &;
+  $self: btn;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -103,7 +103,7 @@ button {
       color: $link_color;
     }
 
-    #{$self}__text {
+    .#{$self}__text {
       font-size: 0.7em;
     }
   }
@@ -117,16 +117,16 @@ button {
     padding: 0 1.2em;
     font-weight: normal;
 
-    #{$self}__text {
+    .#{$self}__text {
       font-weight: 300;
       font-size: 0.7em;
     }
 
-    #{$self}__icon {
+    .#{$self}__icon {
       font-size: 0.8em;
     }
 
-    &#{$self}--border #{$self}__text {
+    &.#{$self}--border .#{$self}__text {
       font-size: 0.6em;
     }
   }
@@ -140,16 +140,16 @@ button {
     padding: 0 2.4em;
     font-weight: bold;
 
-    #{$self}__text {
+    .#{$self}__text {
       font-weight: 700;
       font-size: 0.9em;
     }
 
-    #{$self}__icon {
+    .#{$self}__icon {
       font-size: 1.2em;
     }
 
-    &#{$self}--border #{$self}__text {
+    &.#{$self}--border .#{$self}__text {
       font-size: 0.8em;
     }
   }
@@ -170,16 +170,32 @@ button {
     width: $btn_height;
     height: $btn_height;
 
-    &#{$self}--thin {
+    &.#{$self}--thin {
       width: $btn_thin_height;
       height: $btn_thin_height;
     }
 
-    &#{$self}--tall {
+    &.#{$self}--tall {
       width: $btn_tall_height;
       height: $btn_tall_height;
     }
   }
+
+  .#{$self}--full {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: unset;
+  }
+  
+  @include addBreakpointPrefixes() {
+    &#{$self}--full {
+      flex: 1 0 auto;
+      width: 100%;
+      max-width: unset;
+    }
+  }
 }
+
+
 
 // ===== site specific ===== //
