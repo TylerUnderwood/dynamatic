@@ -4,16 +4,31 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-/* === FILLER === */
-// This is for an element you want to fill the space between others
-.fill {
-  flex: 1 1 auto;
+
+/*
+|–––––––––––––––––––––––––
+| Horizontal Row
+|–––––––––––––––––––––––––
+*/
+
+hr {
+  margin: 0;
+  border: none;
 }
-// This is used as a sibling element inside a flex element to fill empty space
-.filler {
-  display: block;
-  flex: 1 1 auto;
-  content: '';
+
+@mixin class_line {
+  clear: both;
+  margin: 0;
+  border: unset;
+  border-radius: 1px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  color: inherit;
+}
+
+.line {
+  @include class_line;
 }
 
 /* === BREAK === */
@@ -37,4 +52,39 @@
   max-height: 1em;
   padding-top: 1em;
   padding-left: 1em;
+}
+
+
+/*
+|–––––––––––––––––––––––––
+| Line Break
+|–––––––––––––––––––––––––
+*/
+
+br {
+  clear: both;
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  line-height: inherit;
+}
+
+
+/*
+|–––––––––––––––––––––––––
+| Filler
+|–––––––––––––––––––––––––
+*/
+
+/* === FILLER === */
+// This is for an element you want to fill the space between others
+.fill {
+  flex: 1 1 auto;
+}
+
+// This is used as a sibling element inside a flex element to fill empty space
+.filler {
+  display: block;
+  flex: 1 1 auto;
+  content: '';
 }

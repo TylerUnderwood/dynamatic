@@ -19,9 +19,10 @@
     &::before {
       margin-top: $top;
     }
+
     &::after {
       margin-bottom: $bottom;
-    }  
+    }
   }
 }
 
@@ -47,7 +48,7 @@
 
 
 
-/* 
+/*
 |–––––––––––––––––––––––––
 | Copy
 |–––––––––––––––––––––––––
@@ -77,7 +78,7 @@ p {
 
 
 
-/* 
+/*
 |–––––––––––––––––––––––––
 | Headings
 |–––––––––––––––––––––––––
@@ -142,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-/* 
+/*
 |–––––––––––––––––––––––––
 | Lists
 |–––––––––––––––––––––––––
@@ -241,7 +242,7 @@ ol {
 
 
 
-/* 
+/*
 |–––––––––––––––––––––––––
 | Quotes
 |–––––––––––––––––––––––––
@@ -299,7 +300,7 @@ cite {
 
 
 
-/* 
+/*
 |–––––––––––––––––––––––––
 | Links
 |–––––––––––––––––––––––––
@@ -333,7 +334,7 @@ a {
     color: $link_hover;
   }
 
-  [stealth] {
+  &[stealth] {
     color: inherit;
   }
 }
@@ -364,7 +365,7 @@ a {
 
 
 
-/* 
+/*
 |–––––––––––––––––––––––––
 | Meta
 |–––––––––––––––––––––––––
@@ -388,7 +389,7 @@ a {
 
 
 
-/* 
+/*
 |–––––––––––––––––––––––––
 | Code
 |–––––––––––––––––––––––––
@@ -457,7 +458,7 @@ code {
 
 
 
-/* 
+/*
 |–––––––––––––––––––––––––
 | Other Typography
 |–––––––––––––––––––––––––
@@ -545,125 +546,4 @@ ins {
 // striketrough
 del {
   text-decoration: line-through;
-}
-
-
-/* 
-|–––––––––––––––––––––––––
-| Horizontal Row
-|–––––––––––––––––––––––––
-*/
-
-hr {
-  margin: 0;
-  border: none;
-}
-
-@mixin class_line {
-  clear: both;
-  margin: 0;
-  border: unset;
-  border-radius: 1px;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  color: inherit;
-}
-
-.line {
-  @include class_line;
-}
-
-/* === line-break === */
-br {
-  clear: both;
-  display: inline-block;
-  width: 0;
-  height: 1em;
-  line-height: inherit;
-}
-
-
-/* 
-|–––––––––––––––––––––––––
-| Transcription
-|–––––––––––––––––––––––––
-|
-| Putting it all together.
-| This class is used anywhere you want some default text styling.
-|
-*/
-
-.transcription {
-  display: block !important;
-
-  p {
-    @include class_copy;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @include class_heading;
-  }
-
-  h1 {
-    font-size: map-get($headings, "h1", "size" );
-    color: map-get($headings, "h1", "color" );
-  }
-  
-  h2 {
-    font-size: map-get($headings, "h2", "size" );
-    color: map-get($headings, "h2", "color" );
-  }
-  
-  h3 {
-    font-size: map-get($headings, "h3", "size" );
-    color: map-get($headings, "h3", "color" );
-  }
-  
-  h4 {
-    font-size: map-get($headings, "h4", "size" );
-    color: map-get($headings, "h4", "color" );
-  }
-  
-  h5 {
-    font-size: map-get($headings, "h5", "size" );
-    color: map-get($headings, "h5", "color" );
-  }
-  
-  h6 {
-    font-size: map-get($headings, "h6", "size" );
-    color: map-get($headings, "h6", "color" );
-  }
-
-  ul {
-    @include class_list( unordered );
-  }
-
-  ol {
-    @include class_list( ordered );
-  }
-
-  blockquote {
-    @include class_quote;
-  }
-
-  a {
-    @include class_hyperlink;
-  }
-
-  cite {
-    @include class_cite;
-  }
-
-  pre {
-    @include class_pre;
-  }
-
-  code {
-    @include class_code;
-  }
-
-  hr {
-    @include class_line;
-  }
 }
