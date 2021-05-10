@@ -35,8 +35,13 @@
 
 */
 
-//////////////////////////
-// .masonry
+
+/*
+|–––––––––––––––––––––––––
+| Masonry
+|–––––––––––––––––––––––––
+*/
+
 .masonry {
   display: flex;
   flex-direction: row;
@@ -52,9 +57,13 @@
 }
 
 
-//////////////////////////
-// .grout
-.grout {
+/*
+|–––––––––––––––––––––––––
+| Grout
+|–––––––––––––––––––––––––
+*/
+
+@include makeClassWithBreakpointPrefixes( 'grout' ) {
   margin: calc(-1 * (#{$space} / 2));
 
   & > * {
@@ -62,19 +71,9 @@
   }
 }
 
-@include addBreakpointPrefixes() {
-  &grout {
-    margin: calc(-1 * (#{$space} / 2));
-  
-    & > * {
-      padding: calc(#{$space} / 2);
-    }
-  }
-}
-
 @mixin makeGroutClasses( $array ) {
-  @each $index, $value in $array {
-    .grout-#{$index} {
+  @each $key, $value in $array {
+    .grout-#{$key} {
       margin: calc(-1 * (#{$value} / 2));
 
       & > * {
@@ -87,16 +86,20 @@
 @include makeGroutClasses( $spacing );
 
 
-//////////////////////////
-//.tile
+/*
+|–––––––––––––––––––––––––
+| Tile
+|–––––––––––––––––––––––––
+*/
+
 .tile {
   flex: 0 0 auto;
   width: auto;
 }
 
 @mixin makeTileClasses( $array ) {
-  @each $index, $value in $array {
-    .tile-#{$index} {
+  @each $key, $value in $array {
+    .tile-#{$key} {
       flex: 1 1 $value;
       max-width: $value;
     }
@@ -104,8 +107,8 @@
   @each $point, $width in $breakpoints {
     @media ( min-width: #{$width} ) {
       .#{$point}\: {
-        @each $index, $value in $array {
-          &tile-#{$index} {
+        @each $key, $value in $array {
+          &tile-#{$key} {
             flex: 1 1 $value;
             max-width: $value;
           }

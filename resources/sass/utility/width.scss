@@ -4,10 +4,6 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-.no-shrink {
-  flex: 0 0 auto;
-}
-
 
 /* ===== MAX WIDTHS ===== */
 
@@ -51,6 +47,13 @@
 
 @include addBreakpointPrefixes() {
   @include makeClassesForBreakpoints( w, width, $widths );
+}
+
+
+/* ===== No Srink ===== */
+
+.no-shrink {
+  flex: 0 0 auto;
 }
 
 

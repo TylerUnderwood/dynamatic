@@ -298,10 +298,6 @@ $columns: (
 // --- define vars --- //
 
 :root {
-  --horz-space-min:    32px;
-  --horz-space-max:    64px;
-  --vert-space-min:    64px;
-  --vert-space-max:    96px;
   --space:             1em;
   --space-xxs:         0.4rem;
   --space-xs:          0.8rem;
@@ -352,6 +348,23 @@ $spacing: (
 );
 
 
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// Variables: OTHER
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// SHADOW
+$shadow_in:         0px 3px 10px 0px rgba(0,0,0,0.25) inset;
+$shadow_down:       0px 3px 10px 0px rgba(0,0,0,0.25);
+$shadow:            0px 7px 10px 0px rgba(0,0,0,0.25);
+$shadow_up:         0px 10px 18px 3px rgba(0,0,0,0.25);
+
+// BORDER
+$border:            2px solid $border_color;
+
+// BORDER RADIUS
+$round:             2px;
+$rounder:           4px;
+
 
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 // Variables: INPUTS
@@ -372,22 +385,3 @@ $spacing: (
 $btn_tall_height:    var(--btn-tall-height);
 $btn_height:         var(--btn-height);
 $btn_thin_height:    var(--btn-slim-height);
-
-
-
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-// Variables: OTHER
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-
-// SHADOW
-$shadow_in:         0px 3px 10px 0px rgba(0,0,0,0.25) inset;
-$shadow_down:       0px 3px 10px 0px rgba(0,0,0,0.25);
-$shadow:            0px 7px 10px 0px rgba(0,0,0,0.25);
-$shadow_up:         0px 10px 18px 3px rgba(0,0,0,0.25);
-
-// BORDER
-$border:            2px solid $border_color;
-
-// BORDER RADIUS
-$round:             2px;
-$rounder:           4px;

@@ -33,6 +33,8 @@
   }
 }
 
+
+
 //  █████╗ ██████╗ ██████╗     ██████╗ ██████╗ ███████╗ █████╗ ██╗  ██╗██████╗  ██████╗ ██╗███╗   ██╗████████╗███████╗
 // ██╔══██╗██╔══██╗██╔══██╗    ██╔══██╗██╔══██╗██╔════╝██╔══██╗██║ ██╔╝██╔══██╗██╔═══██╗██║████╗  ██║╚══██╔══╝██╔════╝
 // ███████║██║  ██║██║  ██║    ██████╔╝██████╔╝█████╗  ███████║█████╔╝ ██████╔╝██║   ██║██║██╔██╗ ██║   ██║   ███████╗
@@ -101,8 +103,8 @@
 
 // this mixin puts all of the other makeClasses together
 @mixin makeClassesFromListWithBreakpointsPrefixes( $classTypesList, $defaultVar, $varList, $breakpointsList: $breakpoints ) {
-  // make the default class
   @each $className, $properties in $classTypesList {
+    // make the default class
     .#{$className} {
       @each $property in $properties {
         #{$property}: $defaultVar;

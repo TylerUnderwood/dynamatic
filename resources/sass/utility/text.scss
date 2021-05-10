@@ -23,21 +23,6 @@
 }
 
 
-/* === PIXEL SIZES === */
-
-.f-16 {
-  font-size: 16px;
-}
-
-.f-18 {
-  font-size: 18px;
-}
-
-.f-20 {
-  font-size: 20px;
-}
-
-
 /* === RELATIVE SIZES === */
 
 .small {
@@ -48,6 +33,10 @@
   font-size: 0.8em;
 }
 
+.normal {
+  font-size: 1rem;
+}
+
 .large {
   font-size: 1.2rem;
 }
@@ -56,6 +45,24 @@
   font-size: 1.2em;
 }
 
+
+/* === FAMILIES === */
+
+.serif {
+  font-family: $serif;
+}
+
+.sans {
+  font-family: $sans_serif;
+}
+
+.monospace {
+  font-family: $monospace;
+}
+
+
+/* === TEXT DECORATION === */
+
 .bold {
   font-weight: 700;
 }
@@ -63,24 +70,6 @@
 .thin {
   font-weight: 300;
 }
-
-
-/* === FAMILIES === */
-
-.font-serif {
-  font-family: $serif;
-}
-
-.font-sans {
-  font-family: $sans_serif;
-}
-
-.font-mono {
-  font-family: $monospace;
-}
-
-
-/* === TEXT DECORATION === */
 
 .uppercase {
   text-transform: uppercase;
@@ -118,7 +107,9 @@
   hyphens: auto;
 }
 
+
 /* === Vert Text Alignment === */
+
 .midline {
   display: inline-flex;
   align-items: center;
@@ -130,6 +121,7 @@
   align-items: baseline;
   vertical-align: baseline;
 }
+
 
 /* === Horz Text Alignment === */
 

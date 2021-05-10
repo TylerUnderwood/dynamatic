@@ -203,7 +203,7 @@ $inner_main: ($inner / 2) + $section_difference;
   display: flex;
   flex-wrap: nowrap;
   width: 100%;
-    
+
   // columns have no padding or margin verticalty because they only distinguish width
   &__column {
     display: flex;
@@ -263,7 +263,7 @@ $inner_main: ($inner / 2) + $section_difference;
     
     &__wrap {
       margin: 0;
-      max-width: unset;
+      max-width: unset !important;
       padding: 0;
     }
   }
@@ -353,50 +353,6 @@ $inner_main: ($inner / 2) + $section_difference;
     }
     &__main {
       max-width: calc(50% + #{$section_difference});
-    }
-  }
-}
-
-  
-/* === FILLER === */
-.filler {
-  &__block,
-  &__wrap {
-    flex: 1;
-    margin: 0;
-    width: 100%;
-    padding: 0;
-  }
-}
-
-/* === IMAGE === */
-.image {
-  &__block,
-  &__wrap {
-    flex: 1;
-    display: flex;
-    padding: 0;
-  }
-  
-  &__block {
-    .bg-img {
-      flex: 1;
-    }
-
-    @media ( max-width: 767px ) {
-      // make that image 16:9
-      .bg-img::after {
-      padding-top: 56.25%;
-      }
-    }
-
-    @media ( min-width: 768px ) {
-      .bg-img {
-      min-height: 12rem;
-      }
-      .bg-img::after {
-      padding-top: 0;
-      }
     }
   }
 }
