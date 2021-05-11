@@ -4,20 +4,42 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-$section_wrap: $wrapper;
-$section_aside: $section_wrap / 3;
-$section_half: $section_wrap / 2;
-$section_main: ($section_wrap / 3) * 2;
+// :root {
+//   --section-wrap: var(--wrapper);
+//   --section-aside: calc(var(--section-wrap) / 3);
+//   --section-half: calc(var(--section-wrap) / 2);
+//   --section-main: calc((var(--section-wrap) / 3) * 2);
+//   --section-difference: calc((var(--section-main) - var(--section-aside)) / 2);
+//   --section-outer: var(--outer);
+//   --section-outer-aside: calc((var(--section-outer) / 2) - var(--section-difference));
+//   --section-outer-half: calc((var(--section-outer) / 2));
+//   --section-outer-main: calc((var(--section-outer) / 2) + var(--section-difference));
+//   --section-inner: var(--inner);
+//   --section-inner-aside: calc((var(--section-inner) / 2) - var(--section-difference));
+//   --section-inner-half: calc((var(--section-inner) / 2));
+//   --section-inner-main: calc((var(--section-inner) / 2) + var(--section-difference));
+// }
 
-$section_difference: ($section_main - $section_aside) / 2;
+$section_wrap: $wrapper;
+$section_aside: calc(#{$section_wrap} / 3);
+$section_half: calc(#{$section_wrap} / 2);
+$section_main: calc((#{$section_wrap} / 3) * 2);
+$section_difference: calc((#{$section_main} - #{$section_aside}) / 2);
+
+$section_outer: $outer;
+$section_outer_aside: calc((#{$section_outer} / 2) - #{$section_difference});
+$section_outer_half: calc((#{$section_outer} / 2));
+$section_outer_main: calc((#{$section_outer} / 2) + #{$section_difference});
+
+$section_inner: $inner;
+$section_inner_aside: calc((#{$section_inner} / 2) - #{$section_difference});
+$section_inner_half: calc((#{$section_inner} / 2));
+$section_inner_main: calc((#{$section_inner} / 2) + #{$section_difference});
 
 
 /* ===== CONTAINERS ===== */
 
 /* === outer === */
-$outer_aside: ($outer / 2) - $section_difference;
-$outer_half: ($outer / 2);
-$outer_main: ($outer / 2) + $section_difference;
 
 .outer {
   margin-left: auto;
@@ -26,13 +48,13 @@ $outer_main: ($outer / 2) + $section_difference;
   max-width: $outer;
 
   &--aside {
-    max-width: $outer_aside;
+    max-width: $section_outer_aside;
   }
   &--half {
-    max-width: $outer_half;
+    max-width: $section_outer_half;
   }
   &--main {
-    max-width: $outer_main;
+    max-width: $section_outer_main;
   }
 }
 
@@ -55,9 +77,6 @@ $outer_main: ($outer / 2) + $section_difference;
 }
 
 /* === inner === */
-$inner_aside: ($inner / 2) - $section_difference;
-$inner_half: ($inner / 2);
-$inner_main: ($inner / 2) + $section_difference;
 
 .inner {
   margin-left: auto;
@@ -66,131 +85,13 @@ $inner_main: ($inner / 2) + $section_difference;
   max-width: $inner;
 
   &--aside {
-    max-width: $inner_aside;
+    max-width: $section_inner_aside;
   }
   &--half {
-    max-width: $inner_half;
+    max-width: $section_inner_half;
   }
   &--main {
-    max-width: $inner_main;
-  }
-}
-
-
-
-/* ===== WHITESPACE ===== */
-
-/* === frame === */
-// margin based vertical whitespace
-@mixin vert_mar {
-  @include fluid-type(margin-top margin-bottom, $min_width, $max_width, $vert_space_min, $vert_space_max);
-}
-
-.frame {
-  @include vert_mar;
-}
-
-@include above( sm ) {
-  .sm\:frame {
-    @include vert_mar;
-  }
-}
-
-@include above( md ) {
-  .md\:frame {
-    @include vert_mar;
-  }
-}
-
-@include above( lg ) {
-  .lg\:frame {
-    @include vert_mar;
-  }
-}
-
-/* === trim === */
-// padding based vertical whitespace
-@mixin vert_pad {
-  @include fluid-type(padding-top padding-bottom, $min_width, $max_width, $vert_space_min, $vert_space_max);
-}
-
-.trim {
-  @include vert_pad;
-}
-
-@include above( sm ) {
-  .sm\:trim {
-    @include vert_pad;
-  }
-}
-
-@include above( md ) {
-  .md\:trim {
-    @include vert_pad;
-  }
-}
-
-@include above( lg ) {
-  .lg\:trim {
-    @include vert_pad;
-  }
-}
-
-
-/* === buffer === */
-// margin based horizontal whitespace
-@mixin horz_mar {
-  @include fluid-type(margin-right margin-left, $min_width, $max_width, $horz_space_min, $horz_space_max);
-}
-
-.buffer {
-  @include horz_mar;
-}
-
-@include above( sm ) {
-  .sm\:buffer {
-    @include horz_mar;
-  }
-}
-
-@include above( md ) {
-  .md\:buffer {
-    @include horz_mar;
-  }
-}
-
-@include above( lg ) {
-  .lg\:buffer {
-    @include horz_mar;
-  }
-}
-
-
-/* === gutter === */
-// padding based horizontal whitespace
-@mixin horz_pad {
-  @include fluid-type(padding-right padding-left, $min_width, $max_width, $horz_space_min, $horz_space_max);
-}
-
-.gutter {
-  @include horz_pad;
-}
-
-@include above( sm ) {
-  .sm\:gutter {
-    @include horz_pad;
-  }
-}
-
-@include above( md ) {
-  .md\:gutter {
-    @include horz_pad;
-  }
-}
-
-@include above( lg ) {
-  .lg\:gutter {
-    @include horz_pad;
+    max-width: $section_inner_main;
   }
 }
 
@@ -214,8 +115,8 @@ $inner_main: ($inner / 2) + $section_difference;
     width: 100%;
     padding-right: 0;
     padding-left: 0;
-    // trim
-    // background
+    // vert padding
+    // background-color
   }
   
   // blocks must stack inside column with optional padding and margin
@@ -223,7 +124,7 @@ $inner_main: ($inner / 2) + $section_difference;
     display: flex;
     width: 100%;
     // margin-top
-    // gutter
+    // horz padding
     
     &:first-child {
       margin-top: 0;
@@ -249,7 +150,7 @@ $inner_main: ($inner / 2) + $section_difference;
   &__wrap {
     display: block;
     width: 100%;
-    // gutter
+    // horz padding
   }
   
   @media ( max-width: 767px ) {
@@ -309,10 +210,10 @@ $inner_main: ($inner / 2) + $section_difference;
         max-width: $section_aside;
       }
       #{$self}__outer {
-        max-width: $outer_aside;
+        max-width: $section_outer_aside;
       }
       #{$self}__inner {
-        max-width: $inner_aside;
+        max-width: $section_inner_aside;
       }
     }
     
@@ -324,10 +225,10 @@ $inner_main: ($inner / 2) + $section_difference;
         max-width: $section_half;
       }
       #{$self}__outer {
-        max-width: $outer_half;
+        max-width: $section_outer_half;
       }
       #{$self}__inner {
-        max-width: $inner_half;
+        max-width: $section_inner_half;
       }
     }
     
@@ -339,15 +240,15 @@ $inner_main: ($inner / 2) + $section_difference;
         max-width: $section_main;
       }
       #{$self}__outer {
-        max-width: $outer_main;
+        max-width: $section_outer_main;
       }
       #{$self}__inner {
-        max-width: $inner_main;
+        max-width: $section_inner_main;
       }
     }
   }
 
-  @media ( min-width: $section_wrap ) {
+  @media ( min-width: $content_max ) {
     &__aside {
       max-width: calc(50% - #{$section_difference});
     }
