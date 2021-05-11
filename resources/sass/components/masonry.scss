@@ -48,7 +48,7 @@
   flex-wrap: wrap;
 }
 
-@include addBreakpointPrefixes() {
+@include add-breakpoint-prefixes() {
   &masonry {
     display: flex;
     flex-direction: row;
@@ -63,7 +63,7 @@
 |–––––––––––––––––––––––––
 */
 
-@include makeClassWithBreakpointPrefixes( 'grout' ) {
+@include make-class-with-breakpoint-prefixes( 'grout' ) {
   margin: calc(-1 * (#{$space} / 2));
 
   & > * {

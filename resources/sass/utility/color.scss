@@ -5,12 +5,12 @@
 */
 
 /* === TEXT COLORS === */
-@include makePrefixedClasses( 'c', color, $theme_colors );
+@include make-prefixed-classes-from-list( 'c', color, $theme_colors );
 
 
 /* === BORDER COLORS === */
-@include makePrefixedClasses( 'bd', border-color, $theme_colors );
+@include make-prefixed-classes-from-list( 'bd', border-color, $theme_colors );
 
 
 /* === BACKGROUND COLORS === */
-@include makePrefixedClasses( 'bg', background-color, $theme_colors );
+@include make-prefixed-classes-from-list( 'bg', background-color, $theme_colors );

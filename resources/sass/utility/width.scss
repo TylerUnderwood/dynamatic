@@ -21,9 +21,9 @@
 }
 
 /* static */
-@include makeClasses( mxw, max-width, $max_widths );
+@include make-classes-from-list( mxw, max-width, $max_widths );
 
-@include addBreakpointPrefixes() {
+@include add-breakpoint-prefixes() {
   // DYNAMIC
   &mxw-copy {
     max-width: $copy_max;
@@ -36,17 +36,17 @@
   }
 
   // STATIC
-  @include makeClassesForBreakpoints( mxw, max-width, $max_widths );
+  @include make-classes-for-breakpoints( mxw, max-width, $max_widths );
 }
 
 
 
 /* ===== WIDTHS ===== */
 
-@include makeClasses( w, width, $widths );
+@include make-classes-from-list( w, width, $widths );
 
-@include addBreakpointPrefixes() {
-  @include makeClassesForBreakpoints( w, width, $widths );
+@include add-breakpoint-prefixes() {
+  @include make-classes-for-breakpoints( w, width, $widths );
 }
 
 

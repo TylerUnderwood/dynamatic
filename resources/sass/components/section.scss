@@ -4,37 +4,59 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-// :root {
-//   --section-wrap: var(--wrapper);
-//   --section-aside: calc(var(--section-wrap) / 3);
-//   --section-half: calc(var(--section-wrap) / 2);
-//   --section-main: calc((var(--section-wrap) / 3) * 2);
-//   --section-difference: calc((var(--section-main) - var(--section-aside)) / 2);
-//   --section-outer: var(--outer);
-//   --section-outer-aside: calc((var(--section-outer) / 2) - var(--section-difference));
-//   --section-outer-half: calc((var(--section-outer) / 2));
-//   --section-outer-main: calc((var(--section-outer) / 2) + var(--section-difference));
-//   --section-inner: var(--inner);
-//   --section-inner-aside: calc((var(--section-inner) / 2) - var(--section-difference));
-//   --section-inner-half: calc((var(--section-inner) / 2));
-//   --section-inner-main: calc((var(--section-inner) / 2) + var(--section-difference));
-// }
+:root {
+  --wrapper: #{$wrapper};
+  --outer: #{$outer};
+  --inner: #{$inner};
+}
 
-$section_wrap: $wrapper;
-$section_aside: calc(#{$section_wrap} / 3);
-$section_half: calc(#{$section_wrap} / 2);
-$section_main: calc((#{$section_wrap} / 3) * 2);
-$section_difference: calc((#{$section_main} - #{$section_aside}) / 2);
+:root {
+  --section-wrap: var(--wrapper);
+  --section-aside: calc(var(--section-wrap) / 3);
+  --section-half: calc(var(--section-wrap) / 2);
+  --section-main: calc((var(--section-wrap) / 3) * 2);
+  --section-difference: calc((var(--section-main) - var(--section-aside)) / 2);
+  --section-outer: var(--outer);
+  --section-outer-aside: calc((var(--section-outer) / 2) - var(--section-difference));
+  --section-outer-half: calc((var(--section-outer) / 2));
+  --section-outer-main: calc((var(--section-outer) / 2) + var(--section-difference));
+  --section-inner: var(--inner);
+  --section-inner-aside: calc((var(--section-inner) / 2) - var(--section-difference));
+  --section-inner-half: calc((var(--section-inner) / 2));
+  --section-inner-main: calc((var(--section-inner) / 2) + var(--section-difference));
+}
 
-$section_outer: $outer;
-$section_outer_aside: calc((#{$section_outer} / 2) - #{$section_difference});
-$section_outer_half: calc((#{$section_outer} / 2));
-$section_outer_main: calc((#{$section_outer} / 2) + #{$section_difference});
+$section_wrap: var(--section-wrap);
+$section_aside: var(--section-aside);
+$section_half: var(--section-half);
+$section_main: var(--section-main);
+$section_difference: var(--section-difference);
 
-$section_inner: $inner;
-$section_inner_aside: calc((#{$section_inner} / 2) - #{$section_difference});
-$section_inner_half: calc((#{$section_inner} / 2));
-$section_inner_main: calc((#{$section_inner} / 2) + #{$section_difference});
+$section_outer: var(--section-outer);
+$section_outer_aside: var(--section-outer-aside);
+$section_outer_half: var(--section-outer-half);
+$section_outer_main: var(--section-outer-main);
+
+$section_inner: var(--section-inner);
+$section_inner_aside: var(--section-inner-aside);
+$section_inner_half: var(--section-inner-half);
+$section_inner_main: var(--section-inner-main);
+
+// $section_wrap: $wrapper;
+// $section_aside: calc(#{$section_wrap} / 3);
+// $section_half: calc(#{$section_wrap} / 2);
+// $section_main: calc((#{$section_wrap} / 3) * 2);
+// $section_difference: calc((#{$section_main} - #{$section_aside}) / 2);
+
+// $section_outer: $outer;
+// $section_outer_aside: calc((#{$section_outer} / 2) - #{$section_difference});
+// $section_outer_half: calc((#{$section_outer} / 2));
+// $section_outer_main: calc((#{$section_outer} / 2) + #{$section_difference});
+
+// $section_inner: $inner;
+// $section_inner_aside: calc((#{$section_inner} / 2) - #{$section_difference});
+// $section_inner_half: calc((#{$section_inner} / 2));
+// $section_inner_main: calc((#{$section_inner} / 2) + #{$section_difference});
 
 
 /* ===== CONTAINERS ===== */

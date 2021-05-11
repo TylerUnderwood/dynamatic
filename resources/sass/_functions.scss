@@ -15,7 +15,7 @@
   @return $number;
 }
 
-@mixin fluid-type($properties, $min_vw, $max_vw, $min_value, $max_value) {
+@mixin fluid-rule($properties, $min_vw, $max_vw, $min_value, $max_value) {
   @media ( max-width: #{$min_vw} ) {
     @each $property in $properties {
       #{$property}: $min_value;
@@ -44,7 +44,7 @@
 // ADD BREAKPOINTS
 
 // Make All Classes in the Breakpoints list
-@mixin addBreakpointPrefixes( $breakpointsList: $breakpoints ) {
+@mixin add-breakpoint-prefixes( $breakpointsList: $breakpoints ) {
   @each $point, $width in $breakpointsList {
     @media ( min-width: #{$width} ) {
       .#{$point}\: {
@@ -55,7 +55,7 @@
 }
 
 // Make All Classes In a SCSS list
-@mixin makeClasses( $class, $properties, $list ) {
+@mixin make-classes-from-list( $class, $properties, $list ) {
   @each $key, $value in $list {
     .#{$class}-#{$key} {
       @each $property in $properties {
@@ -67,7 +67,7 @@
 }
 
 // This is the same as the make all mixin but it is expected to be inside the addBreakpointPrefixes mixin
-@mixin makeClassesForBreakpoints( $class, $properties, $list ) {
+@mixin make-classes-for-breakpoints( $class, $properties, $list ) {
   @each $key, $value in $list {
     &#{$class}-#{$key} {
       @each $property in $properties {
@@ -78,8 +78,41 @@
   }
 }
 
-// this makes classes that are to be prefixed, separated by a colon
-@mixin makePrefixedClasses( $prefix, $rule, $list ) {
+@mixin make-list-of-classes-from-list( $classList, $varList, $defaultVar ) {
+  @each $className, $properties in $classList {
+    @if $defaultVar {
+      // make the default class
+      .#{$className} {
+        @each $property in $properties {
+          #{$property}: $defaultVar;
+        }
+      }
+    }
+    @if $varList {
+      // make classes from list
+      @include make-classes-from-list( $className, $properties, $varList );
+    }
+  }
+}
+
+@mixin make-list-of-classes-from-list-for-breakpoints( $classList, $varList, $defaultVar ) {
+  @each $className, $properties in $classList {
+    // make default class inside breakpoints
+    @if $defaultVar {
+      // make the default class
+      &#{$className} {
+        @each $property in $properties {
+          #{$property}: $defaultVar;
+        }
+      }
+    }
+    // make classes from list inside breakpoints
+    @include make-classes-for-breakpoints( $className, $properties, $varList );
+  }
+}
+
+// This makes classes that are prefixed, separated by a colon
+@mixin make-prefixed-classes-from-list( $prefix, $rule, $list ) {
   @each $key, $value in $list {
     .#{$prefix}\:#{$key} {
       #{$rule}: $value;
@@ -87,7 +120,7 @@
   }
 }
 
-@mixin makeClassWithBreakpointPrefixes( $className ) {
+@mixin make-class-with-breakpoint-prefixes( $className ) {
   .#{$className} {
     @content;
   }
@@ -102,7 +135,7 @@
 }
 
 // this mixin puts all of the other makeClasses together
-@mixin makeClassesFromListWithBreakpointsPrefixes( $classTypesList, $defaultVar, $varList, $breakpointsList: $breakpoints ) {
+@mixin make-list-of-classes-from-list-with-breakpoint-prefixes( $classTypesList, $defaultVar, $varList, $breakpointsList: $breakpoints ) {
   @each $className, $properties in $classTypesList {
     // make the default class
     .#{$className} {
@@ -111,11 +144,13 @@
       }
     }
     // make classes from list
-    @include makeClasses( $className, $properties, $varList );
+    @include make-classes-from-list( $className, $properties, $varList );
   }
 
+  @content;
+
   // create breakpoints
-  @include addBreakpointPrefixes( $breakpointsList ) {
+  @include add-breakpoint-prefixes( $breakpointsList ) {
     @each $className, $properties in $classTypesList {
       // make default class inside breakpoints
       &#{$className} {
@@ -124,8 +159,10 @@
         }
       }
       // make classes from list inside breakpoints
-      @include makeClassesForBreakpoints( $className, $properties, $varList );
+      @include make-classes-for-breakpoints( $className, $properties, $varList );
     }
+
+    @content;
   }
 }
 

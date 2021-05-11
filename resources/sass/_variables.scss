@@ -298,7 +298,10 @@ $columns: (
 // --- define vars --- //
 
 :root {
+  // default
   --space:             1em;
+
+  // dynamic
   --space-xxs:         0.4rem;
   --space-xs:          0.8rem;
   --space-sm:          1.2rem;
@@ -308,23 +311,9 @@ $columns: (
   --space-xxl:         6.4rem;
 }
 
-
 // --- convert to scss vars --- //
 
-// Mobile horizontal space
-$horz_space_min:    32px;
-// Desktop horizontal space
-$horz_space_max:    64px;
-
-// Mobile vertical space
-$vert_space_min:    64px;
-// Desktop vertical space
-$vert_space_max:    96px;
-
-// default
 $space:             var(--space);
-
-// dynamic
 $space_xxs:         var(--space-xxs);
 $space_xs:          var(--space-xs);
 $space_sm:          var(--space-sm);
@@ -346,6 +335,17 @@ $spacing: (
   xl:               $space_xl,
   xxl:              $space_xxl,
 );
+
+
+// Mobile horizontal space
+$horz_space_min:    32px;
+// Desktop horizontal space
+$horz_space_max:    64px;
+
+// Mobile vertical space
+$vert_space_min:    64px;
+// Desktop vertical space
+$vert_space_max:    96px;
 
 
 //––––––––––––––––––––––––––––––––––––––––––––––––––

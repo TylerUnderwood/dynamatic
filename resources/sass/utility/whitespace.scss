@@ -27,7 +27,23 @@
 |–––––––––––––––––––––––––
 */
 
-$padding_types: (
+$trim_classes: (
+  'trim': padding-top padding-bottom,
+  'trim-t': padding-top,
+  'trim-b': padding-bottom,
+);
+
+@include make-list-of-classes-from-list( $trim_classes, null, $vertical_space );
+
+$gutter_classes: (
+  'gutter': padding-right padding-left,
+  'gutter-r': padding-right,
+  'gutter-l': padding-left,
+);
+
+@include make-list-of-classes-from-list( $gutter_classes, null, $horizontal_space );
+
+$padding_classes: (
   'pad':   padding,
   'pad-v': padding-top padding-bottom,
   'pad-h': padding-right padding-left,
@@ -37,7 +53,17 @@ $padding_types: (
   'pad-l': padding-left,
 );
 
-@include makeClassesFromListWithBreakpointsPrefixes( $padding_types, $space, $spacing );
+@include make-list-of-classes-from-list( $padding_classes, $spacing, $space );
+
+@include add-breakpoint-prefixes() {
+
+  @include make-list-of-classes-from-list-for-breakpoints( $trim_classes, null, $vertical_space );
+
+  @include make-list-of-classes-from-list-for-breakpoints( $gutter_classes, null, $horizontal_space );
+
+  @include make-list-of-classes-from-list-for-breakpoints( $padding_classes, $spacing, $space );
+
+}
 
 
 /*
@@ -46,6 +72,22 @@ $padding_types: (
 |–––––––––––––––––––––––––
 */
 
+$frame_classes: (
+  'frame': margin-top margin-bottom,
+  'frame-t': margin-top,
+  'frame-b': margin-bottom,
+);
+
+@include make-list-of-classes-from-list( $frame_classes, null, $vertical_space );
+
+$buffer_classes: (
+  'buffer': margin-right margin-left,
+  'buffer-r': margin-right,
+  'buffer-l': margin-left,
+);
+
+@include make-list-of-classes-from-list( $buffer_classes, null, $horizontal_space );
+
 $margin_types: (
   'mar-t': margin-top,
   'mar-r': margin-right,
@@ -53,17 +95,27 @@ $margin_types: (
   'mar-l': margin-left,
 );
 
-@include makeClassesFromListWithBreakpointsPrefixes( $margin_types, $space, $spacing );
+@include make-list-of-classes-from-list( $margin_types, $spacing, $space );
 
-@include makeClassWithBreakpointPrefixes( 'mar-t-auto' ) {
-  margin-top: auto;
-}
-@include makeClassWithBreakpointPrefixes( 'mar-r-auto' ) {
-  margin-right: auto;
-}
-@include makeClassWithBreakpointPrefixes( 'mar-b-auto' ) {
-  margin-bottom: auto;
-}
-@include makeClassWithBreakpointPrefixes( 'mar-l-auto' ) {
-  margin-left: auto;
+$push_types: (
+  'push-v': margin-top margin-bottom,
+  'push-h': margin-right margin-left,
+  'push-t': margin-top,
+  'push-r': margin-right,
+  'push-b': margin-bottom,
+  'push-l': margin-left,
+);
+
+@include make-list-of-classes-from-list( $push_types, null, auto );
+
+@include add-breakpoint-prefixes() {
+
+  @include make-list-of-classes-from-list-for-breakpoints( $frame_classes, null, $vertical_space );
+
+  @include make-list-of-classes-from-list-for-breakpoints( $buffer_classes, null, $horizontal_space );
+
+  @include make-list-of-classes-from-list-for-breakpoints( $margin_types, $spacing, $space );
+
+  @include make-list-of-classes-from-list-for-breakpoints( $push_types, null, auto );
+
 }

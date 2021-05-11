@@ -20,7 +20,7 @@
 }
 
 html {
-  @include fluid-type(font-size, $min_width, $max_width, $font_min, $font_max);
+  @include fluid-rule(font-size, $min_width, $max_width, $font_min, $font_max);
 }
 
 body {

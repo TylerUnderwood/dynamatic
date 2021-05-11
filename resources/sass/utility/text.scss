@@ -12,14 +12,14 @@
   font-size: $space;
 }
 
-@include makeClasses( size, font-size, $spacing );
+@include make-classes-from-list( size, font-size, $spacing );
 
-@include addBreakpointPrefixes() {
+@include add-breakpoint-prefixes() {
   &size {
     font-size: $space;
   }
   
-  @include makeClassesForBreakpoints( size, font-size, $spacing );
+  @include make-classes-for-breakpoints( size, font-size, $spacing );
 }
 
 
@@ -135,7 +135,7 @@
   text-align: center;
 }
 
-@include addBreakpointPrefixes() {
+@include add-breakpoint-prefixes() {
   &text-left {
     text-align: left;
   }

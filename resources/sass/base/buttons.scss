@@ -187,7 +187,7 @@ button {
     max-width: unset;
   }
   
-  @include addBreakpointPrefixes() {
+  @include add-breakpoint-prefixes() {
     &#{$self}--full {
       flex: 1 0 auto;
       width: 100%;
