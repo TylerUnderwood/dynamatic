@@ -1242,7 +1242,7 @@ input[type=file] {
   opacity: 0.3;
   color: inherit;
 }
-.input:focus, .input:active {
+.input:focus, .input:active, .input[filled] {
   border-color: var(--link-color);
   background-color: var(--contrast);
 }
@@ -1405,7 +1405,7 @@ option {
   padding: 0 0 0.2em;
   transition: background 300ms ease-out;
 }
-.input-underline:focus, .input-underline:active {
+.input-underline:focus, .input-underline:active, .input-underline[filled] {
   border: none;
   background-color: unset;
   background-size: 100% 100%, 100% 100%;
@@ -2935,7 +2935,7 @@ video {
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%) rotate(-10deg);
-  background: linear-gradient(90deg, #282a30 0%, #8011ff 35%, #00d4ff 100%);
+  background: linear-gradient(90deg, transparent -10%, #8011ff 35%, #00d4ff 100%);
 }
 .post-intro__content {
   position: relative;

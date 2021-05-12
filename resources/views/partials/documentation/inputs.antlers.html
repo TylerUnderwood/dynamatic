@@ -33,6 +33,17 @@
     
     <label class="small" for="stealthField">Stealth Field</label>
     <input id="stealthField" class="input mar-t-xxs" type="text" placeholder="Some Text" stealth>
+  
+    <hr class="break size-lg">
+    
+    <label class="small" for="inputUnderline">Input Underline</label>
+    <input
+      id="inputUnderline"
+      class="input-underline"
+      placeholder="Some Text" 
+      type="text" 
+      name="someText"
+    />
   </form>
 
   <hr class="line frame"/>
@@ -48,12 +59,16 @@
     <hr class="break"/>
     <textarea class="input textarea"></textarea>
     <hr class="break"/>
-    <button class="btn btn--slim" type="submit">Submit</button>
+    <button class="btn btn--thin" type="submit">
+      <span class="btn__text meta">Submit</span>
+    </button>
   </form>
 
   <hr class="line frame"/>
 
   <form>
+    <h2 class="heading h2">Default Field Styles</h2>
+    <hr class="break size-lg"/>
     <input 
       type="text" 
       name="text" 
@@ -90,14 +105,20 @@
       placeholder="tel"
     />
     <hr class="break"/>
-    <textarea></textarea>
+    <input
+      placeholder="date"
+      name="date"
+      label="date"
+      type="date"
+    />
     <hr class="break"/>
-    <button class="btn" type="submit">Submit</button>
-  </form>
-
-  <hr class="line frame"/>
-
-  <form>
+    <input
+      placeholder="time"
+      name="time"
+      label="time"
+      type="time"
+    />
+    <hr class="break"/>
     <select name="select" onChange={this.onChange}>
       <option value="option1">Option 1</option>
       <option value="option2">Option 2</option>
@@ -105,14 +126,36 @@
       <option value="option4">Option 4</option>
     </select>
     <hr class="break"/>
-    <label for="checkbox">
-      <input
-        id="checkbox"
-        name="checkbox"
-        label="Checkbox"
-        type="checkbox" />
-      <span class="mar-l-xs">Checkbox</span>
-    </label>
+    <fieldset>
+      <legend>Checkbox</legend>
+      <label for="checkbox1">
+        <input
+          id="checkbox1"
+          name="checkbox"
+          label="checkbox 1"
+          type="checkbox"
+          checked />
+        <span class="mar-l-xs">Checkbox 1</span>
+      </label>
+      <hr class="break size-xs"/>
+      <label for="checkbox2">
+        <input
+          id="checkbox2"
+          name="checkbox"
+          label="checkbox 2"
+          type="checkbox" />
+        <span class="mar-l-xs">Checkbox 2</span>
+      </label>
+      <hr class="break size-xs"/>
+      <label for="checkbox3">
+        <input
+          id="checkbox3"
+          name="checkbox"
+          label="checkbox 3"
+          type="checkbox" />
+        <span class="mar-l-xs">Checkbox 3</span>
+      </label>
+    </fieldset>
     <hr class="break"/>
     <fieldset>
       <legend>Radio</legend>
@@ -121,7 +164,8 @@
           id="radio1"
           name="radio"
           label="Radio 1"
-          type="radio" />
+          type="radio"
+          checked />
         <span class="mar-l-xs">Radio 1</span>
       </label>
       <hr class="break size-xs"/>
@@ -150,12 +194,6 @@
       type="range" 
     />
     <hr class="break"/>
-    <button class="btn" type="submit">Submit</button>
-  </form>
-
-  <hr class="line frame"/>
-
-  <form>
     <input
       placeholder="file"
       name="file"
@@ -170,38 +208,7 @@
       type="color"
     />
     <hr class="break"/>
-    <button class="btn" type="submit">Submit</button>
-  </form>
-
-  <hr class="line frame"/>
-
-  <form>
-    <input
-      placeholder="date"
-      name="date"
-      label="date"
-      type="date"
-    />
-    <hr class="break"/>
-    <input
-      placeholder="time"
-      name="time"
-      label="time"
-      type="time"
-    />
-    <hr class="break"/>
-    <button class="btn" type="submit">Submit</button>
-  </form>
-
-  <hr class="line frame"/>
-
-  <form>
-    <input
-      class="input-underline"
-      placeholder="username" 
-      type="text" 
-      name="username"
-    />
+    <textarea></textarea>
     <hr class="break"/>
     <button class="btn" type="submit">Submit</button>
   </form>

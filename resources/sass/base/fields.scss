@@ -137,7 +137,8 @@ input {
   }
 
   &:focus,
-  &:active {
+  &:active,
+  &[filled] {
     border-color: $link_color;
     background-color: $contrast;
   }
@@ -286,7 +287,8 @@ option {
 	transition: background 300ms ease-out;
 
 	&:focus,
-	&:active {
+	&:active,
+  &[filled] {
 		border: none;
 		background-color: unset;
 		background-size: 100% 100%, 100% 100%;
