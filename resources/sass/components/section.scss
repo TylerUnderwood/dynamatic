@@ -4,59 +4,6 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-:root {
-  --wrapper: #{$wrapper};
-  --outer: #{$outer};
-  --inner: #{$inner};
-}
-
-:root {
-  --section-wrap: var(--wrapper);
-  --section-aside: calc(var(--section-wrap) / 3);
-  --section-half: calc(var(--section-wrap) / 2);
-  --section-main: calc((var(--section-wrap) / 3) * 2);
-  --section-difference: calc((var(--section-main) - var(--section-aside)) / 2);
-  --section-outer: var(--outer);
-  --section-outer-aside: calc((var(--section-outer) / 2) - var(--section-difference));
-  --section-outer-half: calc((var(--section-outer) / 2));
-  --section-outer-main: calc((var(--section-outer) / 2) + var(--section-difference));
-  --section-inner: var(--inner);
-  --section-inner-aside: calc((var(--section-inner) / 2) - var(--section-difference));
-  --section-inner-half: calc((var(--section-inner) / 2));
-  --section-inner-main: calc((var(--section-inner) / 2) + var(--section-difference));
-}
-
-$section_wrap: var(--section-wrap);
-$section_aside: var(--section-aside);
-$section_half: var(--section-half);
-$section_main: var(--section-main);
-$section_difference: var(--section-difference);
-
-$section_outer: var(--section-outer);
-$section_outer_aside: var(--section-outer-aside);
-$section_outer_half: var(--section-outer-half);
-$section_outer_main: var(--section-outer-main);
-
-$section_inner: var(--section-inner);
-$section_inner_aside: var(--section-inner-aside);
-$section_inner_half: var(--section-inner-half);
-$section_inner_main: var(--section-inner-main);
-
-// $section_wrap: $wrapper;
-// $section_aside: calc(#{$section_wrap} / 3);
-// $section_half: calc(#{$section_wrap} / 2);
-// $section_main: calc((#{$section_wrap} / 3) * 2);
-// $section_difference: calc((#{$section_main} - #{$section_aside}) / 2);
-
-// $section_outer: $outer;
-// $section_outer_aside: calc((#{$section_outer} / 2) - #{$section_difference});
-// $section_outer_half: calc((#{$section_outer} / 2));
-// $section_outer_main: calc((#{$section_outer} / 2) + #{$section_difference});
-
-// $section_inner: $inner;
-// $section_inner_aside: calc((#{$section_inner} / 2) - #{$section_difference});
-// $section_inner_half: calc((#{$section_inner} / 2));
-// $section_inner_main: calc((#{$section_inner} / 2) + #{$section_difference});
 
 
 /* ===== CONTAINERS ===== */
@@ -68,16 +15,6 @@ $section_inner_main: var(--section-inner-main);
   margin-right: auto;
   width: 100%;
   max-width: $outer;
-
-  &--aside {
-    max-width: $section_outer_aside;
-  }
-  &--half {
-    max-width: $section_outer_half;
-  }
-  &--main {
-    max-width: $section_outer_main;
-  }
 }
 
 /* === wrapper === */
@@ -85,17 +22,7 @@ $section_inner_main: var(--section-inner-main);
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: $section_wrap;
-  
-  &--aside {
-    max-width: $section_aside;
-  }
-  &--half {
-    max-width: $section_half;
-  }
-  &--main {
-    max-width: $section_main;
-  }
+  max-width: $wrapper;
 }
 
 /* === inner === */
@@ -105,16 +32,6 @@ $section_inner_main: var(--section-inner-main);
   margin-right: auto;
   width: 100%;
   max-width: $inner;
-
-  &--aside {
-    max-width: $section_inner_aside;
-  }
-  &--half {
-    max-width: $section_inner_half;
-  }
-  &--main {
-    max-width: $section_inner_main;
-  }
 }
 
 
@@ -127,7 +44,7 @@ $section_inner_main: var(--section-inner-main);
   flex-wrap: nowrap;
   width: 100%;
 
-  // columns have no padding or margin verticalty because they only distinguish width
+  // columns have no padding or margin verticalty, because they only distinguish width
   &__column {
     display: flex;
     flex-direction: column;
@@ -141,7 +58,7 @@ $section_inner_main: var(--section-inner-main);
     // background-color
   }
   
-  // blocks must stack inside column with optional padding and margin
+  // blocks must stack inside column with optional padding and margin on top
   &__block {
     display: flex;
     width: 100%;
@@ -152,6 +69,7 @@ $section_inner_main: var(--section-inner-main);
       margin-top: 0;
       padding-top: 0;
     }
+
     &:last-child {
       margin-bottom: 0;
       padding-bottom: 0;
@@ -193,89 +111,69 @@ $section_inner_main: var(--section-inner-main);
   
   @media ( min-width: 768px ) {
     flex-direction: row;
-    
-    // this will be on the left
-    &__column:first-child {
-      align-items: flex-end;
+    --section-main: var(--wrapper);
+    --section-ratio: calc(1 / 2);
 
-      #{$self}__block {
-        justify-content: flex-end;
-        padding-right: 0;
-      }
+    &--aside {
+      --section-ratio: calc(1 / 3);
+    }
 
+    &--main {
+      --section-ratio: calc(2 / 3);
+    }
+
+    &__column {
+      --section-ratio-left: calc( var(--section-ratio) );
+      --section-ratio-right: calc( 1 - var(--section-ratio) );
+      --section-main-left: calc( var(--section-main) * var(--section-ratio-left) );
+      --section-main-right: calc( var(--section-main) * var(--section-ratio-right) );
+      --section-difference: calc( (var(--section-main-left) - var(--section-main-right)) / 2 );
+  
       #{$self}__wrap {
-        margin-left: auto;
-        padding-left: 0;
-      }
-    }
+        --section-wrap: var(--wrapper);
 
-    // this will be on the right
-    &__column:last-child {
-      align-items: flex-start;
+        &#{$self}__inner {
+          --section-wrap: var(--inner);
+        }
 
-      #{$self}__block {
-        justify-content: flex-start;
-        padding-left: 0;
+        &#{$self}__outer {
+          --section-wrap: var(--outer);
+        }
       }
 
-      #{$self}__wrap {
-        margin-right: auto;
-        padding-right: 0;
+      // this will be on the left
+      &:first-child {
+        align-items: flex-end;
+        max-width: calc( 50% + var(--section-difference) );
+  
+        #{$self}__block {
+          justify-content: flex-end;
+          padding-right: 0;
+        }
+  
+        #{$self}__wrap {
+          margin-left: auto;
+          max-width: calc( ( var(--section-wrap) / 2 ) + var(--section-difference) );
+          padding-left: 0;
+        }
       }
-    }
-
-    // the aside column
-    &__aside {
-      max-width: 33.3333%;
-
-      #{$self}__wrap {
-        max-width: $section_aside;
+  
+      // this will be on the right
+      &:last-child {
+        align-items: flex-start;
+        max-width: calc( 50% - var(--section-difference) );
+  
+        #{$self}__block {
+          justify-content: flex-start;
+          padding-left: 0;
+        }
+  
+        #{$self}__wrap {
+          margin-right: auto;
+          max-width: calc( ( var(--section-wrap) / 2 ) - var(--section-difference) );
+          padding-right: 0;
+        }
       }
-      #{$self}__outer {
-        max-width: $section_outer_aside;
-      }
-      #{$self}__inner {
-        max-width: $section_inner_aside;
-      }
-    }
-    
-    // the half column
-    &__half {
-      max-width: 50%;
-
-      #{$self}__wrap {
-        max-width: $section_half;
-      }
-      #{$self}__outer {
-        max-width: $section_outer_half;
-      }
-      #{$self}__inner {
-        max-width: $section_inner_half;
-      }
-    }
-    
-    // the main column
-    &__main {
-      max-width: 66.6666%;
-
-      #{$self}__wrap {
-        max-width: $section_main;
-      }
-      #{$self}__outer {
-        max-width: $section_outer_main;
-      }
-      #{$self}__inner {
-        max-width: $section_inner_main;
-      }
-    }
-  }
-
-  @media ( min-width: $content_max ) {
-    &__aside {
-      max-width: calc(50% - #{$section_difference});
-    }
-    &__main {
-      max-width: calc(50% + #{$section_difference});
     }
   }
 }

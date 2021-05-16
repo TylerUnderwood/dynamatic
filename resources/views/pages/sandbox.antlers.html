@@ -1,59 +1,91 @@
-{{ partial src="banners/_banner" }}
+{{ partial src="banners/_banner" banner_height="banner--short" }}
+
+<section class="column frame gutter">
+	<div class="wrapper">
+		<div class="pad bg:border-color">
+			<h3 class="heading h3">Main wrapper</h3>
+		</div>
+	</div>
+
+	<div class="outer mar-t">
+		<div class="pad bg:border-color">
+			<h3 class="heading h3">Outer wrapper</h3>
+		</div>
+	</div>
+
+	<div class="inner mar-t">
+		<div class="pad bg:border-color">
+			<h3 class="heading h3">Inner wrapper</h3>
+		</div>
+	</div>
+</section>
+
+<section class="section frame" style="--section-ratio: calc(2 / 5)">
+	<div class="section__column trim-t md:trim bg:link-color">
+
+		<div class="section__block gutter mar-t bg:border-color">
+			<div class="section__wrap section__outer">
+
+				<div class="pad bg:background-color">
+					<h3 class="heading h3">H3</h3>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="section__block gutter mar-t bg:border-color">
+			<div class="section__wrap section__inner">
+
+				<div class="pad bg:background-color">
+					<h3 class="heading h3">H3</h3>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="section__block gutter mar-t bg:border-color">
+			<div class="section__wrap">
+
+				<div class="pad bg:background-color">
+					<h3 class="heading h3">H3</h3>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="section__column pad-t trim-b md:trim bg:link-hover">
+
+		<div class="section__block gutter mar-t bg:border-color">
+			<div class="section__wrap section__inner">
+
+				<div class="pad bg:background-color">
+					<h3 class="heading h3">H3</h3>
+				</div>
+
+			</div>
+		</div>
+		
+		<div class="section__fill"></div>
+
+		<div class="section__block gutter mar-t bg:border-color">
+			<div class="section__wrap section__outer">
+
+				<div class="pad bg:background-color">
+					<h3 class="heading h3">H3</h3>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</section>
 
 <section class="frame gutter">
 	<div class="wrapper">
 
 		{{ partial src="_triangle_flower" }}
 		
-	</div>
-</section>
-
-<section class="section frame">
-	<div class="section__column section__main trim-t md:trim bg:border-color">
-
-		<div class="section__block gutter mar-t">
-			<div class="section__wrap section__inner">
-
-				<div class="pad inner bg:background-color">
-					<h3 class="heading h3">Heading</h3>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="section__block gutter mar-t">
-			<div class="section__wrap section__inner">
-
-				<div class="pad inner bg:background-color">
-					<h3 class="heading h3">Heading</h3>
-				</div>
-
-			</div>
-		</div>
-
-	</div>
-	<div class="section__column section__aside pad-t trim-b md:trim bg:border-color">
-
-		<div class="section__block gutter mar-t">
-			<div class="section__wrap section__inner">
-
-				<div class="pad inner bg:background-color">
-					<h3 class="heading h3">Heading</h3>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="section__block gutter mar-t">
-			<div class="section__wrap section__inner" >
-
-				<div class="pad inner bg:background-color">
-					<h3 class="heading h3">Heading</h3>
-				</div>
-
-			</div>
-		</div>
-
 	</div>
 </section>
 

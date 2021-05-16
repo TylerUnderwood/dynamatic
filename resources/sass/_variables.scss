@@ -243,14 +243,19 @@ $min_width:       480px;
 $max_width:       1600px;
 
 // main containers
-$copy_max:        36rem;
-$inner:           $copy_max;
-
-$content_max:     64rem;
-$wrapper:         $content_max;
-
 $site_max:        80rem;
+$content_max:     64rem;
+$copy_max:        36rem;
+
+:root {
+  --outer: #{$site_max};
+  --wrapper: #{$content_max};
+  --inner: #{$copy_max};
+}
+
 $outer:           $site_max;
+$wrapper:         $content_max;
+$inner:           $copy_max;
 
 // utility
 $max_widths: (
