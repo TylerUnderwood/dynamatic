@@ -76,6 +76,7 @@ $light_800:         #dddddd;
   --background-800:    #{$dark_800};
   --contrast:          var(--background-200);
   --primary:           #{$fuchsia};
+  --secondary:         #{$royal_purple};
   --accent:            #{$sea_foam};
   --border-color:      var(--background-400);
   --text-color:        var(--light);
@@ -104,6 +105,7 @@ $light_800:         #dddddd;
 
 // Branding
 $primary:           var(--primary);
+$secondary:         var(--secondary);
 $accent:            var(--accent);
 
 // Theme
@@ -137,6 +139,7 @@ $link_active:       var(--link-active);
 
 $theme_colors: (
   primary:           $primary,
+  secondary:         $secondary,
   accent:            $accent,
   dark:              $dark,
   light:             $light,

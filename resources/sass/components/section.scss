@@ -5,8 +5,11 @@
 */
 
 
-
-/* ===== CONTAINERS ===== */
+/*
+|–––––––––––––––––––––––––
+| Containers
+|–––––––––––––––––––––––––
+*/
 
 /* === outer === */
 
@@ -36,7 +39,11 @@
 
 
 
-/* ===== SECTIONING ===== */
+/*
+|–––––––––––––––––––––––––
+| Secitoning
+|–––––––––––––––––––––––––
+*/
 
 .section {
   $self: &;
@@ -175,5 +182,62 @@
         }
       }
     }
+  }
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Guidelines
+|–––––––––––––––––––––––––
+*/
+
+.guidelines {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  // put this inside any max-width container
+  &__wrap {
+    position: relative;
+    // transform: translateX(-2px);
+    // width: calc(100% + 4px) !important;
+    height: 100vh;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 128, 255, 0.2);
+    border-top: none;
+    border-bottom: none;
+  }
+
+  // put this inside the border to label it
+  &__label {
+    position: absolute;
+    right: 0;
+    left: unset;
+    display: inline-block;
+    background-color: rgba(0, 128, 255, 0.2);
+    padding: 0.1em 0.2em;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: rgba(0, 128, 255, 0.5);
+  }
+
+  &__center {
+    position: relative;
+    left: 50%;
+    width: 0;
+    height: 100vh;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 128, 255, 0.2);
+    border-top: none;
+    border-bottom: none;
   }
 }

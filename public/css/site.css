@@ -19,6 +19,7 @@
   --background-800: #080a10;
   --contrast: var(--background-200);
   --primary: #ff0080;
+  --secondary: #c000ff;
   --accent: #00ffc0;
   --border-color: var(--background-400);
   --text-color: var(--light);
@@ -1910,7 +1911,11 @@ video {
 | COMPONENTS: Section
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
-/* ===== CONTAINERS ===== */
+/*
+|–––––––––––––––––––––––––
+| Containers
+|–––––––––––––––––––––––––
+*/
 /* === outer === */
 .outer {
   margin-left: auto;
@@ -1935,7 +1940,11 @@ video {
   max-width: 36rem;
 }
 
-/* ===== SECTIONING ===== */
+/*
+|–––––––––––––––––––––––––
+| Secitoning
+|–––––––––––––––––––––––––
+*/
 .section {
   display: flex;
   flex-wrap: nowrap;
@@ -2041,6 +2050,53 @@ video {
     max-width: calc( ( var(--section-wrap) / 2 ) - var(--section-difference) );
     padding-right: 0;
   }
+}
+
+/*
+|–––––––––––––––––––––––––
+| Guidelines
+|–––––––––––––––––––––––––
+*/
+.guidelines {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.guidelines__wrap {
+  position: relative;
+  height: 100vh;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 128, 255, 0.2);
+  border-top: none;
+  border-bottom: none;
+}
+.guidelines__label {
+  position: absolute;
+  right: 0;
+  left: unset;
+  display: inline-block;
+  background-color: rgba(0, 128, 255, 0.2);
+  padding: 0.1em 0.2em;
+  text-transform: uppercase;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: rgba(0, 128, 255, 0.5);
+}
+.guidelines__center {
+  position: relative;
+  left: 50%;
+  width: 0;
+  height: 100vh;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 128, 255, 0.2);
+  border-top: none;
+  border-bottom: none;
 }
 
 @media (max-width: 480px) {
@@ -3828,6 +3884,10 @@ video {
   color: var(--primary);
 }
 
+.c\:secondary {
+  color: var(--secondary);
+}
+
 .c\:accent {
   color: var(--accent);
 }
@@ -3901,6 +3961,10 @@ video {
   border-color: var(--primary);
 }
 
+.bd\:secondary {
+  border-color: var(--secondary);
+}
+
 .bd\:accent {
   border-color: var(--accent);
 }
@@ -3972,6 +4036,10 @@ video {
 /* === BACKGROUND COLORS === */
 .bg\:primary {
   background-color: var(--primary);
+}
+
+.bg\:secondary {
+  background-color: var(--secondary);
 }
 
 .bg\:accent {
