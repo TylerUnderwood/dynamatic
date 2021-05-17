@@ -13,4 +13,8 @@
 
 
 /* === BACKGROUND COLORS === */
+.transparent {
+  background-color: transparent;
+}
+
 @include make-prefixed-classes-from-list( 'bg', background-color, $theme_colors );

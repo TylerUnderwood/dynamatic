@@ -1,0 +1,55 @@
+<section 
+	{{ if section_id }}id="{{ section_id }}" {{ /if }}
+	class="
+		section {{ if section_reverse }}section--reverse{{ /if }}
+		frame {{ desktop_frame }} {{ mobile_frame }} 
+		{{ classes }}"
+	style="--section-ratio: {{ section_ratio }}"
+>
+	<div class="
+		section__column section__left
+		{{ left_background_color }} 
+		trim {{ left_mobile_trim }} {{ left_desktop_trim }}">
+	{{ left_blocks }}
+
+		{{ if type === "filler" }}
+			<hr class="section__fill filler">
+		{{ elseif type === "break" }}
+			<hr class="section__space break" style="height: {{ vertical_size }};">
+		{{ else }}
+			<div class="section__block {{ type }}__block {{ outer_gutter }} {{ classes }}">
+				<div class="section__wrap {{ type }}__wrap {{ inner_gutter }}">
+
+					{{ partial src="blocks/_{type}" }}
+
+				</div>
+			</div> <!-- END block {{ type }} -->
+		{{ /if }}
+
+	{{ /left_blocks }}
+	</div> <!-- END column left -->
+
+	<div class="
+		section__column section__right
+		{{ right_background_color }} 
+		trim {{ right_mobile_trim }} {{ right_desktop_trim }}">
+	{{ right_blocks }}
+
+		{{ if type === "filler" }}
+			<hr class="section__fill filler">
+		{{ elseif type === "break" }}
+			<hr class="section__space break" style="height: {{ vertical_size }};">
+		{{ else }}
+			<div class="section__block {{ type }}__block {{ outer_gutter }} {{ classes }}">
+				<div class="section__wrap {{ type }}__wrap {{ inner_gutter }}">
+
+					{{ partial src="blocks/_{type}" }}
+
+				</div>
+			</div> <!-- END block {{ type }} -->
+		{{ /if }}
+
+	{{ /right_blocks }}
+	</div> <!-- END column right -->
+
+</section> <!-- END section {{ section_id }} -->

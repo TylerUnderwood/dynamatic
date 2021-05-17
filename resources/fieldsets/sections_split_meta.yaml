@@ -1,20 +1,30 @@
 title: 'Sections Split Meta'
 fields:
   -
-    handle: section_reverse
+    handle: section_ratio
     field:
       options:
-        section--default: Default
-        section--reverse: Reversed
-      clearable: false
+        'calc(1 / 3)': 'One Thirds'
+        'calc(1 / 2)': Half
+        'calc(2 / 3)': 'Two Thirds'
+      default: 'calc(1 / 2)'
       multiple: false
-      searchable: false
-      taggable: false
+      max_items: 1
+      clearable: true
+      searchable: true
+      taggable: true
       push_tags: false
       cast_booleans: false
+      display: 'Section Ratio'
       type: select
-      localizable: false
-      listable: false
-      placeholder: 'Color'
-      display: 'Reverse Section'
-      default: 'section--default'
+      icon: select
+      width: 50
+      listable: hidden
+  -
+    handle: section_reverse
+    field:
+      display: 'Section Reverse'
+      type: toggle
+      icon: toggle
+      width: 50
+      listable: hidden

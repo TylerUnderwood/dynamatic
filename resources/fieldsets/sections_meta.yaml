@@ -4,54 +4,66 @@ fields:
     handle: section_meta
     field:
       type: section
-      localizable: false
       listable: false
       display: 'Section Meta'
   -
     handle: section_id
     field:
-      placeholder: ID
+      placeholder: id
       type: text
-      localizable: false
       listable: hidden
       display: ID
+      width: 50
+  -
+    handle: classes
+    field:
+      placeholder: classes
+      input_type: text
+      antlers: false
+      display: Classes
+      type: text
+      icon: text
+      listable: hidden
+      width: 50
   -
     handle: mobile_frame
     field:
       type: select
       options:
-        'mb:frame': 'Top and Bottom'
-        'mb:frame--top': 'Only Top'
-        'mb:frame--bot': 'Only Bottom'
-        'mb:frame--not': Neither
+        mar-v-0: Neither
+        frame: 'Top and Bottom'
+        frame-t: 'Only Top'
+        frame-b: 'Only Bottom'
       display: 'Mobile, Space Between'
-      default: 'mb:frame'
+      default: frame
       width: 50
       listable: hidden
       placeholder: 'Space Between'
-      clearable: false
+      clearable: true
       multiple: false
       searchable: true
-      taggable: false
+      taggable: true
       push_tags: false
       cast_booleans: false
+      max_items: 1
   -
     handle: desktop_frame
     field:
       type: select
       options:
-        'dt:frame': 'Top and Bottom'
-        'dt:frame--top': 'Only Top'
-        'dt:frame--bot': 'Only Bottom'
-        'dt:frame--not': Neither
+        'md:mar-v-0': Neither
+        'md:frame': 'Top and Bottom'
+        'md:frame-t': 'Only Top'
+        'md:frame-b': 'Only Bottom'
       display: 'Desktop, Space Between'
-      default: 'dt:frame'
+      default: 'md:frame'
       width: 50
       listable: hidden
       placeholder: 'Space Between'
-      clearable: false
+      clearable: true
       multiple: false
       searchable: true
-      taggable: false
+      taggable: true
       push_tags: false
       cast_booleans: false
+      max_items: 1

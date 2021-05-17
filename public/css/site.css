@@ -1668,6 +1668,7 @@ video {
   font-weight: normal;
   font-family: "Kanit", Times, serif;
   color: inherit;
+  margin-top: 1em;
 }
 .transcription h1::before, .transcription h1::after, .transcription h2::before, .transcription h2::after, .transcription h3::before, .transcription h3::after, .transcription h4::before, .transcription h4::after, .transcription h5::before, .transcription h5::after, .transcription h6::before, .transcription h6::after {
   display: block;
@@ -1679,6 +1680,12 @@ video {
 }
 .transcription h1::after, .transcription h2::after, .transcription h3::after, .transcription h4::after, .transcription h5::after, .transcription h6::after {
   margin-bottom: -0.2em;
+}
+.transcription h1:first-child, .transcription h2:first-child, .transcription h3:first-child, .transcription h4:first-child, .transcription h5:first-child, .transcription h6:first-child {
+  margin-top: 0;
+}
+.transcription h1 + p, .transcription h2 + p, .transcription h3 + p, .transcription h4 + p, .transcription h5 + p, .transcription h6 + p {
+  margin-top: 0.7rem;
 }
 .transcription h1 {
   font-size: 3.6rem;
@@ -1947,6 +1954,7 @@ video {
 */
 .section {
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
 }
@@ -3017,7 +3025,7 @@ video {
   margin-top: 0;
 }
 .bard h1 + p, .bard h2 + p, .bard h3 + p, .bard h4 + p, .bard h5 + p, .bard h6 + p {
-  margin-top: 0.6rem;
+  margin-top: 0.7rem;
 }
 .bard h1 + h1, .bard h1 + h2, .bard h1 + h3, .bard h1 + h4, .bard h1 + h5, .bard h1 + h6, .bard h2 + h1, .bard h2 + h2, .bard h2 + h3, .bard h2 + h4, .bard h2 + h5, .bard h2 + h6, .bard h3 + h1, .bard h3 + h2, .bard h3 + h3, .bard h3 + h4, .bard h3 + h5, .bard h3 + h6, .bard h4 + h1, .bard h4 + h2, .bard h4 + h3, .bard h4 + h4, .bard h4 + h5, .bard h4 + h6, .bard h5 + h1, .bard h5 + h2, .bard h5 + h3, .bard h5 + h4, .bard h5 + h5, .bard h5 + h6, .bard h6 + h1, .bard h6 + h2, .bard h6 + h3, .bard h6 + h4, .bard h6 + h5, .bard h6 + h6 {
   margin: 0.4em 0;
@@ -4034,6 +4042,10 @@ video {
 }
 
 /* === BACKGROUND COLORS === */
+.transparent {
+  background-color: transparent;
+}
+
 .bg\:primary {
   background-color: var(--primary);
 }

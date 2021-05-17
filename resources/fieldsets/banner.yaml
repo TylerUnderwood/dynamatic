@@ -34,6 +34,7 @@ fields:
         overlay-primary: 'Primary Color'
         overlay-none: None
       placeholder: Overlay
+      default: 'overlay-none'
       clearable: false
       multiple: false
       searchable: false
@@ -49,10 +50,11 @@ fields:
     handle: banner_height
     field:
       options:
-        banner: Standard
-        banner--small: Small
+        banner--height: Standard
+        banner--short: Small
         banner--full: 'Full screen height'
       placeholder: Height
+      default: 'banner--height'
       clearable: false
       multiple: false
       searchable: false

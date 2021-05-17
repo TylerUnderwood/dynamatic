@@ -5,9 +5,6 @@ fields:
     field:
       options:
         transparent: None
-        bg-light: 'Primary Light'
-        bg-primary: 'Primary Color'
-        bg-dark: 'Primary Dark'
       clearable: false
       multiple: false
       searchable: false
@@ -25,38 +22,40 @@ fields:
     field:
       type: select
       options:
-        'mb:trim': 'Top and Bottom'
-        'mb:trim--top': 'Only Top'
-        'mb:trim--bot': 'Only Bottom'
-        'mb:trim--not': Neither
-      display: 'Mobile, Space Around'
-      default: 'mb:trim--not'
+        'pad-v-0': Neither
+        'trim': 'Top and Bottom'
+        'trim-t': 'Only Top'
+        'trim-b': 'Only Bottom'
+      display: 'Mobile, Space Inside'
+      default: 'pad-v-0'
       width: 50
       listable: hidden
-      placeholder: 'Space Around'
-      clearable: false
+      placeholder: 'Space Inside'
+      clearable: true
       multiple: false
       searchable: true
-      taggable: false
+      taggable: true
       push_tags: false
       cast_booleans: false
+      max_items: 1
   -
     handle: desktop_trim
     field:
       type: select
       options:
-        'dt:trim': 'Top and Bottom'
-        'dt:trim--top': 'Only Top'
-        'dt:trim--bot': 'Only Bottom'
-        'dt:trim--not': Neither
-      display: 'Desktop, Space Around'
+        'md:pad-v-0': Neither
+        'md:trim': 'Top and Bottom'
+        'md:trim-t md:pad-b-0': 'Only Top'
+        'md:trim-b md:pad-t-0': 'Only Bottom'
+      display: 'Desktop, Space Inside'
+      default: 'md:pad-v-0'
       width: 50
       listable: hidden
-      placeholder: 'Space Around'
-      default: 'dt:trim--not'
-      clearable: false
+      placeholder: 'Space Inside'
+      clearable: true
       multiple: false
       searchable: true
-      taggable: false
+      taggable: true
       push_tags: false
       cast_booleans: false
+      max_items: 1
