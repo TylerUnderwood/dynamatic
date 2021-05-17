@@ -2932,7 +2932,7 @@ video {
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%) rotate(-10deg);
-  background: linear-gradient(90deg, transparent -10%, #8011ff 35%, #00d4ff 100%);
+  background: linear-gradient(90deg, transparent 0%, #8011ff 35%, #00d4ff 100%);
 }
 .post-intro__content {
   position: relative;

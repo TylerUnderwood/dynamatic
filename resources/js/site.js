@@ -2,6 +2,7 @@
 import "./functions/match-height";
 import "./functions/display-var";
 import "./functions/copy-to-clipboard";
+import "./functions/theme-selector";
 
 // ES6 Classes
 import "./classes/smooth-scroll";
