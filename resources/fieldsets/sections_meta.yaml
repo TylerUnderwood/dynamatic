@@ -1,11 +1,20 @@
 title: 'Sections Meta'
 fields:
   -
+    handle: show_section_meta
+    field:
+      display: 'Show Section Meta'
+      type: revealer
+      icon: revealer
+      listable: hidden
+  -
     handle: section_meta
     field:
       type: section
       listable: false
       display: 'Section Meta'
+      if:
+        show_section_meta: 'equals true'
   -
     handle: section_id
     field:
@@ -14,6 +23,8 @@ fields:
       listable: hidden
       display: ID
       width: 50
+      if:
+        show_section_meta: 'equals true'
   -
     handle: classes
     field:
@@ -25,6 +36,8 @@ fields:
       icon: text
       listable: hidden
       width: 50
+      if:
+        show_section_meta: 'equals true'
   -
     handle: mobile_frame
     field:
@@ -46,6 +59,8 @@ fields:
       push_tags: false
       cast_booleans: false
       max_items: 1
+      if:
+        show_section_meta: 'equals true'
   -
     handle: desktop_frame
     field:
@@ -67,3 +82,5 @@ fields:
       push_tags: false
       cast_booleans: false
       max_items: 1
+      if:
+        show_section_meta: 'equals true'

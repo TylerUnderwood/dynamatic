@@ -1,6 +1,13 @@
 title: 'Column Meta'
 fields: 
   -
+    handle: show_column_meta
+    field:
+      display: 'Show Column Meta'
+      type: revealer
+      icon: revealer
+      listable: hidden
+  -
     handle: background_color
     field:
       options:
@@ -17,6 +24,8 @@ fields:
       placeholder: 'Color'
       display: 'Background Color'
       default: 'transparent'
+      if:
+        show_column_meta: 'equals true'
   -
     handle: mobile_trim
     field:
@@ -38,6 +47,8 @@ fields:
       push_tags: false
       cast_booleans: false
       max_items: 1
+      if:
+        show_column_meta: 'equals true'
   -
     handle: desktop_trim
     field:
@@ -59,3 +70,5 @@ fields:
       push_tags: false
       cast_booleans: false
       max_items: 1
+      if:
+        show_column_meta: 'equals true'

@@ -1,6 +1,13 @@
 title: 'Blocks Meta'
 fields:
   -
+    handle: show_block_meta
+    field:
+      display: 'Show Block Meta'
+      type: revealer
+      icon: revealer
+      listable: hidden
+  -
     handle: classes
     field:
       placeholder: classes
@@ -10,6 +17,8 @@ fields:
       type: text
       icon: text
       listable: hidden
+      if:
+        show_block_meta: 'equals true'
   -
     handle: outer_gutter
     field:
@@ -33,6 +42,8 @@ fields:
       icon: select
       listable: hidden
       width: 50
+      if:
+        show_block_meta: 'equals true'
   -
     handle: inner_gutter
     field:
@@ -56,3 +67,5 @@ fields:
       icon: select
       listable: hidden
       width: 50
+      if:
+        show_block_meta: 'equals true'
