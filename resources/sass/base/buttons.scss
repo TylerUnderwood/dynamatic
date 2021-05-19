@@ -56,6 +56,20 @@ button {
     color: $dark;
   }
 
+  // [stealth]
+  &[stealth] {
+    border-color: transparent;
+    background-color: transparent;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      border-color: $link_color;
+      background-color: $link_color;
+      color: $dark;
+    }
+  }
+
   // [disabled] last so it overrides all
   &[disabled] {
     border-color: $link_color;
@@ -101,6 +115,15 @@ button {
       border-color: $link_color;
       background-color: transparent;
       color: $link_color;
+    }
+
+    &[stealth] {
+      &:hover,
+      &:focus {
+        border-color: $link_color;
+        background-color: transparent;
+        color: $link_color;
+      }
     }
 
     .#{$self}__text {
@@ -180,15 +203,24 @@ button {
       height: $btn_tall_height;
     }
   }
-
-  .#{$self}--full {
+  
+  // full //
+  &--full {
     flex: 1 0 auto;
     width: 100%;
     max-width: unset;
   }
-  
-  @include add-breakpoint-prefixes() {
-    &#{$self}--full {
+
+  @include below( sm ) {
+    &--full\:sm {
+      flex: 1 0 auto;
+      width: 100%;
+      max-width: unset;
+    }
+  }
+
+  @include below( md ) {
+    &--full\:md {
       flex: 1 0 auto;
       width: 100%;
       max-width: unset;

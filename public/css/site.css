@@ -1000,6 +1000,16 @@ button {
   background-color: var(--link-hover);
   color: var(--dark);
 }
+.btn[stealth] {
+  border-color: transparent;
+  background-color: transparent;
+  color: inherit;
+}
+.btn[stealth]:hover, .btn[stealth]:focus {
+  border-color: var(--link-color);
+  background-color: var(--link-color);
+  color: var(--dark);
+}
 .btn[disabled] {
   border-color: var(--link-color);
   background-color: var(--link-color);
@@ -1031,6 +1041,11 @@ button {
   color: var(--link-hover);
 }
 .btn--border[disabled] {
+  border-color: var(--link-color);
+  background-color: transparent;
+  color: var(--link-color);
+}
+.btn--border[stealth]:hover, .btn--border[stealth]:focus {
   border-color: var(--link-color);
   background-color: transparent;
   color: var(--link-color);
@@ -1091,27 +1106,20 @@ button {
   width: var(--btn-tall-height);
   height: var(--btn-tall-height);
 }
-.btn .btn--full {
+.btn--full {
   flex: 1 0 auto;
   width: 100%;
   max-width: unset;
 }
-@media (min-width: 480px) {
-  .btn .sm\:btn--full {
+@media (max-width: 479px) {
+  .btn--full\:sm {
     flex: 1 0 auto;
     width: 100%;
     max-width: unset;
   }
 }
-@media (min-width: 768px) {
-  .btn .md\:btn--full {
-    flex: 1 0 auto;
-    width: 100%;
-    max-width: unset;
-  }
-}
-@media (min-width: 1024px) {
-  .btn .lg\:btn--full {
+@media (max-width: 767px) {
+  .btn--full\:md {
     flex: 1 0 auto;
     width: 100%;
     max-width: unset;
