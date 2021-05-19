@@ -138,6 +138,9 @@ $link_active:       var(--link-active);
 // --- add vars to scss list --- //
 
 $theme_colors: (
+  inherit:           inherit,
+  current:           currentColor,
+  transparent:       transparent,
   primary:           $primary,
   secondary:         $secondary,
   accent:            $accent,

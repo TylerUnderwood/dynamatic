@@ -3896,6 +3896,18 @@ video {
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 /* === TEXT COLORS === */
+.c\:inherit {
+  color: inherit;
+}
+
+.c\:current {
+  color: currentColor;
+}
+
+.c\:transparent {
+  color: transparent;
+}
+
 .c\:primary {
   color: var(--primary);
 }
@@ -3973,6 +3985,18 @@ video {
 }
 
 /* === BORDER COLORS === */
+.bd\:inherit {
+  border-color: inherit;
+}
+
+.bd\:current {
+  border-color: currentColor;
+}
+
+.bd\:transparent {
+  border-color: transparent;
+}
+
 .bd\:primary {
   border-color: var(--primary);
 }
@@ -4051,6 +4075,18 @@ video {
 
 /* === BACKGROUND COLORS === */
 .transparent {
+  background-color: transparent;
+}
+
+.bg\:inherit {
+  background-color: inherit;
+}
+
+.bg\:current {
+  background-color: currentColor;
+}
+
+.bg\:transparent {
   background-color: transparent;
 }
 
