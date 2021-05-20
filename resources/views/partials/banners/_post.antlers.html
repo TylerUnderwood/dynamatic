@@ -3,7 +3,7 @@
 	<div class="post-intro__accent"></div>
 
 	<div class="post-intro__content frame gutter">
-		<div class="inner column column-l">
+		<div class="inner col col-l">
 			<h1 class="heading h1 c:light">{{ title }}</h1>
 			{{ if author }}
 			<div class="card row mar-t-md">
@@ -11,7 +11,7 @@
 				<figure class="no-shrink">
 					<img src="{{ email | gravatar or profile_pic }}" alt="{{ name }}">
 				</figure>
-				<div class="column column-v pad-v-xs pad-h-md relative">
+				<div class="col col-v pad-v-xs pad-h-md relative">
 					<div class="triangle triangle--t-l inset-t-l c:border-color" style="font-size: 12rem"></div>
 					<div class="relative">
 						<span class="heading large c:text-color">{{ name }}</span>

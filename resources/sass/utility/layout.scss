@@ -120,20 +120,10 @@
   &-v {
     align-items: center;
   }
-
-  &-between {
-    justify-content: space-between;
-  }
-  &-around {
-    justify-content: space-around;
-  }
-  &-evenly {
-    justify-content: space-evenly;
-  }
 }
 
 /* === Flex Columns === */
-.column {
+.col {
   display: flex;
   flex-direction: column;
 
@@ -275,20 +265,10 @@
     &-v {
       align-items: center;
     }
-
-    &-between {
-      justify-content: space-between;
-    }
-    &-around {
-      justify-content: space-around;
-    }
-    &-evenly {
-      justify-content: space-evenly;
-    }
   }
 
   // Flex Columns
-  &column {
+  &col {
     display: flex;
     flex-direction: column;
 

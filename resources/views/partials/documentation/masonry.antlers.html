@@ -1,0 +1,75 @@
+---
+tewelve_tiles:
+  - Tile 01
+  - Tile 02
+  - Tile 03
+  - Tile 04
+  - Tile 05
+  - Tile 06
+  - Tile 07
+  - Tile 08
+  - Tile 09
+  - Tile 10
+  - Tile 11
+  - Tile 12
+mws:
+  - m\\w/m\\w/m
+  - m\\w/m\\w/m
+  - m\\w/m\\w/m
+  - m\\w/m\\w/m
+  - m\\w/m\\w/m
+  - m\\w/m\\w/m
+  - m\\w/m\\w/m
+---
+
+<div class="block">
+  
+  <div class="masonry grout">
+
+    {{ view:tewelve_tiles }}
+    <div class="tile">
+      <div class="card bg:secondary pad-v-xxs pad-h">
+        <span class="meta small bold">{{ value }}</span>
+      </div>
+    </div>
+    {{ /view:tewelve_tiles }}
+
+  </div>
+
+  <hr class="line mar-v-lg">
+  
+  <div class="masonry grout grout-xxs sm:grout-0 md:grout">
+
+    {{ view:tewelve_tiles }}
+    <div class="tile tile-3 sm:tile-auto">
+      {{ partial src="_demo_tile" text="{{ value }}" }}
+    </div>
+    {{ /view:tewelve_tiles }}
+
+  </div>
+
+  <hr class="line mar-v-lg">
+  
+  <div class="masonry grout sm:grout-xxs">
+
+    {{ view:mws }}
+    <div class="tile tile-3 sm:tile">
+      {{ partial src="_demo_tile" text="{{ value }}" }}
+    </div>
+    {{ /view:mws }}
+
+  </div>
+
+  <hr class="line mar-v-lg">
+  
+  <div class="masonry grout sm:grout-0">
+
+    {{ view:tewelve_tiles }}
+    <div class="tile tile-3 sm:tile">
+      {{ partial src="_demo_tile" text="{{ value }}" }}
+    </div>
+    {{ /view:tewelve_tiles }}
+
+  </div>
+
+</div>

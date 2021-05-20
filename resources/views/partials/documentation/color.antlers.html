@@ -11,7 +11,7 @@ colors:
 ---
 
 <div class="block frame mar-t-0">
-  <div class="masonry grout-xxs">
+  <div class="masonry grout grout-xxs">
   {{ view:colors }}
 
     <div class="tile">
@@ -24,10 +24,10 @@ colors:
   </div>
 </div>
 
-<div class="masonry grout-xs">
+<div class="masonry grout grout-xs">
   {{ view:colors }}
 
-  <div class="column tile tile-6 sm:tile-4 lg:tile-3">
+  <div class="col tile tile-6 sm:tile-4 lg:tile-3">
     {{ partial src="_swatch_card" value="{{ value }}" }}
   </div>
 

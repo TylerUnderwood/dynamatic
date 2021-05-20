@@ -2,38 +2,8 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 | UTILITY: masonry 
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-
-.masonry {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.grout {
-  margin: -0.8rem;
-}
-.grout > * {
-  padding: 0.8rem;
-}
-
-.tile {
-  flex: 0 0 auto;
-  width: auto;
-}
-.tile-3 {
-  flex: 1 1 25%;
-  max-width: 25%;
-}
-.tile-4 {
-  flex: 1 1 33.3333%;
-  max-width: 33.3333%;
-}
-.tile-12 {
-  flex: 1 1 100%;
-  max-width: 100%;
-}
-
 */
+
 
 
 /*
@@ -57,33 +27,34 @@
 }
 
 
+
 /*
 |–––––––––––––––––––––––––
 | Grout
 |–––––––––––––––––––––––––
 */
 
-@include make-class-with-breakpoint-prefixes( 'grout' ) {
-  margin: calc(-1 * (#{$space} / 2));
+$grout_space: var(--grout-space);
+
+.grout {
+  --grout-space: #{$space};
+  margin: calc(-1 * (#{$grout_space} / 2));
 
   & > * {
-    padding: calc(#{$space} / 2);
+    padding: calc(#{$grout_space} / 2);
   }
 }
 
-@mixin makeGroutClasses( $array ) {
-  @each $key, $value in $array {
-    .grout-#{$key} {
-      margin: calc(-1 * (#{$value} / 2));
+@include make-classes-from-list( 'grout', --grout-space, $spacing );
 
-      & > * {
-        padding: calc(#{$value} / 2);
-      }
-    }
+@include add-breakpoint-prefixes() {
+  &grout {
+    --grout-space: #{$space};
   }
+
+  @include make-classes-for-breakpoints( 'grout', --grout-space, $spacing );
 }
 
-@include makeGroutClasses( $spacing );
 
 
 /*
@@ -92,30 +63,36 @@
 |–––––––––––––––––––––––––
 */
 
+$tile_width: var(--tile-width);
+
 .tile {
-  flex: 0 0 auto;
-  width: auto;
+  --tile-width: unset;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: $tile_width;
+  width: $tile_width;
 }
 
-@mixin makeTileClasses( $array ) {
-  @each $key, $value in $array {
-    .tile-#{$key} {
-      flex: 1 1 $value;
-      max-width: $value;
-    }
-  }
-  @each $point, $width in $breakpoints {
-    @media ( min-width: #{$width} ) {
-      .#{$point}\: {
-        @each $key, $value in $array {
-          &tile-#{$key} {
-            flex: 1 1 $value;
-            max-width: $value;
-          }
-        }
-      }
-    }
-  }
+@include make-classes-from-list( 'tile', --tile-width, $columns );
+
+.tile-auto {
+  --tile-width: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
-@include makeTileClasses( $columns );
+@include add-breakpoint-prefixes() {
+  &tile {
+    --tile-width: unset;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  @include make-classes-for-breakpoints( 'tile', --tile-width, $columns );
+
+  &tile-auto {
+    --tile-width: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}

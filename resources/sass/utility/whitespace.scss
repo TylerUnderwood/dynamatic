@@ -89,6 +89,8 @@ $buffer_classes: (
 @include make-list-of-classes-from-list( $buffer_classes, null, $horizontal_space );
 
 $margin_types: (
+  'mar-v': margin-top margin-bottom,
+  'mar-h': margin-right margin-left,
   'mar-t': margin-top,
   'mar-r': margin-right,
   'mar-b': margin-bottom,

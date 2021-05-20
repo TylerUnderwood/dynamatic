@@ -2,18 +2,18 @@
 
 {{ collection from="blog" limit="2" paginate="true" as="posts" sort="date:desc" }}
 <section class="frame outer gutter archive">
-	<div class="inner column">
+	<div class="inner col">
 
 		{{ if no_results }}
 		<h3>More posts coming soon!</h3>
 		{{ /if }}
 
-		<div class="masonry grout-xl">
+		<div class="masonry grout grout-xl">
 		{{ posts }}
 
 			<article class="tile tile-12">
-				<a href="{{ url }}" class="card card:hover lift column sm:row">
-					<div class="column fill pad relative">
+				<a href="{{ url }}" class="card card:hover lift col sm:row">
+					<div class="col fill pad relative">
 						<hr class="triangle triangle--b-r inset-b-r c:border-color" style="font-size: 20rem" />
 						<div class="relative">
 							<h3 class="card__text h4">{{ title }}</h3>
