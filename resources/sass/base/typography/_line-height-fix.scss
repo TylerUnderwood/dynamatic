@@ -1,0 +1,41 @@
+ ///////////////////////
+// Line height fix
+
+@mixin line_height_fix( $top, $bottom ) {
+  &::before,
+  &::after {
+    display: block;
+    height: 0;
+    content: "";
+  }
+
+  &::before {
+    margin-top: $top;
+  }
+
+  &::after {
+    margin-bottom: $bottom;
+  }
+}
+
+@mixin heading_120_fix {
+  @include line_height_fix( -0.25em, -0.2em );
+}
+
+@mixin copy_140_fix {
+  @include line_height_fix( -0.3em, -0.4em );
+}
+
+@mixin copy_160_fix {
+  @include line_height_fix( -0.35em, -0.5em );
+}
+
+@mixin meta_100_fix {
+  @-moz-document url-prefix() {
+    @include line_height_fix( 0em, -0.25em );
+  }
+}
+
+@mixin meta_600_fix {
+  @include line_height_fix( -0.3em, -0.4em );
+}

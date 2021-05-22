@@ -1,0 +1,26 @@
+/*
+|–––––––––––––––––––––––––
+| Hyperfield
+|–––––––––––––––––––––––––
+*/
+
+.hyperfield {
+  outline: none;
+  border-radius: 0;
+	border: none;
+	background-color: unset;
+	background-repeat: no-repeat;
+	background-image: linear-gradient(transparent calc(100% - 3px), $link_color 0),
+					          linear-gradient(transparent calc(100% - 3px), $border_color 0);
+	background-size: 0 100%, 100% 100%;
+	padding: 0 0 0.2em;
+	transition: background 300ms ease-out;
+
+	&:focus,
+	&:active,
+  &[filled] {
+		border: none;
+		background-color: unset;
+		background-size: 100% 100%, 100% 100%;
+	}
+}

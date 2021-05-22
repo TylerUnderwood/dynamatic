@@ -4,6 +4,64 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
+
+
+/*
+|–––––––––––––––––––––––––
+| Links
+|–––––––––––––––––––––––––
+*/
+
+// element
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: inherit;
+  }
+}
+
+// class
+.link {
+  color: $link_color;
+  transition: color 300ms ease;
+  cursor: pointer;
+  
+  &[active] {
+    color: $link_active;
+  }
+
+  &:hover,
+  &:focus {
+    color: $link_hover;
+  }
+
+  &[stealth] {
+    color: inherit;
+
+    &[active] {
+      color: $link_hover;
+    }
+
+    &:hover,
+    &:focus {
+      color: $link_color;
+    }
+  }
+}
+
+
+
+/*
+|–––––––––––––––––––––––––
+| Button
+|–––––––––––––––––––––––––
+*/
+
 button {
   display: inline-block;
   outline: none;

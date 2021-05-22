@@ -9,12 +9,6 @@ figure {
   margin: 0;
 }
 
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 img {
   display: block;
   width: 100%;
@@ -22,6 +16,12 @@ img {
 }
 
 video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+svg {
   display: block;
   width: 100%;
   height: auto;

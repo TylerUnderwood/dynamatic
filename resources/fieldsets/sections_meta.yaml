@@ -68,8 +68,8 @@ fields:
       options:
         'md:mar-v-0': Neither
         'md:frame': 'Top and Bottom'
-        'md:frame-t': 'Only Top'
-        'md:frame-b': 'Only Bottom'
+        'md:frame-t md:mar-b-0': 'Only Top'
+        'md:frame-b md:mar-t-0': 'Only Bottom'
       display: 'Desktop, Space Between'
       default: 'md:frame'
       width: 50

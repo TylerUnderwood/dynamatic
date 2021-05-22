@@ -23,9 +23,9 @@
 ========================================================================== */
 @import "base/layout";
 @import "base/dividers";
-@import "base/typography";
-@import "base/buttons";
-@import "base/fields";
+@import "base/typography/index";
+@import "base/buttons/index";
+@import "base/inputs/index";
 @import "base/media";
 @import "base/backgrounds";
 
@@ -53,9 +53,7 @@
 @import "components/pagination";
 @import "components/social-icons";
 @import "components/contact-form";
-@import "components/single-form";
-@import 'components/fancy-quote.scss';
-@import 'components/inline-list.scss';
+@import "components/soloform";
 @import 'components/arch.scss';
 
 

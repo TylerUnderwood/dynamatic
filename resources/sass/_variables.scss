@@ -39,50 +39,89 @@ $twitter:           #1da1f2;
 $vimeo:             #1ab7ea;
 $youtube:           #bb0000;
 
-// site theme
-$azure:             #0080ff;
-$royal_purple:      #c000ff;
-$fuchsia:           #ff0080;
-$starburst:         #ff0040;
-$lava_orange:       #ff4000;
-$neon_yellow:       #c0ff00;
-$jade:              #00ff80;
-$sea_foam:          #00ffc0;
-
-// site dark
-$dark_100:          #282a30;
-$dark_200:          #202228;
-$dark_400:          #181a20;
-$dark_600:          #101218;
-$dark_800:          #080a10;
-
-// site light
-$light_100:         #ffffff;
-$light_200:         #f8f8f8;
-$light_400:         #eeeeee;
-$light_600:         #e8e8e8;
-$light_800:         #dddddd;
-
 
 // --- define vars --- //
 
 :root {
+  // site theme
+  --azure:             #0080ff;
+  --royal-purple:      #c000ff;
+  --fuchsia:           #ff0080;
+  --starburst:         #ff0040;
+  --lava-orange:       #ff4000;
+  --neon-yellow:       #c0ff00;
+  --jade:              #00ff80;
+  --sea-foam:          #00ffc0;
+  
+  // site dark
+  --dark-100:          #282a30;
+  --dark-200:          #202228;
+  --dark-400:          #181a20;
+  --dark-600:          #101218;
+  --dark-800:          #080a10;
+  
+  // site light
+  --light-100:         #ffffff;
+  --light-200:         #f8f8f8;
+  --light-400:         #eeeeee;
+  --light-600:         #e8e8e8;
+  --light-800:         #dddddd;
+}
+
+// site theme
+$azure:             var(--azure);
+$royal_purple:      var(--royal-purple);
+$fuchsia:           var(--fuchsia);
+$starburst:         var(--starburst);
+$lava_orange:       var(--lava-orange);
+$neon_yellow:       var(--neon-yellow);
+$jade:              var(--jade);
+$sea_foam:          var(--sea-foam);
+
+// site dark
+$dark_100:          var(--dark-100);
+$dark_200:          var(--dark-200);
+$dark_400:          var(--dark-400);
+$dark_600:          var(--dark-600);
+$dark_800:          var(--dark-800);
+
+// site light
+$light_100:         var(--light-100);
+$light_200:         var(--light-200);
+$light_400:         var(--light-400);
+$light_600:         var(--light-600);
+$light_800:         var(--light-800);
+
+:root {
+  // Branding
+  --primary:           #{$fuchsia};
+  --secondary:         #{$royal_purple};
+  --accent:            #{$sea_foam};
+
+  // Theme
   --dark:              #{$dark_100};
   --light:             #{$light_200};
+
+  // Background & Border
   --background-color:  #{$dark_100};
   --background-200:    #{$dark_200};
   --background-400:    #{$dark_400};
   --background-600:    #{$dark_600};
   --background-800:    #{$dark_800};
   --contrast:          var(--background-200);
-  --primary:           #{$fuchsia};
-  --secondary:         #{$royal_purple};
-  --accent:            #{$sea_foam};
   --border-color:      var(--background-400);
+
+  --background-rgb:    40, 42, 48;
+  --contrast-rgb:      32, 34, 40;
+  --border-color-rgb:  24, 26, 32;
+
+  // Text
   --text-color:        var(--light);
   --text-color-off:    #{$grey};
   --text-color-alt:    #{$lava_orange};
   --heading-color:     var(--primary);
+
+  // Links
   --link-color:        var(--accent);
   --link-hover:        #{$azure};
   --link-active:       #{$royal_purple};
@@ -97,6 +136,11 @@ $light_800:         #dddddd;
   --background-800:    #{$light_800};
   --contrast:          var(--background-200);
   --border-color:      var(--background-400);
+
+  --background-rgb:    255, 255, 255;
+  --contrast-rgb:      248, 248, 248;
+  --border-color-rgb:  238, 238, 238;
+
   --text-color:        #{$dark};
 }
 
@@ -112,15 +156,13 @@ $accent:            var(--accent);
 $dark:              var(--dark);
 $light:             var(--light);
 
-// Background
+// Background & Border
 $background_color:  var(--background-color);
 $background_200:    var(--background-200);
 $background_400:    var(--background-400);
 $background_600:    var(--background-600);
 $background_800:    var(--background-800);
 $contrast:          var(--contrast);
-
-// Border
 $border_color:      var(--border-color);
 
 // Text

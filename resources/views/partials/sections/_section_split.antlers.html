@@ -2,14 +2,14 @@
 	{{ if section_id }}id="{{ section_id }}" {{ /if }}
 	class="
 		section {{ if section_reverse }}section--reverse{{ /if }}
-		frame {{ desktop_frame }} {{ mobile_frame }} 
+		{{ desktop_frame }} {{ mobile_frame }} 
 		{{ classes }}"
 	style="--section-ratio: {{ section_ratio }}"
 >
 	<div class="
 		section__column section__left
 		{{ left_background_color }} 
-		trim {{ left_mobile_trim }} {{ left_desktop_trim }}">
+		{{ left_mobile_trim }} {{ left_desktop_trim }}">
 	{{ left_blocks }}
 
 		{{ if type === "filler" }}
@@ -32,7 +32,7 @@
 	<div class="
 		section__column section__right
 		{{ right_background_color }} 
-		trim {{ right_mobile_trim }} {{ right_desktop_trim }}">
+		{{ right_mobile_trim }} {{ right_desktop_trim }}">
 	{{ right_blocks }}
 
 		{{ if type === "filler" }}

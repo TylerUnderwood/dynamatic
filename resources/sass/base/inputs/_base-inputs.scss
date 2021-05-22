@@ -1,10 +1,14 @@
 /*
-|––––––––––––––––––––––––––––––––––––––––––––––––––
-| BASE: Inputs 
-|––––––––––––––––––––––––––––––––––––––––––––––––––
+|–––––––––––––––––––––––––
+| Form
+|–––––––––––––––––––––––––
 */
 
 form {
+  display: block;
+}
+
+.form {
   display: block;
 }
 
@@ -17,7 +21,7 @@ form {
 
 label {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 label[for] {
@@ -26,9 +30,8 @@ label[for] {
 
 .label {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   text-transform: uppercase;
-  font-family: $meta_font;
 }
 
 
@@ -38,7 +41,7 @@ label[for] {
 |–––––––––––––––––––––––––
 */
 
-@mixin element_field( $padding: 0 0.8em ) {
+@mixin element_input( $padding: 0 0.8em ) {
   border: 1px solid currentColor;
   background-color: transparent;
   width: 100%;
@@ -53,7 +56,7 @@ input {
   display: block;
   margin: 0;
   cursor: text;
-  @include element_field;
+  @include element_input;
 
   &::placeholder {
     color: inherit;
@@ -207,7 +210,7 @@ textarea {
   display: block;
   max-width: 100%;
   height: 8em;
-  @include element_field(0.2em 0.8em);
+  @include element_input(0.2em 0.8em);
   resize: vertical;
   cursor: text;
 }
@@ -231,7 +234,7 @@ textarea {
 fieldset {
   display: block;
   margin: 0;
-  @include element_field(0.5em 1em);
+  @include element_input(0.5em 1em);
 }
 
 .fieldset {
@@ -260,7 +263,7 @@ legend {
 */
 
 select {
-  @include element_field;
+  @include element_input;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -270,27 +273,4 @@ option {
   background-color: initial;
   padding: 0;
   color: initial;
-}
-
-
-
-.input-underline {
-  outline: none;
-  border-radius: 0;
-	border: none;
-	background-color: unset;
-	background-repeat: no-repeat;
-	background-image: linear-gradient(transparent calc(100% - 3px), $link_color 0),
-					          linear-gradient(transparent calc(100% - 3px), $border_color 0);
-	background-size: 0 100%, 100% 100%;
-	padding: 0 0 0.2em;
-	transition: background 300ms ease-out;
-
-	&:focus,
-	&:active,
-  &[filled] {
-		border: none;
-		background-color: unset;
-		background-size: 100% 100%, 100% 100%;
-	}
 }

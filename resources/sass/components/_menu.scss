@@ -6,7 +6,7 @@
 
 /* ===== VARIABLES ===== */
 
-$menu_bg: $dark_200;
+$menu_bg: var(--contrast-rgb);
 $menu_color: $text_color;
 $menu_time: 240ms;
 
@@ -28,7 +28,7 @@ $menu_buffer: 1em;
   flex-flow: column;
   width: 100vw;
   height: 100vh;
-  background-color: $menu_bg;
+  background-color: rgb($menu_bg);
   padding: 0 $header_padding;
   line-height: 1;
   font-size: 2.4rem;
@@ -55,12 +55,12 @@ $menu_buffer: 1em;
     &:before {
       top: 0;
       background: linear-gradient(rgba($menu_bg, 1) 0%, 
-                                  rgba($menu_bg, 0) 100%);
+                                  transparent 100%);
     }
 
     &:after {
       bottom: 0;
-      background: linear-gradient(rgba($menu_bg, 0) 0%, 
+      background: linear-gradient(transparent 0%, 
                                   rgba($menu_bg, 1) 100%);
     }
   }
@@ -93,6 +93,7 @@ $menu_buffer: 1em;
 
   &__link {
     display: inline-flex;
+    align-items: center;
     padding: 0.4em;
 
     .icon {

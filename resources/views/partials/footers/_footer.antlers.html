@@ -12,7 +12,7 @@
 			<nav class="nav footer__nav">
 			{{ nav }}
 
-				<a class="nav__link link" href="{{ url }}">
+				<a class="nav__link link" href="{{ url }}" stealth>
 					<span class="meta">{{ title }}</span>
 				</a>
 				
@@ -21,28 +21,42 @@
 
 			<div class="break size-md"></div>
 			
-			<address class="inline-list inline-list--pipline meta small thin">
-				<a class="item" href="{{ site:google_maps_url }}" target="_blank">
-					<span class="meta">{{ site:address:city }} &middot; {{ site:address:state }}</span>
-				</a>
-				<a class="item" href="tel:{{ site:phone }}">
-					<span class="meta">{{ site:phone }}</span>
-				</a>
-				<a class="item" href="mailto:{{ site:email }}">
-					<span class="meta">{{ site:email }}</span>
-				</a>
+			<address class="inline-list inline-list--pipline small thin">
+				<span class="item">
+					<span class="grout">
+						<a class="link meta" href="{{ site:google_maps_url }}" stealth target="_blank">
+							{{ site:address:city }} &middot; {{ site:address:state }}
+						</a>
+					</span>
+				</span>
+				<span class="item">
+					<span class="grout">
+						<a class="link meta" href="tel:{{ site:phone }}" stealth>
+							{{ site:phone }}
+						</a>
+					</span>
+				</span>
+				<span class="item">
+					<span class="grout">
+						<a class="link meta" href="mailto:{{ site:email }}" stealth>
+							{{ site:email }}
+						</a>
+					</span>
+				</span>
 			</address> <!-- END site-info -->
 
 			<div class="break size-md"></div>
 	
-			<div class="copyright meta small thin">
+			<div class="copyright small thin">
 				<span class="meta">Copyright &copy; {{ date format="Y" }} {{ site:name }}.</span>
 				<span class="meta">All Rights Reserved.</span>
 				<span class="meta">
 					<a 
-						href="https://github.com/cyborgspaceviking" 
+						href="https://github.com/TylerUnderwood" 
 						target="_blank" 
-						title="All my work in one place">
+						title="All my work in one place"
+						stealth
+					>
 						Site by Tyler.
 					</a>
 				</span>

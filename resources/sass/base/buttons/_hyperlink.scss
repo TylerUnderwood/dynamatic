@@ -1,0 +1,29 @@
+/*
+|–––––––––––––––––––––––––
+| Hyperlink
+|–––––––––––––––––––––––––
+*/
+
+@mixin class_hyperlink {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(transparent calc(100% - 0.2em), $link_hover 0),
+                    linear-gradient(transparent calc(100% - 0.2em), $link_color 0);
+  background-size: 0 100%, 100% 100%;
+  color: inherit;
+  transition: background 300ms ease;
+  
+  &[active] {
+    background-image: linear-gradient(transparent calc(100% - 0.2em), $link_hover 0),
+                      linear-gradient(transparent calc(100% - 0.2em), $link_active 0);
+  }
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    background-size: 100% 100%, 100% 100%;
+  }
+}
+
+.hyperlink {
+  @include class_hyperlink;
+}
