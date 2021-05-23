@@ -64,35 +64,38 @@ $grout_space: var(--grout-space);
 */
 
 $tile_width: var(--tile-width);
+$tile_flex: var(--tile-flex);
 
 .tile {
   --tile-width: unset;
-  flex-grow: 0;
-  flex-shrink: 0;
+  --tile-flex: 0;
+  flex-grow: $tile_flex;
+  flex-shrink: $tile_flex;
   flex-basis: $tile_width;
   width: $tile_width;
 }
 
-@include make-classes-from-list( 'tile', --tile-width, $columns );
+@include make-classes-from-list( 'tile', --tile-width, $columns ) {
+  --tile-flex: 0;
+};
 
 .tile-auto {
   --tile-width: auto;
-  flex-grow: 1;
-  flex-shrink: 1;
+  --tile-flex: 1;
 }
 
 @include add-breakpoint-prefixes() {
   &tile {
     --tile-width: unset;
-    flex-grow: 0;
-    flex-shrink: 0;
+    --tile-flex: 0;
   }
 
-  @include make-classes-for-breakpoints( 'tile', --tile-width, $columns );
+  @include make-classes-for-breakpoints( 'tile', --tile-width, $columns ) {
+    --tile-flex: 0;
+  };
 
   &tile-auto {
     --tile-width: auto;
-    flex-grow: 1;
-    flex-shrink: 1;
+    --tile-flex: 1;
   }
 }

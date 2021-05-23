@@ -816,16 +816,13 @@ code {
 .pre:first-child {
   margin-top: 0;
 }
-.pre code,
-.pre .code {
+.pre code {
   border: none;
   background: none;
   padding: 0;
   line-height: inherit;
 }
-.pre code::before, .pre code::after,
-.pre .code::before,
-.pre .code::after {
+.pre code::before, .pre code::after {
   display: none;
 }
 
@@ -1021,6 +1018,221 @@ del {
 | BASE: Buttons 
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
+/*
+|–––––––––––––––––––––––––
+| Links
+|–––––––––––––––––––––––––
+*/
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a:hover, a:focus {
+  outline: none;
+  color: inherit;
+}
+
+.link {
+  color: var(--link-color);
+  transition: color 300ms ease;
+  cursor: pointer;
+}
+.link[active] {
+  color: var(--link-active);
+}
+.link:hover, .link:focus {
+  color: var(--link-hover);
+}
+.link[stealth] {
+  color: inherit;
+}
+.link[stealth][active] {
+  color: var(--link-hover);
+}
+.link[stealth]:hover, .link[stealth]:focus {
+  color: var(--link-color);
+}
+
+/*
+|–––––––––––––––––––––––––
+| Button
+|–––––––––––––––––––––––––
+*/
+button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  text-align: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  outline: none;
+  border: 2px solid var(--link-color);
+  border-radius: 2px;
+  min-width: 8em;
+  height: var(--btn-height);
+  background-color: var(--link-color);
+  padding: 0 1.4em;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  font-size: inherit;
+  color: var(--dark);
+  transition: border-color 300ms ease, background-color 300ms ease, color 300ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.btn[active] {
+  border-color: var(--link-active);
+  background-color: var(--link-active);
+  color: var(--dark);
+}
+.btn:hover, .btn:focus {
+  outline: none;
+  border-color: var(--link-hover);
+  background-color: var(--link-hover);
+  color: var(--dark);
+}
+.btn[stealth] {
+  border-color: transparent;
+  background-color: transparent;
+  color: inherit;
+}
+.btn[stealth]:hover, .btn[stealth]:focus {
+  border-color: var(--link-color);
+  background-color: var(--link-color);
+  color: var(--dark);
+}
+.btn[disabled] {
+  border-color: var(--link-color);
+  background-color: var(--link-color);
+  color: var(--dark);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn__text {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 0.8em;
+}
+.btn__icon {
+  font-size: 1em;
+}
+.btn--border {
+  border-color: var(--link-color);
+  background: transparent;
+  color: var(--link-color);
+}
+.btn--border[active] {
+  border-color: var(--link-active);
+  background-color: transparent;
+  color: var(--link-active);
+}
+.btn--border:hover, .btn--border:focus {
+  border-color: var(--link-hover);
+  background-color: transparent;
+  color: var(--link-hover);
+}
+.btn--border[disabled] {
+  border-color: var(--link-color);
+  background-color: transparent;
+  color: var(--link-color);
+}
+.btn--border[stealth]:hover, .btn--border[stealth]:focus {
+  border-color: var(--link-color);
+  background-color: transparent;
+  color: var(--link-color);
+}
+.btn--border .btn__text {
+  font-size: 0.7em;
+}
+.btn--thin {
+  min-width: 6em;
+  height: var(--btn-slim-height);
+  border-width: 1px;
+  padding: 0 1.2em;
+  font-weight: normal;
+}
+.btn--thin .btn__text {
+  font-weight: 300;
+  font-size: 0.7em;
+}
+.btn--thin .btn__icon {
+  font-size: 0.8em;
+}
+.btn--thin.btn--border .btn__text {
+  font-size: 0.6em;
+}
+.btn--tall {
+  min-width: 12em;
+  height: var(--btn-tall-height);
+  border-width: 2px;
+  padding: 0 2.4em;
+  font-weight: bold;
+}
+.btn--tall .btn__text {
+  font-weight: 700;
+  font-size: 0.9em;
+}
+.btn--tall .btn__icon {
+  font-size: 1.2em;
+}
+.btn--tall.btn--border .btn__text {
+  font-size: 0.8em;
+}
+.btn--stout {
+  min-width: unset;
+  padding-right: 0.8em;
+  padding-left: 0.8em;
+}
+.btn--square {
+  min-width: unset;
+  padding: 0;
+  width: var(--btn-height);
+  height: var(--btn-height);
+}
+.btn--square.btn--thin {
+  width: var(--btn-slim-height);
+  height: var(--btn-slim-height);
+}
+.btn--square.btn--tall {
+  width: var(--btn-tall-height);
+  height: var(--btn-tall-height);
+}
+.btn--full {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: unset;
+}
+@media (max-width: 479px) {
+  .btn--full\:sm {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: unset;
+  }
+}
+@media (max-width: 767px) {
+  .btn--full\:md {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: unset;
+  }
+}
+
 /*
 |–––––––––––––––––––––––––
 | Hyperlink
@@ -1356,6 +1568,46 @@ option {
 
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Soloform
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+.soloform {
+  display: flex;
+  flex-direction: row;
+}
+.soloform__input {
+  flex: 1 0 auto;
+  width: unset;
+}
+.soloform__submit {
+  min-width: unset;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+@media (max-width: 479px) {
+  .soloform {
+    flex-direction: column;
+  }
+  .soloform__submit {
+    margin-top: var(--space);
+    width: 100%;
+  }
+}
+@media (min-width: 480px) {
+  .soloform__input {
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+    border-right: transparent;
+  }
+  .soloform__submit {
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+    border-left: transparent;
+  }
+}
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
 | BASE: Media
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
@@ -1575,6 +1827,7 @@ svg {
 | COMPONENTS: Transcription
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 |
+| This is akin to the wysiwyg
 | For sections where you want your lists, links and etc. to look nice,
 | and so you don't have to backpedal any of the styles where you don't need.
 |
@@ -1604,7 +1857,6 @@ svg {
   font-weight: normal;
   font-family: "Kanit", Times, serif;
   color: inherit;
-  margin-top: 1em;
 }
 .transcription h1::before, .transcription h1::after, .transcription h2::before, .transcription h2::after, .transcription h3::before, .transcription h3::after, .transcription h4::before, .transcription h4::after, .transcription h5::before, .transcription h5::after, .transcription h6::before, .transcription h6::after {
   display: block;
@@ -1616,12 +1868,6 @@ svg {
 }
 .transcription h1::after, .transcription h2::after, .transcription h3::after, .transcription h4::after, .transcription h5::after, .transcription h6::after {
   margin-bottom: -0.2em;
-}
-.transcription h1:first-child, .transcription h2:first-child, .transcription h3:first-child, .transcription h4:first-child, .transcription h5:first-child, .transcription h6:first-child {
-  margin-top: 0;
-}
-.transcription h1 + p, .transcription h2 + p, .transcription h3 + p, .transcription h4 + p, .transcription h5 + p, .transcription h6 + p {
-  margin-top: 0.7rem;
 }
 .transcription h1 {
   font-size: 3.6rem;
@@ -1802,16 +2048,13 @@ svg {
 .transcription pre:first-child {
   margin-top: 0;
 }
-.transcription pre code,
-.transcription pre .code {
+.transcription pre code {
   border: none;
   background: none;
   padding: 0;
   line-height: inherit;
 }
-.transcription pre code::before, .transcription pre code::after,
-.transcription pre .code::before,
-.transcription pre .code::after {
+.transcription pre code::before, .transcription pre code::after {
   display: none;
 }
 .transcription code {
@@ -2251,208 +2494,250 @@ svg {
 */
 .tile {
   --tile-width: unset;
-  flex-grow: 0;
-  flex-shrink: 0;
+  --tile-flex: 0;
+  flex-grow: var(--tile-flex);
+  flex-shrink: var(--tile-flex);
   flex-basis: var(--tile-width);
   width: var(--tile-width);
 }
 
 .tile-1 {
   --tile-width: calc( (1 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-2 {
   --tile-width: calc( (2 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-3 {
   --tile-width: calc( (3 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-4 {
   --tile-width: calc( (4 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-5 {
   --tile-width: calc( (5 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-6 {
   --tile-width: calc( (6 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-7 {
   --tile-width: calc( (7 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-8 {
   --tile-width: calc( (8 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-9 {
   --tile-width: calc( (9 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-10 {
   --tile-width: calc( (10 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-11 {
   --tile-width: calc( (11 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-12 {
   --tile-width: calc( (12 / 12) * 100% );
+  --tile-flex: 0;
 }
 
 .tile-auto {
   --tile-width: auto;
-  flex-grow: 1;
-  flex-shrink: 1;
+  --tile-flex: 1;
 }
 
 @media (min-width: 480px) {
   .sm\:tile {
     --tile-width: unset;
-    flex-grow: 0;
-    flex-shrink: 0;
+    --tile-flex: 0;
   }
   .sm\:tile-1 {
     --tile-width: calc( (1 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-2 {
     --tile-width: calc( (2 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-3 {
     --tile-width: calc( (3 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-4 {
     --tile-width: calc( (4 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-5 {
     --tile-width: calc( (5 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-6 {
     --tile-width: calc( (6 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-7 {
     --tile-width: calc( (7 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-8 {
     --tile-width: calc( (8 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-9 {
     --tile-width: calc( (9 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-10 {
     --tile-width: calc( (10 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-11 {
     --tile-width: calc( (11 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-12 {
     --tile-width: calc( (12 / 12) * 100% );
+    --tile-flex: 0;
   }
   .sm\:tile-auto {
     --tile-width: auto;
-    flex-grow: 1;
-    flex-shrink: 1;
+    --tile-flex: 1;
   }
 }
 @media (min-width: 768px) {
   .md\:tile {
     --tile-width: unset;
-    flex-grow: 0;
-    flex-shrink: 0;
+    --tile-flex: 0;
   }
   .md\:tile-1 {
     --tile-width: calc( (1 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-2 {
     --tile-width: calc( (2 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-3 {
     --tile-width: calc( (3 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-4 {
     --tile-width: calc( (4 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-5 {
     --tile-width: calc( (5 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-6 {
     --tile-width: calc( (6 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-7 {
     --tile-width: calc( (7 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-8 {
     --tile-width: calc( (8 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-9 {
     --tile-width: calc( (9 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-10 {
     --tile-width: calc( (10 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-11 {
     --tile-width: calc( (11 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-12 {
     --tile-width: calc( (12 / 12) * 100% );
+    --tile-flex: 0;
   }
   .md\:tile-auto {
     --tile-width: auto;
-    flex-grow: 1;
-    flex-shrink: 1;
+    --tile-flex: 1;
   }
 }
 @media (min-width: 1024px) {
   .lg\:tile {
     --tile-width: unset;
-    flex-grow: 0;
-    flex-shrink: 0;
+    --tile-flex: 0;
   }
   .lg\:tile-1 {
     --tile-width: calc( (1 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-2 {
     --tile-width: calc( (2 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-3 {
     --tile-width: calc( (3 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-4 {
     --tile-width: calc( (4 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-5 {
     --tile-width: calc( (5 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-6 {
     --tile-width: calc( (6 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-7 {
     --tile-width: calc( (7 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-8 {
     --tile-width: calc( (8 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-9 {
     --tile-width: calc( (9 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-10 {
     --tile-width: calc( (10 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-11 {
     --tile-width: calc( (11 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-12 {
     --tile-width: calc( (12 / 12) * 100% );
+    --tile-flex: 0;
   }
   .lg\:tile-auto {
     --tile-width: auto;
-    flex-grow: 1;
-    flex-shrink: 1;
+    --tile-flex: 1;
   }
 }
 /*
@@ -2964,9 +3249,6 @@ svg {
 .bard h1 + p, .bard h2 + p, .bard h3 + p, .bard h4 + p, .bard h5 + p, .bard h6 + p {
   margin-top: 0.7rem;
 }
-.bard h1 + h1, .bard h1 + h2, .bard h1 + h3, .bard h1 + h4, .bard h1 + h5, .bard h1 + h6, .bard h2 + h1, .bard h2 + h2, .bard h2 + h3, .bard h2 + h4, .bard h2 + h5, .bard h2 + h6, .bard h3 + h1, .bard h3 + h2, .bard h3 + h3, .bard h3 + h4, .bard h3 + h5, .bard h3 + h6, .bard h4 + h1, .bard h4 + h2, .bard h4 + h3, .bard h4 + h4, .bard h4 + h5, .bard h4 + h6, .bard h5 + h1, .bard h5 + h2, .bard h5 + h3, .bard h5 + h4, .bard h5 + h5, .bard h5 + h6, .bard h6 + h1, .bard h6 + h2, .bard h6 + h3, .bard h6 + h4, .bard h6 + h5, .bard h6 + h6 {
-  margin: 0.4em 0;
-}
 .bard hr {
   margin: var(--space-xl) auto;
   width: 80%;
@@ -3012,7 +3294,7 @@ svg {
     margin-top: 0.3rem;
     margin-bottom: 1rem;
     width: 50%;
-    max-width: 32rem;
+    max-width: calc(64rem / 2);
   }
   .bard__left {
     float: left;
@@ -3368,46 +3650,6 @@ svg {
   border-color: #ff6666;
   background-color: #ff9999;
   color: var(--text-color);
-}
-
-/*
-|––––––––––––––––––––––––––––––––––––––––––––––––––
-| COMPONENTS: Soloform
-|––––––––––––––––––––––––––––––––––––––––––––––––––
-*/
-.soloform {
-  display: flex;
-  flex-direction: row;
-}
-.soloform__input {
-  flex: 1 0 auto;
-  width: unset;
-}
-.soloform__submit {
-  min-width: unset;
-  padding-left: 1.2em;
-  padding-right: 1.2em;
-}
-@media (max-width: 479px) {
-  .soloform {
-    flex-direction: column;
-  }
-  .soloform__submit {
-    margin-top: var(--space);
-    width: 100%;
-  }
-}
-@media (min-width: 480px) {
-  .soloform__input {
-    border-top-right-radius: unset;
-    border-bottom-right-radius: unset;
-    border-right: transparent;
-  }
-  .soloform__submit {
-    border-top-left-radius: unset;
-    border-bottom-left-radius: unset;
-    border-left: transparent;
-  }
 }
 
 /*
@@ -5124,12 +5366,32 @@ svg {
   width: 20%;
 }
 
+.w-25 {
+  width: 25%;
+}
+
+.w-33 {
+  width: 33.3333%;
+}
+
 .w-40 {
   width: 40%;
 }
 
+.w-50 {
+  width: 50%;
+}
+
 .w-60 {
   width: 60%;
+}
+
+.w-66 {
+  width: 66.6666%;
+}
+
+.w-75 {
+  width: 75%;
 }
 
 .w-80 {
@@ -5144,11 +5406,26 @@ svg {
   .sm\:w-20 {
     width: 20%;
   }
+  .sm\:w-25 {
+    width: 25%;
+  }
+  .sm\:w-33 {
+    width: 33.3333%;
+  }
   .sm\:w-40 {
     width: 40%;
   }
+  .sm\:w-50 {
+    width: 50%;
+  }
   .sm\:w-60 {
     width: 60%;
+  }
+  .sm\:w-66 {
+    width: 66.6666%;
+  }
+  .sm\:w-75 {
+    width: 75%;
   }
   .sm\:w-80 {
     width: 80%;
@@ -5161,11 +5438,26 @@ svg {
   .md\:w-20 {
     width: 20%;
   }
+  .md\:w-25 {
+    width: 25%;
+  }
+  .md\:w-33 {
+    width: 33.3333%;
+  }
   .md\:w-40 {
     width: 40%;
   }
+  .md\:w-50 {
+    width: 50%;
+  }
   .md\:w-60 {
     width: 60%;
+  }
+  .md\:w-66 {
+    width: 66.6666%;
+  }
+  .md\:w-75 {
+    width: 75%;
   }
   .md\:w-80 {
     width: 80%;
@@ -5178,11 +5470,26 @@ svg {
   .lg\:w-20 {
     width: 20%;
   }
+  .lg\:w-25 {
+    width: 25%;
+  }
+  .lg\:w-33 {
+    width: 33.3333%;
+  }
   .lg\:w-40 {
     width: 40%;
   }
+  .lg\:w-50 {
+    width: 50%;
+  }
   .lg\:w-60 {
     width: 60%;
+  }
+  .lg\:w-66 {
+    width: 66.6666%;
+  }
+  .lg\:w-75 {
+    width: 75%;
   }
   .lg\:w-80 {
     width: 80%;

@@ -36,13 +36,13 @@
   
     <hr class="break size-lg">
     
-    <label class="small" for="inputUnderline">Input Underline</label>
+    <label class="small" for="hyperfield">Hyperfield</label>
     <input
-      id="inputUnderline"
-      class="input-underline"
+      id="hyperfield"
+      class="hyperfield"
       placeholder="Some Text" 
       type="text" 
-      name="someText"
+      name="hyperfield"
     />
   </form>
 
@@ -119,12 +119,26 @@
       type="time"
     />
     <hr class="break"/>
-    <select name="select" onChange={this.onChange}>
+    <select name="select">
       <option value="option1">Option 1</option>
       <option value="option2">Option 2</option>
       <option value="option3">Option 3</option>
       <option value="option4">Option 4</option>
     </select>
+    <hr class="break"/>
+    <input
+      placeholder="datalist"
+      name="datalist"
+      label="datalist"
+      type="text"
+      list="datalist"
+    />
+    <datalist id="datalist" name="datalist">
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+      <option value="option4">Option 4</option>
+    </datalist>
     <hr class="break"/>
     <fieldset>
       <legend>Checkbox</legend>

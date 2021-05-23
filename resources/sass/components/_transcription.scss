@@ -3,6 +3,7 @@
 | COMPONENTS: Transcription
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 |
+| This is akin to the wysiwyg
 | For sections where you want your lists, links and etc. to look nice,
 | and so you don't have to backpedal any of the styles where you don't need.
 |
@@ -18,15 +19,6 @@
 
   h1, h2, h3, h4, h5, h6 {
     @include class_heading;
-    margin-top: 1em;
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    & + p {
-      margin-top: 0.7rem;
-    }
   }
 
   h1 {
