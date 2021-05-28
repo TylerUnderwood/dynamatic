@@ -32,17 +32,6 @@ fields:
                 type: text
                 icon: text
                 listable: hidden
-        ordered_list:
-          display: 'Ordered List'
-          fields:
-            -
-              import: blog_set_meta
-            -
-              handle: list
-              field:
-                type: list
-                listable: hidden
-                display: List
         blockquote:
           display: Blockquote
           fields:
@@ -61,6 +50,17 @@ fields:
                 type: text
                 listable: hidden
                 display: Cite
+        ordered_list:
+          display: 'Ordered List'
+          fields:
+            -
+              import: blog_set_meta
+            -
+              handle: list
+              field:
+                type: list
+                listable: hidden
+                display: List
         unordered_list:
           display: 'Unordered List'
           fields:
@@ -100,7 +100,6 @@ fields:
                 icon: textarea
                 listable: hidden
       buttons:
-        - h2
         - h3
         - h4
         - h5
@@ -133,3 +132,5 @@ fields:
       listable: hidden
       display: Blog
       always_show_set_button: true
+      enable_input_rules: true
+      enable_paste_rules: true

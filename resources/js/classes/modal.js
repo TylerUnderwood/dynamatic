@@ -104,6 +104,28 @@ class Modal
     }, this.duration);
   }
 
+  activeOnStart() {
+    const roughScale = (num) => {
+      const parsed = parseInt(num, 10);
+      if (isNaN(parsed)) { return 0; }
+      return parsed;
+    }
+
+    const time = roughScale(this.modal.getAttribute('active'));
+
+    if ( time > 0 ) {
+      this.setStateAttribute('idle');
+
+      setTimeout(() => {
+        this.activate();
+      }, time * 1000 );
+    } else {
+      this.activate();
+    }
+
+    this.modal.removeAttribute('active');
+  }
+
   buttonAction( button, action ) {
     button.addEventListener("click", ( event ) => {
       event.preventDefault();
@@ -117,45 +139,33 @@ class Modal
   }
 
   init() {
+    // give all modals close on esc event
     document.addEventListener( 'keydown', (event) => {
       this.escClose(event)
     });
 
+    // set active states for all modals
     if ( this.modal.hasAttribute('active') ) {
-      const roughScale = (num) => {
-        const parsed = parseInt(num, 10);
-        if (isNaN(parsed)) { return 0; }
-        return parsed;
-      }
-      let time = roughScale(this.modal.getAttribute('active'));
-
-      if ( time > 0 ) {
-        this.setStateAttribute('idle');
-
-        setTimeout(() => {
-          this.activate();
-        }, time * 1000 );
-      } else {
-        this.activate();
-      }
-
-      this.modal.removeAttribute('active');
+      this.activeOnStart();
     } else {
       this.setModalInactive();
     }
 
+    // set the events for the toggle buttons
     this.toggleButtons.forEach( (button) => {
       this.buttonAction( button, () => {
         !this.isActive() ? this.activate( button ) : this.deactivate();
       })
     });
 
+    // set the events for the open buttons
     this.openButtons.forEach( (button) => {
       this.buttonAction( button, () => {
         !this.isActive() ? this.activate( button ) : null;
       })
     });
 
+    // set the events for the close buttons
     this.closeButtons.forEach( (button) => {
       this.buttonAction( button, () => {
         this.isActive() ? this.deactivate() : null;

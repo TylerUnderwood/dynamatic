@@ -1,18 +1,53 @@
 ---
-colors:
-  - primary
-  - accent
-  - link-hover
-  - link-active
-  - text-color
-  - background-color
-  - contrast
-  - border-color
+color_sections:
+  -
+    heading: "Dynamic Theme Colors"
+    colors:
+      - primary
+      - accent
+      - link-hover
+      - link-active
+      - text-color
+      - background-color
+      - contrast
+      - border-color
+  -
+    heading: "Theme Colors"
+    colors:
+      - azure
+      - royal-purple
+      - fuchsia
+      - starburst
+      - lava-orange
+      - neon-yellow
+      - jade
+      - sea-foam
+  -
+    heading: "Theme Dark"
+    colors:
+      - dark-100
+      - dark-200
+      - dark-400
+      - dark-600
+      - dark-800
+  -
+    heading: "Theme Light"
+    colors:
+      - light-100
+      - light-200
+      - light-400
+      - light-600
+      - light-800
 ---
 
-<div class="block frame mar-t-0">
+{{ view:color_sections }}
+<div class="block">
+  <h2 class="heading h2">{{ heading }}</h2>
+
+  <hr class="break size-lg">
+
   <div class="masonry grout grout-xxs">
-  {{ view:colors }}
+  {{ colors }}
 
     <div class="tile">
       <a class="btn btn--thin btn--stout btn--border" href="#{{ value }}">
@@ -20,16 +55,24 @@ colors:
       </a>
     </div>
 
-  {{ /view:colors }}
+  {{ /colors }}
+  </div>
+
+  <hr class="break size-lg">
+
+  <div class="masonry grout grout-xs">
+    {{ colors }}
+
+    <div class="col tile tile-6 sm:tile-4 lg:tile-3">
+      {{ partial src="_swatch_card" value="{{ value }}" }}
+    </div>
+
+    {{ /colors }}
   </div>
 </div>
 
-<div class="masonry grout grout-xs">
-  {{ view:colors }}
+{{ if not last }}
+<hr class="line frame" />
+{{ /if }}
 
-  <div class="col tile tile-6 sm:tile-4 lg:tile-3">
-    {{ partial src="_swatch_card" value="{{ value }}" }}
-  </div>
-
-  {{ /view:colors }}
-</div>
+{{ /view:color_sections }}

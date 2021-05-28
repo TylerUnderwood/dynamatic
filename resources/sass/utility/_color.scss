@@ -4,6 +4,18 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
+// TODO: add color hover states
+// .hover\:c\:primary:hover {
+//   color: $primary;
+// }
+
+// .group:hover {
+//   .group-hover\:c\:primary {
+//     color: $primary;
+//   }
+// }
+
+
 /* === TEXT COLORS === */
 @include make-prefixed-classes-from-list( 'c', color, $theme_colors );
 

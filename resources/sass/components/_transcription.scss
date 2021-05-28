@@ -19,36 +19,70 @@
 
   h1, h2, h3, h4, h5, h6 {
     @include class_heading;
+    margin-top: 1.4em;
+    margin-bottom: 0.7rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   h1 {
     font-size: map-get($headings, "h1", "size" );
     color: map-get($headings, "h1", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
   }
   
   h2 {
     font-size: map-get($headings, "h2", "size" );
     color: map-get($headings, "h2", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
   }
   
   h3 {
     font-size: map-get($headings, "h3", "size" );
     color: map-get($headings, "h3", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
   }
   
   h4 {
     font-size: map-get($headings, "h4", "size" );
     color: map-get($headings, "h4", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
   }
   
   h5 {
     font-size: map-get($headings, "h5", "size" );
     color: map-get($headings, "h5", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
   }
   
   h6 {
     font-size: map-get($headings, "h6", "size" );
     color: map-get($headings, "h6", "color" );
+
+    & + * {
+      margin-top: 0;
+    }
   }
 
   ul {

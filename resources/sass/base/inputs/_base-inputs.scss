@@ -21,7 +21,7 @@ form {
 
 label {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 label[for] {
@@ -31,7 +31,6 @@ label[for] {
 .label {
   display: inline-flex;
   align-items: center;
-  text-transform: uppercase;
 }
 
 
@@ -253,6 +252,7 @@ legend {
 .legend {
   padding: 0 0.4em;
   margin: 0 -0.4em;
+  line-height: 1;
 }
 
 

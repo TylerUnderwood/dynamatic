@@ -13,6 +13,7 @@ p {
 @mixin class_copy {
   display: block;
   margin: $space_md 0 0;
+  width: 100%;
   max-width: $copy_max;
   line-height: 1.6;
   hyphens: none;
@@ -113,15 +114,16 @@ ul {
 ol {
   margin: 0;
   padding: 0;
-  list-style: decimal;
+  list-style: none;
 }
 
 @mixin class_list( $type: list ) {
   $list_top: 0.8em;
-  $list_left: 1.6em;
+  $list_left: 1.6rem;
 
   display: inline-block;
   margin: $space_md 0 0;
+  width: 100%;
   max-width: $copy_max;
   padding: 0;
   line-height: 1.4;
@@ -136,11 +138,11 @@ ol {
     list-style: decimal;
   }
 
-  @include copy_140_fix;
-
   &:first-child {
     margin-top: 0;
   }
+
+  @include copy_140_fix;
 
   & > li {
     margin: $list_top 0 0;
@@ -154,12 +156,13 @@ ol {
     @if $type == unordered {
       position: relative;
 
-      &:before {
+      &::before {
         position: absolute;
-        top: 0.55em;
+        top: 0.35em;
         left: 0;
         width: 6px;
         height: 6px;
+        border-radius: 1px;
         background-color: $accent;
         content: '';
       }
@@ -168,6 +171,10 @@ ol {
     @if $type == ordered {
       margin-left: #{$list_left * 0.6};
       padding-left: #{$list_left * 0.4};
+    }
+
+    & > p {
+      line-height: inherit;
     }
   }
 
@@ -206,15 +213,17 @@ blockquote {
 }
 
 cite {
+  font-style: normal;
   font-size: 0.8rem;
 }
 
 @mixin class_quote {
   display: inline-block;
   margin: $space_md 0 0;
+  width: 100%;
   max-width: $copy_max;
   border-left: 4px solid $accent;
-  padding: 0 0 0 1.2em;
+  padding: 0 0 0 calc(1.6rem - 4px);
   line-height: 1.4;
   font-size: 1.2rem;
       
@@ -222,7 +231,11 @@ cite {
     margin-top: 0;
   }
 
-  @include copy_160_fix;
+  @include copy_140_fix;
+
+  & > p {
+    line-height: inherit;
+  }
 }
 
 .quote {

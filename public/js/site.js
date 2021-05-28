@@ -13004,14 +13004,42 @@ var Modal = /*#__PURE__*/function () {
       }, this.duration);
     }
   }, {
+    key: "activeOnStart",
+    value: function activeOnStart() {
+      var _this3 = this;
+
+      var roughScale = function roughScale(num) {
+        var parsed = parseInt(num, 10);
+
+        if (isNaN(parsed)) {
+          return 0;
+        }
+
+        return parsed;
+      };
+
+      var time = roughScale(this.modal.getAttribute('active'));
+
+      if (time > 0) {
+        this.setStateAttribute('idle');
+        setTimeout(function () {
+          _this3.activate();
+        }, time * 1000);
+      } else {
+        this.activate();
+      }
+
+      this.modal.removeAttribute('active');
+    }
+  }, {
     key: "buttonAction",
     value: function buttonAction(button, action) {
-      var _this3 = this;
+      var _this4 = this;
 
       button.addEventListener("click", function (event) {
         event.preventDefault();
 
-        if (_this3.isAnimating()) {
+        if (_this4.isAnimating()) {
           return;
         }
 
@@ -13021,52 +13049,35 @@ var Modal = /*#__PURE__*/function () {
   }, {
     key: "init",
     value: function init() {
-      var _this4 = this;
+      var _this5 = this;
 
+      // give all modals close on esc event
       document.addEventListener('keydown', function (event) {
-        _this4.escClose(event);
-      });
+        _this5.escClose(event);
+      }); // set active states for all modals
 
       if (this.modal.hasAttribute('active')) {
-        var roughScale = function roughScale(num) {
-          var parsed = parseInt(num, 10);
-
-          if (isNaN(parsed)) {
-            return 0;
-          }
-
-          return parsed;
-        };
-
-        var time = roughScale(this.modal.getAttribute('active'));
-
-        if (time > 0) {
-          this.setStateAttribute('idle');
-          setTimeout(function () {
-            _this4.activate();
-          }, time * 1000);
-        } else {
-          this.activate();
-        }
-
-        this.modal.removeAttribute('active');
+        this.activeOnStart();
       } else {
         this.setModalInactive();
-      }
+      } // set the events for the toggle buttons
+
 
       this.toggleButtons.forEach(function (button) {
-        _this4.buttonAction(button, function () {
-          !_this4.isActive() ? _this4.activate(button) : _this4.deactivate();
+        _this5.buttonAction(button, function () {
+          !_this5.isActive() ? _this5.activate(button) : _this5.deactivate();
         });
-      });
+      }); // set the events for the open buttons
+
       this.openButtons.forEach(function (button) {
-        _this4.buttonAction(button, function () {
-          !_this4.isActive() ? _this4.activate(button) : null;
+        _this5.buttonAction(button, function () {
+          !_this5.isActive() ? _this5.activate(button) : null;
         });
-      });
+      }); // set the events for the close buttons
+
       this.closeButtons.forEach(function (button) {
-        _this4.buttonAction(button, function () {
-          _this4.isActive() ? _this4.deactivate() : null;
+        _this5.buttonAction(button, function () {
+          _this5.isActive() ? _this5.deactivate() : null;
         });
       });
     }
@@ -13351,12 +13362,28 @@ window.addEventListener('resize', function () {
 /***/ (function(module, exports) {
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById('theme').addEventListener('click', function (event) {
-    if (event.target.checked) {
-      document.body.classList.add('light-theme');
+  var themeSwitch = document.getElementById('theme');
+  var onTheme = 'light-theme';
+  var offTheme = 'dark-theme'; // switch the themes
+
+  var switchTheme = function switchTheme(trigger, onTheme, offTheme) {
+    var bodyClasses = document.body.classList;
+
+    if (trigger) {
+      bodyClasses.add(onTheme);
+      bodyClasses.remove(offTheme);
     } else {
-      document.body.classList.remove('light-theme');
+      bodyClasses.add(offTheme);
+      bodyClasses.remove(onTheme);
     }
+  }; // add class when page loads
+  // offTheme is the default
+
+
+  switchTheme(themeSwitch.checked, onTheme, offTheme); // add class when switch clicked
+
+  themeSwitch.addEventListener('click', function (event) {
+    switchTheme(event.target.checked, onTheme, offTheme);
   }, false);
 });
 
