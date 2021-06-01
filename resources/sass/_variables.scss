@@ -384,7 +384,6 @@ $space_xxl:         var(--space-xxl);
 // --- add vars to scss list --- //
 
 $spacing: (
-  0:                0,
   xxs:              $space_xxs,
   xs:               $space_xs,
   sm:               $space_sm,
@@ -392,6 +391,7 @@ $spacing: (
   lg:               $space_lg,
   xl:               $space_xl,
   xxl:              $space_xxl,
+  0:                0,
 );
 
 
@@ -435,6 +435,9 @@ $rounder:           4px;
   --btn-tall-height: 2.8em;
   --btn-height:      2.2em;
   --btn-slim-height: 1.6em;
+  --btn-color:       #{$link_color};
+  --btn-hover:       #{$link_hover};
+  --btn-active:      #{$link_active};
 }
 
 
@@ -443,3 +446,6 @@ $rounder:           4px;
 $btn_tall_height:    var(--btn-tall-height);
 $btn_height:         var(--btn-height);
 $btn_thin_height:    var(--btn-slim-height);
+$btn_color:          var(--btn-color);
+$btn_hover:          var(--btn-hover);
+$btn_active:         var(--btn-active);

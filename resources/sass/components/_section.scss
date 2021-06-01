@@ -96,9 +96,18 @@
   
   // wrap is what sets the max-width based on the column it is inside
   &__wrap {
+    --section-wrap: var(--wrapper);
     display: block;
     width: 100%;
     // horz padding
+
+    &#{$self}__inner {
+      --section-wrap: var(--inner);
+    }
+
+    &#{$self}__outer {
+      --section-wrap: var(--outer);
+    }
   }
   
   @media ( max-width: 767px ) {
@@ -111,8 +120,9 @@
     }
     
     &__wrap {
-      margin: 0;
-      max-width: unset !important;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: var(--section-wrap);
       padding: 0;
     }
   }
@@ -136,18 +146,6 @@
       --section-main-left: calc( var(--section-main) * var(--section-ratio-left) );
       --section-main-right: calc( var(--section-main) * var(--section-ratio-right) );
       --section-difference: calc( (var(--section-main-left) - var(--section-main-right)) / 2 );
-  
-      #{$self}__wrap {
-        --section-wrap: var(--wrapper);
-
-        &#{$self}__inner {
-          --section-wrap: var(--inner);
-        }
-
-        &#{$self}__outer {
-          --section-wrap: var(--outer);
-        }
-      }
 
       // this will be on the left
       &:first-child {
@@ -161,6 +159,7 @@
   
         #{$self}__wrap {
           margin-left: auto;
+          margin-right: 0;
           max-width: calc( ( var(--section-wrap) / 2 ) + var(--section-difference) );
           padding-left: 0;
         }
@@ -177,6 +176,7 @@
         }
   
         #{$self}__wrap {
+          margin-left: 0;
           margin-right: auto;
           max-width: calc( ( var(--section-wrap) / 2 ) - var(--section-difference) );
           padding-right: 0;
@@ -206,8 +206,8 @@
   // put this inside any max-width container
   &__wrap {
     position: relative;
-    // transform: translateX(-2px);
-    // width: calc(100% + 4px) !important;
+    transform: translateX(-2px);
+    width: calc(100% + 4px) !important;
     height: 100vh;
     border-width: 2px;
     border-style: solid;

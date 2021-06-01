@@ -1,21 +1,14 @@
 {{ partial src="banners/_banner" banner_height="banner--short" }}
 
-<section class="section section--aside frame">
-	<div class="section__column">
-		
-		<div class="section__block gutter">
-			<div class="section__wrap">
-				{{ partial src="_docs_nav" }}
-			</div>
+<section class="section frame gutter">
+	<div class="col md:row wrapper">
+
+		<div class="col pad-r-lg small">
+			{{ partial src="_docs_nav" }}
 		</div>
 
-	</div>
-	<div class="section__column trim pad-b-0 md:pad-t-0">
-
-		<div class="section__block gutter">
-			<div class="section__wrap md:gutter">
-				{{ partial src="documentation/{subject}" }}
-			</div>
+		<div class="col trim pad-b-0 md:pad-t-0">
+			{{ partial src="documentation/{subject}" }}
 		</div>
 
 	</div>

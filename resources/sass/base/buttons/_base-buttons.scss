@@ -73,18 +73,18 @@ button {
   align-items: center;
   flex: 0 0 auto;
   outline: none;
-  border: 2px solid $link_color;
+  border: 2px solid $btn_color;
   border-radius: $round;
   min-width: 8em;
   height: $btn_height;
-  background-color: $link_color;
+  background-color: $btn_color;
   padding: 0 1.4em;
   vertical-align: middle;
   white-space: nowrap;
   text-align: center;
   text-decoration: none;
   font-size: inherit;
-  color: $dark;
+  color: $background_color;
   transition: border-color 300ms ease,
               background-color 300ms ease,
               color 300ms ease;
@@ -93,17 +93,17 @@ button {
 
   // [active] first so :hover overrides it
   &[active] {
-    border-color: $link_active;
-    background-color: $link_active;
-    color: $dark;
+    border-color: $btn_active;
+    background-color: $btn_active;
+    color: $background_color;
   }
 
   &:hover,
   &:focus {
     outline: none;
-    border-color: $link_hover;
-    background-color: $link_hover;
-    color: $dark;
+    border-color: $btn_hover;
+    background-color: $btn_hover;
+    color: $background_color;
   }
 
   // [stealth]
@@ -114,17 +114,17 @@ button {
 
     &:hover,
     &:focus {
-      border-color: $link_color;
-      background-color: $link_color;
-      color: $dark;
+      border-color: $btn_color;
+      background-color: $btn_color;
+      color: $background_color;
     }
   }
 
   // [disabled] last so it overrides all
   &[disabled] {
-    border-color: $link_color;
-    background-color: $link_color;
-    color: $dark;
+    border-color: $btn_color;
+    background-color: $btn_color;
+    color: $background_color;
     opacity: 0.5;
     cursor: not-allowed;
   }
@@ -144,35 +144,35 @@ button {
   
   // border button //
   &--border {
-    border-color: $link_color;
+    border-color: $btn_color;
     background: transparent;
-    color: $link_color;
+    color: $btn_color;
 
     &[active] {
-      border-color: $link_active;
+      border-color: $btn_active;
       background-color: transparent;
-      color: $link_active;
+      color: $btn_active;
     }
     
     &:hover,
     &:focus {
-      border-color: $link_hover;
+      border-color: $btn_hover;
       background-color: transparent;
-      color: $link_hover;
+      color: $btn_hover;
     }
 
     &[disabled] {
-      border-color: $link_color;
+      border-color: $btn_color;
       background-color: transparent;
-      color: $link_color;
+      color: $btn_color;
     }
 
     &[stealth] {
       &:hover,
       &:focus {
-        border-color: $link_color;
+        border-color: $btn_color;
         background-color: transparent;
-        color: $link_color;
+        color: $btn_color;
       }
     }
 
@@ -275,5 +275,19 @@ button {
       width: 100%;
       max-width: unset;
     }
+  }
+
+
+  // === button colors === //
+  &--warn {
+    --btn-color:       #ffdd00;
+    --btn-hover:       #ffff44;
+    --btn-active:      #ffcc00;
+  }
+
+  &--error {
+    --btn-color:       #ff2200;
+    --btn-hover:       #ff4422;
+    --btn-active:      #dd2200;
   }
 }
