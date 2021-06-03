@@ -30,3 +30,19 @@
 .float-right {
   float: right;
 }
+
+@include add-breakpoint-prefixes() {
+  &center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  &float-left {
+    float: left;
+  }
+  
+  &float-right {
+    float: right;
+  }
+}

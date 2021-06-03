@@ -19,7 +19,7 @@
     font-size: $space;
   }
   
-  @include make-classes-for-breakpoints( size, font-size, $spacing );
+  @include make-classes-from-list-for-prefixes( size, font-size, $spacing );
 }
 
 

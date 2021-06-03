@@ -124,7 +124,6 @@ button {
   &[disabled] {
     border-color: $btn_color;
     background-color: $btn_color;
-    color: $background_color;
     opacity: 0.5;
     cursor: not-allowed;
   }

@@ -52,7 +52,7 @@ $grout_space: var(--grout-space);
     --grout-space: #{$space};
   }
 
-  @include make-classes-for-breakpoints( 'grout', --grout-space, $spacing );
+  @include make-classes-from-list-for-prefixes( 'grout', --grout-space, $spacing );
 }
 
 
@@ -90,7 +90,7 @@ $tile_flex: var(--tile-flex);
     --tile-flex: 0;
   }
 
-  @include make-classes-for-breakpoints( 'tile', --tile-width, $columns ) {
+  @include make-classes-from-list-for-prefixes( 'tile', --tile-width, $columns ) {
     --tile-flex: 0;
   };
 

@@ -1,0 +1,29 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Display 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$display_classes: (
+  show: (
+    display: initial,
+  ),
+  hide: (
+    display: none,
+  ),
+  block: (
+    display: block,
+  ),
+  inline: (
+    display: inline,
+  ),
+  inline-block: (
+    display: inline-block,
+  ),
+  inline-flex: (
+    display: inline-flex,
+  ),
+  flex: (
+    display: flex,
+  ),
+);

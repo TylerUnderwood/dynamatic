@@ -1,11 +1,11 @@
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| UTILITY: Shapes
+| COMPONENTS: Shapes
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
 /* === SQUARE === */
-.square::before {
+.square {
   display: block;
   width: 1em;
   height: 1em;
@@ -14,7 +14,7 @@
 }
 
 /* === CIRCLE === */
-.circle::before {
+.circle {
   display: block;
   border-radius: 50%;
   overflow: hidden;

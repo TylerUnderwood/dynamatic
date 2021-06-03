@@ -1,0 +1,75 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| UTILITY: Flex 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$flex_classes: (
+  // === Direction === //
+  flex-row: (
+    flex-direction: row,
+  ),
+  flex-column: (
+    flex-direction: column,
+  ),
+  flex-row-reverse: (
+    flex-direction: row-reverse,
+  ),
+  flex-column-reverse: (
+    flex-direction: column-reverse,
+  ),
+  // === Justify === //
+  justify-start: (
+    justify-content: flex-start,
+  ),
+  justify-end: (
+    justify-content: flex-end,
+  ),
+  justify-center: (
+    justify-content: center,
+  ),
+  justify-between: (
+    justify-content: space-between,
+  ),
+  justify-around: (
+    justify-content: space-around,
+  ),
+  justify-evenly: (
+    justify-content: space-evenly,
+  ),
+  // === Align Items === //
+  items-start: (
+    align-items: flex-start,
+  ),
+  items-end: (
+    align-items: flex-end,
+  ),
+  items-center: (
+    align-items: center,
+  ),
+  items-stretch: (
+    align-items: stretch,
+  ),
+  items-baseline: (
+    align-items: baseline,
+  ),
+  // === Align Content === //
+  content-start: (
+    align-content: flex-start,
+  ),
+  content-end: (
+    align-content: flex-end,
+  ),
+  content-center: (
+    align-content: center,
+  ),
+  content-between: (
+    align-content: space-between,
+  ),
+  content-around: (
+    align-content: space-around,
+  ),
+  content-evenly: (
+    align-content: space-evenly,
+  ),  
+);

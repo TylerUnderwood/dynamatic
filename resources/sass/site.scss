@@ -38,6 +38,7 @@
 =
 ========================================================================== */
 @import "components/transcription";
+@import "components/layout";
 @import "components/section";
 @import "components/gutter";
 @import "components/masonry";
@@ -54,6 +55,7 @@
 @import "components/social-icons";
 @import "components/contact-form";
 @import 'components/arch.scss';
+@import "components/shapes";
 
 
 
@@ -63,15 +65,16 @@
 = 
 =
 ========================================================================== */
-@import "utility/text";
-@import "utility/color";
-@import "utility/border";
-@import "utility/shapes";
-@import "utility/position";
+@import "utility/display";
+@import "utility/flex";
 @import "utility/layout";
 @import "utility/alignment";
+@import "utility/position";
+@import "utility/border";
 @import "utility/width";
 @import "utility/whitespace";
+@import "utility/text";
+@import "utility/color";
 
 
 

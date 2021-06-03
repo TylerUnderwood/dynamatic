@@ -1,3 +1,8 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Gutter
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
 
 :root {
   @include fluid-rule(--horizontal-space, $min_width, $max_width, $horz_space_min, $horz_space_max);

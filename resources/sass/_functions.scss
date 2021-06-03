@@ -67,7 +67,7 @@
 }
 
 // This is the same as the make all mixin but it is expected to be inside the addBreakpointPrefixes mixin
-@mixin make-classes-for-breakpoints( $class, $properties, $list ) {
+@mixin make-classes-from-list-for-prefixes( $class, $properties, $list ) {
   @each $key, $value in $list {
     &#{$class}-#{$key} {
       @each $property in $properties {
@@ -95,7 +95,7 @@
   }
 }
 
-@mixin make-list-of-classes-from-list-for-breakpoints( $classList, $varList, $defaultVar ) {
+@mixin make-list-of-classes-from-list-for-prefixes( $classList, $varList, $defaultVar ) {
   @each $className, $properties in $classList {
     // make default class inside breakpoints
     @if $defaultVar {
@@ -107,9 +107,29 @@
       }
     }
     // make classes from list inside breakpoints
-    @include make-classes-for-breakpoints( $className, $properties, $varList );
+    @include make-classes-from-list-for-prefixes( $className, $properties, $varList );
   }
 }
+
+@mixin make-classes-from-object( $object ) {
+  @each $class, $rules in $object {
+    .#{$class} {
+      @each $rule, $type in $rules {
+        #{$rule}: #{$type};
+      }
+    }
+  }
+};
+
+@mixin make-classes-from-object-for-prefixes( $object ) {
+  @each $class, $rules in $object {
+    &#{$class} {
+      @each $rule, $type in $rules {
+        #{$rule}: #{$type};
+      }
+    }
+  }
+};
 
 // This makes classes that are prefixed, separated by a colon
 @mixin make-prefixed-classes-from-list( $prefix, $rule, $list ) {
@@ -117,52 +137,6 @@
     .#{$prefix}\:#{$key} {
       #{$rule}: $value;
     }
-  }
-}
-
-@mixin make-class-with-breakpoint-prefixes( $className ) {
-  .#{$className} {
-    @content;
-  }
-
-  @each $point, $width in $breakpoints {
-    @media ( min-width: #{$width} ) {
-      .#{$point}\:#{$className} {
-        @content;
-      }
-    }
-  }
-}
-
-// this mixin puts all of the other makeClasses together
-@mixin make-list-of-classes-from-list-with-breakpoint-prefixes( $classTypesList, $defaultVar, $varList, $breakpointsList: $breakpoints ) {
-  @each $className, $properties in $classTypesList {
-    // make the default class
-    .#{$className} {
-      @each $property in $properties {
-        #{$property}: $defaultVar;
-      }
-    }
-    // make classes from list
-    @include make-classes-from-list( $className, $properties, $varList );
-  }
-
-  @content;
-
-  // create breakpoints
-  @include add-breakpoint-prefixes( $breakpointsList ) {
-    @each $className, $properties in $classTypesList {
-      // make default class inside breakpoints
-      &#{$className} {
-        @each $property in $properties {
-          #{$property}: $defaultVar;
-        }
-      }
-      // make classes from list inside breakpoints
-      @include make-classes-for-breakpoints( $className, $properties, $varList );
-    }
-
-    @content;
   }
 }
 

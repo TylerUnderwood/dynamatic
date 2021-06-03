@@ -36,7 +36,7 @@
   }
 
   // STATIC
-  @include make-classes-for-breakpoints( mxw, max-width, $max_widths );
+  @include make-classes-from-list-for-prefixes( mxw, max-width, $max_widths );
 }
 
 
@@ -46,7 +46,7 @@
 @include make-classes-from-list( w, width, $widths );
 
 @include add-breakpoint-prefixes() {
-  @include make-classes-for-breakpoints( w, width, $widths );
+  @include make-classes-from-list-for-prefixes( w, width, $widths );
 }
 
 

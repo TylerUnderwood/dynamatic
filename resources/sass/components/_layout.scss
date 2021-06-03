@@ -1,0 +1,55 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Layout 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/* === Row === */
+@mixin class-row {
+  display: flex;
+  flex-direction: row;
+
+  &-t {
+    align-items: flex-start;
+  }
+  &-r {
+    justify-content: flex-end;
+  }
+  &-b {
+    align-items: flex-end;
+  }
+  &-l {
+    justify-content: flex-start;
+  }
+  &-h {
+    justify-content: center;
+  }
+  &-v {
+    align-items: center;
+  }
+}
+
+/* === Columns === */
+@mixin class-col {
+  display: flex;
+  flex-direction: column;
+
+  &-t {
+    justify-content: flex-start;
+  }
+  &-r {
+    align-items: flex-end;
+  }
+  &-b {
+    justify-content: flex-end;
+  }
+  &-l {
+    align-items: flex-start;
+  }
+  &-h {
+    align-items: center;
+  }
+  &-v {
+    justify-content: center;
+  }
+}
