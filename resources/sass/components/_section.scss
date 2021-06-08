@@ -42,6 +42,7 @@
 | Secitoning
 |–––––––––––––––––––––––––
 */
+$section_wrap: 1280px;
 
 .section {
   $self: &;
@@ -49,6 +50,26 @@
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
+  --section-ratio: calc(1 / 2);
+  --section-wrap: #{$section_wrap};
+
+  // ratio modifiers
+  &--aside {
+    --section-ratio: calc(1 / 3);
+  }
+
+  &--main {
+    --section-ratio: calc(2 / 3);
+  }
+
+  // wrap modifiers
+  &--inner {
+    --section-wrap: var(--inner);
+  }
+
+  &--outer {
+    --section-wrap: var(--outer);
+  }
 
   // columns have no padding or margin verticalty, because they only distinguish width
   &__column {
@@ -60,7 +81,7 @@
     width: 100%;
     padding-right: 0;
     padding-left: 0;
-    // vert padding
+    // vertical padding
     // background-color
   }
   
@@ -90,22 +111,17 @@
     width: 100%;
     padding: 0 !important;
     content: '';
+
+    & > * {
+      display: none;
+    }
   }
   
   // wrap is what sets the max-width based on the column it is inside
   &__wrap {
-    --section-wrap: var(--wrapper);
     display: block;
     width: 100%;
     // horz padding
-
-    &#{$self}__inner {
-      --section-wrap: var(--inner);
-    }
-
-    &#{$self}__outer {
-      --section-wrap: var(--outer);
-    }
   }
   
   @media ( max-width: 767px ) {
@@ -126,29 +142,18 @@
   }
   
   @media ( min-width: 768px ) {
-    flex-direction: row;
-    --section-main: var(--wrapper);
-    --section-ratio: calc(1 / 2);
-
-    &--aside {
-      --section-ratio: calc(1 / 3);
-    }
-
-    &--main {
-      --section-ratio: calc(2 / 3);
-    }
-
     &__column {
+      --section-width: 100vw;
       --section-ratio-left: calc( var(--section-ratio) );
       --section-ratio-right: calc( 1 - var(--section-ratio) );
-      --section-main-left: calc( var(--section-main) * var(--section-ratio-left) );
-      --section-main-right: calc( var(--section-main) * var(--section-ratio-right) );
-      --section-difference: calc( (var(--section-main-left) - var(--section-main-right)) / 2 );
+      --section-column-left: calc( var(--section-width) * var(--section-ratio-left) );
+      --section-column-right: calc( var(--section-width) * var(--section-ratio-right) );
+      --section-difference: calc( (var(--section-column-left) - var(--section-column-right)) / 2 );
 
       // this will be on the left
       &:first-child {
         align-items: flex-end;
-        max-width: calc( 50% + var(--section-difference) );
+        max-width: calc( 100vw * var(--section-ratio-left) );
   
         #{$self}__block {
           justify-content: flex-end;
@@ -166,7 +171,7 @@
       // this will be on the right
       &:last-child {
         align-items: flex-start;
-        max-width: calc( 50% - var(--section-difference) );
+        max-width: calc( 100vw * var(--section-ratio-right) );
   
         #{$self}__block {
           justify-content: flex-start;
@@ -179,6 +184,20 @@
           max-width: calc( ( var(--section-wrap) / 2 ) - var(--section-difference) );
           padding-right: 0;
         }
+      }
+    }
+  }
+
+  @media ( min-width: #{$section_wrap} ) {
+    &__column {
+      --section-width: var(--section-wrap);
+
+      &:first-child {
+        max-width: calc( 50% + var(--section-difference) );
+      }
+
+      &:last-child {
+        max-width: calc( 50% - var(--section-difference) );
       }
     }
   }
