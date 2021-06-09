@@ -1,0 +1,135 @@
+
+<div class="block">
+
+  <h2 class="heading h2">Intro</h2>
+
+  <p class="copy">
+    This is where we build the core template, the foundation upon which all the other markup lays. Any upates should be minimal and not subect to changes. The template has a strict order of nesting. First inside the body element, should be the template div. Then inside of the template div should be, in order, header, main, and footer elements. Here is what the template must contain.
+  </p>
+
+  <ul class="ul frame-b">
+    <li class="li">
+      <a href="#html_section" class="link" stealth>HTML</a>
+      <code class="code small mar-l">&#60;html></code>
+    </li>
+    <li class="li">
+      <a href="#body_section" class="link" stealth>Body</a>
+      <code class="code small mar-l">&#60;body id="body"></code>
+    </li>
+    <li class="li">
+      <a href="#site_section" class="link" stealth>Site</a>
+      <code class="code small mar-l">&#60;div id="site" class="template-class"></code>
+    </li>
+    <li class="li">
+      <a href="#header_section" class="link" stealth>Header</a>
+      <code class="code small mar-l">&#60;header id="header"></code>
+    </li>
+    <li class="li">
+      <a href="#main_section" class="link" stealth>Main</a>
+      <code class="code small mar-l">&#60;main id="main"></code>
+    </li>
+    <li class="li">
+      <a href="#footer_section" class="link" stealth>Footer</a>
+      <code class="code small mar-l">&#60;footer id="footer"></code>
+    </li>
+    <li class="li">
+      <a href="#section_section" class="link" stealth>Section</a>
+      <code class="code small mar-l">&#60;section id="section_one" id="section"></code>
+    </li>
+  </ul>
+
+  <h3 id="html_section" class="heading h3 pad-t-lg">HTML</h3>
+  <p class="copy">
+    The <code class="code">html</code> tag has the root text size which I've set it to be <code class="code">16px</code> below a screen width of <code class="code">480px</code> and up to <code class="code">20px</code> at a screen width of <code class="code">1600px</code>. This is a fluid width, so anywhere between <code class="code">480px</code> and <code class="code">1600px</code> will be dynamicly calculated for a smooth transition.
+  </p>
+
+  <h3 id="body_section" class="heading h3 pad-t-lg">Body</h3>
+  <p class="copy">
+    The body element cuts off horizontal overflow, sets the defaut text styles and the background color for the whole site. I've set the default font size to <code class="code">1rem</code> to ensure all text folows the fluid font at the root. The text color and background color are set to a css var so you can easily change it for themes. So, if you want a new theme just make a class and add it to the body.
+  </p>
+
+  <h3 id="site_section" class="heading h3 pad-t-lg">Site</h3>
+  <p class="copy">
+    The <code class="code">#site</code> element can be used to hook in Vue or other frameworks. This will, at the least, fill the viewport so that the site is never smaller than the browser window. The site element also gives the template structure, almost all cases a flex column is enough, so I have set that as the default. If you want it to change just add a class.
+  </p>
+
+  <h3 id="header_section" class="heading h3 pad-t-lg">Header</h3>
+  <p class="copy">
+    The header comes first, but should always be on top.
+  </p>
+
+  <h3 id="main_section" class="heading h3 pad-t-lg">Main</h3>
+  <p class="copy">
+    The main is in the middle, and it should fill the space between, but be below both the header and footer.
+  </p>
+
+  <h3 id="footer_section" class="heading h3 pad-t-lg">Footer</h3>
+  <p class="copy">
+    The footer is at the bottom, below the header but above the main.
+  </p>
+
+  <hr class="line mar-v-xl">
+
+  <h2 class="heading h2 c:text-color-alt">The Flow</h2>
+
+<pre class="pre"><code class="code">&#60;html>
+  &#60;head>Meta or whatevs&#60;/head>
+  &#60;body id="body">
+    &#60;div id="site" class="template-class">
+
+      &#60;header id="header">Header stuff&#60;/header>
+
+      &#60;main id="main">
+
+        This can be whatever, but it is usualy like this
+
+        &#60;section id="section_one">Section stuff&#60;/section>
+
+        &#60;section id="section_two">Section stuff&#60;/section>
+
+        &#60;section id="section_three">Section stuff&#60;/section>
+        
+      &#60;/main>
+
+      &#60;footer id="footer">Footer stuff&#60;/footer>
+
+    &#60;/div>
+  &#60;/body>
+&#60;/html></code></pre>
+
+</div>
+
+<hr class="line mar-v-xl">
+
+<h2 class="heading h2 c:text-color-alt">The Style</h2>
+
+<pre class="pre"><code class="code">body {
+  overflow-x: clip;
+  background-color: var(--background);
+  font-size: 1rem;
+  text-color: var(--text-color);
+}
+
+#site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#header {
+  position: relative;
+  z-index: 3;
+}
+
+#main {
+  position: relative;
+  z-index: 1;
+  flex: 1 0 auto;
+}
+
+#footer {
+  position: relative;
+  z-index: 2;
+}</code></pre>
+
+</div>

@@ -5,11 +5,11 @@
 */
 
 :root {
-  @include fluid-rule(--horizontal-space, $min_width, $max_width, $horz_space_min, $horz_space_max);
+  @include fluid-value(--horizontal-space, $min_width, $max_width, $horz_space_min, $horz_space_max);
 }
 $horizontal_space: var(--horizontal-space);
 
 :root {
-  @include fluid-rule(--vertical-space, $min_width, $max_width, $vert_space_min, $vert_space_max);
+  @include fluid-value(--vertical-space, $min_width, $max_width, $vert_space_min, $vert_space_max);
 }
 $vertical_space: var(--vertical-space);

@@ -295,7 +295,7 @@
 ========================================================================== */
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| BASE: Body
+| BASE: Template
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 *,
@@ -311,6 +311,7 @@
 
 [scroll-lock] {
   overflow: hidden !important;
+  overflow: clip !important;
 }
 
 @media (max-width: 480px) {
@@ -331,6 +332,7 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
   overflow-x: clip;
   overflow-y: auto;
   background-color: var(--background-color);
@@ -339,8 +341,6 @@ body {
   font-weight: normal;
   font-family: "Overpass", Arial, sans-serif;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   color: var(--text-color);
   scroll-behavior: smooth;
   -ms-overflow-style: none;
@@ -370,12 +370,8 @@ main {
 
 #main {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   flex: 1 0 auto;
-}
-
-section {
-  display: block;
 }
 
 footer {
@@ -384,7 +380,11 @@ footer {
 
 #footer {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+}
+
+section {
+  display: block;
 }
 
 /*
@@ -495,6 +495,9 @@ p {
 }
 .copy:first-child {
   margin-top: 0;
+}
+.copy > code {
+  font-size: 0.9rem;
 }
 
 /*
@@ -1875,6 +1878,9 @@ svg {
 }
 .transcription p:first-child {
   margin-top: 0;
+}
+.transcription p > code {
+  font-size: 0.9rem;
 }
 .transcription h1, .transcription h2, .transcription h3, .transcription h4, .transcription h5, .transcription h6 {
   display: flex;
@@ -4622,6 +4628,14 @@ svg {
 }
 
 /* === inset === */
+.inset {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .inset-t-r {
   position: absolute;
   top: 0;

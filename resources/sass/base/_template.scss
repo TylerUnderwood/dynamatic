@@ -1,6 +1,6 @@
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| BASE: Body
+| BASE: Template
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
@@ -17,14 +17,16 @@
 
 [scroll-lock] {
   overflow: hidden !important;
+  overflow: clip !important;
 }
 
 html {
-  @include fluid-rule(font-size, $min_width, $max_width, $font_min, $font_max);
+  @include fluid-value(font-size, $min_width, $max_width, $font_min, $font_max);
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   overflow-x: clip;
   overflow-y: auto;
   background-color: $background_color;
@@ -33,8 +35,6 @@ body {
   font-weight: normal;
   font-family: $copy_font;
   text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   color: $text_color;
 
   // Firefox only
@@ -48,6 +48,8 @@ body {
   }
 }
 
+
+// this will, at the least, fill the viewport and gives the template structure
 #site {
   display: flex;
   flex-direction: column;
@@ -58,6 +60,7 @@ header {
   display: block;
 }
 
+// header comes first but should always be on top
 #header {
   position: relative;
   z-index: 3;
@@ -67,21 +70,24 @@ main {
   display: block;
 }
 
+// main is in the middle and it should fill the space between but be below both the header and footer
 #main {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   flex: 1 0 auto;
-}
-
-section {
-  display: block;
 }
 
 footer {
   display: block;
 }
 
+// footer 
 #footer {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+}
+
+// seciton
+section {
+  display: block;
 }

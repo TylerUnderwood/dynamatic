@@ -83,6 +83,14 @@
 }
 
 /* === inset === */
+.inset {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 // corner
 .inset-t-r {
   position: absolute;

@@ -15,7 +15,7 @@
   @return $number;
 }
 
-@mixin fluid-rule($properties, $min_vw, $max_vw, $min_value, $max_value) {
+@mixin fluid-value($properties, $min_vw, $max_vw, $min_value, $max_value) {
   @media ( max-width: #{$min_vw} ) {
     @each $property in $properties {
       #{$property}: $min_value;

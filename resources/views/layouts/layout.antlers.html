@@ -10,13 +10,12 @@
 		<title>{{ site:name }} | {{ view:error_code or title }}</title>
 		<link rel="shortcut icon" href="{{ site:favicon }}" type="image/x-icon" />
 		<link rel="stylesheet" href="{{ mix src='css/site.css' }}">
-		<script src="{{ mix src='/js/site.js' }}"></script>
 		<script src="https://use.fontawesome.com/e0e6298726.js"></script>
 	</head>
 
-	<body class="{{ template or 'main' }}-layout">
+	<body id="body">
 
-		<div id="site">
+		<div id="site" class="{{ template or 'main' }}-template">
 			{{ partial src="headers/_header" }}
 
 			<main id="main" class="main">
@@ -24,7 +23,9 @@
 			</main> <!-- END #main -->
 	
 			{{ partial src="footers/_footer" }}
-		</div> <!-- END Vue App -->
+		</div> <!-- END #site -->
+
+		<script src="{{ mix src='/js/site.js' }}"></script>
 
 	</body>
 
