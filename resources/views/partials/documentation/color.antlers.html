@@ -61,13 +61,13 @@ color_sections:
   <hr class="break size-lg">
 
   <div class="masonry grout grout-xs">
-    {{ colors }}
+  {{ colors }}
 
-    <div class="col tile tile-6 sm:tile-4 lg:tile-3">
+    <div class="col tile tile-half sm:tile-1of3 lg:tile-1of4">
       {{ partial src="_swatch_card" value="{{ value }}" }}
     </div>
 
-    {{ /colors }}
+  {{ /colors }}
   </div>
 </div>
 

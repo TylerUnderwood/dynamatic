@@ -111,10 +111,6 @@ $light_800:         var(--light-800);
   --contrast:          var(--background-200);
   --border-color:      var(--background-400);
 
-  --background-rgb:    40, 42, 48;
-  --contrast-rgb:      32, 34, 40;
-  --border-color-rgb:  24, 26, 32;
-
   // Text
   --text-color:        var(--light);
   --text-color-off:    #{$grey};
@@ -136,11 +132,6 @@ $light_800:         var(--light-800);
   --background-800:    #{$light_800};
   --contrast:          var(--background-200);
   --border-color:      var(--background-400);
-
-  --background-rgb:    255, 255, 255;
-  --contrast-rgb:      248, 248, 248;
-  --border-color-rgb:  238, 238, 238;
-
   --text-color:        #{$dark};
 }
 
@@ -284,7 +275,7 @@ $breakpoints: (
 );
 
 //////////////////////////
-// WIDTH
+// MAX WIDTHS
 
 // base structure
 $min_width:       480px;
@@ -296,54 +287,35 @@ $content_max:     64rem;
 $copy_max:        36rem;
 
 :root {
-  --outer: #{$site_max};
-  --wrapper: #{$content_max};
-  --inner: #{$copy_max};
+  --outer:        #{$site_max};
+  --wrapper:      #{$content_max};
+  --inner:        #{$copy_max};
 }
 
-$outer:           $site_max;
-$wrapper:         $content_max;
-$inner:           $copy_max;
+$outer:           var(--outer);
+$wrapper:         var(--wrapper);
+$inner:           var(--inner);
 
-// utility
-$max_widths: (
-  120:            6rem,
-  240:            12rem,
-  360:            18rem,
-  480:            24rem,
-  720:            36rem,
-  1080:           54rem,
-  1280:           64rem,
-  1600:           80rem,
-);
+//////////////////////////
+// COMMON WIDTHS
 
 $widths: (
-  20:             20%,
-  25:             25%,
-  33:             33.3333%,
-  40:             40%,
-  50:             50%,
-  60:             60%,
-  66:             66.6666%,
-  75:             75%,
-  80:             80%,
-  100:            100%,
-);
-
-// the number is for x out of twelve
-$columns: (
-  1:              calc( (1 / 12) * 100% ),
-  2:              calc( (2 / 12) * 100% ),
-  3:              calc( (3 / 12) * 100% ),
-  4:              calc( (4 / 12) * 100% ),
-  5:              calc( (5 / 12) * 100% ),
-  6:              calc( (6 / 12) * 100% ),
-  7:              calc( (7 / 12) * 100% ),
-  8:              calc( (8 / 12) * 100% ),
-  9:              calc( (9 / 12) * 100% ),
-  10:             calc( (10 / 12) * 100% ),
-  11:             calc( (11 / 12) * 100% ),
-  12:             calc( (12 / 12) * 100% ),
+  1of12:              calc( (1 / 12) * 100% ),  // 0.08333
+  1of6:               calc( (1 / 6) * 100% ),   // 0.16666
+  1of5:               calc( (1 / 5) * 100% ),   // 0.20
+  1of4:               calc( (1 / 4) * 100% ),   // 0.25
+  1of3:               calc( (1 / 3) * 100% ),   // 0.33333
+  2of5:               calc( (2 / 5) * 100% ),   // 0.40
+  5of12:              calc( (5 / 12) * 100% ),  // 0.41666
+  half:               calc( (1 / 2) * 100% ),   // 0.50
+  7of12:              calc( (7 / 12) * 100% ),  // 0.58333
+  3of5:               calc( (2 / 5) * 100% ),   // 0.60
+  2of3:               calc( (2 / 3) * 100% ),   // 0.66666
+  3of4:               calc( (3 / 4) * 100% ),   // 0.75
+  4of5:               calc( (4 / 5) * 100% ),   // 0.80
+  5of6:               calc( (5 / 6) * 100% ),   // 0.83333
+  11of12:             calc( (11 / 12) * 100% ), // 0.91666
+  full:               100%,
 );
 
 

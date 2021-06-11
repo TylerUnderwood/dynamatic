@@ -21,11 +21,11 @@
   &-l {
     justify-content: flex-start;
   }
-  &-h {
-    justify-content: center;
-  }
   &-v {
     align-items: center;
+  }
+  &-h {
+    justify-content: center;
   }
 }
 
@@ -46,10 +46,10 @@
   &-l {
     align-items: flex-start;
   }
-  &-h {
-    align-items: center;
-  }
   &-v {
     justify-content: center;
+  }
+  &-h {
+    align-items: center;
   }
 }

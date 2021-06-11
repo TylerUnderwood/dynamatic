@@ -6,37 +6,28 @@
 
 
 /* ===== MAX WIDTHS ===== */
-
-/* dynamic */
-.mxw-copy {
+.copy-max {
   max-width: $copy_max;
 }
 
-.mxw-content {
+.content-max {
   max-width: $content_max;
 }
 
-.mxw-site {
+.site-max {
   max-width: $site_max;
 }
 
-/* static */
-@include make-classes-from-list( mxw, max-width, $max_widths );
-
 @include add-breakpoint-prefixes() {
-  // DYNAMIC
-  &mxw-copy {
+  &copy-max {
     max-width: $copy_max;
   }
-  &mxw-content {
+  &content-max {
     max-width: $content_max;
   }
-  &mxw-site {
+  &site-max {
     max-width: $site_max;
   }
-
-  // STATIC
-  @include make-classes-from-list-for-prefixes( mxw, max-width, $max_widths );
 }
 
 
@@ -52,8 +43,14 @@
 
 /* ===== No Srink ===== */
 
-.no-shrink {
+.rigid {
   flex: 0 0 auto;
+}
+
+@include add-breakpoint-prefixes() {
+  &rigid {
+    flex: 0 0 auto;
+  }
 }
 
 
@@ -68,4 +65,16 @@
   margin-right: -50vw;
   width: 100vw;
   max-width: unset;
+}
+
+@include add-breakpoint-prefixes() {
+  &force-full {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    max-width: unset;
+  }
 }

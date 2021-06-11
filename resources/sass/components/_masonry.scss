@@ -75,7 +75,7 @@ $tile_flex: var(--tile-flex);
   width: $tile_width;
 }
 
-@include make-classes-from-list( 'tile', --tile-width, $columns ) {
+@include make-classes-from-list( 'tile', --tile-width, $widths ) {
   --tile-flex: 0;
 };
 
@@ -90,7 +90,7 @@ $tile_flex: var(--tile-flex);
     --tile-flex: 0;
   }
 
-  @include make-classes-from-list-for-prefixes( 'tile', --tile-width, $columns ) {
+  @include make-classes-from-list-for-prefixes( 'tile', --tile-width, $widths ) {
     --tile-flex: 0;
   };
 

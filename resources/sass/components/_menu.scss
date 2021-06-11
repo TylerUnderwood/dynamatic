@@ -6,7 +6,7 @@
 
 /* ===== VARIABLES ===== */
 
-$menu_bg: var(--contrast-rgb);
+$menu_bg: #202228;
 $menu_color: $text_color;
 $menu_time: 240ms;
 
@@ -28,7 +28,7 @@ $menu_buffer: 1em;
   flex-flow: column;
   width: 100vw;
   height: 100vh;
-  background-color: rgb($menu_bg);
+  background-color: $menu_bg;
   padding: 0 $header_padding;
   line-height: 1;
   font-size: 2.4rem;
