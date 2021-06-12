@@ -12,64 +12,72 @@ tewelve_tiles:
   - Tile 10
   - Tile 11
   - Tile 12
-mws:
-  - m\\w/m\\w/m
-  - m\\w/m\\w/m
-  - m\\w/m\\w/m
-  - m\\w/m\\w/m
-  - m\\w/m\\w/m
-  - m\\w/m\\w/m
-  - m\\w/m\\w/m
+random_tiles:
+  - Hello this is a long tile
+  - Short
+  - W
+  - This is a tile
+  - Something
+  - Somethin else
+  - Lorem Ipsum
+  - Fart
+masonry_types:
+  -
+    heading: Default
+    grout: grout
+    tile: tile
+  -
+    heading: Grout Types
+    grout: grout grout-md sm:grout md:grout-0 lg:grout-lg
+    tile: tile
+  -
+    heading: Tile Types
+    grout: grout
+    tile: tile tile-1of3 sm:tile md:tile-auto lg:tile-1of5
 ---
 
 <div class="block">
-  
-  <div class="masonry grout">
+{{ view:masonry_types }}
 
-    {{ view:tewelve_tiles }}
-    <div class="tile">
-      <div class="card bg:secondary pad-v-xxs pad-h">
-        <span class="meta small bold">{{ value }}</span>
-      </div>
-    </div>
-    {{ /view:tewelve_tiles }}
-
+  <h2 class="heading h2">{{ heading }}</h2>
+  <div class="mar-t-sm w-full small">
+    <span class="meta unsetcase">grout classes:</span>
+    <code class="code">{{ grout }}</code>
+  </div>
+  <div class="mar-t-xxs w-full small">
+    <span class="meta unsetcase">tile classes:</span>
+    <code class="code">{{ tile }}</code>
   </div>
 
-  <hr class="line mar-v-lg">
+  <div class="break size-lg"></div>
   
-  <div class="masonry grout grout-xxs sm:grout-0 md:grout">
+  <h5 class="heading h5 mar-b-sm">Twelve Tiles</h5>
+  <div class="masonry {{ grout }}">
 
     {{ view:tewelve_tiles }}
-    <div class="tile tile-1of4 sm:tile-auto">
+    <div class="{{ tile }}">
       {{ partial src="_demo_tile" text="{{ value }}" }}
     </div>
     {{ /view:tewelve_tiles }}
 
   </div>
 
-  <hr class="line mar-v-lg">
-  
-  <div class="masonry grout sm:grout-xxs">
+  <div class="break size-lg"></div>
 
-    {{ view:mws }}
-    <div class="tile tile-1of4 sm:tile">
+  <h5 class="heading h5 mar-b-sm">Random Tiles</h5>
+  <div class="masonry {{ grout }}">
+
+    {{ view:random_tiles }}
+    <div class="{{ tile }}">
       {{ partial src="_demo_tile" text="{{ value }}" }}
     </div>
-    {{ /view:mws }}
+    {{ /view:random_tiles }}
 
   </div>
-
-  <hr class="line mar-v-lg">
   
-  <div class="masonry grout sm:grout-0">
+  {{ if not last }}
+  <hr class="line frame">
+  {{ /if }}
 
-    {{ view:tewelve_tiles }}
-    <div class="tile tile-1of4 sm:tile">
-      {{ partial src="_demo_tile" text="{{ value }}" }}
-    </div>
-    {{ /view:tewelve_tiles }}
-
-  </div>
-
+{{ /view:masonry_types }}
 </div>

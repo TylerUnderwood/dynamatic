@@ -346,6 +346,7 @@ $space_xxl:            var(--space-xxl);
 
 // --- add vars to scss list --- //
 $spacing: (
+  0:                   0,
   xxs:                 $space_xxs,
   xs:                  $space_xs,
   sm:                  $space_sm,
@@ -353,7 +354,6 @@ $spacing: (
   lg:                  $space_lg,
   xl:                  $space_xl,
   xxl:                 $space_xxl,
-  0:                   0,
 );
 
 
