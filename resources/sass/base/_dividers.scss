@@ -31,6 +31,28 @@ hr {
   @include class_line;
 }
 
+
+/*
+|–––––––––––––––––––––––––
+| Line Break
+|–––––––––––––––––––––––––
+*/
+
+br {
+  clear: both;
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  line-height: inherit;
+}
+
+
+/*
+|–––––––––––––––––––––––––
+| Spacers
+|–––––––––––––––––––––––––
+*/
+
 /* === BREAK === */
 .break {
   min-width: 100%;
@@ -57,30 +79,9 @@ hr {
 
 /*
 |–––––––––––––––––––––––––
-| Line Break
-|–––––––––––––––––––––––––
-*/
-
-br {
-  clear: both;
-  display: inline-block;
-  width: 0;
-  height: 1em;
-  line-height: inherit;
-}
-
-
-/*
-|–––––––––––––––––––––––––
 | Filler
 |–––––––––––––––––––––––––
 */
-
-/* === FILLER === */
-// This is for an element you want to fill the space between others
-.fill {
-  flex: 1 1 auto;
-}
 
 // This is used as a sibling element inside a flex element to fill empty space
 .filler {

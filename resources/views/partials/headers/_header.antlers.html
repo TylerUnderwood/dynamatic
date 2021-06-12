@@ -10,7 +10,7 @@
 	<nav class="header__nav nav hide md:show">
 	{{ nav:header }}
 
-		<a class="nav__link link" href="{{ url }}" stealth {{ if is_current || is_parent }}active {{ endif }}>
+		<a class="nav__link link" href="{{ url }}" stealth {{ if is_current || is_parent }} active {{ endif }}>
 			<span class="meta">{{ title }}</span>
 		</a>
 		
@@ -18,7 +18,7 @@
 	</nav> <!-- END header__nav -->
 
 	<div class="mar-l hide md:show">
-		<a href="/documentation" class="btn btn--stout shadow">
+		<a href="/documentation/" class="btn btn--stout shadow">
 			<span class="meta">Docs</span>
 		</a>
 	</div>
@@ -36,7 +36,7 @@
 				<nav class="menu__nav">
 				{{ nav }}
 
-					<a class="menu__link link" href="{{ url }}" stealth {{ if is_current || is_parent }}active {{ endif }}>
+					<a class="menu__link link" href="{{ url }}" stealth {{ if is_current || is_parent }} active {{ endif }}>
 						<span class="heading">{{ title }}</span>
 					</a>
 						

@@ -12,12 +12,6 @@
   &__link {
     display: inline-flex;
     padding: 0.5em;
-    color: inherit;
-
-    &:hover,
-    &:active {
-      color: $link_hover;
-    }
   }
 
   &--h {

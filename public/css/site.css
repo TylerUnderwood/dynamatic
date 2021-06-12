@@ -407,6 +407,24 @@ hr {
   color: inherit;
 }
 
+/*
+|–––––––––––––––––––––––––
+| Line Break
+|–––––––––––––––––––––––––
+*/
+br {
+  clear: both;
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  line-height: inherit;
+}
+
+/*
+|–––––––––––––––––––––––––
+| Spacers
+|–––––––––––––––––––––––––
+*/
 /* === BREAK === */
 .break {
   min-width: 100%;
@@ -432,27 +450,9 @@ hr {
 
 /*
 |–––––––––––––––––––––––––
-| Line Break
-|–––––––––––––––––––––––––
-*/
-br {
-  clear: both;
-  display: inline-block;
-  width: 0;
-  height: 1em;
-  line-height: inherit;
-}
-
-/*
-|–––––––––––––––––––––––––
 | Filler
 |–––––––––––––––––––––––––
 */
-/* === FILLER === */
-.fill {
-  flex: 1 1 auto;
-}
-
 .filler {
   display: block;
   flex: 1 1 auto;
@@ -489,9 +489,6 @@ p {
 }
 .copy:first-child {
   margin-top: 0;
-}
-.copy > code {
-  font-size: 0.9rem;
 }
 
 /*
@@ -865,6 +862,9 @@ code {
 .code::after {
   margin-bottom: -0.25em;
 }
+p > .code {
+  font-size: 0.9rem;
+}
 
 /*
 |–––––––––––––––––––––––––
@@ -1063,10 +1063,10 @@ a:hover, a:focus {
   color: inherit;
 }
 .link[stealth][active] {
-  color: var(--link-hover);
+  color: var(--link-color);
 }
 .link[stealth]:hover, .link[stealth]:focus {
-  color: var(--link-color);
+  color: var(--link-hover);
 }
 
 /*
@@ -2146,6 +2146,9 @@ svg {
 .transcription code::after {
   margin-bottom: -0.25em;
 }
+p > .transcription code {
+  font-size: 0.9rem;
+}
 .transcription hr {
   clear: both;
   margin: 0;
@@ -2911,10 +2914,6 @@ svg {
 .nav__link {
   display: inline-flex;
   padding: 0.5em;
-  color: inherit;
-}
-.nav__link:hover, .nav__link:active {
-  color: var(--link-hover);
 }
 .nav--h {
   flex-direction: row;
@@ -3761,8 +3760,7 @@ svg {
   height: 1.2em;
   padding: 0.2em;
 }
-.social-icons .icon-facebook,
-.social-icons .icon-facebook-square {
+.social-icons .icon-facebook {
   color: #3b5998;
 }
 .social-icons .icon-instagram {
@@ -3771,14 +3769,11 @@ svg {
 .social-icons .icon-linkedin {
   color: #0077b5;
 }
-.social-icons .icon-periscope {
-  color: #d75444;
-}
 .social-icons .icon-pinterest {
   color: #c8232c;
 }
 .social-icons .icon-soundcloud {
-  color: #FF5401;
+  color: #ff5401;
 }
 .social-icons .icon-twitter {
   color: #1da1f2;
@@ -3786,8 +3781,7 @@ svg {
 .social-icons .icon-vimeo {
   color: #1ab7ea;
 }
-.social-icons .icon-youtube,
-.social-icons .icon-youtube-outline {
+.social-icons .icon-youtube {
   color: #bb0000;
 }
 
@@ -4853,53 +4847,6 @@ svg {
 | UTILITY: WIDTH
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
-/* ===== MAX WIDTHS ===== */
-.copy-max {
-  max-width: 36rem;
-}
-
-.content-max {
-  max-width: 64rem;
-}
-
-.site-max {
-  max-width: 80rem;
-}
-
-@media (min-width: 480px) {
-  .sm\:copy-max {
-    max-width: 36rem;
-  }
-  .sm\:content-max {
-    max-width: 64rem;
-  }
-  .sm\:site-max {
-    max-width: 80rem;
-  }
-}
-@media (min-width: 768px) {
-  .md\:copy-max {
-    max-width: 36rem;
-  }
-  .md\:content-max {
-    max-width: 64rem;
-  }
-  .md\:site-max {
-    max-width: 80rem;
-  }
-}
-@media (min-width: 1024px) {
-  .lg\:copy-max {
-    max-width: 36rem;
-  }
-  .lg\:content-max {
-    max-width: 64rem;
-  }
-  .lg\:site-max {
-    max-width: 80rem;
-  }
-}
-/* ===== WIDTHS ===== */
 .w-1of12 {
   width: calc( (1 / 12) * 100% );
 }
@@ -5114,27 +5061,53 @@ svg {
     width: 100%;
   }
 }
-/* ===== No Srink ===== */
-.rigid {
-  flex: 0 0 auto;
+/* ===== Max Widths ===== */
+.copy-max {
+  max-width: 36rem;
+}
+
+.content-max {
+  max-width: 64rem;
+}
+
+.site-max {
+  max-width: 80rem;
 }
 
 @media (min-width: 480px) {
-  .sm\:rigid {
-    flex: 0 0 auto;
+  .sm\:copy-max {
+    max-width: 36rem;
+  }
+  .sm\:content-max {
+    max-width: 64rem;
+  }
+  .sm\:site-max {
+    max-width: 80rem;
   }
 }
 @media (min-width: 768px) {
-  .md\:rigid {
-    flex: 0 0 auto;
+  .md\:copy-max {
+    max-width: 36rem;
+  }
+  .md\:content-max {
+    max-width: 64rem;
+  }
+  .md\:site-max {
+    max-width: 80rem;
   }
 }
 @media (min-width: 1024px) {
-  .lg\:rigid {
-    flex: 0 0 auto;
+  .lg\:copy-max {
+    max-width: 36rem;
+  }
+  .lg\:content-max {
+    max-width: 64rem;
+  }
+  .lg\:site-max {
+    max-width: 80rem;
   }
 }
-/* ===== FORCE FULL ===== */
+/* ===== Force Full ===== */
 .force-full {
   position: relative;
   left: 50%;
@@ -5176,6 +5149,46 @@ svg {
     margin-right: -50vw;
     width: 100vw;
     max-width: unset;
+  }
+}
+/* ===== No Srink ===== */
+.rigid {
+  flex: 0 0 auto;
+}
+
+@media (min-width: 480px) {
+  .sm\:rigid {
+    flex: 0 0 auto;
+  }
+}
+@media (min-width: 768px) {
+  .md\:rigid {
+    flex: 0 0 auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:rigid {
+    flex: 0 0 auto;
+  }
+}
+/* ===== Fill ===== */
+.fill {
+  flex: 1 1 auto;
+}
+
+@media (min-width: 480px) {
+  .sm\:fill {
+    flex: 1 1 auto;
+  }
+}
+@media (min-width: 768px) {
+  .md\:fill {
+    flex: 1 1 auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:fill {
+    flex: 1 1 auto;
   }
 }
 /*

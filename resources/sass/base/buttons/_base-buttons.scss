@@ -36,12 +36,12 @@ a {
     color: inherit;
 
     &[active] {
-      color: $link_hover;
+      color: $link_color;
     }
 
     &:hover,
     &:focus {
-      color: $link_color;
+      color: $link_hover;
     }
   }
 }

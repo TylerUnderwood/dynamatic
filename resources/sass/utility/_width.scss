@@ -5,7 +5,14 @@
 */
 
 
-/* ===== MAX WIDTHS ===== */
+@include make-classes-from-list( w, width, $widths );
+
+@include add-breakpoint-prefixes() {
+  @include make-classes-from-list-for-prefixes( w, width, $widths );
+}
+
+
+/* ===== Max Widths ===== */
 .copy-max {
   max-width: $copy_max;
 }
@@ -31,31 +38,7 @@
 }
 
 
-
-/* ===== WIDTHS ===== */
-
-@include make-classes-from-list( w, width, $widths );
-
-@include add-breakpoint-prefixes() {
-  @include make-classes-from-list-for-prefixes( w, width, $widths );
-}
-
-
-/* ===== No Srink ===== */
-
-.rigid {
-  flex: 0 0 auto;
-}
-
-@include add-breakpoint-prefixes() {
-  &rigid {
-    flex: 0 0 auto;
-  }
-}
-
-
-/* ===== FORCE FULL ===== */
-
+/* ===== Force Full ===== */
 // this must be inside a centered container
 .force-full {
   position: relative;
@@ -76,5 +59,31 @@
     margin-right: -50vw;
     width: 100vw;
     max-width: unset;
+  }
+}
+
+
+/* ===== No Srink ===== */
+// the size that it is and nothing less
+.rigid {
+  flex: 0 0 auto;
+}
+
+@include add-breakpoint-prefixes() {
+  &rigid {
+    flex: 0 0 auto;
+  }
+}
+
+
+/* ===== Fill ===== */
+// This is for an element you want to fill the space between others
+.fill {
+  flex: 1 1 auto;
+}
+
+@include add-breakpoint-prefixes() {
+  &fill {
+    flex: 1 1 auto;
   }
 }

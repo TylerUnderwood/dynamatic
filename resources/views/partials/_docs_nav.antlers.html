@@ -2,12 +2,12 @@
 {{ nav:documentation }}
   <div class="col col-l">
 
-    <a class="nav__link link" href="{{ url }}">
+    <a class="nav__link link" href="{{ url }}" stealth {{ if is_current || is_parent }} active {{ endif }}>
       <span class="meta">{{ title }}</span>
     </a>
 
     {{ children }}
-      <a class="nav__link link mar-l" href="{{ url }}">
+      <a class="nav__link link mar-l" href="{{ url }}" stealth {{ if is_current || is_parent }} active {{ endif }}>
         <span class="meta">{{ title }}</span>
       </a>
     {{ /children }}
