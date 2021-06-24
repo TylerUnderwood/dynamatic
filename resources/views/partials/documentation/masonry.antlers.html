@@ -15,11 +15,11 @@ tewelve_tiles:
 random_tiles:
   - Hello this is a long tile
   - Short
+  - Lorem Ipsum
   - W
   - This is a tile
   - Something
   - Somethin else
-  - Lorem Ipsum
   - Fart
 masonry_types:
   -
@@ -28,13 +28,64 @@ masonry_types:
     tile: tile
   -
     heading: Grout Types
-    grout: grout grout-md sm:grout md:grout-0 lg:grout-lg
+    grout: grout grout-md sm:grout md:grout-0 lg:grout-v-sm lg:grout-h-lg
     tile: tile
   -
     heading: Tile Types
     grout: grout
     tile: tile tile-1of3 sm:tile md:tile-auto lg:tile-1of5
 ---
+
+<div class="block">
+  <table class="table">
+    <thead class="thead">
+      <tr class="trow">
+        <th class="tnull"></th>
+        <th class="tcell">
+          <div class="tcopy">Firstname</div>
+        </th>
+        <th class="tcell">
+          <div class="tcopy">Lastname</div>
+        </th>
+        <th class="tcell">
+          <div class="tcopy">Age</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="trow">
+        <th class="tcell thead">
+          <span class="tcopy">Row</span>
+        </th>
+        <td class="tcell">
+          <div class="tcopy">Jill</div>
+        </td>
+        <td class="tcell">
+          <div class="tcopy">Smith</div>
+        </td>
+        <td class="tcell">
+          <div class="tcopy">50</div>
+        </td>
+      </tr>
+      <tr class="trow">
+        <th class="tcell thead">
+          <span class="tcopy">Row</span>
+        </th>
+        <td class="tcell">
+          <div class="tcopy">Eve</div>
+        </td>
+        <td class="tcell">
+          <div class="tcopy">Jackson</div>
+        </td>
+        <td class="tcell">
+          <div class="tcopy">94</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="line frame">
 
 <div class="block">
 {{ view:masonry_types }}

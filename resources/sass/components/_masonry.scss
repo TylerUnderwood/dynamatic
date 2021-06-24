@@ -62,9 +62,16 @@ $grout_space_y: var(--grout-space-y);
     --grout-space-x: #{$space};
     --grout-space-y: #{$space};
   }
-
   @include make-classes-from-list-for-prefixes( 'grout', --grout-space-x --grout-space-y, $spacing );
+
+  &grout-v {
+    --grout-space-x: #{$space};
+  }
   @include make-classes-from-list-for-prefixes( 'grout-v', --grout-space-x , $spacing );
+
+  &grout-h {
+    --grout-space-y: #{$space};
+  }
   @include make-classes-from-list-for-prefixes( 'grout-h', --grout-space-y, $spacing );
 }
 

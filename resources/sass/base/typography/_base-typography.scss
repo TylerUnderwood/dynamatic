@@ -312,7 +312,7 @@ code {
   line-height: 1.6;
   font-size: 0.9em;
 
-  @include meta_600_fix();
+  @include meta_160_fix();
 
   &:first-child {
     margin-top: 0;

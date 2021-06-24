@@ -464,6 +464,93 @@ br {
 | BASE: Typography
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
+/* === heading fixes === */
+.heading-120-fix::before, .heading-120-fix::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.heading-120-fix::before {
+  margin-top: -0.25em;
+}
+.heading-120-fix::after {
+  margin-bottom: -0.2em;
+}
+
+/* === copy fixes === */
+.copy-160-fix::before, .copy-160-fix::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.copy-160-fix::before {
+  margin-top: -0.35em;
+}
+.copy-160-fix::after {
+  margin-bottom: -0.5em;
+}
+
+.copy-140-fix::before, .copy-140-fix::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.copy-140-fix::before {
+  margin-top: -0.2em;
+}
+.copy-140-fix::after {
+  margin-bottom: -0.35em;
+}
+
+.copy-120-fix::before, .copy-120-fix::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.copy-120-fix::before {
+  margin-top: -0.3em;
+}
+.copy-120-fix::after {
+  margin-bottom: -0.4em;
+}
+
+.copy-100-fix::before, .copy-100-fix::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.copy-100-fix::before {
+  margin-top: 0;
+}
+.copy-100-fix::after {
+  margin-bottom: -0.2em;
+}
+
+/* === meta fixes === */
+.meta-160-fix::before, .meta-160-fix::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.meta-160-fix::before {
+  margin-top: -0.3em;
+}
+.meta-160-fix::after {
+  margin-bottom: -0.4em;
+}
+
+.meta-100-fix::before, .meta-100-fix::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.meta-100-fix::before {
+  margin-top: 0;
+}
+.meta-100-fix::after {
+  margin-bottom: -0.25em;
+}
+
 /*
 |–––––––––––––––––––––––––
 | Copy
@@ -786,7 +873,7 @@ cite {
   content: "";
 }
 .meta::before {
-  margin-top: 0em;
+  margin-top: 0;
 }
 .meta::after {
   margin-bottom: -0.25em;
@@ -857,7 +944,7 @@ code {
   content: "";
 }
 .code::before {
-  margin-top: 0em;
+  margin-top: 0;
 }
 .code::after {
   margin-bottom: -0.25em;
@@ -1669,6 +1756,77 @@ svg {
 
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Table
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+table {
+  display: table;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+tr {
+  display: table-row;
+}
+
+th {
+  display: table-cell;
+  border: 1px solid currentColor;
+  padding: 0.5em;
+  text-align: left;
+  font-weight: unset;
+}
+
+td {
+  display: table-cell;
+  border: 1px solid currentColor;
+  padding: 0.5em;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.trow {
+  display: table-row;
+}
+
+.tcell {
+  display: table-cell;
+  border: 2px solid var(--border-color);
+  padding: 0.5em;
+}
+
+.thead {
+  background-color: var(--contrast);
+}
+
+.tnull {
+  background-color: var(--border-color);
+  border: 2px solid var(--border-color);
+}
+
+.tcopy {
+  display: block;
+}
+.tcopy::before, .tcopy::after {
+  display: block;
+  height: 0;
+  content: "";
+}
+.tcopy::before {
+  margin-top: 0;
+}
+.tcopy::after {
+  margin-bottom: -0.2em;
+}
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
 | UTILITY: Backgrounds
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
@@ -2141,7 +2299,7 @@ svg {
   content: "";
 }
 .transcription code::before {
-  margin-top: 0em;
+  margin-top: 0;
 }
 .transcription code::after {
   margin-bottom: -0.25em;
@@ -2610,6 +2768,9 @@ p > .transcription code {
     --grout-space-x: var(--space-xxl);
     --grout-space-y: var(--space-xxl);
   }
+  .sm\:grout-v {
+    --grout-space-x: var(--space);
+  }
   .sm\:grout-v-0 {
     --grout-space-x: 0;
   }
@@ -2633,6 +2794,9 @@ p > .transcription code {
   }
   .sm\:grout-v-xxl {
     --grout-space-x: var(--space-xxl);
+  }
+  .sm\:grout-h {
+    --grout-space-y: var(--space);
   }
   .sm\:grout-h-0 {
     --grout-space-y: 0;
@@ -2696,6 +2860,9 @@ p > .transcription code {
     --grout-space-x: var(--space-xxl);
     --grout-space-y: var(--space-xxl);
   }
+  .md\:grout-v {
+    --grout-space-x: var(--space);
+  }
   .md\:grout-v-0 {
     --grout-space-x: 0;
   }
@@ -2719,6 +2886,9 @@ p > .transcription code {
   }
   .md\:grout-v-xxl {
     --grout-space-x: var(--space-xxl);
+  }
+  .md\:grout-h {
+    --grout-space-y: var(--space);
   }
   .md\:grout-h-0 {
     --grout-space-y: 0;
@@ -2782,6 +2952,9 @@ p > .transcription code {
     --grout-space-x: var(--space-xxl);
     --grout-space-y: var(--space-xxl);
   }
+  .lg\:grout-v {
+    --grout-space-x: var(--space);
+  }
   .lg\:grout-v-0 {
     --grout-space-x: 0;
   }
@@ -2805,6 +2978,9 @@ p > .transcription code {
   }
   .lg\:grout-v-xxl {
     --grout-space-x: var(--space-xxl);
+  }
+  .lg\:grout-h {
+    --grout-space-y: var(--space);
   }
   .lg\:grout-h-0 {
     --grout-space-y: 0;

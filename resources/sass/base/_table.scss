@@ -1,0 +1,62 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| BASE: Table
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+table {
+  display: table;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+tr {
+  display: table-row;
+}
+
+th {
+  display: table-cell;
+  border: 1px solid currentColor;
+  padding: 0.5em;
+  text-align: left;
+  font-weight: unset;
+}
+
+td {
+  display: table-cell;
+  border: 1px solid currentColor;
+  padding: 0.5em;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.trow {
+  display: table-row;
+}
+
+.tcell {
+  display: table-cell;
+  border: $border;
+  padding: 0.5em;
+}
+
+.thead {
+  background-color: $contrast;
+}
+
+.tnull {
+  background-color: $border_color;
+  border: $border;
+}
+
+.tcopy {
+  display: block;
+
+  @include copy_100_fix;
+}

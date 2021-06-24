@@ -18,26 +18,64 @@
   }
 }
 
+/* === heading fixes === */
+
 @mixin heading_120_fix {
   @include line_height_fix( -0.25em, -0.2em );
 }
 
+.heading-120-fix {
+  @include heading_120_fix;
+}
+
+/* === copy fixes === */
+
 @mixin copy_160_fix {
   @include line_height_fix( -0.35em, -0.5em );
+}
+
+.copy-160-fix {
+  @include copy_160_fix;
 }
 
 @mixin copy_140_fix {
   @include line_height_fix( -0.2em, -0.35em );
 }
 
+.copy-140-fix {
+  @include copy_140_fix;
+}
+
 @mixin copy_120_fix {
   @include line_height_fix( -0.3em, -0.4em );
 }
 
-@mixin meta_100_fix {
-  @include line_height_fix( 0em, -0.25em );
+.copy-120-fix {
+  @include copy_120_fix;
 }
 
-@mixin meta_600_fix {
+@mixin copy_100_fix {
+  @include line_height_fix( 0, -0.2em );
+}
+
+.copy-100-fix {
+  @include copy_100_fix;
+}
+
+/* === meta fixes === */
+
+@mixin meta_160_fix {
   @include line_height_fix( -0.3em, -0.4em );
+}
+
+.meta-160-fix {
+  @include meta_160_fix;
+}
+
+@mixin meta_100_fix {
+  @include line_height_fix( 0, -0.25em );
+}
+
+.meta-100-fix {
+  @include meta_100_fix;
 }
