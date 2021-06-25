@@ -1,7 +1,9 @@
 
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-// Variables: COLOR
-//––––––––––––––––––––––––––––––––––––––––––––––––––
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: COLOR
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
 
 // common
 $true_red:             #FF0000;
@@ -58,6 +60,9 @@ $soundcloud:           #ff5401;
   --dark-400:          #181a20;
   --dark-600:          #101218;
   --dark-800:          #080a10;
+
+  // grey
+  --grey:              #808080;
   
   // site light
   --light-100:         #ffffff;
@@ -83,6 +88,8 @@ $dark_200:             var(--dark-200);
 $dark_400:             var(--dark-400);
 $dark_600:             var(--dark-600);
 $dark_800:             var(--dark-800);
+
+$grey:                 var(--grey);
 
 // site light
 $light_100:            var(--light-100);
@@ -131,9 +138,8 @@ $light_800:            var(--light-800);
   --background-800:    #{$light_800};
   --contrast:          var(--background-200);
   --border-color:      var(--background-400);
-  --text-color:        #{$dark};
+  --text-color:        var(--dark);
 }
-
 
 // --- convert to scss vars --- //
 
@@ -195,9 +201,11 @@ $theme_colors: (
 
 
 
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-// Variables: TYPOGRAPHY
-//––––––––––––––––––––––––––––––––––––––––––––––––––
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: TYPOGRAPHY
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
 
 @import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono:wght@300;500;700;|Kanit:wght@300;500;700&display=swap');
 
@@ -256,9 +264,11 @@ $headings: (
 
 
 
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-// Variables: WIDTH
-//––––––––––––––––––––––––––––––––––––––––––––––––––
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: WIDTH
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
 
 $widths: (
   1of12:               calc( (1 / 12) * 100% ),  // 0.08333
@@ -315,45 +325,47 @@ $wrapper:              var(--wrapper);
 $inner:                var(--inner);
 
 
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-// Variables: WHITESPACE
-//––––––––––––––––––––––––––––––––––––––––––––––––––
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: WHITESPACE
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
 
 // --- define vars --- //
 :root {
   // default
-  --space:             1em;
+  --size:             1em;
 
   // dynamic
-  --space-xxs:         0.4rem;
-  --space-xs:          0.8rem;
-  --space-sm:          1.2rem;
-  --space-md:          1.6rem;
-  --space-lg:          2.4rem;
-  --space-xl:          3.2rem;
-  --space-xxl:         6.4rem;
+  --size-xxs:         0.4rem;
+  --size-xs:          0.8rem;
+  --size-sm:          1.2rem;
+  --size-md:          1.6rem;
+  --size-lg:          2.4rem;
+  --size-xl:          3.2rem;
+  --size-xxl:         6.4rem;
 }
 
 // --- convert to scss vars --- //
-$space:                var(--space);
-$space_xxs:            var(--space-xxs);
-$space_xs:             var(--space-xs);
-$space_sm:             var(--space-sm);
-$space_md:             var(--space-md);
-$space_lg:             var(--space-lg);
-$space_xl:             var(--space-xl);
-$space_xxl:            var(--space-xxl);
+$size:                var(--size);
+$size_xxs:            var(--size-xxs);
+$size_xs:             var(--size-xs);
+$size_sm:             var(--size-sm);
+$size_md:             var(--size-md);
+$size_lg:             var(--size-lg);
+$size_xl:             var(--size-xl);
+$size_xxl:            var(--size-xxl);
 
 // --- add vars to scss list --- //
-$spacing: (
+$sizes: (
   0:                   0,
-  xxs:                 $space_xxs,
-  xs:                  $space_xs,
-  sm:                  $space_sm,
-  md:                  $space_md,
-  lg:                  $space_lg,
-  xl:                  $space_xl,
-  xxl:                 $space_xxl,
+  xxs:                 $size_xxs,
+  xs:                  $size_xs,
+  sm:                  $size_sm,
+  md:                  $size_md,
+  lg:                  $size_lg,
+  xl:                  $size_xl,
+  xxl:                 $size_xxl,
 );
 
 
@@ -368,9 +380,11 @@ $vert_space_min:       64px;
 $vert_space_max:       96px;
 
 
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-// Variables: OTHER
-//––––––––––––––––––––––––––––––––––––––––––––––––––
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: OTHER
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
 
 // SHADOW
 $shadow_in:            0px 3px 10px 0px rgba(0,0,0,0.25) inset;
@@ -386,9 +400,11 @@ $round:                2px;
 $rounder:              4px;
 
 
-//––––––––––––––––––––––––––––––––––––––––––––––––––
-// Variables: INPUTS
-//––––––––––––––––––––––––––––––––––––––––––––––––––
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Variables: INPUTS
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
 
 // --- define vars --- //
 :root {

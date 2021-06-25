@@ -38,8 +38,8 @@ $grout_space_x: var(--grout-space-x);
 $grout_space_y: var(--grout-space-y);
 
 .grout {
-  --grout-space-x: #{$space};
-  --grout-space-y: #{$space};
+  --grout-space-x: #{$size};
+  --grout-space-y: #{$size};
   margin-top: calc(-1 * (#{$grout_space_x} / 2));
   margin-right: calc(-1 * (#{$grout_space_y} / 2));
   margin-bottom: calc(-1 * (#{$grout_space_x} / 2));
@@ -53,26 +53,26 @@ $grout_space_y: var(--grout-space-y);
   }
 }
 
-@include make-classes-from-list( 'grout', --grout-space-x --grout-space-y, $spacing );
-@include make-classes-from-list( 'grout-v', --grout-space-x , $spacing );
-@include make-classes-from-list( 'grout-h', --grout-space-y, $spacing );
+@include make-classes-from-list( 'grout', --grout-space-x --grout-space-y, $sizes );
+@include make-classes-from-list( 'grout-v', --grout-space-x , $sizes );
+@include make-classes-from-list( 'grout-h', --grout-space-y, $sizes );
 
 @include add-breakpoint-prefixes() {
   &grout {
-    --grout-space-x: #{$space};
-    --grout-space-y: #{$space};
+    --grout-space-x: #{$size};
+    --grout-space-y: #{$size};
   }
-  @include make-classes-from-list-for-prefixes( 'grout', --grout-space-x --grout-space-y, $spacing );
+  @include make-classes-from-list-for-prefixes( 'grout', --grout-space-x --grout-space-y, $sizes );
 
   &grout-v {
-    --grout-space-x: #{$space};
+    --grout-space-x: #{$size};
   }
-  @include make-classes-from-list-for-prefixes( 'grout-v', --grout-space-x , $spacing );
+  @include make-classes-from-list-for-prefixes( 'grout-v', --grout-space-x , $sizes );
 
   &grout-h {
-    --grout-space-y: #{$space};
+    --grout-space-y: #{$size};
   }
-  @include make-classes-from-list-for-prefixes( 'grout-h', --grout-space-y, $spacing );
+  @include make-classes-from-list-for-prefixes( 'grout-h', --grout-space-y, $sizes );
 }
 
 

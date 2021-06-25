@@ -9,17 +9,17 @@
 /* === THEME SIZES === */
 
 .size {
-  font-size: $space;
+  font-size: $size;
 }
 
-@include make-classes-from-list( size, font-size, $spacing );
+@include make-classes-from-list( size, font-size, $sizes );
 
 @include add-breakpoint-prefixes() {
   &size {
-    font-size: $space;
+    font-size: $size;
   }
   
-  @include make-classes-from-list-for-prefixes( size, font-size, $spacing );
+  @include make-classes-from-list-for-prefixes( size, font-size, $sizes );
 }
 
 

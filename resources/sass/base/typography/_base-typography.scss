@@ -12,7 +12,7 @@ p {
 
 @mixin class_copy {
   display: block;
-  margin: $space_md 0 0;
+  margin: $size_md 0 0;
   width: 100%;
   max-width: $copy_max;
   line-height: 1.6;
@@ -122,7 +122,7 @@ ol {
   $list_left: 1.6rem;
 
   display: inline-block;
-  margin: $space_md 0 0;
+  margin: $size_md 0 0;
   width: 100%;
   max-width: $copy_max;
   padding: 0;
@@ -219,7 +219,7 @@ cite {
 
 @mixin class_quote {
   display: inline-block;
-  margin: $space_md 0 0;
+  margin: $size_md 0 0;
   width: 100%;
   max-width: $copy_max;
   border-left: 4px solid $accent;
@@ -303,7 +303,7 @@ code {
 
 @mixin class_pre {
   display: block;
-  margin: $space_md 0 0;
+  margin: $size_md 0 0;
   border-radius: $rounder;
   border: 1px solid $border_color;
   background: $contrast;

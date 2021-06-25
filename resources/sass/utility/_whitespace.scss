@@ -53,7 +53,7 @@ $padding_classes: (
   'pad-l': padding-left,
 );
 
-@include make-list-of-classes-from-list( $padding_classes, $spacing, $space );
+@include make-list-of-classes-from-list( $padding_classes, $sizes, $size );
 
 @include add-breakpoint-prefixes() {
 
@@ -61,7 +61,7 @@ $padding_classes: (
 
   @include make-list-of-classes-from-list-for-prefixes( $gutter_classes, null, $horizontal_space );
 
-  @include make-list-of-classes-from-list-for-prefixes( $padding_classes, $spacing, $space );
+  @include make-list-of-classes-from-list-for-prefixes( $padding_classes, $sizes, $size );
 
 }
 
@@ -97,7 +97,7 @@ $margin_types: (
   'mar-l': margin-left,
 );
 
-@include make-list-of-classes-from-list( $margin_types, $spacing, $space );
+@include make-list-of-classes-from-list( $margin_types, $sizes, $size );
 
 $push_types: (
   'push-v': margin-top margin-bottom,
@@ -116,7 +116,7 @@ $push_types: (
 
   @include make-list-of-classes-from-list-for-prefixes( $buffer_classes, null, $horizontal_space );
 
-  @include make-list-of-classes-from-list-for-prefixes( $margin_types, $spacing, $space );
+  @include make-list-of-classes-from-list-for-prefixes( $margin_types, $sizes, $size );
 
   @include make-list-of-classes-from-list-for-prefixes( $push_types, null, auto );
 
