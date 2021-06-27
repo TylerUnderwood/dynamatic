@@ -4,52 +4,77 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
+
 /* === Row === */
 @mixin class-row {
   display: flex;
   flex-direction: row;
-
-  &-t {
-    align-items: flex-start;
-  }
-  &-r {
-    justify-content: flex-end;
-  }
-  &-b {
-    align-items: flex-end;
-  }
-  &-l {
-    justify-content: flex-start;
-  }
-  &-v {
-    align-items: center;
-  }
-  &-h {
-    justify-content: center;
-  }
+  justify-content: var(--h-align);
+  align-content: var(--v-align);
+  align-items: var(--v-align);
+  --v-align: stretch;
+  --h-align: flex-start;
 }
+
+.row {
+  @include class-row;
+}
+
 
 /* === Columns === */
 @mixin class-col {
   display: flex;
   flex-direction: column;
+  justify-content: var(--v-align);
+  align-content: var(--h-align);
+  align-items: var(--h-align);
+  --v-align: flex-start;
+  --h-align: stretch;
+}
 
+.col {
+  @include class-col;
+}
+
+
+/* === Align === */
+@mixin class-align {
   &-t {
-    justify-content: flex-start;
+    --v-align: flex-start;
   }
   &-r {
-    align-items: flex-end;
+    --h-align: flex-end;
   }
   &-b {
-    justify-content: flex-end;
+    --v-align: flex-end;
   }
   &-l {
-    align-items: flex-start;
+    --h-align: flex-start;
   }
-  &-v {
-    justify-content: center;
+  &-m {
+    --v-align: center;
   }
-  &-h {
-    align-items: center;
+  &-c {
+    --h-align: center;
+  }
+}
+
+.align {
+  @include class-align;
+}
+
+
+/* === Layout Breakpoints === */
+@include add-breakpoint-prefixes() {
+  &row {
+    @include class-row;
+  }
+
+  &col {
+    @include class-col;
+  }
+
+  &align {
+    @include class-align;
   }
 }

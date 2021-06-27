@@ -18,6 +18,13 @@ $flex_classes: (
   flex-column-reverse: (
     flex-direction: column-reverse,
   ),
+  // === Wrap === //
+  flex-wrap: (
+    flex-wrap: wrap,
+  ),
+  flex-nowrap: (
+    flex-wrap: nowrap,
+  ),
   // === Justify === //
   justify-start: (
     justify-content: flex-start,
@@ -27,6 +34,9 @@ $flex_classes: (
   ),
   justify-center: (
     justify-content: center,
+  ),
+  justify-stretch: (
+    align-items: stretch,
   ),
   justify-between: (
     justify-content: space-between,
@@ -62,6 +72,9 @@ $flex_classes: (
   ),
   content-center: (
     align-content: center,
+  ),
+  content-stretch: (
+    align-items: stretch,
   ),
   content-between: (
     align-content: space-between,

@@ -13389,6 +13389,77 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./resources/js/functions/toggle-class.js":
+/*!************************************************!*\
+  !*** ./resources/js/functions/toggle-class.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//////////////////////////////
+// Match Height
+var toggleClass = function toggleClass() {
+  document.querySelectorAll('[toggle-class]').forEach(function (element) {
+    var toggleToElementID = element.getAttribute('toggle-class');
+    var toggleClassToThis = document.getElementById(toggleToElementID);
+
+    var toggleClassIfChecked = function toggleClassIfChecked() {
+      if (element.checked) {
+        toggleClassToThis.classList.add(element.value);
+      } else {
+        toggleClassToThis.classList.remove(element.value);
+      }
+    };
+
+    element.addEventListener('change', toggleClassIfChecked, false);
+    toggleClassIfChecked();
+  });
+};
+
+window.addEventListener('DOMContentLoaded', function () {
+  toggleClass();
+});
+
+var uncheck = function uncheck() {
+  document.querySelectorAll('[uncheck]').forEach(function (element) {
+    var uncheckElementIds = element.getAttribute('uncheck');
+    uncheckElementIds.split(' ').forEach(function (uncheckElementId) {
+      // if string is empty or null
+      if (!!!uncheckElementId) {
+        return;
+      }
+
+      var uncheckThis = function uncheckThis() {
+        var uncheckElement = document.getElementById(uncheckElementId);
+
+        if (!!!uncheckElement) {
+          console.error('No element with id="' + uncheckElementId + '"');
+          return;
+        }
+
+        var triggerEventOutside = function triggerEventOutside(element) {
+          var event = document.createEvent("HTMLEvents");
+          event.initEvent('change', false, true);
+          element.dispatchEvent(event);
+        };
+
+        if (element.checked) {
+          uncheckElement.checked = false;
+          triggerEventOutside(uncheckElement);
+        }
+      };
+
+      element.addEventListener('change', uncheckThis, false);
+    });
+  });
+};
+
+window.addEventListener('DOMContentLoaded', function () {
+  uncheck();
+});
+
+/***/ }),
+
 /***/ "./resources/js/site.js":
 /*!******************************!*\
   !*** ./resources/js/site.js ***!
@@ -13406,16 +13477,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_functions_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _functions_theme_selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./functions/theme-selector */ "./resources/js/functions/theme-selector.js");
 /* harmony import */ var _functions_theme_selector__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_functions_theme_selector__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./classes/smooth-scroll */ "./resources/js/classes/smooth-scroll.js");
-/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./classes/appear */ "./resources/js/classes/appear.js");
-/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_classes_appear__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./classes/modal */ "./resources/js/classes/modal.js");
-/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_classes_modal__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_DemoComponent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/DemoComponent */ "./resources/js/components/DemoComponent.vue");
+/* harmony import */ var _functions_toggle_class__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./functions/toggle-class */ "./resources/js/functions/toggle-class.js");
+/* harmony import */ var _functions_toggle_class__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_functions_toggle_class__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./classes/smooth-scroll */ "./resources/js/classes/smooth-scroll.js");
+/* harmony import */ var _classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_classes_smooth_scroll__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./classes/appear */ "./resources/js/classes/appear.js");
+/* harmony import */ var _classes_appear__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_classes_appear__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./classes/modal */ "./resources/js/classes/modal.js");
+/* harmony import */ var _classes_modal__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_classes_modal__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_DemoComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/DemoComponent */ "./resources/js/components/DemoComponent.vue");
 // ES6 Functions
+
 
 
 
@@ -13427,10 +13501,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-new vue__WEBPACK_IMPORTED_MODULE_7___default.a({
+new vue__WEBPACK_IMPORTED_MODULE_8___default.a({
   el: '#site',
   components: {
-    DemoComponent: _components_DemoComponent__WEBPACK_IMPORTED_MODULE_8__["default"]
+    DemoComponent: _components_DemoComponent__WEBPACK_IMPORTED_MODULE_9__["default"]
   }
 });
 

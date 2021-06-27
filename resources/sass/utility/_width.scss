@@ -65,12 +65,12 @@
 
 /* ===== No Srink ===== */
 // the size that it is and nothing less
-.rigid {
+.stiff {
   flex: 0 0 auto;
 }
 
 @include add-breakpoint-prefixes() {
-  &rigid {
+  &stiff {
     flex: 0 0 auto;
   }
 }

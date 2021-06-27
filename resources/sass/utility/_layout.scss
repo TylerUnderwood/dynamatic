@@ -4,29 +4,15 @@
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
-.row {
-  @include class-row;
-}
-
-.col {
-  @include class-col;
-}
-
 @include make-classes-from-object( $display_classes );
 
 @include make-classes-from-object( $flex_classes );
 
 
 @include add-breakpoint-prefixes() {
-  &row {
-    @include class-row;
-  }
-
-  &col {
-    @include class-col;
-  }
 
   @include make-classes-from-object-for-prefixes( $display_classes );
 
   @include make-classes-from-object-for-prefixes( $flex_classes );
+  
 }
