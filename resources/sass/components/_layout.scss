@@ -12,8 +12,6 @@
   justify-content: var(--h-align);
   align-content: var(--v-align);
   align-items: var(--v-align);
-  --v-align: stretch;
-  --h-align: flex-start;
 }
 
 .row {
@@ -28,8 +26,6 @@
   justify-content: var(--v-align);
   align-content: var(--h-align);
   align-items: var(--h-align);
-  --v-align: flex-start;
-  --h-align: stretch;
 }
 
 .col {

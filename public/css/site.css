@@ -2361,8 +2361,6 @@ p > .transcription code {
   justify-content: var(--h-align);
   align-content: var(--v-align);
   align-items: var(--v-align);
-  --v-align: stretch;
-  --h-align: flex-start;
 }
 
 /* === Columns === */
@@ -2372,8 +2370,6 @@ p > .transcription code {
   justify-content: var(--v-align);
   align-content: var(--h-align);
   align-items: var(--h-align);
-  --v-align: flex-start;
-  --h-align: stretch;
 }
 
 /* === Align === */
@@ -2404,8 +2400,6 @@ p > .transcription code {
     justify-content: var(--h-align);
     align-content: var(--v-align);
     align-items: var(--v-align);
-    --v-align: stretch;
-    --h-align: flex-start;
   }
   .sm\:col {
     display: flex;
@@ -2413,8 +2407,6 @@ p > .transcription code {
     justify-content: var(--v-align);
     align-content: var(--h-align);
     align-items: var(--h-align);
-    --v-align: flex-start;
-    --h-align: stretch;
   }
   .sm\:align-t {
     --v-align: flex-start;
@@ -2442,8 +2434,6 @@ p > .transcription code {
     justify-content: var(--h-align);
     align-content: var(--v-align);
     align-items: var(--v-align);
-    --v-align: stretch;
-    --h-align: flex-start;
   }
   .md\:col {
     display: flex;
@@ -2451,8 +2441,6 @@ p > .transcription code {
     justify-content: var(--v-align);
     align-content: var(--h-align);
     align-items: var(--h-align);
-    --v-align: flex-start;
-    --h-align: stretch;
   }
   .md\:align-t {
     --v-align: flex-start;
@@ -2480,8 +2468,6 @@ p > .transcription code {
     justify-content: var(--h-align);
     align-content: var(--v-align);
     align-items: var(--v-align);
-    --v-align: stretch;
-    --h-align: flex-start;
   }
   .lg\:col {
     display: flex;
@@ -2489,8 +2475,6 @@ p > .transcription code {
     justify-content: var(--v-align);
     align-content: var(--h-align);
     align-items: var(--h-align);
-    --v-align: flex-start;
-    --h-align: stretch;
   }
   .lg\:align-t {
     --v-align: flex-start;
@@ -4663,7 +4647,7 @@ p > .transcription code {
 }
 
 .justify-stretch {
-  align-items: stretch;
+  justify-items: stretch;
 }
 
 .justify-between {
@@ -4711,7 +4695,7 @@ p > .transcription code {
 }
 
 .content-stretch {
-  align-items: stretch;
+  align-content: stretch;
 }
 
 .content-between {
@@ -4776,7 +4760,7 @@ p > .transcription code {
     justify-content: center;
   }
   .sm\:justify-stretch {
-    align-items: stretch;
+    justify-items: stretch;
   }
   .sm\:justify-between {
     justify-content: space-between;
@@ -4812,7 +4796,7 @@ p > .transcription code {
     align-content: center;
   }
   .sm\:content-stretch {
-    align-items: stretch;
+    align-content: stretch;
   }
   .sm\:content-between {
     align-content: space-between;
@@ -4874,7 +4858,7 @@ p > .transcription code {
     justify-content: center;
   }
   .md\:justify-stretch {
-    align-items: stretch;
+    justify-items: stretch;
   }
   .md\:justify-between {
     justify-content: space-between;
@@ -4910,7 +4894,7 @@ p > .transcription code {
     align-content: center;
   }
   .md\:content-stretch {
-    align-items: stretch;
+    align-content: stretch;
   }
   .md\:content-between {
     align-content: space-between;
@@ -4972,7 +4956,7 @@ p > .transcription code {
     justify-content: center;
   }
   .lg\:justify-stretch {
-    align-items: stretch;
+    justify-items: stretch;
   }
   .lg\:justify-between {
     justify-content: space-between;
@@ -5008,7 +4992,7 @@ p > .transcription code {
     align-content: center;
   }
   .lg\:content-stretch {
-    align-items: stretch;
+    align-content: stretch;
   }
   .lg\:content-between {
     align-content: space-between;

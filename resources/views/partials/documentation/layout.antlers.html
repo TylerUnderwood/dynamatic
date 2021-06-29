@@ -116,6 +116,7 @@ breakpoints:
 
   {{ /view:layout_types }}
   </fieldset>
+
   <hr class="break">
 
   <div class="masonry grout">
@@ -152,7 +153,83 @@ breakpoints:
 
   {{ /view:align_types }}
   </div>
+
   <hr class="break">
+
+  <summary class="masonry">
+    <span class="float-left">Breakpoint Types</span>
+    <hr class="break size-xxs">
+    <details class="col w-full">
+      <hr class="break size-xs">
+    {{ view:breakpoints }}
+      {{ if not first }}
+      <hr class="break">
+      {{ /if }}
+
+      <fieldset class="fieldset">
+        <legend class="legend">Above {{ bp_legend }} Orientation</legend>
+      {{ view:layout_types }}
+    
+          <label 
+            class="{{ if not first }}mar-l-xxs{{ /if }} midline" 
+            for="{{ bp_value }}_{{ class }}Selection"
+          >
+            <input 
+              type="checkbox" 
+              id="{{ bp_value }}_{{ class }}Selection" 
+              name="orientation" 
+              value="{{ bp_value }}:{{ class }}" 
+              toggle-class="layoutDemo"
+              {{ if uncheck }}
+              uncheck="{{ uncheck }}{{ bp_value }}_{{ value }}Selection {{ /uncheck }}"
+              {{ /if }}
+            >
+            <code class="mar-l-xxs code small">.{{ bp_value }}:{{ class }}</code>
+          </label>
+    
+      {{ /view:layout_types }}
+      </fieldset>
+
+      <hr class="break">
+
+      <div class="masonry grout">
+      {{ view:align_types }}
+
+        <div class="tile tile-full sm:tile-half">
+          <fieldset class="fieldset">
+            <legend class="legend">Above {{ bp_legend }} {{ legend }}</legend>
+          {{ types }}
+          
+              <label 
+                class="w-full {{ if not first }}mar-t-xxs{{ /if }} midline" 
+                for="{{ bp_value }}_{{ align_id }}"
+              >
+                <input 
+                  type="checkbox" 
+                  id="{{ bp_value }}_{{ align_id }}" 
+                  name="{{ bp_value }}_{{ orientation_id }}" 
+                  value="{{ bp_value }}:{{ value }}" 
+                  toggle-class="layoutDemo"
+                  {{ if uncheck }}
+                  uncheck="{{ uncheck }}{{ bp_value }}_{{ value }} {{ /uncheck }}"
+                  {{ /if }}
+                >
+                <code class="mar-l-xxs code small">.{{ bp_value }}:{{ value }}</code>
+              </label>
+          
+          {{ /types }}
+          </fieldset>
+        </div>
+
+      {{ /view:align_types }}
+      </div>
+
+    {{ /view:breakpoints }}
+    </details>
+  </summary>
+
+  <hr class="break">
+  
   <div class="card pad-xxs">
 
     <div id="layoutDemo" class="flex-wrap grout grout-xxs relative" style="min-height: 640px;">
@@ -165,39 +242,5 @@ breakpoints:
   
     </div>
   </div>
-  {{ view:breakpoints }}
-  <hr class="break">
-  <div class="masonry grout">
-  {{ view:align_types }}
-
-    <div class="tile tile-full sm:tile-half">
-      <fieldset class="fieldset">
-        <legend class="legend">Above {{ bp_legend }} {{ legend }}</legend>
-      {{ types }}
-      
-          <label 
-            class="w-full {{ if not first }}mar-t-xxs{{ /if }} midline" 
-            for="{{ bp_value }}_{{ align_id }}"
-          >
-            <input 
-              type="checkbox" 
-              id="{{ bp_value }}_{{ align_id }}" 
-              name="{{ bp_value }}_{{ orientation_id }}" 
-              value="{{ bp_value }}:{{ value }}" 
-              toggle-class="layoutDemo"
-              {{ if uncheck }}
-              uncheck="{{ uncheck }}{{ bp_value }}_{{ value }} {{ /uncheck }}"
-              {{ /if }}
-            >
-            <code class="mar-l-xxs code small">.{{ bp_value }}:{{ value }}</code>
-          </label>
-      
-      {{ /types }}
-      </fieldset>
-    </div>
-
-  {{ /view:align_types }}
-  </div>
-  {{ /view:breakpoints }}
 
 </div>
