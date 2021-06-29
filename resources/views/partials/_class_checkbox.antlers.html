@@ -1,0 +1,12 @@
+<label class="midline" or="{{ type_id }}">
+  <input
+    type="checkbox"
+    id="{{ type_id }}"
+    name="{{ type_name }}"
+    value="{{ value }}"
+    toggle-class="{{ effected_id }}"
+    uncheck
+    {{ if checked }}checked{{ /if }}
+  >
+  <code class="mar-l-xxs code small">{{ value }}</code>
+</label>

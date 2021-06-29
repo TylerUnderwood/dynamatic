@@ -1,35 +1,43 @@
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| COMPONENTS: Layout 
+| COMPONENTS: Layout
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
 
 /* === Row === */
 @mixin class-row {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
-  justify-content: var(--h-align);
-  align-content: var(--v-align);
+  justify-content: var(--h-justify);
+  align-content: var(--v-justify);
   align-items: var(--v-align);
 }
 
 .row {
   @include class-row;
+  --v-align: stretch;
+  --h-align: flex-start;
+  --v-justify: var(--v-align);
+  --h-justify: var(--h-align);
 }
 
 
 /* === Columns === */
 @mixin class-col {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
-  justify-content: var(--v-align);
-  align-content: var(--h-align);
+  justify-content: var(--v-justify);
+  align-content: var(--h-justify);
   align-items: var(--h-align);
 }
 
 .col {
   @include class-col;
+  --v-align: flex-start;
+  --h-align: stretch;
+  --v-justify: var(--v-align);
+  --h-justify: var(--h-align);
 }
 
 
@@ -60,6 +68,39 @@
 }
 
 
+/* === Justify === */
+@mixin class-justify {
+  &-v-stretch {
+    --v-justify: stretch;
+  }
+  &-h-stretch {
+    --h-justify: stretch;
+  }
+  &-v-between {
+    --v-justify: space-between;
+  }
+  &-h-between {
+    --h-justify: space-between;
+  }
+  &-v-around {
+    --v-justify: space-around;
+  }
+  &-h-around {
+    --h-justify: space-around;
+  }
+  &-v-evenly {
+    --v-justify: space-evenly;
+  }
+  &-h-evenly {
+    --h-justify: space-evenly;
+  }
+}
+
+.justify {
+  @include class-justify;
+}
+
+
 /* === Layout Breakpoints === */
 @include add-breakpoint-prefixes() {
   &row {
@@ -72,5 +113,9 @@
 
   &align {
     @include class-align;
+  }
+
+  &justify {
+    @include class-justify;
   }
 }

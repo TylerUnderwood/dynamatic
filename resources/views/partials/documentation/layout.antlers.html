@@ -19,63 +19,64 @@ random_tiles:
   - size: 40px
   - size: 120px
   - size: 90px
+  - size: 100px
+  - size: 50px
+  - size: 70px
+  - size: 40px
+  - size: 120px
+  - size: 90px
+  - size: 100px
+  - size: 50px
+  - size: 70px
+  - size: 40px
+  - size: 120px
+  - size: 90px
 align_types:
   -
     legend: X Alignment
     orientation_id: xAlign
     types:
-      - 
-        value: align-t
-        align_id: align_t
-        uncheck:
-          - align_b
-          - align_v
       -
-        value: align-b
-        align_id: align_b
-        uncheck:
-          - align_t
-          - align_v
+        value: t
       -
-        value: align-m
-        align_id: align_v
-        uncheck:
-          - align_t
-          - align_b
+        value: b
+      -
+        value: m
         checked: true
   -
     legend: Y Alignment
     orientation_id: yAlign
     types:
       -
-        value: align-r
-        align_id: align_r
-        uncheck:
-          - align_l
-          - align_h
+        value: r
       -
-        value: align-l
-        align_id: align_l
-        uncheck:
-          - align_r
-          - align_h
+        value: l
       -
-        value: align-c
-        align_id: align_h
-        uncheck:
-          - align_r
-          - align_l
+        value: c
         checked: true
+justify_types:
+  -
+    legend: X Justify
+    orientation_id: xJustify
+    types:
+      - v-stretch
+      - v-between
+      - v-around
+      - v-evenly
+  -
+    legend: Y Justify
+    orientation_id: yJustify
+    types:
+      - h-stretch
+      - h-between
+      - h-around
+      - h-evenly
 layout_types:
   -
     class: row
-    uncheck:
-      - col
     checked: true
   -
     class: col
-    uncheck:
-      - row
 breakpoints:
   -
     bp_value: sm
@@ -92,66 +93,70 @@ breakpoints:
 
   <fieldset class="fieldset">
     <legend class="legend">Orientation</legend>
-  {{ view:layout_types }}
+    {{ view:layout_types }}
 
-      <label 
-        class="{{ if not first }}mar-l-xxs{{ /if }} midline" 
-        for="{{ class }}Selection"
-      >
-        <input 
-          type="checkbox" 
-          id="{{ class }}Selection" 
-          name="orientation" 
-          value="{{ class }}" 
-          toggle-class="layoutDemo"
-          {{ if uncheck }}
-          uncheck="{{ uncheck }}{{ value }}Selection {{ /uncheck }}"
-          {{ /if }}
-          {{ if checked }}
-          checked
-          {{ /if }}
-        >
-        <code class="mar-l-xxs code small">.{{ class }}</code>
-      </label>
+      <div class="inline-block {{ if not first }}mar-l-xxs{{ /if }}">
+        {{ partial src="_class_checkbox"
+          type_id="{{ class }}_selection"
+          type_name="orientation"
+          effected_id="layoutDemo"
+          value="{{ class }}"
+        }}
+      </div>
 
-  {{ /view:layout_types }}
+    {{ /view:layout_types }}
   </fieldset>
 
   <hr class="break">
 
   <div class="masonry grout">
-  {{ view:align_types }}
+    {{ view:align_types }}
 
     <div class="tile tile-full sm:tile-half">
       <fieldset class="fieldset">
         <legend class="legend">{{ legend }}</legend>
-      {{ types }}
-      
-          <label 
-            class="w-full {{ if not first }}mar-t-xxs{{ /if }} midline" 
-            for="{{ align_id }}"
-          >
-            <input 
-              type="checkbox" 
-              id="{{ align_id }}" 
-              name="{{ orientation_id }}" 
-              value="{{ value }}" 
-              toggle-class="layoutDemo"
-              {{ if uncheck }}
-              uncheck="{{ uncheck }}{{ value }} {{ /uncheck }}"
-              {{ /if }}
-              {{ if checked }}
-              checked
-              {{ /if }}
-            >
-            <code class="mar-l-xxs code small">.{{ value }}</code>
-          </label>
-      
-      {{ /types }}
+        {{ types }}
+
+          <div class="w-full {{ if not first }}mar-t-xxs{{ /if }}">
+            {{ partial src="_class_checkbox"
+              type_id="{{ value }}_align_selection"
+              type_name="{{ orientation_id }}"
+              effected_id="layoutDemo"
+              value="align-{{ value }}"
+            }}
+          </div>
+
+        {{ /types }}
       </fieldset>
     </div>
 
-  {{ /view:align_types }}
+    {{ /view:align_types }}
+  </div>
+
+  <hr class="break">
+
+  <div class="masonry grout">
+    {{ view:justify_types }}
+
+    <div class="tile tile-full sm:tile-half">
+      <fieldset class="fieldset">
+        <legend class="legend">{{ legend }}</legend>
+        {{ types }}
+
+          <div class="w-full {{ if not first }}mar-t-xxs{{ /if }}">
+            {{ partial src="_class_checkbox"
+              type_id="{{ value }}_justify_selection"
+              type_name="{{ orientation_id }}"
+              effected_id="layoutDemo"
+              value="justify-{{ value }}"
+            }}
+          </div>
+
+        {{ /types }}
+      </fieldset>
+    </div>
+
+    {{ /view:justify_types }}
   </div>
 
   <hr class="break">
@@ -161,85 +166,98 @@ breakpoints:
     <hr class="break size-xxs">
     <details class="col w-full">
       <hr class="break size-xs">
-    {{ view:breakpoints }}
-      {{ if not first }}
-      <hr class="break">
-      {{ /if }}
+      {{ view:breakpoints }}
+        {{ if not first }}
+        <hr class="break">
+        {{ /if }}
 
-      <fieldset class="fieldset">
-        <legend class="legend">Above {{ bp_legend }} Orientation</legend>
-      {{ view:layout_types }}
-    
-          <label 
-            class="{{ if not first }}mar-l-xxs{{ /if }} midline" 
-            for="{{ bp_value }}_{{ class }}Selection"
-          >
-            <input 
-              type="checkbox" 
-              id="{{ bp_value }}_{{ class }}Selection" 
-              name="orientation" 
-              value="{{ bp_value }}:{{ class }}" 
-              toggle-class="layoutDemo"
-              {{ if uncheck }}
-              uncheck="{{ uncheck }}{{ bp_value }}_{{ value }}Selection {{ /uncheck }}"
-              {{ /if }}
-            >
-            <code class="mar-l-xxs code small">.{{ bp_value }}:{{ class }}</code>
-          </label>
-    
-      {{ /view:layout_types }}
-      </fieldset>
+        <fieldset class="fieldset">
+          <legend class="legend">Above {{ bp_legend }} Orientation</legend>
+          {{ view:layout_types }}
 
-      <hr class="break">
+            <div class="inline-block {{ if not first }}mar-l-xxs{{ /if }}">
+              {{ partial src="_class_checkbox"
+                type_id="{{ bp_value }}_{{ class }}_selection"
+                type_name="{{ bp_value }}_orientation"
+                effected_id="layoutDemo"
+                value="{{ bp_value }}:{{ class }}"
+                checked="false"
+              }}
+            </div>
 
-      <div class="masonry grout">
-      {{ view:align_types }}
+          {{ /view:layout_types }}
+        </fieldset>
 
-        <div class="tile tile-full sm:tile-half">
-          <fieldset class="fieldset">
-            <legend class="legend">Above {{ bp_legend }} {{ legend }}</legend>
-          {{ types }}
-          
-              <label 
-                class="w-full {{ if not first }}mar-t-xxs{{ /if }} midline" 
-                for="{{ bp_value }}_{{ align_id }}"
-              >
-                <input 
-                  type="checkbox" 
-                  id="{{ bp_value }}_{{ align_id }}" 
-                  name="{{ bp_value }}_{{ orientation_id }}" 
-                  value="{{ bp_value }}:{{ value }}" 
-                  toggle-class="layoutDemo"
-                  {{ if uncheck }}
-                  uncheck="{{ uncheck }}{{ bp_value }}_{{ value }} {{ /uncheck }}"
-                  {{ /if }}
-                >
-                <code class="mar-l-xxs code small">.{{ bp_value }}:{{ value }}</code>
-              </label>
-          
-          {{ /types }}
-          </fieldset>
+        <hr class="break">
+
+        <div class="masonry grout">
+        {{ view:align_types }}
+
+          <div class="tile tile-full sm:tile-half">
+            <fieldset class="fieldset">
+              <legend class="legend">Above {{ bp_legend }} {{ legend }}</legend>
+              {{ types }}
+
+                <div class="w-full {{ if not first }}mar-t-xxs{{ /if }}">
+                  {{ partial src="_class_checkbox"
+                    type_id="{{ bp_value }}_{{ value }}_align_selection"
+                    type_name="{{ bp_value }}_{{ orientation_id }}"
+                    effected_id="layoutDemo"
+                    value="{{ bp_value }}:align-{{ value }}"
+                    checked="false"
+                  }}
+                </div>
+
+              {{ /types }}
+            </fieldset>
+          </div>
+
+        {{ /view:align_types }}
         </div>
 
-      {{ /view:align_types }}
-      </div>
+        <hr class="break">
 
-    {{ /view:breakpoints }}
+        <div class="masonry grout">
+        {{ view:justify_types }}
+
+          <div class="tile tile-full sm:tile-half">
+            <fieldset class="fieldset">
+              <legend class="legend">Above {{ bp_legend }} {{ legend }}</legend>
+              {{ types }}
+
+                <div class="w-full {{ if not first }}mar-t-xxs{{ /if }}">
+                  {{ partial src="_class_checkbox"
+                    type_id="{{ bp_value }}_{{ value }}_justify_selection"
+                    type_name="{{ bp_value }}_{{ orientation_id }}"
+                    effected_id="layoutDemo"
+                    value="{{ bp_value }}:justify-{{ value }}"
+                    checked="false"
+                  }}
+                </div>
+
+              {{ /types }}
+            </fieldset>
+          </div>
+
+        {{ /view:justify_types }}
+        </div>
+
+      {{ /view:breakpoints }}
     </details>
   </summary>
 
   <hr class="break">
-  
+
   <div class="card pad-xxs">
 
-    <div id="layoutDemo" class="flex-wrap grout grout-xxs relative" style="min-height: 640px;">
-  
+    <div id="layoutDemo" class="wraps grout grout-xxs relative" style="height: 640px;">
+
       {{ view:random_tiles }}
       <div class="flex stiff" style="min-width: {{ size }}; min-height: {{ size }};">
         {{ partial src="_demo_tile" }}
       </div>
       {{ /view:random_tiles }}
-  
+
     </div>
   </div>
 

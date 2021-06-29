@@ -1,6 +1,6 @@
 /*
 |––––––––––––––––––––––––––––––––––––––––––––––––––
-| UTILITY: Flex 
+| UTILITY: Flex
 |––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
@@ -19,10 +19,10 @@ $flex_classes: (
     flex-direction: column-reverse,
   ),
   // === Wrap === //
-  flex-wrap: (
+  wraps: (
     flex-wrap: wrap,
   ),
-  flex-nowrap: (
+  nowraps: (
     flex-wrap: nowrap,
   ),
   // === Justify === //
@@ -84,5 +84,5 @@ $flex_classes: (
   ),
   content-evenly: (
     align-content: space-evenly,
-  ),  
+  ),
 );

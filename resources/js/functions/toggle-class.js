@@ -33,23 +33,22 @@ window.addEventListener( 'DOMContentLoaded', () => {
 const uncheck = () => {
 
   document.querySelectorAll( '[uncheck]' ).forEach( element => {
-    const uncheckElementIds = element.getAttribute('uncheck');
+    const uncheckElementsName = element.getAttribute("name");
+    const uncheckElements = document.getElementsByName(uncheckElementsName);
 
-    uncheckElementIds.split(' ').forEach( uncheckElementId => {
-      // if string is empty or null
-      if ( !!!uncheckElementId ) {
+    if ( !!!uncheckElements ) {
+      console.error('No elements with name="' + uncheckElementsName + '"');
+      return;
+    }
+
+    uncheckElements.forEach( uncheckElement => {
+
+      if ( element.id === uncheckElement.id ) {
         return;
       }
 
       const uncheckThis = () => {
-        const uncheckElement = document.getElementById(uncheckElementId);
-
-        if ( !!!uncheckElement ) {
-          console.error('No element with id="' + uncheckElementId + '"');
-          return;
-        }
-
-        const triggerEventOutside = (element) => {
+        const triggerEventOutside = ( element ) => {
           var event = document.createEvent("HTMLEvents");
           event.initEvent('change', false, true);
           element.dispatchEvent(event);
@@ -63,6 +62,35 @@ const uncheck = () => {
 
       element.addEventListener('change', uncheckThis, false);
     });
+
+    // uncheckElementIds.split(' ').forEach( uncheckElementId => {
+    //   // if string is empty or null
+    //   if ( !!!uncheckElementId ) {
+    //     return;
+    //   }
+
+    //   const uncheckThis = () => {
+    //     const uncheckElement = document.getElementById(uncheckElementId);
+
+    //     if ( !!!uncheckElement ) {
+    //       console.error('No element with id="' + uncheckElementId + '"');
+    //       return;
+    //     }
+
+    //     const triggerEventOutside = (element) => {
+    //       var event = document.createEvent("HTMLEvents");
+    //       event.initEvent('change', false, true);
+    //       element.dispatchEvent(event);
+    //     }
+
+    //     if (element.checked) {
+    //       uncheckElement.checked = false;
+    //       triggerEventOutside( uncheckElement );
+    //     }
+    //   }
+
+    //   element.addEventListener('change', uncheckThis, false);
+    // });
   });
 
 }

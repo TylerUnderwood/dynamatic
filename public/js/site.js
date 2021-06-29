@@ -13422,21 +13422,20 @@ window.addEventListener('DOMContentLoaded', function () {
 
 var uncheck = function uncheck() {
   document.querySelectorAll('[uncheck]').forEach(function (element) {
-    var uncheckElementIds = element.getAttribute('uncheck');
-    uncheckElementIds.split(' ').forEach(function (uncheckElementId) {
-      // if string is empty or null
-      if (!!!uncheckElementId) {
+    var uncheckElementsName = element.getAttribute("name");
+    var uncheckElements = document.getElementsByName(uncheckElementsName);
+
+    if (!!!uncheckElements) {
+      console.error('No elements with name="' + uncheckElementsName + '"');
+      return;
+    }
+
+    uncheckElements.forEach(function (uncheckElement) {
+      if (element.id === uncheckElement.id) {
         return;
       }
 
       var uncheckThis = function uncheckThis() {
-        var uncheckElement = document.getElementById(uncheckElementId);
-
-        if (!!!uncheckElement) {
-          console.error('No element with id="' + uncheckElementId + '"');
-          return;
-        }
-
         var triggerEventOutside = function triggerEventOutside(element) {
           var event = document.createEvent("HTMLEvents");
           event.initEvent('change', false, true);
@@ -13450,7 +13449,29 @@ var uncheck = function uncheck() {
       };
 
       element.addEventListener('change', uncheckThis, false);
-    });
+    }); // uncheckElementIds.split(' ').forEach( uncheckElementId => {
+    //   // if string is empty or null
+    //   if ( !!!uncheckElementId ) {
+    //     return;
+    //   }
+    //   const uncheckThis = () => {
+    //     const uncheckElement = document.getElementById(uncheckElementId);
+    //     if ( !!!uncheckElement ) {
+    //       console.error('No element with id="' + uncheckElementId + '"');
+    //       return;
+    //     }
+    //     const triggerEventOutside = (element) => {
+    //       var event = document.createEvent("HTMLEvents");
+    //       event.initEvent('change', false, true);
+    //       element.dispatchEvent(event);
+    //     }
+    //     if (element.checked) {
+    //       uncheckElement.checked = false;
+    //       triggerEventOutside( uncheckElement );
+    //     }
+    //   }
+    //   element.addEventListener('change', uncheckThis, false);
+    // });
   });
 };
 
@@ -13528,8 +13549,8 @@ new vue__WEBPACK_IMPORTED_MODULE_8___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/statetyler/Documents/Sites/dynamatic/resources/js/site.js */"./resources/js/site.js");
-module.exports = __webpack_require__(/*! /Users/statetyler/Documents/Sites/dynamatic/resources/sass/site.scss */"./resources/sass/site.scss");
+__webpack_require__(/*! /Users/tunderwood/Repos/dynamatic/resources/js/site.js */"./resources/js/site.js");
+module.exports = __webpack_require__(/*! /Users/tunderwood/Repos/dynamatic/resources/sass/site.scss */"./resources/sass/site.scss");
 
 
 /***/ })
