@@ -1,0 +1,24 @@
+{
+  "name": "dynamatic",
+  "version": "0.0.0",
+  "description": "A native CSS framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylerUnderwood/dynamatic.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "node"
+  ],
+  "author": "TylerUnderwood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TylerUnderwood/dynamatic/issues"
+  },
+  "homepage": "https://github.com/TylerUnderwood/dynamatic#readme"
+}
