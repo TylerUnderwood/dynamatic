@@ -26,11 +26,13 @@ const tokenCategories = ( theme = defaultTheme ) => {
 
     for ( const token in tokens ) {
         let prefix = '';
-        let blocklist = ["color", "markup"];
+        let blocklist = ["color", "markup", "import"];
 
         // Only add categories to prefixes that are not in the blocklist
         if ( blocklist.some(word => category.includes(word)) ) {
             prefix = token;
+        } else if ( category === 'default' ) {
+            prefix = 'theme-' + token;
         } else {
             prefix = category + '-' + token;
         }
@@ -54,10 +56,8 @@ const tokensNative = ( theme = defaultTheme ) => {
         let values = tokens[category];
 
         for ( const key in values ) {
-            if (category === "DEFAULT") {
-                let newValue = values[key].replace("theme", "light");
-                let newKey = key.replace("DEFAULT", "theme");
-                variables.push(`--${newKey}: var(${newValue});`);
+            if (category === "import") {
+                variables.push(values[key]);
             } else if (/^--/.test(values[key])) {
                 variables.push(`--${key}: var(${values[key]});`);
             } else {
@@ -85,12 +85,24 @@ const tokenBuilder = ( theme = defaultTheme ) => {
         return tokensStyles;
     }
 
+    const importList = ( imports ) => {
+        let importStyles = '';
+        imports.forEach((item, index) => {
+           importStyles += `@import url('${item}');\n`;
+        });
+        return importStyles;
+    }
+
     const addCategoryStyles = ( category, categoryName, rule ) => {
-        themeCSS += `
+        if ( categoryName === 'import' ) {
+            themeCSS = importList(tokens[category]) + themeCSS;
+        } else {
+            themeCSS += `
 /* ${categoryName} */
 ${rule} {
   ${tokenList( tokens[category] )}
 }\n`
+        }
     };
 
     for ( const category in tokens ) {
