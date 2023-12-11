@@ -26,13 +26,15 @@ const tokenCategories = ( theme = defaultTheme ) => {
 
     for ( const token in tokens ) {
         let prefix = '';
-        let blocklist = ["color", "markup", "import"];
+        let blocklist = ["color", "import", "other"];
 
         // Only add categories to prefixes that are not in the blocklist
         if ( blocklist.some(word => category.includes(word)) ) {
             prefix = token;
-        } else if ( category === 'default' ) {
+        } else if ( category === 'DEFAULT' ) {
             prefix = 'theme-' + token;
+        } else if ( token === 'DEFAULT' ) {
+            prefix = category;
         } else {
             prefix = category + '-' + token;
         }
@@ -58,8 +60,6 @@ const tokensNative = ( theme = defaultTheme ) => {
         for ( const key in values ) {
             if (category === "import") {
                 variables.push(values[key]);
-            } else if (/^--/.test(values[key])) {
-                variables.push(`--${key}: var(${values[key]});`);
             } else {
                 variables.push(`--${key}: ${values[key]};`);
             }
@@ -106,8 +106,8 @@ ${rule} {
     };
 
     for ( const category in tokens ) {
-        if ( category === "theme" ) {
-            addCategoryStyles(category, "Theme", ":root");
+        if ( category === "DEFAULT" ) {
+            addCategoryStyles(category, "theme", ":root");
         } else {
             addCategoryStyles(category, category, ":root");
         }
