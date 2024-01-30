@@ -119,63 +119,42 @@
       "font-weight": "700",
       "font-family": "var(--font-head)",
       "color": "var(--theme-head)"
-    },
-    "lg": {
-      "font-size": "1.6rem"
     }
   },
   "h1": {
     "DEFAULT": {
       "font-size": "3.6rem",
       "color": "var(--theme-head)"
-    },
-    "lg": {
-      "font-size": "3.6rem"
     }
   },
   "h2": {
     "DEFAULT": {
       "font-size": "2.4rem",
       "color": "var(--theme-head)"
-    },
-    "lg": {
-      "font-size": "2.4rem"
     }
   },
   "h3": {
     "DEFAULT": {
       "font-size": "2.0rem",
       "color": "var(--theme-head)"
-    },
-    "lg": {
-      "font-size": "2.0rem"
     }
   },
   "h4": {
     "DEFAULT": {
       "font-size": "1.6rem",
       "color": "var(--theme-head)"
-    },
-    "lg": {
-      "font-size": "1.6rem"
     }
   },
   "h5": {
     "DEFAULT": {
       "font-size": "1.6rem",
       "color": "var(--markup-color)"
-    },
-    "lg": {
-      "font-size": "1.6rem"
     }
   },
   "h6": {
     "DEFAULT": {
       "font-size": "1.6rem",
       "color": "var(--markup-muted)"
-    },
-    "lg": {
-      "font-size": "1.6rem"
     }
   },
   "eyebrow": {
