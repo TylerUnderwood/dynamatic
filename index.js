@@ -76,10 +76,16 @@ const tokensNative = ( theme = defaultTheme ) => {
 const tokenBuilder = ( theme = defaultTheme ) => {
     let tokens = tokensNative(theme);
     let themeCSS = '';
+    let schemeColors = [];
 
-    const tokenList = ( category ) => {
+    const tokenList = ( category, storeScheme = true ) => {
         let tokensStyles = '';
+
         category.forEach((token, index) => {
+            // store colors that will be dynamic
+            if (/color:/.test(token) && storeScheme) {
+                schemeColors.push(token);
+            }
             tokensStyles += token + (index < category.length - 1 ? '\n  ' : '');
         });
         return tokensStyles;
@@ -93,25 +99,28 @@ const tokenBuilder = ( theme = defaultTheme ) => {
         return importStyles;
     }
 
-    const addCategoryStyles = ( category, categoryName, rule ) => {
+    const addCategoryStyles = ( list, categoryName, rule, storeScheme = true ) => {
         if ( categoryName === 'import' ) {
-            themeCSS = importList(tokens[category]) + themeCSS;
+            themeCSS = importList(list) + themeCSS;
         } else {
             themeCSS += `
 /* ${categoryName} */
 ${rule} {
-  ${tokenList( tokens[category] )}
+  ${tokenList( list, storeScheme )}
 }\n`
         }
     };
 
     for ( const category in tokens ) {
         if ( category === "DEFAULT" ) {
-            addCategoryStyles(category, "theme", ":root");
+            addCategoryStyles(tokens[category], "default", ":root");
         } else {
-            addCategoryStyles(category, category, ":root");
+            addCategoryStyles(tokens[category], category, ":root");
         }
     };
+
+    // add colors stored from earlier
+    addCategoryStyles(schemeColors, "scheme", "[data-scheme]", false);
 
     return themeCSS;
 }

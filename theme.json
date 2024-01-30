@@ -42,9 +42,9 @@
     }
   },
   "light": {
-    "primary-light": "var(--blue-200)",
+    "primary-up": "var(--blue-200)",
     "primary": "var(--blue-600)",
-    "primary-dark": "var(--blue-800)",
+    "primary-down": "var(--blue-800)",
     "secondary": "var(--azure)",
     "tertiary": "var(--purple)",
     "accent": "var(--yellow)",
@@ -56,9 +56,9 @@
     "body": "var(--dark-100)"
   },
   "dark": {
-    "primary-light": "var(--blue-200)",
+    "primary-up": "var(--blue-200)",
     "primary": "var(--blue-600)",
-    "primary-dark": "var(--blue-800)",
+    "primary-down": "var(--blue-800)",
     "secondary": "var(--azure)",
     "tertiary": "var(--purple)",
     "accent": "var(--yellow)",
@@ -70,9 +70,9 @@
     "body": "var(--light-600)"
   },
   "DEFAULT": {
-    "primary-light": "var(--light-primary-light)",
+    "primary-up": "var(--light-primary-up)",
     "primary": "var(--light-primary)",
-    "primary-dark": "var(--light-primary-dark)",
+    "primary-down": "var(--light-primary-down)",
     "secondary": "var(--light-secondary)",
     "tertiary": "var(--light-tertiary)",
     "accent": "var(--light-accent)",
@@ -89,7 +89,8 @@
     "lg": "9px"
   },
   "border": {
-    "DEFAULT": "2px solid var(--theme-contrast)"
+    "color": "var(--theme-contrast)",
+    "DEFAULT": "2px solid var(--border-color)"
   },
   "outline": {
     "DEFAULT": "2px solid var(--input-color)"
@@ -110,23 +111,113 @@
   },
   "heading": {
     "DEFAULT": {
-      "sm": {
-
-      },
-      "DEFAULT": {
-        "letter-spacing": "0",
-        "line-height": "1.2",
-        "font-size": "1.6rem",
-        "font-weight": "700",
-        "color": "var(--theme-head)"
-      },
-      "lg": {
-
-      }
+      "letter-spacing": "0",
+      "line-height": "1.2",
+      "lhc-top": "-0.18em",
+      "lhc-bottom": "-0.25em",
+      "font-size": "1.2rem",
+      "font-weight": "700",
+      "font-family": "var(--font-head)",
+      "color": "var(--theme-head)"
     },
-    "title": {
-
+    "lg": {
+      "font-size": "1.6rem"
     }
+  },
+  "h1": {
+    "DEFAULT": {
+      "font-size": "3.6rem",
+      "color": "var(--theme-head)"
+    },
+    "lg": {
+      "font-size": "3.6rem"
+    }
+  },
+  "h2": {
+    "DEFAULT": {
+      "font-size": "2.4rem",
+      "color": "var(--theme-head)"
+    },
+    "lg": {
+      "font-size": "2.4rem"
+    }
+  },
+  "h3": {
+    "DEFAULT": {
+      "font-size": "2.0rem",
+      "color": "var(--theme-head)"
+    },
+    "lg": {
+      "font-size": "2.0rem"
+    }
+  },
+  "h4": {
+    "DEFAULT": {
+      "font-size": "1.6rem",
+      "color": "var(--theme-head)"
+    },
+    "lg": {
+      "font-size": "1.6rem"
+    }
+  },
+  "h5": {
+    "DEFAULT": {
+      "font-size": "1.6rem",
+      "color": "var(--markup-color)"
+    },
+    "lg": {
+      "font-size": "1.6rem"
+    }
+  },
+  "h6": {
+    "DEFAULT": {
+      "font-size": "1.6rem",
+      "color": "var(--markup-muted)"
+    },
+    "lg": {
+      "font-size": "1.6rem"
+    }
+  },
+  "eyebrow": {
+    "DEFAULT": {
+      "letter-spacing": "0",
+      "line-height": "1.2",
+      "lhc-top": "-0.18em",
+      "lhc-bottom": "-0.25em",
+      "font-size": "1.2rem",
+      "font-weight": "700",
+      "font-family": "var(--font-head)",
+      "color": "var(--theme-head)"
+    }
+  },
+  "copy": {
+    "letter-spacing": "0",
+    "line-height": "1.6",
+    "lhc-top": "-0.3em",
+    "lhc-bottom": "-0.35em",
+    "font-size": "1rem",
+    "font-weight": "500",
+    "font-family": "var(--font-face)",
+    "color": "var(--theme-body)"
+  },
+  "list": {
+    "line-height": "1.4",
+    "lhc-top": "-0.3em",
+    "lhc-bottom": "-0.35em",
+    "font-size": "1rem",
+    "color": "var(--theme-face)"
+  },
+  "quote": {
+    "line-height": "1.4",
+    "lhc-top": "-0.3em",
+    "lhc-bottom": "-0.35em",
+    "font-size": "1.2rem",
+    "color": "var(--theme-face)"
+  },
+  "meta": {
+    "line-height": "1.2",
+    "lhc-top": "-0.2em",
+    "lhc-bottom": "-0.3em"
   },
   "input": {
     "color": "var(--theme-primary)",
@@ -196,5 +287,7 @@
     "tab": "var(--tab-size)",
     "DEFAULT": "1em",
     "rem": "1rem"
+  },
+  "import": {
   }
 }
