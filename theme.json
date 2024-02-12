@@ -100,14 +100,24 @@
     "DEFAULT": "0px 7px 10px 0px rgb(0, 0, 0, / 0.2)",
     "lg": "0px 0px 20px 4px rgb(0, 0, 0, / 0.2)"
   },
-  "markup": {
-    "color": "var(--theme-primary)",
-    "muted": "var(--grey-200)"
-  },
   "font": {
     "head": "'Arial', sans-serif",
     "face": "'Arial', sans-serif",
     "meta": "'Arial', sans-serif"
+  },
+  "markup": {
+    "color": "var(--theme-primary)",
+    "muted": "var(--grey-200)"
+  },
+  "copy": {
+    "letter-spacing": "0",
+    "line-height": "1.6",
+    "lhc-top": "-0.3em",
+    "lhc-bottom": "-0.35em",
+    "font-size": "1rem",
+    "font-weight": "500",
+    "font-family": "var(--font-face)",
+    "color": "var(--theme-body)"
   },
   "heading": {
     "DEFAULT": {
@@ -168,16 +178,6 @@
       "font-family": "var(--font-head)",
       "color": "var(--theme-head)"
     }
-  },
-  "copy": {
-    "letter-spacing": "0",
-    "line-height": "1.6",
-    "lhc-top": "-0.3em",
-    "lhc-bottom": "-0.35em",
-    "font-size": "1rem",
-    "font-weight": "500",
-    "font-family": "var(--font-face)",
-    "color": "var(--theme-body)"
   },
   "list": {
     "line-height": "1.4",
