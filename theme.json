@@ -3,11 +3,11 @@
     "red": "#D82848",
     "yellow": "#D8B828",
     "green": "#48D828",
-    "azure": "#2299ee",
+    "azure": "#2277dd",
     "azure-new": "#28A0D8",
     "dark-blue": "#1F39AE",
     "blue": {
-      "100": "#88a8ff",
+      "100": "#6888ff",
       "200": "#6080f8",
       "400": "#4868f0",
       "600": "#2848d8",
@@ -41,8 +41,14 @@
       "DEFAULT": "var(--dark-200)"
     }
   },
+  "theme": {
+    "primary": "var(--blue)",
+    "secondary": "var(--azure)",
+    "tertiary": "var(--purple)",
+    "accent": "var(--yellow)"
+  },
   "light": {
-    "primary-up": "var(--blue-200)",
+    "primary-up": "var(--blue-100)",
     "primary": "var(--blue-600)",
     "primary-down": "var(--blue-800)",
     "secondary": "var(--azure)",
@@ -56,7 +62,7 @@
     "body": "var(--dark-100)"
   },
   "dark": {
-    "primary-up": "var(--blue-200)",
+    "primary-up": "var(--blue-100)",
     "primary": "var(--blue-600)",
     "primary-down": "var(--blue-800)",
     "secondary": "var(--azure)",
@@ -86,7 +92,8 @@
   "round": {
     "sm": "3px",
     "md": "6px",
-    "lg": "9px"
+    "lg": "9px",
+    "DEFAULT": "var(--round-md)"
   },
   "border": {
     "color": "var(--theme-contrast)",
@@ -96,9 +103,9 @@
     "DEFAULT": "2px solid var(--input-color)"
   },
   "shadow": {
-    "lg-inset": "inset 0px 0px 20px 4px rgb(0, 0, 0, / 0.2)",
-    "DEFAULT": "0px 7px 10px 0px rgb(0, 0, 0, / 0.2)",
-    "lg": "0px 0px 20px 4px rgb(0, 0, 0, / 0.2)"
+    "lg-inset": "inset 0px 0px 20px 4px rgb(0 0 0 / 0.2)",
+    "DEFAULT": "0px 2px 4px 2px rgb(0 0 0 / 0.1)",
+    "lg": "0px 4px 8px 4px rgb(0 0 0 / 0.2)"
   },
   "font": {
     "head": "'Arial', sans-serif",
@@ -200,10 +207,10 @@
   },
   "input": {
     "color": "var(--theme-primary)",
-    "hover": "var(--theme-secondary)",
-    "active": "var(--theme-tertiary)",
+    "hover": "var(--theme-primary-up)",
+    "active": "var(--theme-primary-down)",
     "outline": "2px solid var(--input-color)",
-    "backdrop": "rgb(64 128 255 / 0.2)",
+    "backdrop": "rgb(64 128 255 / var(--alpha, 0.2))",
     "height": {
       "large": "2.8rem",
       "DEFAULT": "2.2rem",
@@ -226,9 +233,9 @@
     "easing": "ease"
   },
   "card": {
-    "shadow": "var(--shadow-lg)",
-    "round": "var(--round-lg)",
-    "background": "var(--theme-base)"
+    "shadow": "var(--shadow)",
+    "round": "var(--round)",
+    "background-color": "var(--theme-base)"
   },
   "screen": {
     "sm": "480px",

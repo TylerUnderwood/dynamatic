@@ -83,7 +83,7 @@ const tokenBuilder = ( theme = defaultTheme ) => {
 
         category.forEach((token, index) => {
             // store colors that will be dynamic
-            if (/color:/.test(token) && storeScheme) {
+            if (/var\(--theme/.test(token) && storeScheme) {
                 schemeColors.push(token);
             }
             tokensStyles += token + (index < category.length - 1 ? '\n  ' : '');
