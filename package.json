@@ -1,24 +1,35 @@
 {
+  "type": "module",
+  "version": "0.4.0",
   "name": "dynamatic",
-  "version": "0.3.2",
-  "description": "A native CSS framework",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "A postCSS foundation for theming",
+  "keywords": [
+    "css",
+    "postcss",
+    "node"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TylerUnderwood/dynamatic.git"
   },
-  "keywords": [
-    "css",
-    "framework",
-    "node"
-  ],
   "author": "TylerUnderwood",
   "license": "ISC",
+  "homepage": "https://github.com/TylerUnderwood/dynamatic#readme",
   "bugs": {
     "url": "https://github.com/TylerUnderwood/dynamatic/issues"
   },
-  "homepage": "https://github.com/TylerUnderwood/dynamatic#readme"
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "cssnano": "^8.0.2",
+    "postcss": "^8.5.24",
+    "postcss-cli": "^11.0.1",
+    "postcss-preset-env": "^11.3.2",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  }
 }

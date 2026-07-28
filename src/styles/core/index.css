@@ -1,0 +1,71 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Template
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--theme-contrast);
+}
+
+html {
+    overflow-x: clip;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--theme-base);
+    tab-size: var(--tab-size);
+    line-height: 1;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: var(--font-face);
+    text-rendering: optimizeLegibility;
+    color: var(--theme-face);
+    accent-color: var(--input-color);
+}
+
+/* this will, at the least, fill the viewport and gives the template structure */
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: block;
+}
+
+/* header comes first but should always be on top */
+#header {
+    position: relative;
+    z-index: 3;
+}
+
+main {
+    display: block;
+}
+
+/* main is in the middle and it should fill the space between but be below both the header and footer */
+#main {
+    position: relative;
+    z-index: 1;
+    flex: 1 0 auto;
+}
+
+footer {
+    display: block;
+}
+
+/* footer */
+#footer {
+    position: relative;
+    z-index: 2;
+}

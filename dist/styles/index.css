@@ -1,0 +1,73 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Template
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--theme-contrast);
+}
+
+html {
+    overflow-x: clip;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--theme-base);
+    tab-size: var(--tab-size);
+    line-height: 1;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: var(--font-face);
+    text-rendering: optimizeLegibility;
+    color: var(--theme-face);
+    accent-color: var(--input-color);
+}
+
+/* this will, at the least, fill the viewport and gives the template structure */
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: block;
+}
+
+/* header comes first but should always be on top */
+#header {
+    position: relative;
+    z-index: 3;
+}
+
+main {
+    display: block;
+}
+
+/* main is in the middle and it should fill the space between but be below both the header and footer */
+#main {
+    position: relative;
+    z-index: 1;
+    flex: 1 0 auto;
+}
+
+footer {
+    display: block;
+}
+
+/* footer */
+#footer {
+    position: relative;
+    z-index: 2;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9zdHlsZXMvY29yZS9pbmRleC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoiaW5kZXguY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLypcbnzigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJNcbnwgQ09SRTogVGVtcGxhdGVcbnzigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJNcbiovXG5cbiosXG46OmJlZm9yZSxcbjo6YWZ0ZXIge1xuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgYm9yZGVyLXdpZHRoOiAwO1xuICAgIGJvcmRlci1zdHlsZTogc29saWQ7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS10aGVtZS1jb250cmFzdCk7XG59XG5cbmh0bWwge1xuICAgIG92ZXJmbG93LXg6IGNsaXA7XG4gICAgb3ZlcmZsb3cteTogYXV0bztcbiAgICBzY3JvbGwtYmVoYXZpb3I6IHNtb290aDtcbn1cblxuYm9keSB7XG4gICAgbWFyZ2luOiAwO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXRoZW1lLWJhc2UpO1xuICAgIHRhYi1zaXplOiB2YXIoLS10YWItc2l6ZSk7XG4gICAgbGluZS1oZWlnaHQ6IDE7XG4gICAgZm9udC1zaXplOiAxcmVtO1xuICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gICAgZm9udC1mYW1pbHk6IHZhcigtLWZvbnQtZmFjZSk7XG4gICAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplTGVnaWJpbGl0eTtcbiAgICBjb2xvcjogdmFyKC0tdGhlbWUtZmFjZSk7XG4gICAgYWNjZW50LWNvbG9yOiB2YXIoLS1pbnB1dC1jb2xvcik7XG59XG5cbi8qIHRoaXMgd2lsbCwgYXQgdGhlIGxlYXN0LCBmaWxsIHRoZSB2aWV3cG9ydCBhbmQgZ2l2ZXMgdGhlIHRlbXBsYXRlIHN0cnVjdHVyZSAqL1xuI2FwcCB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgIG1pbi1oZWlnaHQ6IDEwMHZoO1xufVxuXG5oZWFkZXIge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xufVxuXG4vKiBoZWFkZXIgY29tZXMgZmlyc3QgYnV0IHNob3VsZCBhbHdheXMgYmUgb24gdG9wICovXG4jaGVhZGVyIHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgei1pbmRleDogMztcbn1cblxubWFpbiB7XG4gICAgZGlzcGxheTogYmxvY2s7XG59XG5cbi8qIG1haW4gaXMgaW4gdGhlIG1pZGRsZSBhbmQgaXQgc2hvdWxkIGZpbGwgdGhlIHNwYWNlIGJldHdlZW4gYnV0IGJlIGJlbG93IGJvdGggdGhlIGhlYWRlciBhbmQgZm9vdGVyICovXG4jbWFpbiB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIHotaW5kZXg6IDE7XG4gICAgZmxleDogMSAwIGF1dG87XG59XG5cbmZvb3RlciB7XG4gICAgZGlzcGxheTogYmxvY2s7XG59XG5cbi8qIGZvb3RlciAqL1xuI2Zvb3RlciB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIHotaW5kZXg6IDI7XG59XG4iXX0= */
