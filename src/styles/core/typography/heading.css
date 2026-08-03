@@ -1,0 +1,78 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Heading
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 1;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.Heading,
+.Markup h1,
+.Markup h2,
+.Markup h3,
+.Markup h4,
+.Markup h5,
+.Markup h6 {
+    --lhc-height: var(--heading-line-height);
+    --lhc-top: var(--heading-lhc-top);
+    --lhc-bottom: var(--heading-lhc-bottom);
+    line-height: var(--heading-line-height);
+    letter-spacing: var(--heading-letter-spacing);
+    font-size: var(--heading-font-size);
+    font-weight: var(--heading-font-weight);
+    font-family: var(--heading-font-family);
+    color: var(--heading-color);
+}
+
+.h1,
+.Markup h1 {
+    font-size: var(--h1-font-size);
+    color: var(--h1-color);
+}
+
+.h2,
+.Markup h2 {
+    font-size: var(--h2-font-size);
+    color: var(--h2-color);
+}
+
+.h3,
+.Markup h3 {
+    font-size: var(--h3-font-size);
+    color: var(--h3-color);
+}
+
+.h4,
+.Markup h4 {
+    font-size: var(--h4-font-size);
+    color: var(--h4-color);
+}
+
+.h5,
+.Markup h5 {
+    font-size: var(--h5-font-size);
+    color: var(--h5-color);
+}
+
+.h6,
+.Markup h6 {
+    font-size: var(--h6-font-size);
+    color: var(--h6-color);
+}
+
+.Eyebrow {
+    --lhc-height: var(--eyebrow-line-height);
+    --lhc-top: var(--eyebrow-lhc-top);
+    --lhc-bottom: var(--eyebrow-lhc-bottom);
+    line-height: var(--eyebrow-line-height);
+    letter-spacing: var(--eyebrow-letter-spacing);
+    font-size: var(--eyebrow-font-size);
+    font-weight: var(--eyebrow-font-weight);
+    font-family: var(--eyebrow-font-family);
+    color: var(--eyebrow-color);
+}

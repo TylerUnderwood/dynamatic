@@ -1,0 +1,39 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENT: Card
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.Card {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    flex: 1 0 auto;
+    box-shadow: var(--shadow);
+    border-radius: var(--round);
+    background-color: var(--theme-base);
+    padding: 1rem;
+    transition-property: box-shadow;
+    transition-duration: var(--input-timing);
+    transition-timing-function: ease;
+}
+
+.Card--hover:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.Card--lg {
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--round-lg);
+    background-color: var(--theme-base);
+}
+
+.Card--flat {
+    box-shadow: none;
+    border-radius: var(--round);
+    background-color: var(--theme-offset);
+}
+
+.Card--flat.Card--hover:hover {
+    box-shadow: var(--shadow);
+}

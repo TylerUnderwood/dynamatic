@@ -1,0 +1,51 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Link
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:hover,
+a:focus {
+    outline: none;
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: var(--input-outline);
+}
+
+.Link {
+    color: var(--input-face);
+    transition-property: color;
+    transition-duration: var(--input-timing);
+    transition-timing-function: var(--input-easing);
+    cursor: pointer;
+
+    &[active] {
+        color: var(--input-active);
+    }
+
+    &:hover,
+    &:focus {
+        color: var(--input-hover);
+    }
+
+    &[stealth] {
+        color: inherit;
+
+        &[active] {
+            color: var(--input-active);
+        }
+
+        &:hover,
+        &:focus {
+            color: var(--input-hover);
+        }
+    }
+}

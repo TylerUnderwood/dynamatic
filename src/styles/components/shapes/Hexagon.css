@@ -1,0 +1,55 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Hexagon
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.Hexagon {
+    --hexagon-width: 1em;
+    --hexagon-short-diagonal: var(--hexagon-width);
+    --hexagon-long-diagonal: calc(var(--hexagon-width) * 1.1547);
+    --hexagon-side: calc(var(--hexagon-short-diagonal) * 0.5774);
+    --hexagon-margin: calc(var(--hexagon-side) * 0.5);
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+    margin: var(--hexagon-margin) 0;
+    width: var(--hexagon-short-diagonal);
+    height: var(--hexagon-side);
+    background-color: currentcolor;
+}
+
+.Hexagon:before,
+.Hexagon:after {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    border: inherit;
+    content: "";
+}
+
+.Hexagon:before {
+    rotate: 60deg;
+}
+
+.Hexagon:after {
+    rotate: -60deg;
+}
+
+/* HEXAGON BORDER */
+.Hexagon--border {
+    --hexagon-border-size: 0.1em;
+    /* this calculation stops the border size from being too big and breaking the hexegon */
+    --hexagon-border-width: min(calc(var(--hexagon-short-diagonal) / 2), var(--hexagon-border-size));
+    background-color: transparent;
+    border-color: currentColor;
+    border-style: solid;
+    border-width: var(--hexagon-border-width);
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+.Hexagon--border::before,
+.Hexagon--border::after {
+    left: calc(-1 * var(--hexagon-border-width));
+}

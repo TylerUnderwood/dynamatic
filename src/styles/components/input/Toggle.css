@@ -1,0 +1,63 @@
+.Toggle {
+    --toggle-border-width: 3px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Toggle__input {
+	position: absolute;
+    inset: 0;
+	opacity: 0;
+}
+
+.Toggle__switch {
+    position: relative;
+    display: inline-flex;
+    border-radius: 9999px;
+    width: 2em;
+    height: 1em;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--input-color);
+    background-color: var(--input-color);
+}
+input:focus-visible + .Toggle__switch {
+    outline: var(--input-outline);
+    outline-offset: 2px;
+}
+input:checked + .Toggle__switch {
+    border-color: var(--input-color);
+    background-color: var(--input-color);
+}
+
+.Toggle__switch::before {
+    position: relative;
+    left: 0%;
+    transform: translateX(0%);
+    width: calc(1em - (var(--toggle-border-width) * 2));
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    background-color: var(--theme-base);
+    transition-property: left, transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--input-timing);
+    content: '';
+}
+input:checked + .Toggle__switch::before {
+    left: 100%;
+    transform: translateX(-100%);
+    background-color: var(--theme-base);
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.Toggle__value {
+    animation-name: fadein;
+    animation-duration: var(--input-timing);
+    animation-timing-function: forwards;
+}

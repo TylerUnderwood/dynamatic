@@ -1,0 +1,39 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Nav
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+nav {
+    display: block;
+}
+
+.Nav {
+    --nav-link-pad: 0.5em;
+    display: flex;
+}
+
+.Nav__list {
+    display: flex;
+    margin: calc(var(--nav-link-pad) * -1);
+    padding: 0;
+    list-style: none;
+}
+
+.Nav__item {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+.Nav__link {
+    border-radius: var(--input-round);
+    padding: var(--nav-link-pad);
+    transition-property: background-color;
+}
+
+.Nav__link:hover,
+.Nav__link:focus {
+    background-color: var(--input-backdrop);
+    color: var(--input-backdrop-face);
+}

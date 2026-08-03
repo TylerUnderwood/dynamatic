@@ -1,0 +1,73 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Dividers
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+
+/* ===== Horizontal Row ===== */
+
+hr {
+    margin: 0;
+    border: none;
+}
+
+.Line,
+.Markup hr {
+    clear: both;
+    margin: 0;
+    border: unset;
+    border-radius: 1px;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    color: inherit;
+}
+
+
+/* ===== Line Break ===== */
+
+br {
+    clear: both;
+    display: inline-block;
+    min-width: 100%;
+    height: 1em;
+    line-height: inherit;
+    content: '';
+}
+
+
+/* ===== Spacers ===== */
+
+/* === BREAK === */
+.break {
+    display: block;
+    min-width: 100%;
+    padding: 1em 0 0 0 !important;
+    content: '';
+}
+
+/* === SPACE === */
+.space {
+    display: block;
+    padding: 0 0 0 1em !important;
+    min-height: 100%;
+    content: '';
+}
+
+/* === SPACER === */
+.spacer {
+    display: block;
+    padding: 1em 0 0 1em !important;
+    content: '';
+}
+
+
+/* ===== Filler ===== */
+
+/* This is used as a sibling element inside a flex element to fill empty space */
+.filler {
+    display: block;
+    flex: 1 0 auto;
+    content: '';
+}

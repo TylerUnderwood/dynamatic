@@ -1,0 +1,45 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Code
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+code {
+    display: inline-block;
+    margin: 0;
+    font-family: monospace;
+}
+
+pre {
+    display: block;
+    margin: 0;
+}
+
+.Code {
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid var(--theme-contrast);
+    background: var(--theme-offset);
+    padding: 0.2em 0.4em;
+    line-height: 1;
+    font-size: 0.8em;
+    font-family: var(--font-meta);
+    color: var(--theme-body);
+}
+
+.Codeblock {
+    display: block;
+    border-radius: var(--input-round);
+    border-width: var(--input-border-width);
+    border-style: solid;
+    border-color: var(--theme-contrast);
+    background: var(--theme-offset);
+    box-shadow: var(--shadow-in);
+    overflow-x: auto;
+    overflow-y: clip;
+    padding: var(--input-pad);
+    line-height: 1.2;
+    font-family: var(--font-meta);
+    font-size: inherit;
+    color: var(--theme-body);
+}

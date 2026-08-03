@@ -1,0 +1,27 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Circle
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.Circle {
+    --circle-width: 1em;
+    --circle-radius: calc(var(--circle-width) * 0.5);
+    display: block;
+    border-radius: 50%;
+    overflow: clip;
+    flex-shrink: 0;
+    width: var(--circle-width);
+    height: var(--circle-width);
+    background-color: currentColor;
+}
+
+.Circle--border {
+    --circle-border-size: 0.1em;
+    /* this calculation stops the border size from being too big and breaking the circle */
+    --circle-border-width: min(var(--circle-radius), var(--circle-border-size));
+    background-color: transparent;
+    border-color: currentColor;
+    border-style: solid;
+    border-width: var(--circle-border-width);
+}

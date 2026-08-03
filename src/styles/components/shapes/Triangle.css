@@ -1,0 +1,92 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Triangle
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.Triangle {
+    --triangle-width: 1em;
+    --triangle-height: calc(var(--triangle-width) * 0.86603);
+    --triangle-offset: calc(var(--triangle-width) - var(--triangle-height));
+    --triangle-side: var(--triangle-width);
+    --triangle-half-side: calc(var(--triangle-width) * 0.5);
+    display: block;
+    flex-shrink: 0;
+    border-width: var(--triangle-half-side);
+    border-style: solid;
+    border-color: transparent;
+}
+
+/* === Equilateral === */
+
+/* = Top = */
+.Triangle\=t {
+    border-top: 0;
+    border-bottom-width: var(--triangle-height);
+    border-bottom-color: currentColor;
+}
+
+/* = Right = */
+.Triangle\=r {
+    border-right: 0;
+    border-left-width: var(--triangle-height);
+    border-left-color: currentColor;
+}
+
+/* = Bottom = */
+.Triangle\=b {
+    border-top-width: var(--triangle-height);
+    border-top-color: currentColor;
+    border-bottom: 0;
+}
+
+/* = Left = */
+.Triangle\=l {
+    border-right-width: var(--triangle-height);
+    border-right-color: currentColor;
+    border-left: 0;
+}
+
+
+/* === Right Angle === */
+
+/* = Top = */
+.Triangle--t {
+    border-top: 0;
+    border-bottom-color: currentColor;
+}
+/* = Right = */
+.Triangle--r {
+    border-right: 0;
+    border-left-color: currentColor;
+}
+/* = Bottom = */
+.Triangle--b {
+    border-top-color: currentColor;
+    border-bottom: 0;
+}
+/* = Left = */
+.Triangle--l {
+    border-right-color: currentColor;
+    border-left: 0;
+}
+/* = Top Right = */
+.Triangle--tr {
+    border-top-color: currentColor;
+    border-right-color: currentColor;
+}
+/* = Bottom Right = */
+.Triangle--br {
+    border-bottom-color: currentColor;
+    border-right-color: currentColor;
+}
+/* = Bottom Left = */
+.Triangle--bl {
+    border-bottom-color: currentColor;
+    border-left-color: currentColor;
+}
+/* = Top Left = */
+.Triangle--tl {
+    border-top-color: currentColor;
+    border-left-color: currentColor;
+}

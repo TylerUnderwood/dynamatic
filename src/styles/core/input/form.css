@@ -1,0 +1,75 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Form
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+form {
+    display: block;
+}
+
+.Form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Label
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+label {
+    display: inline-block;
+}
+
+label[for] {
+    cursor: pointer;
+}
+
+.Label {
+    display: inline-flex;
+    align-items: center;
+}
+
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Fieldset
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+fieldset {
+    margin: 0;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    background-color: transparent;
+    flex: 1 0 auto;
+    width: 100%;
+    padding: var(--input-pad) 1em;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+.Fieldset {
+    display: block;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--theme-contrast);
+    border-radius: var(--input-round);
+    background-color: var(--theme-offset);
+}
+
+legend {
+    padding: 0 0.4em;
+    margin: 0 -0.4em;
+    line-height: 1;
+}
+
+.Legend {
+    padding: 0 0.4em;
+    margin: 0 -0.4em;
+    line-height: 1;
+}

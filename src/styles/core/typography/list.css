@@ -1,0 +1,114 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Lists
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+li {
+    line-height: 1;
+    list-style: inherit;
+    font-size: 1rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.List,
+.Markup ul,
+.Markup ol {
+    --list-tab: var(--tab-size);
+    --list-gap: 1.2rem;
+    --marker-color: var(--markup-color);
+    --lhc-height: var(--list-line-height);
+    --lhc-top: var(--list-lhc-top);
+    --lhc-bottom: var(--list-lhc-bottom);
+    display: block;
+    margin: 0;
+    width: 100%;
+    max-width: var(--max-w-copy);
+    padding: 0;
+    list-style: none;
+    counter-reset: list;
+}
+
+/* Nested Lists */
+.List > .List,
+.Markup ul > ul,
+.Markup ul > ol,
+.Markup ol > ul,
+.Markup ol > ol {
+    margin-top: 0 !important;
+    margin-left: var(--list-tab);
+}
+
+/* List Item */
+.List__item,
+.Markup li {
+    display: list-item;
+    margin: 0;
+    padding: 0;
+    list-style: inherit;
+    line-height: var(--list-line-height);
+    font-size: var(--list-font-size);
+}
+
+/* List Text and Marker */
+.List__item > .List__text,
+.List__item::marker,
+.Markup li > * {
+    line-height: inherit;
+    font-size: inherit;
+    color: var(--list-color);
+}
+
+
+.List > .List__item,
+.Markup ul > li,
+.Markup ol > li {
+    margin-top: calc(var(--list-gap) + var(--lhc-top));
+    margin-left: calc(var(--list-tab) * .7);
+    margin-bottom: var(--lhc-bottom);
+    padding-left: calc(var(--list-tab) * .3);
+    counter-increment: list;
+
+    &::marker {
+        color: var(--markup-color);
+    }
+}
+
+/* Unordered List */
+.List--bullet > .List__item,
+.Markup ul > li {
+    &::marker {
+        content: "\2022";
+    }
+}
+
+/* Ordered List */
+.List--numbered > .List__item,
+.Markup ol > li {
+    &::marker {
+        content: counter(list) ".";
+    }
+}
+
+/* Checkmark List */
+.List--checkmark > .List__item {
+    &::marker {
+        content: "\2713";
+    }
+}
+
+/* Custom marker on List */
+.List[style*="--marker:"] > .List__item::marker {
+    content: var(--marker);
+}

@@ -1,0 +1,161 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Field
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+input,
+select,
+textarea {
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    background-color: transparent;
+    flex: 1 0 auto;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: var(--input-outline);
+    outline-offset: 2px;
+}
+
+::placeholder {
+    color: inherit;
+    opacity: 0.3;
+}
+
+.Field {
+    display: flex;
+    flex: 1 0 auto;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+    border-width: var(--input-border-width);
+    border-style: solid;
+    border-color: var(--theme-contrast);
+    border-radius: var(--input-round);
+    background-color: var(--theme-offset);
+    width: 100%;
+    height: var(--input-height);
+    padding: 0 var(--input-pad);
+    line-height: 1;
+    font-family: var(--font-face);
+    font-size: 1rem;
+    color: var(--theme-face);
+    transition-property: border-color, background-color, color, opacity;
+    transition-duration: var(--input-timing);
+    transition-timing-function: var(--input-easing);
+
+    &::placeholder {
+        opacity: 0.3;
+        color: inherit;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &[active],
+    &[filled] {
+        outline: none;
+        border-color: var(--input-color);
+        background-color: var(--theme-offset);
+    }
+
+    &[disabled],
+    &[readonly] {
+        border-color: var(--theme-contrast) !important;
+        background-color: var(--theme-offset) !important;
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+    }
+}
+
+.Field[stealth] {
+    border-color: transparent;
+    background-color: transparent;
+    transition-property: border-color, background-color, color, padding, translate;
+
+    &::placeholder {
+        opacity: 1;
+    }
+
+    &:not(:focus) {
+        padding-left: 0;
+    }
+
+    &:focus,
+    &:active {
+        border-color: var(--input-color);
+        background-color: var(--theme-offset);
+
+        &::placeholder {
+            opacity: 0.3;
+        }
+    }
+
+    &[readonly] {
+        border-color: transparent !important;
+        background-color: transparent !important;
+
+        &::placeholder {
+            opacity: 1 !important;
+        }
+    }
+}
+
+/* === Field large === */
+.Field--large {
+    border-width: var(--input-border-width-lg);
+    height: var(--input-height-lg);
+    padding: 0 var(--input-pad-lg);
+    font-size: 1.2rem;
+}
+
+/* === Field small === */
+.Field--small {
+    border-width: var(--input-border-width-sm);
+    height: var(--input-height-sm);
+    padding: 0 var(--input-pad-sm);
+    font-size: 0.8rem;
+}
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Textarea
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.Textarea {
+    max-width: 100%;
+    height: 12em;
+    min-height: 2.4em;
+    resize: vertical;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    line-height: 1.4;
+}
+
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Select
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Progress
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/

@@ -1,0 +1,74 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENT: Checkbox
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.Checkbox {
+    --checkbox-timing: calc(var(--input-timing) * .64);
+    --checkbox-delay: calc(var(--input-timing) * .33);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Checkbox__input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+.Checkbox__box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    border-radius: var(--round);
+    border: 2px solid var(--theme-contrast);
+    background-color: var(--theme-base);
+    padding: 1px;
+    transition-property: background-color;
+    transition-timing-function: ease;
+    transition-duration: var(--checkbox-timing);
+    transition-delay: var(--checkbox-delay);
+}
+input:focus-visible + .Checkbox__box {
+    outline: var(--input-outline);
+    outline-offset: 2px;
+}
+input:checked + .Checkbox__box {
+    background-color: var(--input-color);
+    transition-delay: 0ms;
+}
+
+/* does not work for animation but you can copy-paste it into your component */
+.Checkbox__box::before {
+    content: url('data:image/svg+xml;utf8,<svg class="Checkbox__icon" width="20" height="20" viewBox="0 0 20 20"><polyline class="Checkbox__polyline" points="4 11 8 15 16 6"></polyline></svg>');
+}
+
+.Checkbox__icon {
+    position: relative;
+    width: 100%;
+    height: inherit;
+    fill: transparent;
+}
+
+.Checkbox__polyline {
+    fill: none;
+    stroke: var(--dark-face);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 18px;
+    stroke-dashoffset: 18px;
+    transition-property: stroke-dashoffset;
+    transition-timing-function: ease;
+    transition-duration: var(--checkbox-timing);
+}
+input:checked + .Checkbox__box .Checkbox__polyline {
+    stroke-dashoffset: 0;
+    transition-delay: var(--checkbox-delay);
+}

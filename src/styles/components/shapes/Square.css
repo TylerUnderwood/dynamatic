@@ -1,0 +1,25 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Square
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.Square {
+    --square-width: 1em;
+    --square-radius: calc(var(--square-width) * 0.5);
+    display: block;
+    flex-shrink: 0;
+    width: var(--square-width);
+    height: var(--square-width);
+    background-color: currentColor;
+}
+
+.Square--border {
+    --square-border-size: 0.1em;
+    /* this calculation stops the border size from being too big and breaking the square */
+    --square-border-width: min(var(--square-radius), var(--square-border-size));
+    background-color: transparent;
+    border-color: currentColor;
+    border-style: solid;
+    border-width: var(--square-border-width);
+}

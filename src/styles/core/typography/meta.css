@@ -1,0 +1,17 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Meta
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.Meta {
+    --lhc-height: var(--meta-line-height);
+    --lhc-top: var(--meta-lhc-top);
+    --lhc-bottom: var(--meta-lhc-bottom);
+    line-height: var(--meta-line-height);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: var(--font-meta);
+    font-size: 0.8rem;
+}

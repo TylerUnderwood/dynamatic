@@ -1,0 +1,168 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Section
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.Section {
+    --section-ratio: calc(1 / 2);
+    --section-wrap: var(--max-w-page);
+    --section-pad: var(--space-page);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100vw;
+    overflow-x: clip;
+    overflow-y: initial;
+}
+
+/* ratio modifiers */
+.Section--aside {
+    --section-ratio: calc(1 / 3);
+}
+.Section--main {
+    --section-ratio: calc(2 / 3);
+}
+
+/* wrap modifiers */
+.Section--site {
+    --section-wrap: var(--max-w-site);
+}
+.Section--copy {
+    --section-wrap: var(--max-w-copy);
+}
+
+
+/* columns have no padding or margin vertically, because they only distinguish width */
+.Section__column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    /* vertical padding */
+    /* background-color */
+}
+
+/* blocks must stack inside column with optional padding and margin on top */
+.Section__block {
+    display: flex;
+    width: 100%;
+    /* margin-top */
+    /* horizontal padding */
+}
+
+.Section__block:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.Section__block:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Section__fill can replace Section__block to fill in space between blocks */
+/* Don't put any elements inside of this one */
+.Section__fill {
+    margin: 0 !important;
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 0 !important;
+}
+.Section__fill > * {
+    display: none !important;
+}
+
+/* wrap is what sets the max-width based on the column it is inside */
+.Section__wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* horizontal padding */
+}
+
+.Section > .Section__wrap {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--section-wrap);
+}
+
+@media ( max-width: 767px ) {
+    .Section {
+        flex-direction: column;
+    }
+
+    .Section__wrap {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: var(--section-wrap);
+    }
+}
+
+@media ( min-width: 768px ) {
+    .Section:not(.Section--reverse) {
+        flex-direction: row;
+    }
+
+    .Section--reverse {
+        flex-direction: row-reverse;
+    }
+
+    .Section__column {
+        --section-ratio-left: var(--section-ratio);
+        --section-ratio-right: calc( 1 - var(--section-ratio) );
+        --section-ratio-diff: calc( var(--section-ratio-left) - var(--section-ratio-right) );
+        --section-wrap-diff: calc( var(--section-wrap) * var(--section-ratio-diff) );
+        --section-pad-diff: calc( var(--section-pad) * var(--section-ratio-diff) );
+    }
+
+    /* Left column */
+    .Section:not(.Section--reverse) .Section__column:first-child,
+    .Section.Section--reverse .Section__column:last-child {
+        --section-left-wide: calc( 50vw + (var(--section-wrap-diff) / 2) );
+        --section-left-thin: calc( (100vw * var(--section-ratio-left)) - var(--section-pad-diff) );
+        align-items: flex-end;
+        max-width: max( var(--section-left-wide), var(--section-left-thin) );
+    }
+
+    .Section:not(.Section--reverse) .Section__column:first-child .Section__block,
+    .Section.Section--reverse .Section__column:last-child .Section__block {
+        justify-content: flex-end;
+        padding-right: 0;
+    }
+
+    .Section:not(.Section--reverse) .Section__column:first-child .Section__wrap,
+    .Section.Section--reverse .Section__column:last-child .Section__wrap {
+        margin-left: auto;
+        margin-right: 0;
+        max-width: calc( (var(--section-wrap) + var(--section-wrap-diff)) / 2);
+        padding-left: 0;
+    }
+
+    /* Right column */
+    .Section:not(.Section--reverse) .Section__column:last-child,
+    .Section.Section--reverse .Section__column:first-child {
+        --section-right-wide: calc( 50vw - (var(--section-wrap-diff) / 2) );
+        --section-right-thin: calc( (100vw * var(--section-ratio-right)) + var(--section-pad-diff) );
+        align-items: flex-start;
+        max-width: max( var(--section-right-wide), var(--section-right-thin) );
+    }
+
+    .Section:not(.Section--reverse) .Section__column:last-child .Section__block,
+    .Section.Section--reverse .Section__column:first-child .Section__block {
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+
+    .Section:not(.Section--reverse) .Section__column:last-child .Section__wrap,
+    .Section.Section--reverse .Section__column:first-child .Section__wrap {
+        margin-left: 0;
+        margin-right: auto;
+        max-width: calc( (var(--section-wrap) - var(--section-wrap-diff)) / 2);
+        padding-right: 0;
+    }
+}

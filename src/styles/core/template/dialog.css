@@ -1,0 +1,21 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Dialog
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+dialog {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    overflow: visible;
+}
+
+dialog:modal {
+    max-width: unset;
+    max-height: unset;
+}
+
+dialog:not([open]) {
+    display: none;
+}

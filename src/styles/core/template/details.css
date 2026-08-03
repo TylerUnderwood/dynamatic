@@ -1,0 +1,39 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| CORE: Summary
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+details {
+     margin: 0;
+}
+
+details[open] + details {
+     margin-top: 1.6rem;
+     border-top: solid 2px currentColor;
+}
+
+details[open] > summary {
+     margin-bottom: 1.6rem;
+}
+
+details:first-of-type > summary {
+     padding-top: 0;
+}
+
+summary {
+     display: flex;
+     border-radius: 2px;
+     border-bottom: solid 2px currentColor;
+     padding: 0.8rem 0;
+     cursor: pointer;
+}
+
+summary:focus {
+    outline: none;
+}
+
+summary:focus-visible {
+    outline: var(--input-outline);
+    outline-offset: 2px;
+}
