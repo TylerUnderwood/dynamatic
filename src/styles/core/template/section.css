@@ -1,0 +1,11 @@
+/* section */
+section {
+    display: block;
+}
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: var(--section-wrap);
+    max-width: var(--section-wrap);
+}
