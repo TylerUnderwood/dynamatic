@@ -1,5 +1,5 @@
 {
-  "pallet": {
+  "color": {
     "cerulean": "#4048F0",
     "azure": "#40A0F0",
     "violet": "#9040F0",
@@ -7,7 +7,7 @@
     "carbon": "#202428",
     "yellow": "#f0e840"
   },
-  "color": {
+  "pallet": {
     "primary": {
       "50": "#ECECFE",
       "100": "#D9DAFD",
