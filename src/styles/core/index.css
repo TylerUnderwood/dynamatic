@@ -1,7 +1,6 @@
-@import './scheme.css';
-
 /* === TEMPLATE === */
 @import './template/site.css';
+@import './template/nav.css';
 @import './template/section.css';
 @import './template/dividers.css';
 @import './template/article.css';
@@ -19,7 +18,6 @@
 
 /* === INPUT === */
 @import './input/link.css';
-@import './input/nav.css';
 @import './input/button.css';
 @import './input/field.css';
 @import './input/form.css';

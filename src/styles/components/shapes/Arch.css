@@ -24,7 +24,7 @@
     width: var(--arch-diameter);
     height: var(--arch-diameter);
     border-radius: 100%;
-    box-shadow: 0 0 0 1em currentColor;
+    box-shadow: 0 0 0 var(--arch-width) currentColor;
     content: '';
 }
 

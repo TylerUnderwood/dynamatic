@@ -5,7 +5,7 @@
 */
 
 .Rhythm p:not(:first-child) {
-    margin-top: calc(var(--break-size) + var(--lhc-top));
+    margin-top: calc(var(--size-break) + var(--lhc-top));
     margin-bottom: var(--lhc-bottom);
 }
 
@@ -47,12 +47,12 @@
 
 .Rhythm ul:not(:first-child),
 .Rhythm ol:not(:first-child) {
-    margin-top: calc(var(--break-size) + var(--lhc-top));
+    margin-top: calc(var(--size-break) + var(--lhc-top));
     margin-bottom: var(--lhc-bottom);
 }
 
 .Rhythm blockquote:not(:first-child) {
-    margin-top: var(--break-size);
+    margin-top: var(--size-break);
 }
 
 .Rhythm blockquote > cite {
@@ -65,5 +65,5 @@
 }
 
 .Rhythm .Rhythm__block:not(:first-child) {
-    margin-top: var(--break-size);
+    margin-top: var(--size-break);
 }

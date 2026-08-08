@@ -10,14 +10,14 @@
 <body data-scheme="preferred">
     <header id="header" class="Header">
         <div class="Header__wrap wrapper">
-            <div id="logo" class="Logo h1">
-                LOGO
+            <div id="logo" class="Logo h2">
+                <strong>LOGO</strong>
             </div>
             <nav id="nav" class="Nav">
-                <ul class="NavList">
-                    <li class="NavList__item"><a href="./">page one</a></li>
-                    <li class="NavList__item"><a href="./">page two</a></li>
-                    <li class="NavList__item"><a href="./">page three</a></li>
+                <ul class="Nav__list">
+                    <li class="Nav__item"><a class="Nav__link" href="preview.html">page01</a></li>
+                    <li class="Nav__item"><a class="Nav__link" href="preview.html">page02</a></li>
+                    <li class="Nav__item"><a class="Nav__link" href="preview.html">page03</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,38 +30,65 @@
         </section>
         <section id="section-one" class="Section" aria-labelledby="section-one-heading">
             <div class="Section__wrap">
-                <h2 id="section-one-heading" class="Heading h2">Section One</h2>
+                <h2 id="section-one-heading" class="Heading h2">Template</h2>
+                <p class="Paragraph">This whole page is a demo of the template styles.</p>
             </div>
         </section>
         <section id="section-two" class="Section" aria-labelledby="section-two-heading">
-            <div class="Section__wrap">
-                <h2 id="section-two-heading" class="Heading h2">Section Two</h2>
-                <p class="Paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                <h3 class="Heading h3">Heading Three</h3>
-                <p class="Paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                <h4 class="Heading h4">Heading Four</h4>
-                <p class="Paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                <h5 class="Heading h5">Heading Five</h5>
-                <p class="Paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                <h6 class="Heading h6">Heading Six</h6>
-                <p class="Paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-            </div>
-        </section>
-        <section id="section-three" class="Section" aria-labelledby="section-three-heading">
-            <div class="Section__wrap">
-                <h2 id="section-three-heading" class="Heading h2">Section Three</h2>
-                <code class="Code">console.log('Hello, world!');</code>
-                <code class="Codeblock">
+            <div class="Section__wrap col">
+                <h2 id="section-two-heading" class="Heading h2">Typography</h2>
+                <div class="Markup Rhythm">
+                    <p class="Paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                    <h3 class="Heading h3">Heading Three</h3>
+                    <p class="Paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                    <h4 class="Heading h4">Heading Four</h4>
+                    <p class="Paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                    <h5 class="Heading h5">Heading Five</h5>
+                    <p class="Paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                    <h6 class="Heading h6">Heading Six</h6>
+                    <p class="Paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                    <ul class="List">
+                        <li class="List__item">Item One</li>
+                        <li class="List__item">Item Two</li>
+                        <li class="List__item">Item Three</li>
+                    </ul>
+                    <blockquote class="Quote">
+                        <p class="Quote__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                        <cite class="Cite">John Doe</cite>
+                    </blockquote>
+                    <p><code class="Code">console.log('Hello, world!');</code></p>
+                    <br>
+                    <code class="Codeblock">
 <pre>
 console.log('Hello, world!');
 </pre>
-                </code>
+                    </code>
+                </div>
+            </div>
+        </section>
+        <section id="section-three" class="Section" aria-labelledby="section-three-heading">
+            <div class="Section__wrap col gap-2">
+                <h2 id="section-three-heading" class="Heading h2">Inputs</h2>
+                <div class="col">
+                    <a class="Link" href="preview.html">Link</a>
+                </div>
+                <div class="row">
+                    <button class="Button">Button</button>
+                    <button class="Button" data-type="secondary">Button</button>
+                    <button class="Button" data-type="tertiary">Button</button>
+                </div>
+                <div class="col">
+                    <input class="Field" type="text" placeholder="Text">
+                    <textarea class="Field Textarea" placeholder="Textarea"></textarea>
+                </div>
             </div>
         </section>
     </main>
     <footer id="footer" class="Footer">
         <div class="Footer__wrap wrapper">
-            Footer
+            <p visually-hidden>
+                Footer
+            </p>
         </div>
     </footer>
     <script type="module">
@@ -93,6 +120,24 @@ console.log('Hello, world!');
         .Footer__wrap {
             display: flex;
             max-width: var(--max-w-page);
+        }
+        .row {
+            display: flex;
+            gap: 1em;
+        }
+        .col {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        .gap-2 {
+            gap: 2em;
+        }
+        .gap-3 {
+            gap: 3em;
+        }
+        .gap-4 {
+            gap: 4em;
         }
     </style>
 </body>

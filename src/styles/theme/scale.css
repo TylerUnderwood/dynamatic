@@ -1,0 +1,11 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| THEME: Scale
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+:root {
+    --fluid-rem: fluidLength(16px, 20px, 480px, 1280px);
+    --space-page: fluidLength(20px, 36px, 480px, 1280px);
+    --space-section: fluidLength(56px, 72px, 480px, 1280px);
+}

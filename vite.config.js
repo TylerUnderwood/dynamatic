@@ -41,6 +41,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         // 1 file: everything under core/index.css
+        theme: resolve(styles, 'theme/index.css'),
+
+        // 1 file: everything under core/index.css
         core: resolve(styles, 'core/index.css'),
 
         // 1 file per component CSS (not the barrel)

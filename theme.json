@@ -284,10 +284,6 @@
     "page": "48em",
     "site": "64em"
   },
-  "other": {
-    "break-size": "1.6rem",
-    "tab-size": "2.0rem"
-  },
   "size": {
     "1": "1px",
     "2": "2px",
@@ -306,8 +302,8 @@
     "80": "4.0rem",
     "96": "4.8rem",
     "128": "6.4rem",
-    "break": "var(--break-size)",
-    "tab": "var(--tab-size)",
+    "break": "1.6rem",
+    "tab": "2.0rem",
     "DEFAULT": "1em",
     "rem": "1rem"
   },

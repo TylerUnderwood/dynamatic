@@ -22,7 +22,7 @@ html {
 body {
     margin: 0;
     background-color: var(--theme-base);
-    tab-size: var(--tab-size);
+    tab-size: var(--size-tab);
     line-height: 1;
     font-size: 1rem;
     font-weight: normal;

@@ -1,3 +1,4 @@
+@import './theme/index.css';
 @import './core/index.css';
 @import './components/index.css';
 @import './utilities/index.css';

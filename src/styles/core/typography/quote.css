@@ -25,7 +25,7 @@ cite {
     max-width: var(--max-w-copy);
     border-left: var(--quote-border-width) solid var(--markup-color);
     border-radius: var(--quote-border-width);
-    padding: 0 0 0 calc(var(--tab-size) - (var(--quote-border-width) * 2));
+    padding: 0 0 0 calc(var(--size-tab) - (var(--quote-border-width) * 2));
 }
 
 .Quote__text,
@@ -33,6 +33,7 @@ cite {
     --lhc-height: var(--quote-line-height);
     --lhc-top: var(--quote-lhc-top);
     --lhc-bottom: var(--quote-lhc-bottom);
+    padding: 0.1em 0;
     line-height: var(--quote-line-height);
     font-size: var(--quote-font-size);
     color: var(--quote-color);

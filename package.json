@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "name": "dynamatic",
   "description": "A postCSS foundation for generating custom themes.",
   "keywords": [
@@ -8,12 +8,12 @@
     "postcss",
     "node"
   ],
+  "author": "TylerUnderwood",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TylerUnderwood/dynamatic.git"
   },
-  "author": "TylerUnderwood",
-  "license": "ISC",
   "homepage": "https://github.com/TylerUnderwood/dynamatic#readme",
   "bugs": {
     "url": "https://github.com/TylerUnderwood/dynamatic/issues"

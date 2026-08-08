@@ -25,7 +25,7 @@ ol {
 .List,
 .Markup ul,
 .Markup ol {
-    --list-tab: var(--tab-size);
+    --list-tab: var(--size-tab);
     --list-gap: 1.2rem;
     --marker-color: var(--markup-color);
     --lhc-height: var(--list-line-height);
