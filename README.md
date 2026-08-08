@@ -1,5 +1,5 @@
 # dynamatic
-> [!info]
+> [!IMPORTANT]
 > Everthing is still very much in alpha expect breaking changes. 
 > Progress has been steady so expect that to change soon(TM) with a 1.0.0 release
 
