@@ -40,7 +40,7 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       input: {
-        // 1 file: everything under core/index.css
+        // 1 file: everything under theme/index.css
         theme: resolve(styles, 'theme/index.css'),
 
         // 1 file: everything under core/index.css

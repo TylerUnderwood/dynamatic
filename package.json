@@ -6,7 +6,10 @@
   "keywords": [
     "css",
     "postcss",
-    "node"
+    "theme",
+    "bootstrap",
+    "tailwindcss",
+    "foundation"
   ],
   "author": "TylerUnderwood",
   "license": "ISC",
@@ -31,8 +34,5 @@
     "postcss-preset-env": "^11.3.2",
     "typescript": "~6.0.2",
     "vite": "^8.1.1"
-  },
-  "dependencies": {
-    "user": "^0.0.0"
   }
 }
