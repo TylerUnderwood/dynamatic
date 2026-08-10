@@ -1,5 +1,5 @@
-'use strict'
-import themeJson from '../../theme.json' with { type: "json" };
+'use strict';
+import themeJson from '../../theme.json';
 
 const defaultTheme: any = themeJson;
 

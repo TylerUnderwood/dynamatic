@@ -6,6 +6,6 @@ section {
 .wrapper {
     margin-left: auto;
     margin-right: auto;
-    width: var(--section-wrap);
-    max-width: var(--section-wrap);
+    width: 100%;
+    max-width: var(--maw-w-page);
 }

@@ -44,7 +44,7 @@ input:checked + .Checkbox__box {
     transition-delay: 0ms;
 }
 
-/* does not work for animation but you can copy-paste it into your component */
+/* does not work for animation but you can copy-paste the <svg> into your component */
 .Checkbox__box::before {
     content: url('data:image/svg+xml;utf8,<svg class="Checkbox__icon" width="20" height="20" viewBox="0 0 20 20"><polyline class="Checkbox__polyline" points="4 11 8 15 16 6"></polyline></svg>');
 }
