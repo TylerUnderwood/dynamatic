@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "version": "0.4.4",
+  "version": "0.5.0-next",
   "name": "dynamatic",
   "description": "A postCSS foundation for generating custom themes.",
   "keywords": [
@@ -22,17 +22,30 @@
     "url": "https://github.com/TylerUnderwood/dynamatic/issues"
   },
   "main": "index.js",
+  "files": [
+    "dist", "theme.json", "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "release": "semantic-release"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.10",
+    "@semantic-release/release-notes-generator": "^14.1.1",
     "cssnano": "^8.0.2",
     "postcss": "^8.5.24",
     "postcss-cli": "^11.0.1",
     "postcss-preset-env": "^11.3.2",
     "tsx": "^4.23.12",
+    "semantic-release": "^25.0.9",
     "typescript": "~6.0.2",
     "vite": "^8.1.1"
   }
